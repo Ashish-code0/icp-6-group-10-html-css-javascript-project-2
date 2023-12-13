@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <title>Group Project 2</title>
+    <script src="functions.js"></script>
     <style>
         .colors{
            color: #ffb700;
@@ -42,13 +43,11 @@
             margin: 0;
         }
         .search-container{
-            
-        }
-        .search-bar-container{
             display: flex;
             margin: 0;
             margin-bottom: 35px;
         }
+    
         input{
             border: none;
             outline:none;
@@ -77,6 +76,7 @@
             cursor: pointer;
             height: 37px;
         }
+        
         .search-card{
             width:250px;
             padding: 10px 15px; 
@@ -87,17 +87,7 @@
             align-items: center;
             border-right: 1px solid black;
         }
-        .search-card:hover{
-            padding: 10px 15px; 
-            background-color: aqua;
-            cursor: pointer;
-            margin:5px 15px;    
-            border-right: 1px solid black;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border-right: 1px solid black;
-        }
+        
         .navbar-menu-container{
             display: flex;
             margin-top: 25px;
@@ -116,6 +106,19 @@
             flex-direction: column;
             margin: 0 5px;
         }
+        .searched-sections{
+            display: none;
+            margin: 10px 0;
+            border-bottom: 2px solid #ffbb00;
+        }
+        .search-book-title{
+          padding-left: 40px;
+          font-size: 20px;
+          font-weight: bold; 
+          border-top: 1px solid #de1212;
+          border-bottom: 1px solid #de1212;
+        }
+
         .shop-sections{
             margin: 10px 0;
             border-bottom: 2px solid #ffbb00;
@@ -132,7 +135,7 @@
         }
         .book-img{
             height:220px;
-            border: 1px solid black;
+            border: 1px solid white;
         }
         .books-name{
             text-align: center;
@@ -152,7 +155,7 @@
         .footer-sec{
             width:400px;
             margin: 10px 10px;
-            border-right: 2px solid rgb(222, 18, 18);
+            border-right: 2px solid #de1212;
         }
         .footer-sec-title{
             font-size: 18px;
@@ -170,25 +173,9 @@
             <p class="shop-name"> Readit</p>
         </div>
         <div class="search-container">
-            <div class="search-bar-container">
                 <input type="text" placeholder="Rich Dad Poor Dad" class="search-bar" id="search-book" onchange="searchBook()">
-                <a href="./pages/search.html"><button type="button" class="search-button" onclick="showBook(bookName)">Search</button> </a>
-            </div>
-
-            <div class="search-card">
-                <img src="./images/personality/ikigai.jpeg" class="book-img" id="book-img-id" />
-                <p class="books-name" id="book-name-id"> Ikigai: The Japanese Secret to a Long and Happy Life</p>
-                <p class="books-price" id="book-price-id">499/- </p>
-            </div>    
-
-
+                <button type="button" class="search-button" onclick="showBook(bookName)">Search</button> 
         </div>
-
-
-
-
-
-
 
         <div class="navbar-menu-container">
             <button type="button" class="navbar-menu">Login</button>
@@ -197,7 +184,17 @@
             <button type="button" class="navbar-menu">Cart </button>
         </div>
     </div>
+    
     <div class="shop-body">
+        <div class="searched-sections" id="hidden-search-id"> 
+            <p class="search-book-title">Searched Book: </p>
+            <div class="search-card">
+                <img src="./images/personality/ikigai.jpeg" class="book-img" id="book-img-id" />
+                <p class="books-name" id="book-name-id"> Ikigai: The Japanese Secret to a Long and Happy Life</p>
+                <p class="books-price" id="book-price-id">499/- </p>
+            </div>
+        </div>
+
         <div class="shop-sections">
             <div class="books-card">
                 <img src="./images/personality/ikigai.jpeg" class="book-img" id="ikigai-id" />
@@ -212,25 +209,25 @@
             <div class="books-card">
                 <img src="./images/personality/psychology-of-money.jpg" class="book-img" id="fire-blood-id" />
                 <p class="books-name" > The Psychology Of Money Paperback _ 1 September 2020</p>
-                <p class="books-price"> 600/-</p>
+                <p class="books-price"> 550/-</p>
             </div>
             
             <div class="books-card">
                 <img src="./images/personality/rich-dad-poor-dad.jpeg" class="book-img" id="atomic-habit-id" />
                 <p class="books-name" >Rich Dad Poor Dad: 25th Anniversary Edit </p>
-                <p class="books-price">$13.29</p>
+                <p class="books-price"> 400/-</p>
             </div>
             <div class="books-card">
-                <img src="./images/personality/think-and-grow-rich.jpg" class="book-img" id="atomic-habit-id" />
+                <img src="./images/personality/think-and-grow-rich.png" class="book-img" id="atomic-habit-id" />
                 <p class="books-name" > Think and Grow Rich: The Landmark Bestseller</p>
-                <p class="books-price">$13.29</p>
+                <p class="books-price"> 649/-</p>
             </div>
         </div>
         <div class="shop-sections">
             <div class="books-card">
-                <img src="./images/fiction/divine-rivals.jpg" class="book-img" id="ikigai-id" />
+                <img src="./images/fiction/divine-rivals.png" class="book-img" id="ikigai-id" />
                 <p class="books-name" > Divine Rivals: A Novel: 1 (Letters of Enchantment, 1)</p>
-                <p class="books-price">$13.29</p>
+                <p class="books-price">500/-</p>
             </div>
             <div class="books-card">
                 <img src="./images/fiction/fire-blood.jpeg" class="book-img" id="fire-blood-id" />
@@ -243,7 +240,7 @@
                 <p class="books-price">2100/-</p>
             </div>
             <div class="books-card">
-                <img src="./images/fiction/fourth-wing.jpg" class="book-img" id="atomic-habit-id" />
+                <img src="./images/fiction/fourth-wing.png" class="book-img" id="atomic-habit-id" />
                 <p class="books-name" > Fourth Wing: The Empyrean Discover the Instant  </p>
                 <p class="books-price">499/-</p>
             </div>
@@ -316,7 +313,7 @@
 
 </body>
 
-<script src="functions.js">
+
     
 </script>
 
