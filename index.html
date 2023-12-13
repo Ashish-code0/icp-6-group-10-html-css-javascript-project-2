@@ -42,6 +42,9 @@
             margin: 0;
         }
         .search-container{
+            
+        }
+        .search-bar-container{
             display: flex;
             margin: 0;
             margin-bottom: 35px;
@@ -77,7 +80,6 @@
         .search-card{
             width:250px;
             padding: 10px 15px; 
-            background-color: aqua;
             margin:5px 15px;    
             border-right: 1px solid black;
             display: flex;
@@ -88,6 +90,7 @@
         .search-card:hover{
             padding: 10px 15px; 
             background-color: aqua;
+            cursor: pointer;
             margin:5px 15px;    
             border-right: 1px solid black;
             display: flex;
@@ -167,21 +170,31 @@
             <p class="shop-name"> Readit</p>
         </div>
         <div class="search-container">
-            <input type="text" placeholder="Rich Dad Poor Dad" class="search-bar" id="search-book" onchange="searchBook()">
-                <a href="./pages/search.html">
-                    <button type="button" class="search-button" onclick="showBook(bookName)">Search</button>
-                </a> 
+            <div class="search-bar-container">
+                <input type="text" placeholder="Rich Dad Poor Dad" class="search-bar" id="search-book" onchange="searchBook()">
+                <a href="./pages/search.html"><button type="button" class="search-button" onclick="showBook(bookName)">Search</button> </a>
+            </div>
+
             <div class="search-card">
                 <img src="./images/personality/ikigai.jpeg" class="book-img" id="book-img-id" />
                 <p class="books-name" id="book-name-id"> Ikigai: The Japanese Secret to a Long and Happy Life</p>
                 <p class="books-price" id="book-price-id">499/- </p>
             </div>    
+
+
         </div>
+
+
+
+
+
+
+
         <div class="navbar-menu-container">
-            <button type="button" class="navbar-menu">Login page</button>
-            <button type="button" class="navbar-menu">Sub page</button>
-            <button type="button" class="navbar-menu">Sub page</button>
-            <button type="button" class="navbar-menu">Sub page</button>
+            <button type="button" class="navbar-menu">Login</button>
+            <button type="button" class="navbar-menu">Fiction </button>
+            <button type="button" class="navbar-menu">Non-fiction </button>
+            <button type="button" class="navbar-menu">Cart </button>
         </div>
     </div>
     <div class="shop-body">

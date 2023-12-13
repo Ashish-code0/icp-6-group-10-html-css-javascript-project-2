@@ -1,6 +1,8 @@
+let bookName;
+
 function searchBook(){
     const searchedBook = document.getElementById('search-book');
-    const bookName = searchedBook.value;
+    bookName = searchedBook.value;
     console.log(`Book searched : ${bookName}`);
 
 }
@@ -12,14 +14,14 @@ function showBook(bookName){
 
     switch(bookName){
         case 'atomic':
-            bookImgId.src="./../images/personality/atomic.jpeg"
+            bookImgId.src="./../images/personality/atomic-habit.jpeg"
             bookNameId.innerText = 'Atomic Habits Paperback _ 1 January 2018';
             bookPriceId.innerText = '600/-';
         break;
         default:
-            bookImgId.src="./../images/personality/atomic.jpeg"
-            bookNameId.innerText = 'Atomic Habits Paperback _ 1 January 2018';
-            bookPriceId.innerText = '600/-';
+            bookImgId.src="./../images/personality/ikigai.jpeg"
+            bookNameId.innerText = 'Ikigai: The Japanese Secret to a Long and Happy Life';
+            bookPriceId.innerText = '499/-';
         break;   
     }
     
