@@ -12,8 +12,13 @@
         body{
             padding:0;
             margin:0;
+            background-color: #fffefb;
         }
-        .header{
+        a{
+            text-decoration: none;
+            color:#000;
+        }
+        .shop-header{
             background-color: #ffd60a;
             padding:2px 15px;
             display:flex;
@@ -41,24 +46,54 @@
             margin: 0;
             margin-bottom: 35px;
         }
+        input{
+            border: none;
+            outline:none;
+            background: none;
+        }
         .search-bar{
             width:330px;
-            padding: 5px 15px;
+            padding: 8px 15px;
             font-size: 15px;
             border:none;
             border-radius: 25px 0 0 25px;
             background-color: azure;
-            
         }
         .search-button{
             display: block;
             margin-left: auto;
             padding: 5px 15px;
             font-size: 15px;
+            height: 33px;
             border : none;
             border-radius: 0 25px 25px 0;
             background-color: #000;
             color: white;
+        }
+        .search-button:hover{
+            cursor: pointer;
+            height: 37px;
+        }
+        .search-card{
+            width:250px;
+            padding: 10px 15px; 
+            background-color: aqua;
+            margin:5px 15px;    
+            border-right: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-right: 1px solid black;
+        }
+        .search-card:hover{
+            padding: 10px 15px; 
+            background-color: aqua;
+            margin:5px 15px;    
+            border-right: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-right: 1px solid black;
         }
         .navbar-menu-container{
             display: flex;
@@ -72,42 +107,75 @@
             border : none;
             background-color: #000;
             color: white;
-
         }
-        .page-body{
-            height: 575px;
+        .shop-body{
             display: flex;
             flex-direction: column;
             margin: 0 5px;
         }
-        .page-div{
-            height: 350px;
+        .shop-sections{
             margin: 10px 0;
+            border-bottom: 2px solid #ffbb00;
+            display: flex;
+        }
+        .books-card{
+            width:250px;
+            padding: 10px 15px; 
+            margin:5px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-right: 1px solid black;
+        }
+        .book-img{
+            height:220px;
             border: 1px solid black;
         }
-        .page-footer{
-            height:200px;
+        .books-name{
+            text-align: center;
+            font-size: 17px;
+        }
+        .books-price{
+            font-size: 20px;
+            color:#000;
+            font-weight: bold;
+        }
+        .shop-footer{
             background-color: #ffd60a;
             display: flex;
             justify-content: space-around;
+            font-size: 15px;
         }
-        .footer-div{
-            height: 180px;
+        .footer-sec{
             width:400px;
             margin: 10px 10px;
-            border: 1px solid black;
+            border-right: 2px solid rgb(222, 18, 18);
+        }
+        .footer-sec-title{
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .footer-data{
+            margin-left: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="header">
+    <div class="shop-header">
         <div class="shop-container">
             <img src="logo.png" alt="logo" class="shop-logo">
             <p class="shop-name"> Readit</p>
         </div>
         <div class="search-container">
-            <input type="text" placeholder="Rich Dad Poor Dad" class="search-bar" >
-            <button type="button" class="search-button">Search</button>
+            <input type="text" placeholder="Rich Dad Poor Dad" class="search-bar" id="search-book" onchange="searchBook()">
+                <a href="./pages/search.html">
+                    <button type="button" class="search-button" onclick="showBook(bookName)">Search</button>
+                </a> 
+            <div class="search-card">
+                <img src="./images/personality/ikigai.jpeg" class="book-img" id="book-img-id" />
+                <p class="books-name" id="book-name-id"> Ikigai: The Japanese Secret to a Long and Happy Life</p>
+                <p class="books-price" id="book-price-id">499/- </p>
+            </div>    
         </div>
         <div class="navbar-menu-container">
             <button type="button" class="navbar-menu">Login page</button>
@@ -116,21 +184,127 @@
             <button type="button" class="navbar-menu">Sub page</button>
         </div>
     </div>
-    <div class="page-body">
-        <div class="page-div"></div>
-        <div class="page-div"></div>
+    <div class="shop-body">
+        <div class="shop-sections">
+            <div class="books-card">
+                <img src="./images/personality/ikigai.jpeg" class="book-img" id="ikigai-id" />
+                <p class="books-name" > Ikigai: The Japanese Secret to a Long and Happy Life</p>
+                <p class="books-price">499/- </p>
+            </div>
+            <div class="books-card">
+                <img src="./images/personality/atomic-habit.jpeg" class="book-img" id="atomic-habit-id" />
+                <p class="books-name" > Atomic Habits Paperback _ 1 January 2018  </p>
+                <p class="books-price">600/-</p>
+            </div>
+            <div class="books-card">
+                <img src="./images/personality/psychology-of-money.jpg" class="book-img" id="fire-blood-id" />
+                <p class="books-name" > The Psychology Of Money Paperback _ 1 September 2020</p>
+                <p class="books-price"> 600/-</p>
+            </div>
+            
+            <div class="books-card">
+                <img src="./images/personality/rich-dad-poor-dad.jpeg" class="book-img" id="atomic-habit-id" />
+                <p class="books-name" >Rich Dad Poor Dad: 25th Anniversary Edit </p>
+                <p class="books-price">$13.29</p>
+            </div>
+            <div class="books-card">
+                <img src="./images/personality/think-and-grow-rich.jpg" class="book-img" id="atomic-habit-id" />
+                <p class="books-name" > Think and Grow Rich: The Landmark Bestseller</p>
+                <p class="books-price">$13.29</p>
+            </div>
+        </div>
+        <div class="shop-sections">
+            <div class="books-card">
+                <img src="./images/fiction/divine-rivals.jpg" class="book-img" id="ikigai-id" />
+                <p class="books-name" > Divine Rivals: A Novel: 1 (Letters of Enchantment, 1)</p>
+                <p class="books-price">$13.29</p>
+            </div>
+            <div class="books-card">
+                <img src="./images/fiction/fire-blood.jpeg" class="book-img" id="fire-blood-id" />
+                <p class="books-name" > A Song Of Ice And Fire — Fire And Blood</p>
+                <p class="books-price">300/-</p>
+            </div>
+            <div class="books-card">
+                <img src="./images/fiction/song-of-ice-fire.jpeg" class="book-img" id="atomic-habit-id" />
+                <p class="books-name" > A Song Of Ice And Fire — Set of 7 Books</p>
+                <p class="books-price">2100/-</p>
+            </div>
+            <div class="books-card">
+                <img src="./images/fiction/fourth-wing.jpg" class="book-img" id="atomic-habit-id" />
+                <p class="books-name" > Fourth Wing: The Empyrean Discover the Instant  </p>
+                <p class="books-price">499/-</p>
+            </div>
+            <div class="books-card">
+                <img src="./images/fiction/iron-flame.jpg" class="book-img" id="atomic-habit-id" />
+                <p class="books-name" > Iron Flame: The Sequel of Fourth Wing</p>
+                <p class="books-price"> 499/-</p>
+            </div>
+            
+        </div>
 
     </div>
-    <div class="page-footer">
-        <div class="footer-div">
-
+    <div class="shop-footer">
+        <div class="footer-sec">
+            <p class="footer-sec-title"> Quick Links </p>
+                <div class="footer-data">
+                    <p><a href="index.html">Home </a></p>
+                    <p><a href="./pages/fiction.html">Fiction
+                        </a></p>
+                    <p><a href="./pages/personality.html">Personality </a></p>
+                    <p><a href="./pages/non-fiction.html">Non-fiction </a>
+                    </p>
+                    <p><a href="./pages/academic.html">
+                            Academic </a></p>
+                    <p><a href="./pages/login.html"> Login </a>
+                </div>
         </div>
-        <div class="footer-div">
+        <div class="footer-sec">
+            <p class="footer-sec-title"> Social :</p>
+                <div class="footer-data">
+                    <p> <i class="fa-solid fa-envelope" ></i>
+                        &nbsp; &nbsp; <a href="mailto:ashishgore382@gmail.com">ashishgore382@gmail.com</a>
+                    </p>
 
+                    <p> <i class="fa-solid fa-phone" ></i>
+                        &nbsp; &nbsp; <a href="tel:+918805803087" class="footer-anchor"> +91-8805803087</a>
+                    </p>
+
+                    <p> <i class="fa-brands fa-facebook" ></i> &nbsp;
+                        &nbsp; Facebook </p>
+
+                    <p> <i class="fa-brands fa-twitter" ></i> &nbsp;
+                        &nbsp; Twitter</p>
+
+                    <p> <i class="fa-brands fa-instagram" ></i> &nbsp;
+                        &nbsp; Instagram</p>
+
+                    <p> <i class="fa-brands fa-linkedin" ></i> &nbsp;
+                        &nbsp; LinkedIn</p>
+                </div>
         </div>
-        <div class="footer-div">
+        <div class="footer-sec">
+            <p class="footer-sec-title"> Contact us :</p>
+                <div class="footer-data">
+                    
+                    <p><i class="fa-solid fa-location-dot"></i>
+                        &nbsp; &nbsp; <a href="https://maps.app.goo.gl/N3ngnED1vBDYVvj19" target="blank"> B.D.College of Engineering, Wardha</a>
+                    </p>
+                    <p> <i class="fa-solid fa-envelope" ></i>
+                        &nbsp; &nbsp; <a href="mailto:ashishgore393@gmail.com">ashishgore393@gmail.com</a>
+                    </p>
 
+                    <p> <i class="fa-solid fa-phone" ></i>
+                        &nbsp; &nbsp; <a href="tel:+918975004427"> +91-8975004427</a>
+                    </p>
+                </div>
         </div>
     </div>
+    <script src="https://kit.fontawesome.com/4d47a5db67.js" crossorigin="anonymous"></script>
+
 </body>
+
+<script src="functions.js">
+    
+</script>
+
 </html>
