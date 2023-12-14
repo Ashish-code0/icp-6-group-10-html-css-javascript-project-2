@@ -36,8 +36,8 @@ function showBook(bookName){
         break;
         case 'psychology':
             bookImgId.src="./images/personality/psychology-of-money.jpg";
-            bookNameId.innerText = 'Atomic Habits Paperback _ 1 January 2018';
-            bookPriceId.innerText = '600/-';
+            bookNameId.innerText = 'The Psychology Of Money Paperback _ 1 September 2020';
+            bookPriceId.innerText = '550/-';
         break;
         case 'rich':
             bookImgId.src="./images/personality/rich-dad-poor-dad.jpeg";
@@ -46,33 +46,33 @@ function showBook(bookName){
         break;
         case 'think':
             bookImgId.src="./images/personality/think-and-grow-rich.png";
-            bookNameId.innerText = 'Atomic Habits Paperback _ 1 January 2018';
-            bookPriceId.innerText = '600/-';
+            bookNameId.innerText = 'Think and Grow Rich: The Landmark Bestseller';
+            bookPriceId.innerText = '649/-';
         break;
         case 'divine':
             bookImgId.src="./images/fiction/divine-rivals.png";
-            bookNameId.innerText = 'Atomic Habits Paperback _ 1 January 2018';
-            bookPriceId.innerText = '600/-';
+            bookNameId.innerText = 'Divine Rivals: A Novel: 1 (Letters of Enchantment, 1)';
+            bookPriceId.innerText = '500/-';
         break;
         case 'fire':
             bookImgId.src="./images/fiction/fire-blood.jpeg";
-            bookNameId.innerText = 'Atomic Habits Paperback _ 1 January 2018';
-            bookPriceId.innerText = '600/-';
+            bookNameId.innerText = 'Fire And Blood: A Song Of Ice And Fire: Book One:';
+            bookPriceId.innerText = '300/-';
         break;
-        case 'song':
-            bookImgId.src="./images/fiction/song-of-ice-fire.jpeg";
-            bookNameId.innerText = 'A Song Of Ice And Fire — Set of 7 Books';
-            bookPriceId.innerText = '2100/-';
+        case 'game':
+            bookImgId.src="./images/fiction/game-of-thrones.jpeg";
+            bookNameId.innerText = 'A Game of Thrones: A Song of Ice and Fire: Book One: 1';
+            bookPriceId.innerText = '700/-';
         break;
         case 'fourth':
             bookImgId.src="./images/fiction/fourth-wing.png";
-            bookNameId.innerText = 'Atomic Habits Paperback _ 1 January 2018';
-            bookPriceId.innerText = '600/-';
+            bookNameId.innerText = 'Fourth Wing: The Empyrean Discover the Instant';
+            bookPriceId.innerText = '499/-';
         break;
         case 'iron':
             bookImgId.src="./images/fiction/iron-flame.jpg";
-            bookNameId.innerText = 'Atomic Habits Paperback _ 1 January 2018';
-            bookPriceId.innerText = '600/-';
+            bookNameId.innerText = 'Iron Flame: The Sequel of Fourth Wing';
+            bookPriceId.innerText = '499/-';
         break;
     }
 
@@ -133,5 +133,9 @@ function showBook(bookName){
     console.log(bookNameId.innerText);      
     console.log(bookPriceId.innerText);  
     
+    
+}
+
+function addToCart(){
     
 }
