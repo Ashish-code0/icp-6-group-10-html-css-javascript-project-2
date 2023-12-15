@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome to the Novel Section</title>
+    <script src="functions.js"></script>
+    <style>
+        
+        body{
+            padding:0;
+            margin:0;
+            background-color: #fffefb;
+        }
+        a{
+            text-decoration: none;
+            color:#000;
+        }
+        .shop-header{
+            background-color: #ffd60a;
+            padding:2px 15px;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 20px;
+        }
+        .shop-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0px 40px;
+        }
+        .shop-logo{
+            height:60px;
+            margin: 0;
+        }
+        .shop-name{
+            font-size: 25px;
+            font-weight: bolder;
+            margin: 0;
+        }
+        .search-container{
+            display: flex;
+            margin: 0;
+            margin-bottom: 35px;
+        }
+    
+        input{
+            border: none;
+            outline:none;
+            background: none;
+        }
+        .search-bar{
+            width:330px;
+            padding: 8px 15px;
+            font-size: 15px;
+            border:none;
+            border-radius: 25px 0 0 25px;
+            background-color: azure;
+        }
+        .search-button{
+            display: block;
+            margin-left: auto;
+            padding: 5px 15px;
+            font-size: 15px;
+            height: 33px;
+            border : none;
+            border-radius: 0 25px 25px 0;
+            background-color: #000;
+            color: white;
+        }
+        .search-button:hover{
+            cursor: pointer;
+            height: 37px;
+        }
+        .navbar-menu-container{
+            display: flex;
+            margin-top: 25px;
+        }
+        .navbar-menu{
+            margin : 0 15px;
+            font-size: 15px;
+            padding: 5px 25px;
+            border-radius: 10px;
+            border : none;
+            background-color: #000;
+            color: white;
+        }
+        .navbar-anchor{
+            color:white;
+        }
+        .shop-body{
+            display: flex;
+            flex-direction: column;
+            margin: 0 5px;
+        }
+        .searched-sections{
+            display: none;
+            margin: 10px auto;
+            background-color: #ffd60a;
+            width:98vw;
+            border-bottom: 2px solid #ffbb00;
+        }
+        
+        .search-book-title{
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold; 
+            border-top: 1px solid #de1212;
+            border-bottom: 1px solid #de1212;
+        }
+        .search-card{
+            width:250px;
+            border-radius: 5px;
+            padding: 10px 15px; 
+            margin:5px auto;    
+            border-right: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-right: 1px solid black;
+        }
+        .shop-sections{
+            margin: 10px 0;
+            border-bottom: 2px solid #ffbb00;
+            display: flex;
+            justify-content:space-around;
+        }
+        .books-card{
+            width:250px;
+            padding: 10px 15px; 
+            margin:5px 15px;
+            justify-content: center;
+            align-items: center;
+            border-right: 1px solid black;
+        }
+        .book-img{
+            height:220px;
+            border: 1px solid white;
+            text-align: center;
+
+            margin-right: auto;
+        }
+        .books-name{
+            text-align: center;
+            font-size: 17px;
+           text-align: center;
+        }
+        .books-price{
+            font-size: 20px;
+            color:#000;
+            font-weight: bold;
+            text-align: center;
+        }
+        .add-cart-btn{
+            background-color: #de1212;
+            padding: 5px 15px;
+            font-size: 17px;
+            border:none;
+            color:white;
+            border-radius: 10px;
+            align-items: center;
+        }
+        
+        .shop-footer{
+            background-color: #ffd60a;
+            display: flex;
+            justify-content: space-around;
+            font-size: 15px;
+        }
+        .footer-sec{
+            width:400px;
+            margin: 10px 10px;
+            border-right: 2px solid #de1212;
+        }
+        .footer-sec-title{
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .footer-data{
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="shop-header">
+        <div class="shop-container">
+            <img src="logo.png" alt="logo" class="shop-logo">
+            <p class="shop-name"> Readit</p>
+        </div>
+        <div class="search-container">
+                <input type="text" placeholder="Rich Dad Poor Dad" class="search-bar" id="search-book" onchange="searchBook()">
+                <button type="button" class="search-button" onclick="showBook(bookName)">Search</button> 
+        </div>
+
+        <div class="navbar-menu-container">
+            <button type="button" class="navbar-menu"><a href="./pages/login.html" class="navbar-anchor"> Login </a></button>
+            <button type="button" class="navbar-menu"><a href="./pages/fiction.html" class="navbar-anchor"> Fiction </a> </button>
+            <button type="button" class="navbar-menu"><a href="./pages/non-fiction.html" class="navbar-anchor"> Non-fiction </a> </button>
+            <button type="button" class="navbar-menu"><a href="./pages/novel.html" class="navbar-anchor"> Novel </a> </button>
+            <button type="button" class="navbar-menu"><a href="./pages/historic.html" class="navbar-anchor"> Historic </a> </button>
+            <button type="button" class="navbar-menu"><a href="./pages/cart.html" class="navbar-anchor"> Cart </a> </button>
+        </div>
+    </div>
+    
+    <div class="shop-body">
+        <div class="searched-sections" id="hidden-search-id"> 
+            <p class="search-book-title">Searched Book: </p>
+            <div class="search-card">
+                <img src="../images/novel/animal.jpg" class="book-img" id="book-img-id" />
+                <p class="books-name" id="book-name-id"> Animal Farm</p>
+                <p class="books-price" id="book-price-id">499/- </p>
+                <button type="button" class="add-cart-btn" onclick="addToCart()"> Add to cart</button>
+                
+            </div>
+        </div>
+
+        <div class="shop-sections">
+            <div class="books-card">
+                <img src="../images/novel/black-beuty.jpg" class="book-img" id="ikigai-id" />
+                <p class="books-name" > The Black-Beuty</p>
+                <p class="books-price">499/- </p>
+                <button type="button" class="add-cart-btn" onclick="addToCart()"> Add to cart</button>
+            </div>
+            <div class="books-card">
+                <img src="../images/novel/brave.jpg" class="book-img" id="atomic-habit-id" />
+                <p class="books-name" > Atomic Habits Paperback _ 1 January 2018  </p>
+                <p class="books-price">600/-</p>
+                <button type="button" class="add-cart-btn"> Add to cart</button>
+            </div>
+            <div class="books-card">
+                <img src="../images/novel/dracula.jpg" class="book-img" id="fire-blood-id" />
+                <p class="books-name" > The Psychology Of Money Paperback _ 1 September 2020</p>
+                <p class="books-price"> 550/-</p>
+                <button type="button" class="add-cart-btn"> Add to cart</button>
+            </div>
+            
+            <div class="books-card">
+                <img src="../images/novel/gatspy.jpg" class="book-img" id="atomic-habit-id" />
+                <p class="books-name" >Rich Dad Poor Dad: 25th Anniversary Edit </p>
+                <p class="books-price"> 400/-</p>
+                <button type="button" class="add-cart-btn"> Add to cart</button>
+            </div>
+            <div class="books-card">
+                <img src="../images/novel/oliver.jpg" class="book-img" id="ikigai-id" />
+                <p class="books-name" > Divine Rivals: A Novel: 1 (Letters of Enchantment, 1)</p>
+                <p class="books-price">500/-</p>
+                <button type="button" class="add-cart-btn"> Add to cart</button>
+            </div>
+           
+            </div>
+            <div class="shop-sections"> 
+                <div class="books-card">
+                    <img src="../images/novel/oliver.jpg" class="book-img" id="ikigai-id" />
+                    <p class="books-name" > Divine Rivals: A Novel: 1 (Letters of Enchantment, 1)</p>
+                    <p class="books-price">500/-</p>
+                    <button type="button" class="add-cart-btn"> Add to cart</button>
+                </div>
+            <div class="books-card">
+                <img src="../images/novel/king.jpg" class="book-img" id="atomic-habit-id" />
+                <p class="books-name" > Think and Grow Rich: The Landmark Bestseller</p>
+                <p class="books-price"> 649/-</p>
+                <button type="button" class="add-cart-btn"> Add to cart</button>
+            </div>
+    
+            <div class="books-card">
+                <img src="../images/novel/oliver.jpg" class="book-img" id="ikigai-id" />
+                <p class="books-name" > Divine Rivals: A Novel: 1 (Letters of Enchantment, 1)</p>
+                <p class="books-price">500/-</p>
+                <button type="button" class="add-cart-btn"> Add to cart</button>
+            </div>
+            <div class="books-card">
+                <img src="../images/novel/sherlocks.jpg" class="book-img" id="fire-blood-id" />
+                <p class="books-name" >Fire And Blood: A Song Of Ice And Fire: Book One: </p>
+                <p class="books-price">300/-</p>
+                <button type="button" class="add-cart-btn"> Add to cart</button>
+            </div>
+            <div class="books-card">
+                <img src="../images/novel/solitute.jpg" class="book-img" id="atomic-habit-id" />
+                <p class="books-name" >A Game of Thrones: A Song of Ice and Fire: Book One: 1</p>
+                <p class="books-price">700/-</p>
+                <button type="button" class="add-cart-btn"> Add to cart</button>
+            </div>
+            </div>
+            <div class="shop-sections">
+            <div class="books-card">
+                <img src="../images/novel/uncle-tom.jpg" class="book-img" id="atomic-habit-id" />
+                <p class="books-name" > Fourth Wing: The Empyrean Discover the Instant  </p>
+                <p class="books-price">499/-</p>
+                <button type="button" class="add-cart-btn"> Add to cart</button>
+            </div>
+            <div class="books-card">
+                <img src="../images/novel/vanier.jpg" class="book-img" id="atomic-habit-id" />
+                <p class="books-name" > Iron Flame: The Sequel of Fourth Wing</p>
+                <p class="books-price"> 499/-</p>
+                <button type="button" class="add-cart-btn"> Add to cart</button>
+            </div>
+            <div class="books-card">
+                <img src="../images/novel/war.jpg" class="book-img" id="atomic-habit-id" />
+                <p class="books-name" > Iron Flame: The Sequel of Fourth Wing</p>
+                <p class="books-price"> 499/-</p>
+                <button type="button" class="add-cart-btn"> Add to cart</button>
+            </div>
+            <div class="books-card">
+                <img src="../images/novel/portrait.jpg" class="book-img" id="atomic-habit-id" />
+                <p class="books-name" > Iron Flame: The Sequel of Fourth Wing</p>
+                <p class="books-price"> 499/-</p>
+                <button type="button" class="add-cart-btn"> Add to cart</button>
+            </div>
+            <div class="books-card">
+                <img src="../images/novel/oliver.jpg" class="book-img" id="ikigai-id" />
+                <p class="books-name" > Divine Rivals: A Novel: 1 (Letters of Enchantment, 1)</p>
+                <p class="books-price">500/-</p>
+                <button type="button" class="add-cart-btn"> Add to cart</button>
+            </div>
+        </div>
+
+    </div>
+    <div class="shop-footer">
+        <div class="footer-sec">
+            <p class="footer-sec-title"> Quick Links </p>
+                <div class="footer-data">
+                    <p><a href="index.html">Home </a></p>
+                    <p><a href="./pages/fiction.html">Fiction
+                        </a></p>
+                    <p><a href="./pages/personality.html">Personality </a></p>
+                    <p><a href="./pages/non-fiction.html">Non-fiction </a>
+                    </p>
+                    <p><a href="./pages/academic.html">
+                            Academic </a></p>
+                    <p><a href="./pages/login.html"> Login </a>
+                </div>
+        </div>
+        <div class="footer-sec">
+            <p class="footer-sec-title"> Social :</p>
+                <div class="footer-data">
+                    <p> <i class="fa-solid fa-envelope" ></i>
+                        &nbsp; &nbsp; <a href="mailto:ashishgore382@gmail.com">ashishgore382@gmail.com</a>
+                    </p>
+
+                    <p> <i class="fa-solid fa-phone" ></i>
+                        &nbsp; &nbsp; <a href="tel:+918805803087" class="footer-anchor"> +91-8805803087</a>
+                    </p>
+
+                    <p> <i class="fa-brands fa-facebook" ></i> &nbsp;
+                        &nbsp; Facebook </p>
+
+                    <p> <i class="fa-brands fa-twitter" ></i> &nbsp;
+                        &nbsp; Twitter</p>
+
+                    <p> <i class="fa-brands fa-instagram" ></i> &nbsp;
+                        &nbsp; Instagram</p>
+
+                    <p> <i class="fa-brands fa-linkedin" ></i> &nbsp;
+                        &nbsp; LinkedIn</p>
+                </div>
+        </div>
+        <div class="footer-sec">
+            <p class="footer-sec-title"> Contact us :</p>
+                <div class="footer-data">
+                    
+                    <p><i class="fa-solid fa-location-dot"></i>
+                        &nbsp; &nbsp; <a href="https://maps.app.goo.gl/N3ngnED1vBDYVvj19" target="blank"> B.D.College of Engineering, Wardha</a>
+                    </p>
+                    <p> <i class="fa-solid fa-envelope" ></i>
+                        &nbsp; &nbsp; <a href="mailto:ashishgore393@gmail.com">ashishgore393@gmail.com</a>
+                    </p>
+
+                    <p> <i class="fa-solid fa-phone" ></i>
+                        &nbsp; &nbsp; <a href="tel:+918975004427"> +91-8975004427</a>
+                    </p>
+                </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/4d47a5db67.js" crossorigin="anonymous"></script>
+
+</body>
+
+
+
+</html>

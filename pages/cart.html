@@ -51,12 +51,52 @@
         .navbar-anchor{
             color:white;
         }
-        .cart-book-sections{
+        .cart-card-container{
             margin: 10px 0;
             border-bottom: 2px solid #ffbb00;
             display: flex;
         }
+        .cart-book-sections{
+            display: none;
+        }
+        .cart-books-card{
+            width:250px;
+            padding: 10px 15px; 
+            margin:5px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-right: 1px solid black;
+        }
+        .cart-books-img{
+            height:220px;
+            border: 1px solid white;
+        }
+        .cart-books-name{
+            text-align: center;
+            font-size: 17px;
+        }
+        .cart-books-price{
+            font-size: 20px;
+            color:#000;
+            font-weight: bold;
+        }
+
+        .books-counter{
+            display: flex;
+            align-items: center;
+        }
+        .inc-dec-btn{
+            height:25px;
+        }
+        .books-quantity{
+            font-size: 25px;
+            margin : 2px 20px;
+            padding:1px 5px;
+            border-bottom: 2px dashed #000;
+        }
         .cart-footer{
+            
             background-color: #ffd60a;
             display: flex;
             justify-content: space-around;
@@ -87,41 +127,41 @@
 
         <div class="navbar-menu-container">
             <button type="button" class="navbar-menu"><a href="./../index.html" class="navbar-anchor"> Home </a> </button>
-            <button type="button" class="navbar-menu">Login</button>
-            <button type="button" class="navbar-menu">Fiction </button>
-            <button type="button" class="navbar-menu">Non-fiction </button>
+            <button type="button" class="navbar-menu"><a href="./login.html" class="navbar-anchor"> Login </a></button>
+            <button type="button" class="navbar-menu"><a href="./fiction.html" class="navbar-anchor"> Fiction </a> </button>
+            <button type="button" class="navbar-menu"><a href="./non-fiction.html" class="navbar-anchor"> Non-fiction </a> </button>
+            <button type="button" class="navbar-menu"><a href="./novel.html" class="navbar-anchor"> Novel </a> </button>
+            <button type="button" class="navbar-menu"><a href="./historic.html" class="navbar-anchor"> Historic </a> </button>
             
         </div>
     </div>
 
     <div class="cart-body">
-        <div class="cart-book-sections">
+        <div class="cart-book-sections" id="cart-hidden-section">
+            <div class="cart-card-container">
             <div class="cart-books-card">
-                <img src="./images/personality/ikigai.jpeg" class="card-book-img" id="1" />
-                <p class="cart-books-name" > Ikigai: The Japanese Secret to a Long and Happy Life</p>
-                <p class="cart-books-price">499/- </p>
-            </div>
-            <div class="cart-books-card">
-                <img src="./images/personality/atomic-habit.jpeg" class="card-book-img" id="2" />
-                <p class="cart-books-name" > Atomic Habits Paperback _ 1 January 2018  </p>
-                <p class="cart-books-price">600/-</p>
-            </div>
-            <div class="cart-books-card">
-                <img src="./images/personality/psychology-of-money.jpg" class="card-book-img" id="3" />
-                <p class="cart-books-name" > The Psychology Of Money Paperback _ 1 September 2020</p>
-                <p class="cart-books-price"> 550/-</p>
+                <img src="./../images/personality/ikigai.jpeg" class="cart-books-img" id="cart-book-img-id" />
+                <p class="cart-books-name" id="cart-books-name-id"> Ikigai: The Japanese Secret to a Long and Happy Life</p>
+                <p class="cart-books-price" id="priceBook">499/- </p>
+
+                <div class="books-counter">
+                        <img class="inc-dec-btn" src="./../images/cart/minus.png" onclick="decreaseQuantity()">
+                        <span class="books-quantity" id="quantity"> 1 </span>
+                        <img class="inc-dec-btn" src="./../images/cart/add.png"  onclick="increaseQuantity()">
+                </div>
+
             </div>
             
-            <div class="cart-books-card">
-                <img src="./images/personality/rich-dad-poor-dad.jpeg" class="card-book-img" id="4" />
-                <p class="cart-books-name" >Rich Dad Poor Dad: 25th Anniversary Edit </p>
-                <p class="cart-books-price"> 400/-</p>
             </div>
-            <div class="cart-books-card">
-                <img src="./images/personality/think-and-grow-rich.png" class="card-book-img" id="5" />
-                <p class="cart-books-name" > Think and Grow Rich: The Landmark Bestseller</p>
-                <p class="cart-books-price"> 649/-</p>
-            </div>
+        </div>
+    </div>
+        <button type="button" onclick="countTotal()">
+            Total
+        </button>
+        <div>
+            The Total Price for all the Purcahse is :
+            <span id="totalPriceDisplay">0</span>
+
         </div>
 
     </div>
@@ -183,5 +223,103 @@
         </div>
     </div>
     <script src="https://kit.fontawesome.com/4d47a5db67.js" crossorigin="anonymous"></script>
+    <script src="./../cart.js">
+        /*
+        let totalPrice;
+        let quantity;
+        function decreaseQuantity(){
+            const countElement = document.getElementById('quantity');
+            quantity = parseInt(countElement.innerText);
+            if(quantity > 1){
+                countElement.innerText = --quantity;
+            } else
+            {
+                alert('Can not buy less than 1');
+            }
+        }
+        function increaseQuantity(){
+            const countElement = document.getElementById('quantity');
+            quantity = parseInt(countElement.innerText);
+            if(quantity < 5){
+                countElement.innerText = ++quantity;
+            } else
+            {
+                alert('You can not buy more than 5 products at once');
+            }
+            
+        }
+
+        function countTotal(){
+            const priceElement = document.getElementById('priceBook');
+
+            const tempPrice = parseInt(priceElement.innerText);
+            console.log(`Book Price is : ${tempPrice}`);
+
+            totalPrice = (quantity * tempPrice);
+            console.log(`Total price is : ${totalPrice}`);
+
+            const totalPriceElement = document.getElementById('totalPriceDisplay');
+            totalPriceElement.innerText = totalPrice;
+        }
+        function addToCartInCart(cartBookName){
+            const imgElement = document.getElementById('cart-book-img-id');
+            const nameElement = document.getElementById('cart-books-name-id');
+            const priceElement = document.getElementById('priceBook');
+
+            switch(cartBookName){
+                case 'atomic':
+                    bookImgId.src="./images/personality/atomic-habit.jpeg";
+                    bookNameId.innerText = 'Atomic Habits Paperback _ 1 January 2018';
+                    bookPriceId.innerText = '600/-';
+                break;
+                case 'ikigai':
+                    bookImgId.src="./images/personality/ikigai.jpeg"
+                    bookNameId.innerText = 'Ikigai: The Japanese Secret to a Long and Happy Life';
+                    bookPriceId.innerText = '499/-';
+                break;
+                case 'psychology':
+                    bookImgId.src="./images/personality/psychology-of-money.jpg";
+                    bookNameId.innerText = 'The Psychology Of Money Paperback _ 1 September 2020';
+                    bookPriceId.innerText = '550/-';
+                break;
+                case 'rich':
+                    bookImgId.src="./images/personality/rich-dad-poor-dad.jpeg";
+                    bookNameId.innerText = 'Rich Dad Poor Dad: 25th Anniversary Edit';
+                    bookPriceId.innerText = '400/-';
+                break;
+                case 'think':
+                    bookImgId.src="./images/personality/think-and-grow-rich.png";
+                    bookNameId.innerText = 'Think and Grow Rich: The Landmark Bestseller';
+                    bookPriceId.innerText = '649/-';
+                break;
+                case 'divine':
+                    bookImgId.src="./images/fiction/divine-rivals.png";
+                    bookNameId.innerText = 'Divine Rivals: A Novel: 1 (Letters of Enchantment, 1)';
+                    bookPriceId.innerText = '500/-';
+                break;
+                case 'fire':
+                    bookImgId.src="./images/fiction/fire-blood.jpeg";
+                    bookNameId.innerText = 'Fire And Blood: A Song Of Ice And Fire: Book One:';
+                    bookPriceId.innerText = '300/-';
+                break;
+                case 'game':
+                    bookImgId.src="./images/fiction/game-of-thrones.jpeg";
+                    bookNameId.innerText = 'A Game of Thrones: A Song of Ice and Fire: Book One: 1';
+                    bookPriceId.innerText = '700/-';
+                break;
+                case 'fourth':
+                    bookImgId.src="./images/fiction/fourth-wing.png";
+                    bookNameId.innerText = 'Fourth Wing: The Empyrean Discover the Instant';
+                    bookPriceId.innerText = '499/-';
+                break;
+                case 'iron':
+                    bookImgId.src="./images/fiction/iron-flame.jpg";
+                    bookNameId.innerText = 'Iron Flame: The Sequel of Fourth Wing';
+                    bookPriceId.innerText = '499/-';
+                break;
+            }
+        }
+        */
+    </script>
 </body>
 </html>

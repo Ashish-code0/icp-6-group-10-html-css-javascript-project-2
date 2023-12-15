@@ -136,6 +136,6 @@ function showBook(bookName){
     
 }
 
-function addToCart(){
-    
+function addToCart(cartAddBookName){
+    addToCartInCart(cartAddBookName);
 }
