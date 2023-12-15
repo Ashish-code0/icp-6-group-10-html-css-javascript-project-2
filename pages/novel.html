@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcom to Novel Section</title>
+    <style>
+         body{
+            padding:0;
+            margin:0;
+            background-color: #fffefb;
+        }
+        a{
+            text-decoration: none;
+            color:#000;
+        }
+        .shop-header{
+            background-color: #ffd60a;
+            padding:2px 15px;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 20px;
+        }
+        .shop-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0px 40px;
+        }
+        .shop-logo{
+            height:60px;
+            margin: 0;
+        }
+        .shop-name{
+            font-size: 25px;
+            font-weight: bolder;
+            margin: 0;
+        }
+        .search-container{
+            display: flex;
+            margin: 0;
+            margin-bottom: 35px;
+        }
+    
+        input{
+            border: none;
+            outline:none;
+            background: none;
+        }
+        .search-bar{
+            width:330px;
+            padding: 8px 15px;
+            font-size: 15px;
+            border:none;
+            border-radius: 25px 0 0 25px;
+            background-color: azure;
+        }
+        .search-button{
+            display: block;
+            margin-left: auto;
+            padding: 5px 15px;
+            font-size: 15px;
+            height: 33px;
+            border : none;
+            border-radius: 0 25px 25px 0;
+            background-color: #000;
+            color: white;
+        }
+        .search-button:hover{
+            cursor: pointer;
+            height: 37px;
+        }
+        .navbar-menu-container{
+            display: flex;
+            margin-top: 25px;
+        }
+        .navbar-menu{
+            margin : 0 15px;
+            font-size: 15px;
+            padding: 5px 25px;
+            border-radius: 10px;
+            border : none;
+            background-color: #000;
+            color: white;
+        }
+        .navbar-anchor{
+            color:white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="shop-header">
+        <div class="shop-container">
+            <img src="logo.png" alt="logo" class="shop-logo">
+            <p class="shop-name"> Readit</p>
+        </div>
+        <div class="search-container">
+                <input type="text" placeholder="Popular Novels" class="search-bar" id="search-book" onchange="searchBook()">
+                <button type="button" class="search-button" onclick="showBook(bookName)">Search</button> 
+        </div>
+
+        <div class="navbar-menu-container">
+            <button type="button" class="navbar-menu"><a href="./pages/login.html" class="navbar-anchor"> Login </a></button>
+            <button type="button" class="navbar-menu"><a href="./pages/fiction.html" class="navbar-anchor"> Fiction </a> </button>
+            <button type="button" class="navbar-menu"><a href="./pages/non-fiction.html" class="navbar-anchor"> Non-fiction </a> </button>
+            <button type="button" class="navbar-menu"><a href="./pages/novel.html" class="navbar-anchor"> Novel </a> </button>
+            <button type="button" class="navbar-menu"><a href="./pages/historic.html" class="navbar-anchor"> Historic </a> </button>
+            <button type="button" class="navbar-menu"><a href="./pages/cart.html" class="navbar-anchor"> Cart </a> </button>
+        </div>
+    </div>
+    
+</body>
+</html>
