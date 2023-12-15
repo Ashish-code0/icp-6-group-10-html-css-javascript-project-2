@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiction</title>
+    <style>
+                .colors{
+           color: #ffb700;
+           color: #ffdd98;
+           color: #ffa600;
+           color: #ffd60a;
+        }
+        body{
+            padding:0;
+            margin:0;
+            background-color: #fffefb;
+        }
+        a{
+            text-decoration: none;
+            color:#000;
+        }
+        .shop-header{
+            background-color: #ffd60a;
+            padding:2px 15px;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 20px;
+        }
+        .shop-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0px 40px;
+        }
+        .shop-logo{
+            height:60px;
+            margin: 0;
+        }
+        .shop-name{
+            font-size: 25px;
+            font-weight: bolder;
+            margin: 0;
+        }
+        .navbar-menu-container{
+            display: flex;
+            margin-top: 25px;
+        }
+        .navbar-menu{
+            margin : 0 15px;
+            font-size: 15px;
+            padding: 5px 25px;
+            border-radius: 10px;
+            border : none;
+            background-color: #000;
+            color: white;
+        }
+        .navbar-anchor{
+            color:white;
+        }
+    </style>
+</head>
+<body>
+        <div class="shop-header">
+            <a href="./index.html">
+                <div class="shop-container">
+                    <img src="./../logo.png" alt="logo" class="shop-logo">
+                    <p class="shop-name"> Readit</p>
+                </div>
+            </a>
+    
+            <div class="navbar-menu-container">
+                <button type="button" class="navbar-menu"><a href="/pages/login.html" class="navbar-anchor"> Login </a></button>
+                <button type="button" class="navbar-menu"><a href="/pages/fiction.html" class="navbar-anchor"> Fiction </a> </button>
+                <button type="button" class="navbar-menu"><a href="/pages/non-fiction.html" class="navbar-anchor"> Non-fiction </a> </button>
+                <button type="button" class="navbar-menu"><a href="/pages/novel.html" class="navbar-anchor"> Novel </a> </button>
+                <button type="button" class="navbar-menu"><a href="/pages/historic.html" class="navbar-anchor"> Historic </a> </button>
+                <button type="button" class="navbar-menu"><a href="/pages/cart.html" class="navbar-anchor"> Cart </a> </button>
+            </div>
+        </div>
+</body>
+</html>
