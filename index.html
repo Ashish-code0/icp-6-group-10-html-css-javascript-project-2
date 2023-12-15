@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <title>Group Project 2</title>
-    <script src="functions.js"></script>
     <style>
         .colors{
            color: #ffb700;
@@ -137,7 +136,7 @@
             align-items: center;
             border-right: 1px solid black;
         }
-        .book-img{
+        .books-img{
             height:220px;
             border: 1px solid white;
         }
@@ -156,6 +155,7 @@
             font-size: 17px;
             border:none;
             color:white;
+            cursor: pointer;
             border-radius: 10px;
         }
         
@@ -181,10 +181,12 @@
 </head>
 <body>
     <div class="shop-header">
-        <div class="shop-container">
-            <img src="logo.png" alt="logo" class="shop-logo">
-            <p class="shop-name"> Readit</p>
-        </div>
+        <a href="./index.html">
+            <div class="shop-container">
+                <img src="logo.png" alt="logo" class="shop-logo">
+                <p class="shop-name"> Readit</p>
+            </div>
+        </a>
         <div class="search-container">
                 <input type="text" placeholder="Rich Dad Poor Dad" class="search-bar" id="search-book" onchange="searchBook()">
                 <button type="button" class="search-button" onclick="showBook(bookName)">Search</button> 
@@ -204,77 +206,77 @@
         <div class="searched-sections" id="hidden-search-id"> 
             <p class="search-book-title">Searched Book: </p>
             <div class="search-card">
-                <img src="./images/personality/ikigai.jpeg" class="book-img" id="book-img-id" />
+                <img src="./images/personality/ikigai.jpeg" class="books-img" id="book-img-id" />
                 <p class="books-name" id="book-name-id"> Ikigai: The Japanese Secret to a Long and Happy Life</p>
                 <p class="books-price" id="book-price-id">499/- </p>
-                <button type="button" class="add-cart-btn" onclick="addToCart()"> Add to cart</button>
+                <button type="button" class="add-cart-btn" onclick="addToCart(bookName)"> Add to cart</button>
                 
             </div>
         </div>
 
         <div class="shop-sections">
             <div class="books-card">
-                <img src="./images/personality/ikigai.jpeg" class="book-img" id="ikigai-id" />
+                <img src="./images/personality/ikigai.jpeg" class="books-img"  />
                 <p class="books-name" > Ikigai: The Japanese Secret to a Long and Happy Life</p>
                 <p class="books-price">499/- </p>
-                <button type="button" class="add-cart-btn" onclick="addToCart()"> Add to cart</button>
+                <button type="button" class="add-cart-btn" onclick="addToCart('ikigai')"> Add to cart</button>
             </div>
             <div class="books-card">
-                <img src="./images/personality/atomic-habit.jpeg" class="book-img" id="atomic-habit-id" />
+                <img src="./images/personality/atomic-habit.jpeg" class="books-img"  />
                 <p class="books-name" > Atomic Habits Paperback _ 1 January 2018  </p>
                 <p class="books-price">600/-</p>
-                <button type="button" class="add-cart-btn"> Add to cart</button>
+                <button type="button" class="add-cart-btn" onclick="addToCart('atomic')"> Add to cart</button>
             </div>
             <div class="books-card">
-                <img src="./images/personality/psychology-of-money.jpg" class="book-img" id="fire-blood-id" />
+                <img src="./images/personality/psychology-of-money.jpg" class="books-img"  />
                 <p class="books-name" > The Psychology Of Money Paperback _ 1 September 2020</p>
                 <p class="books-price"> 550/-</p>
-                <button type="button" class="add-cart-btn"> Add to cart</button>
+                <button type="button" class="add-cart-btn" onclick="addToCart('psychology')"> Add to cart</button>
             </div>
             
             <div class="books-card">
-                <img src="./images/personality/rich-dad-poor-dad.jpeg" class="book-img" id="atomic-habit-id" />
+                <img src="./images/personality/rich-dad-poor-dad.jpeg" class="books-img"  />
                 <p class="books-name" >Rich Dad Poor Dad: 25th Anniversary Edit </p>
                 <p class="books-price"> 400/-</p>
-                <button type="button" class="add-cart-btn"> Add to cart</button>
+                <button type="button" class="add-cart-btn" onclick="addToCart('rich')"> Add to cart</button>
             </div>
             <div class="books-card">
-                <img src="./images/personality/think-and-grow-rich.png" class="book-img" id="atomic-habit-id" />
+                <img src="./images/personality/think-and-grow-rich.png" class="books-img"  />
                 <p class="books-name" > Think and Grow Rich: The Landmark Bestseller</p>
                 <p class="books-price"> 649/-</p>
-                <button type="button" class="add-cart-btn"> Add to cart</button>
+                <button type="button" class="add-cart-btn" onclick="addToCart('think')"> Add to cart</button>
             </div>
         </div>
         <div class="shop-sections">
             <div class="books-card">
-                <img src="./images/fiction/divine-rivals.png" class="book-img" id="ikigai-id" />
+                <img src="./images/fiction/divine-rivals.png" class="books-img"  />
                 <p class="books-name" > Divine Rivals: A Novel: 1 (Letters of Enchantment, 1)</p>
                 <p class="books-price">500/-</p>
-                <button type="button" class="add-cart-btn"> Add to cart</button>
+                <button type="button" class="add-cart-btn" onclick="addToCart('divine')"> Add to cart</button>
             </div>
             <div class="books-card">
-                <img src="./images/fiction/fire-blood.jpeg" class="book-img" id="fire-blood-id" />
+                <img src="./images/fiction/fire-blood.jpeg" class="books-img"  />
                 <p class="books-name" >Fire And Blood: A Song Of Ice And Fire: Book One: </p>
                 <p class="books-price">300/-</p>
-                <button type="button" class="add-cart-btn"> Add to cart</button>
+                <button type="button" class="add-cart-btn" onclick="addToCart('fire')"> Add to cart</button>
             </div>
             <div class="books-card">
-                <img src="./images/fiction/game-of-thrones.jpeg" class="book-img" id="atomic-habit-id" />
+                <img src="./images/fiction/game-of-thrones.jpeg" class="books-img"  />
                 <p class="books-name" >A Game of Thrones: A Song of Ice and Fire: Book One: 1</p>
                 <p class="books-price">700/-</p>
-                <button type="button" class="add-cart-btn"> Add to cart</button>
+                <button type="button" class="add-cart-btn" onclick="addToCart('game')"> Add to cart</button>
             </div>
             <div class="books-card">
-                <img src="./images/fiction/fourth-wing.png" class="book-img" id="atomic-habit-id" />
+                <img src="./images/fiction/fourth-wing.png" class="books-img"  />
                 <p class="books-name" > Fourth Wing: The Empyrean Discover the Instant  </p>
                 <p class="books-price">499/-</p>
-                <button type="button" class="add-cart-btn"> Add to cart</button>
+                <button type="button" class="add-cart-btn" onclick="addToCart('fourth')"> Add to cart</button>
             </div>
             <div class="books-card">
-                <img src="./images/fiction/iron-flame.jpg" class="book-img" id="atomic-habit-id" />
+                <img src="./images/fiction/iron-flame.jpg" class="books-img" />
                 <p class="books-name" > Iron Flame: The Sequel of Fourth Wing</p>
                 <p class="books-price"> 499/-</p>
-                <button type="button" class="add-cart-btn"> Add to cart</button>
+                <button type="button" class="add-cart-btn" onclick="addToCart('iron')"> Add to cart</button>
             </div>
             
         </div>
@@ -320,7 +322,7 @@
                 </div>
         </div>
         <div class="footer-sec">
-            <p class="footer-sec-title"> Contact us :</p>
+            <p class="footer-sec-title"> <a href="./pages/contact.html"> Contact us :</a></p>
                 <div class="footer-data">
                     
                     <p><i class="fa-solid fa-location-dot"></i>
@@ -337,7 +339,8 @@
         </div>
     </div>
     <script src="https://kit.fontawesome.com/4d47a5db67.js" crossorigin="anonymous"></script>
-
+    <script src="functions.js"></script>
+    <script src="cart.js"></script>
 </body>
 
 
