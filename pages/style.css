@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login page</title>
-    <link rel="stylesheet" href="login-page.css"
-    <script defer src="login-page.js"></script>
-    <style>
-        html {
+html {
     height: 100%;
   }
   
@@ -18,7 +9,7 @@
     display: grid;
     justify-items: center;
     align-items: center;
-    background-color: yellow;
+    background-color: pink;
   }
   
   #main-holder {
@@ -30,14 +21,8 @@
     background-color: white;
     border-radius: 7px;
     box-shadow: 0px 0px 5px 2px black;
-    
   }
-
-  #login-header{
-     margin-bottom: 50px;
-     margin-top: 50px;
-  }
-
+  
   #login-error-msg-holder {
     width: 100%;
     height: 100%;
@@ -55,7 +40,7 @@
     font-weight: bold;
     color: #8a0000;
     border: 1px solid #8a0000;
-    background-color: yellow; 
+    background-color: #e58f8f;
     opacity: 0;
   }
   
@@ -77,7 +62,7 @@
   .login-form-field {
     border: none;
     border-bottom: 1px solid #3a3a3a;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     border-radius: 3px;
     outline: none;
     padding: 0px 0px 5px 5px;
@@ -93,25 +78,4 @@
     background-color: #3a3a3a;
     cursor: pointer;
     outline: none;
-    margin-bottom: 50px;
   }
-    </style>
-</head>
-<body>
-    
-    <main id="main-holder">
-        <h1 id="login-header">Login</h1>
-
-        <div id="login-error-msg-holder">
-            <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
-        </div>
-
-        <form id="login-form">
-            <input type="text" name="username" id="username-field" class="login-form-field" placeholder="username">
-            <input type="password" name="password" id="password-field" class="login-form-field" placeholder="password">
-            <input type="submit" name="login" id="login-form-submit">
-
-        </form>
-    </main>
-</body>
-</html>
