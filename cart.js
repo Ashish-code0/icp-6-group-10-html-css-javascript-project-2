@@ -32,7 +32,28 @@ let totalPrice;
             console.log(`Total price is : ${totalPrice}`);
 
             const totalPriceElement = document.getElementById('totalPriceDisplay');
-            totalPriceElement.innerText = totalPrice;
+
+            if(totalPrice < 300){
+                console.log('Discount is liable for purchase below 300/- ');
+            }
+            else if(totalPrice > 300 && totalPrice <= 1000){
+                totalPrice -= (totalPrice*0.05);
+                console.log(`Toatl price after 5 % discount is : ${totalPrice}`);
+            }
+            else if(totalPrice > 1000 && totalPrice <= 1500){
+                totalPrice -= (totalPrice*0.10)
+                console.log(`Toatl price after 10 % discount is : ${totalPrice}`);
+            }
+            else if( totalPrice > 1500 && totalPrice <= 2500){
+                totalPrice -= (totalPrice*0.15)
+                console.log(`Toatl price after 15 % discount is : ${totalPrice}`);
+            }
+            else{
+                totalPrice -= (totalPrice*0.20)
+                console.log(`Toatl price after 20 % discount is : ${totalPrice}`);
+            }
+
+            totalPriceElement.innerText = Math.floor(totalPrice);
         }
         function addToCartInCart(cartBookName){
 

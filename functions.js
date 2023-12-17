@@ -132,8 +132,17 @@ function showBook(bookName){
     console.log(bookImgId.src);
     console.log(bookNameId.innerText);      
     console.log(bookPriceId.innerText);  
-    
-    
+}
+function closeSearch(){
+    const searchCardDisplay = document.getElementById('hidden-search-id');
+    if(searchStatus){
+        searchCardDisplay.style.display = "block";
+        searchStatus = false;
+    }
+    else{
+        searchCardDisplay.style.display = "none"; 
+        searchStatus = true;
+    }
 }
 
 function addToCart(cartAddBookName){
