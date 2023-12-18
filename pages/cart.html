@@ -57,7 +57,7 @@
             display: flex;
         }
         .cart-book-sections{
-            display: none;
+            display: flex;
         }
         .cart-books-card{
             width:250px;
@@ -114,14 +114,19 @@
         .footer-data{
             margin-left: 20px;
         }
+        @media only screen and (max-width){
+            
+        } 
     </style>
 </head>
 <body>
     <div class="cart-header">
-        <div class="shop-container">
-            <img src="./../logo.png" alt="logo" class="shop-logo">
-            <p class="shop-name"> Readit</p>
-        </div>
+        <a href="./../index.html">
+            <div class="shop-container">
+                <img src="./../logo.png" alt="logo" class="shop-logo">
+                <p class="shop-name"> Readit</p>
+            </div>
+        </a>
        
         <h2> Your Cart <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i></h2>
 
@@ -223,7 +228,7 @@
         </div>
     </div>
     <script src="https://kit.fontawesome.com/4d47a5db67.js" crossorigin="anonymous"></script>
-    <script src="./../cart.js">
+    <script src="./../functions.js">
         /*
         let totalPrice;
         let quantity;
