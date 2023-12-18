@@ -156,6 +156,8 @@
             font-size: 17px;
             border:none;
             color:white;
+            font-style: none;
+            text-decoration: none;
             border-radius: 10px;
             align-items: center;
         }
@@ -183,12 +185,8 @@
 <body>
     <div class="shop-header">
         <div class="shop-container">
-            <img src="logo.png" alt="logo" class="shop-logo">
+            <img src="../logo.png" alt="logo" class="shop-logo">
             <p class="shop-name"> Readit</p>
-        </div>
-        <div class="search-container">
-                <input type="text" placeholder="Rich Dad Poor Dad" class="search-bar" id="search-book" onchange="searchBook()">
-                <button type="button" class="search-button" onclick="showBook(bookName)">Search</button> 
         </div>
 
         <div class="navbar-menu-container">
@@ -202,48 +200,38 @@
     </div>
     
     <div class="shop-body">
-        <div class="searched-sections" id="hidden-search-id"> 
-            <p class="search-book-title">Searched Book: </p>
-            <div class="search-card">
-                <img src="../images/novel/animal.jpg" class="book-img" id="book-img-id" />
-                <p class="books-name" id="book-name-id"> Animal Farm</p>
-                <p class="books-price" id="book-price-id">499/- </p>
-                <button type="button" class="add-cart-btn" onclick="addToCart()"> Add to cart</button>
-                
-            </div>
-        </div>
 
         <div class="shop-sections">
             <div class="books-card">
                 <img src="../images/novel/black-beuty.jpg" class="book-img" id="ikigai-id" />
                 <p class="books-name" > The Black-Beuty</p>
                 <p class="books-price">499/- </p>
-                <button type="button" class="add-cart-btn" onclick="addToCart()"> Add to cart</button>
+                <button type="button" class="add-cart-btn" onclick="addToCart()"><a href="Shoppingcart.html">Add to cart </a></button>
             </div>
             <div class="books-card">
                 <img src="../images/novel/brave.jpg" class="book-img" id="atomic-habit-id" />
                 <p class="books-name" > Atomic Habits Paperback _ 1 January 2018  </p>
                 <p class="books-price">600/-</p>
-                <button type="button" class="add-cart-btn"> Add to cart</button>
+                <button type="button" class="add-cart-btn"> <a href="Shoppingcart.html">Add to cart </a></button>
             </div>
             <div class="books-card">
                 <img src="../images/novel/dracula.jpg" class="book-img" id="fire-blood-id" />
                 <p class="books-name" > The Psychology Of Money Paperback _ 1 September 2020</p>
                 <p class="books-price"> 550/-</p>
-                <button type="button" class="add-cart-btn"> Add to cart</button>
+                <button type="button" class="add-cart-btn"> <a href="Shoppingcart.html">Add to cart </a></button>
             </div>
             
             <div class="books-card">
                 <img src="../images/novel/gatspy.jpg" class="book-img" id="atomic-habit-id" />
                 <p class="books-name" >Rich Dad Poor Dad: 25th Anniversary Edit </p>
                 <p class="books-price"> 400/-</p>
-                <button type="button" class="add-cart-btn"> Add to cart</button>
+                <button type="button" class="add-cart-btn"><a href="Shoppingcart.html">Add to cart </a></button>
             </div>
             <div class="books-card">
                 <img src="../images/novel/oliver.jpg" class="book-img" id="ikigai-id" />
                 <p class="books-name" > Divine Rivals: A Novel: 1 (Letters of Enchantment, 1)</p>
                 <p class="books-price">500/-</p>
-                <button type="button" class="add-cart-btn"> Add to cart</button>
+                <button type="button" class="add-cart-btn"><a href="Shoppingcart.html">Add to cart </a></button>
             </div>
            
             </div>
@@ -252,32 +240,32 @@
                     <img src="../images/novel/oliver.jpg" class="book-img" id="ikigai-id" />
                     <p class="books-name" > Divine Rivals: A Novel: 1 (Letters of Enchantment, 1)</p>
                     <p class="books-price">500/-</p>
-                    <button type="button" class="add-cart-btn"> Add to cart</button>
+                    <button type="button" class="add-cart-btn"><a href="Shoppingcart.html">Add to cart </a></button>
                 </div>
             <div class="books-card">
                 <img src="../images/novel/king.jpg" class="book-img" id="atomic-habit-id" />
                 <p class="books-name" > Think and Grow Rich: The Landmark Bestseller</p>
                 <p class="books-price"> 649/-</p>
-                <button type="button" class="add-cart-btn"> Add to cart</button>
+                <button type="button" class="add-cart-btn"><a href="Shoppingcart.html">Add to cart </a></button>
             </div>
     
             <div class="books-card">
                 <img src="../images/novel/oliver.jpg" class="book-img" id="ikigai-id" />
                 <p class="books-name" > Divine Rivals: A Novel: 1 (Letters of Enchantment, 1)</p>
                 <p class="books-price">500/-</p>
-                <button type="button" class="add-cart-btn"> Add to cart</button>
+                <button type="button" class="add-cart-btn"> <a href="Shoppingcart.html">Add to cart </a></button>
             </div>
             <div class="books-card">
                 <img src="../images/novel/sherlocks.jpg" class="book-img" id="fire-blood-id" />
                 <p class="books-name" >Fire And Blood: A Song Of Ice And Fire: Book One: </p>
                 <p class="books-price">300/-</p>
-                <button type="button" class="add-cart-btn"> Add to cart</button>
+                <button type="button" class="add-cart-btn"><a href="Shoppingcart.html">Add to cart </a></button>
             </div>
             <div class="books-card">
                 <img src="../images/novel/solitute.jpg" class="book-img" id="atomic-habit-id" />
                 <p class="books-name" >A Game of Thrones: A Song of Ice and Fire: Book One: 1</p>
                 <p class="books-price">700/-</p>
-                <button type="button" class="add-cart-btn"> Add to cart</button>
+                <button type="button" class="add-cart-btn"><a href="Shoppingcart.html">Add to cart </a></button>
             </div>
             </div>
             <div class="shop-sections">
@@ -285,31 +273,31 @@
                 <img src="../images/novel/uncle-tom.jpg" class="book-img" id="atomic-habit-id" />
                 <p class="books-name" > Fourth Wing: The Empyrean Discover the Instant  </p>
                 <p class="books-price">499/-</p>
-                <button type="button" class="add-cart-btn"> Add to cart</button>
+                <button type="button" class="add-cart-btn"><a href="Shoppingcart.html">Add to cart </a></button>
             </div>
             <div class="books-card">
                 <img src="../images/novel/vanier.jpg" class="book-img" id="atomic-habit-id" />
                 <p class="books-name" > Iron Flame: The Sequel of Fourth Wing</p>
                 <p class="books-price"> 499/-</p>
-                <button type="button" class="add-cart-btn"> Add to cart</button>
+                <button type="button" class="add-cart-btn"><a href="Shoppingcart.html">Add to cart </a></button>
             </div>
             <div class="books-card">
                 <img src="../images/novel/war.jpg" class="book-img" id="atomic-habit-id" />
                 <p class="books-name" > Iron Flame: The Sequel of Fourth Wing</p>
                 <p class="books-price"> 499/-</p>
-                <button type="button" class="add-cart-btn"> Add to cart</button>
+                <button type="button" class="add-cart-btn"><a href="Shoppingcart.html">Add to cart </a></button>
             </div>
             <div class="books-card">
                 <img src="../images/novel/portrait.jpg" class="book-img" id="atomic-habit-id" />
                 <p class="books-name" > Iron Flame: The Sequel of Fourth Wing</p>
                 <p class="books-price"> 499/-</p>
-                <button type="button" class="add-cart-btn"> Add to cart</button>
+                <button type="button" class="add-cart-btn"><a href="Shoppingcart.html">Add to cart </a></button>
             </div>
             <div class="books-card">
                 <img src="../images/novel/oliver.jpg" class="book-img" id="ikigai-id" />
                 <p class="books-name" > Divine Rivals: A Novel: 1 (Letters of Enchantment, 1)</p>
                 <p class="books-price">500/-</p>
-                <button type="button" class="add-cart-btn"> Add to cart</button>
+                <button type="button" class="add-cart-btn"><a href="Shoppingcart.html">Add to cart </a></button>
             </div>
         </div>
 
