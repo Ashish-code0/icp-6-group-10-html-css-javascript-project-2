@@ -74,21 +74,32 @@
             <h2 class="heading"> Register Now </h2>
 
         <label class="label"> Username: </label>
-        <input class="text" id="name" name="name">
+        <input class="text" id="name" name="name" required>
 
         <label class="label"> Email: </label>
-        <input class="text" id="email" name="email">
+        <input class="text" id="email" name="email" required>
 
         <label class="label"> Password: </label>
-        <input class="text" id="Password" name="Password">
+        <input class="text" id="Password" name="Password" required>
 
         <label class="label"> Confirm Password: </label>
-        <input class="text" id="cpassword" name="cpassword">
+        <input class="text" id="cpassword" name="cpassword" required>
 
-        <button class="btn"> Submit </button>
+        <button class="btn" onclick="submitForm()"> Submit </button>
        
-
         </form>
+
+        <script>
+
+        function submitForm() {
+        var username = document.getElementById('username').value;
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        var cpassword = document.getElementById('cpassword').value;               
+    
+    }
+    
+        </script>
     </body>
 
 </html>
