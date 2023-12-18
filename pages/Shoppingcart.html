@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 0;
+            margin: 0;
+            background-color: #fffefb;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .shop-header {
+            background-color: #ffd60a;
+            padding: 2px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 20px;
+        }
+
+        .shop-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0px 40px;
+        }
+
+        .shop-logo {
+            height: 60px;
+            margin: 0;
+        }
+
+        .shop-name {
+            font-size: 25px;
+            font-weight: bolder;
+            margin: 0;
+        }
+
+        .navbar-menu-container {
+            display: flex;
+            margin-top: 25px;
+        }
+
+        .navbar-menu {
+            margin: 0 15px;
+            font-size: 15px;
+            padding: 5px 25px;
+            border-radius: 10px;
+            border: none;
+            background-color: #000;
+            color: white;
+        }
+
+        .navbar-anchor {
+            color: white;
+        }
+
+        .shop-body {
+            display: flex;
+            flex-direction: column;
+            margin: 0 5px;
+        }
+
+        .searched-sections {
+            display: none;
+            margin: 10px auto;
+            background-color: #ffd60a;
+            width: 98vw;
+            border-bottom: 2px solid #ffbb00;
+        }
+
+        .search-book-title {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            border-top: 1px solid #de1212;
+            border-bottom: 1px solid #de1212;
+        }
+
+        .search-card {
+            width: 250px;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin: 5px auto;
+            border-right: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-right: 1px solid black;
+        }
+
+        .shop-sections {
+            margin: 10px 0;
+            border-bottom: 2px solid #ffbb00;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .books {
+            display: block;
+            flex-wrap: wrap;
+            margin: auto;
+            width: 70%;
+            height: 550px;
+            padding: 20px;
+
+        }
+
+        .book {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 2px 1px 5px grey;
+        }
+
+        .book:hover {
+            background-color: #fcff69;
+        }
+
+        .book img {
+            width: 250px;
+            height: 350px;
+            margin-bottom: 10px;
+            box-shadow: 2px 6px 6px 2px grey;
+           
+        }
+
+        .book img:hover {
+            box-shadow: 4px 2px 6px 2px grey;
+        }
+
+        .details {
+            text-align: left;
+
+        }
+
+        .buy-now {
+            margin-left: 740px;
+            height: 50px;
+            width: 230px;
+            font-size: 30px;
+            background-color: black;
+            color: white;
+        }
+
+        .buy-now:hover {
+            background-color: yellow;
+            color: black;
+            box-shadow: 2px 6px 6px 2px grey;
+            font-size: 33px;
+            transition: 0.5s;
+            border-radius: 10px;
+            box-shadow: 1px 1px 1px black;
+        }
+
+        .price {
+            font-weight: bold;
+        }
+
+        .cart {
+            margin-top: 50px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+
+        }
+
+        .cart-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .cart-item img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .cart-item span {
+            flex-grow: 1;
+        }
+
+        .total-price {
+            font-weight: bold;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="shop-header">
+        <div class="shop-container">
+            <img src="../logo.png" alt="logo" class="shop-logo">
+            <p class="shop-name"> Readit</p>
+        </div>
+
+        <div class="navbar-menu-container">
+            <button type="button" class="navbar-menu"><a href="./pages/login.html" class="navbar-anchor"> Login
+                </a></button>
+            <button type="button" class="navbar-menu"><a href="./pages/fiction.html" class="navbar-anchor"> Fiction </a>
+            </button>
+            <button type="button" class="navbar-menu"><a href="./pages/non-fiction.html" class="navbar-anchor">
+                    Non-fiction </a> </button>
+            <button type="button" class="navbar-menu"><a href="./pages/novel.html" class="navbar-anchor"> Novel </a>
+            </button>
+            <button type="button" class="navbar-menu"><a href="./pages/historic.html" class="navbar-anchor"> Historic
+                </a> </button>
+            <button type="button" class="navbar-menu"><a href="cart1.html" class="navbar-anchor"> Cart </a> </button>
+        </div>
+    </div>
+
+    <div class="books">
+        <div class="book">
+            <img src="../images/novel/animal.jpg" alt="Animal Farm Loading">
+            <div class="details">
+                <h3>Animal Farm</h3>
+                <p class="price">$200</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores at, earum animi doloremque
+                    repellat,<br> debitis quo modi soluta, atque assumenda fuga.</p>
+                    <button class="buy-now">Buy Now</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="books">
+        <div class="book">
+            <img src="../images/novel/black-beuty.jpg" alt="black-beuty Loading">
+            <div class="details">
+                <h3>Black Beuty</h3>
+                <p class="price">$260</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores at, earum animi doloremque
+                    repellat,<br> debitis quo modi soluta, atque assumenda fuga.</p>
+                    <button class="buy-now">Buy Now</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="books">
+        <div class="book">
+            <img src="../images/novel/brave.jpg" alt="brave the World Loading">
+            <div class="details">
+                <h3>Brave the New World</h3>
+                <p class="price">$300</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores at, earum animi doloremque
+                    repellat,<br> debitis quo modi soluta, atque assumenda fuga.</p>
+                    <button class="buy-now">Buy Now</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="books">
+        <div class="book">
+            <img src="../images/novel/dracula.jpg" alt="dracula Loading">
+            <div class="details">
+                <h3>Dracula</h3>
+                <p class="price">$500</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores at, earum animi doloremque
+                    repellat,<br> debitis quo modi soluta, atque assumenda fuga.</p>
+                <button class="buy-now">Buy Now</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="cart">
+        <h2>Cart Items</h2>
+        <ul class="cart-list"></ul>
+        <p class="total-price">Total: $<span id="total">0.00</span></p>
+    </div>
+
+
+    <script src="../shopping.js"></script>
+</body>
+
+</html>
