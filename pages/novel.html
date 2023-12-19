@@ -416,7 +416,7 @@
         <div class="search-container">
             <input type="text" placeholder="The Black Beuty" class="search-bar" id="search-book"
                 onchange="searchBook()" />
-            <button type="button" class="search-button" onclick="showBook(bookName)">
+            <button type="button" class="search-button" onclick="showBook(name)">
                 Search
             </button>
         </div>
@@ -445,19 +445,19 @@
                     <i class="fa-solid fa-xmark" style="color: white"></i>
                 </button>
             </div>
-
+            
         </div>
 
         <div class="shop-sections">
             <div class="books-card">
                 <img src="../images/novel/black-beuty.jpg" class="book-img" />
-                <p class="books-name"> The Black-Beuty</p>
+                <p class="books-name" id="name"> The Black-Beuty</p>
                 <p class="books-price">499/- </p>
                 <button type="button" class="add-cart-btn" onclick="addToCart()"><a href="Shoppingcart.html">Add to cart
                     </a></button>
             </div>
             <div class="books-card">
-                <img src="../images/novel/brave.jpg" class="book-img" />
+                <img src="../images/novel/brave.jpg" class="book-img"  />
                 <p class="books-name"> Brave The World </p>
                 <p class="books-price">600/-</p>
                 <button type="button" class="add-cart-btn"> <a href="Shoppingcart.html">Add to cart </a></button>
