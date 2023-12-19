@@ -14,10 +14,12 @@
         margin: 0;
         background-color: #fffefb;
       }
+      /* remove underline and styling on a tag*/
       a {
         text-decoration: none;
         color: #000;
       }
+       /* Styles for the header section */
       .shop-header {
         background-color: #ffd60a;
         padding: 2px 15px;
@@ -91,11 +93,14 @@
       .navbar-anchor {
         color: white;
       }
+
+      /* Styles for the body section */
       .shop-body {
         display: flex;
         flex-direction: column;
         margin: 0 5px;
       }
+      /* section to show searched book */
       .searched-sections {
         display: none;
         margin: 10px auto;
@@ -128,7 +133,6 @@
         background-color: #de1212;
         cursor: pointer;
       }
-
       .search-card {
         width: 250px;
         padding: 10px 15px;
@@ -139,6 +143,7 @@
         align-items: center;      
       }
 
+      /* Section for products */
       .shop-sections {
         margin: 13px 0;
         padding: 20px 0;
@@ -191,6 +196,7 @@
         padding: 7px 20px;
       }
 
+      /* Styles for the footer section */
       .shop-footer {
         background-color: #ffd60a;
         display: flex;
@@ -210,6 +216,7 @@
         margin-left: 20px;
       }
 
+      /* Responsive for small screen */
       @media screen and (max-width: 700px) {
         body {
           overflow-x: hidden;
@@ -256,6 +263,7 @@
           height: 180px;
         }
       }
+      /* Responsive for tablet screen */
       @media screen and (min-width: 701px)and (max-width:900px){
         body {
           overflow-x: hidden;
@@ -303,6 +311,7 @@
           height: 200px;
         }
       }
+      /* Responsive for laptop screen */
       @media screen and (min-width: 901px)and (max-width:1299px){
         body {
           overflow-x: hidden;
@@ -353,6 +362,9 @@
     </style>
   </head>
   <body>
+
+    <!-- Header code -->
+
     <div class="shop-header">
       <a href="./index.html">
         <div class="shop-container">
@@ -391,9 +403,11 @@
       </div>
     </div>
 
-    <div class="shop-body">
+    <!--Page body code-->
 
+    <div class="shop-body">
       <div class="searched-sections" id="hidden-search-id">
+        <!-- Search book title and close button -->
         <div class="search-section-container">
           <p class="search-book-title">Searched Book:</p>
           <button type="button" class="closeSearch" onclick="closeSearch()">
@@ -401,20 +415,20 @@
           </button>
         </div>
 
+        <!-- Searched card -->
         <div class="search-card">
           <img src="./images/personality/ikigai.jpeg" class="books-img" id="book-img-id"/>
           <p class="books-name" id="book-name-id">
             Ikigai: The Japanese Secret to a Long and Happy Life
           </p>
           <p class="books-price" id="book-price-id">499/-</p>
-          <a href="./pages/cart.html">
             <button type="button" class="add-cart-btn" onclick="addToCart(bookName)" >
               Add to cart
             </button>
-          </a>
         </div>
       </div>
 
+      <!-- Section 1-->
       <div class="shop-sections">
         <div class="books-card"> 
           <img src="./images/personality/ikigai.jpeg" class="books-img" />
@@ -422,118 +436,103 @@
             Ikigai: The Japanese Secret to a Long and Happy Life
           </p>
           <p class="books-price">499/-</p>
-          <a href="./pages/cart.html">
           <button type="button" class="add-cart-btn" onclick="addToCart('ikigai')" >
             Add to cart
-          </button></a>
+          </button>
         </div>
         <div class="books-card">
           <img src="./images/personality/atomic-habit.jpeg" class="books-img" />
 
           <p class="books-name">Atomic Habits Paperback _ 1 January 2018</p>
           <p class="books-price">600/-</p>
-          <a href="./pages/cart.html">
             <button type="button" class="add-cart-btn" onclick="addToCart('atomic')" >
               Add to cart
             </button>
-          </a>
         </div>
         <div class="books-card">
           <img src="./images/personality/psychology-of-money.jpg" class="books-img"/>
-
           <p class="books-name">
             The Psychology Of Money Paperback _ 1 September 2020
           </p>
           <p class="books-price">550/-</p>
-          <a href="./pages/cart.html">
           <button type="button" class="add-cart-btn" onclick="addToCart('psychology')" >
             Add to cart
-          </button></a>
+          </button>
         </div>
-
         <div class="books-card">
           <img src="./images/personality/rich-dad-poor-dad.jpeg" class="books-img"/>
-
           <p class="books-name">Rich Dad Poor Dad: 25th Anniversary Edit</p>
           <p class="books-price">400/-</p>
-          <a href="./pages/cart.html">
           <button type="button" class="add-cart-btn" onclick="addToCart('rich')" >
             Add to cart
-          </button></a>
+          </button>
         </div>
         <div class="books-card">
           <img src="./images/personality/think-and-grow-rich.png" class="books-img" />
-
           <p class="books-name">Think and Grow Rich: The Landmark Bestseller</p>
           <p class="books-price">649/-</p>
-          <a href="./pages/cart.html">
           <button type="button" class="add-cart-btn" onclick="addToCart('think')" >
             Add to cart
-          </button></a>
+          </button>
         </div>
       </div>
+
+      <!-- Section 2-->
       <div class="shop-sections">
         <div class="books-card">
           <img src="./images/fiction/divine-rivals.png" class="books-img" />
-
           <p class="books-name">
             Divine Rivals: A Novel: 1 (Letters of Enchantment, 1)
           </p>
           <p class="books-price">500/-</p>
-          <a href="./pages/cart.html">
           <button type="button" class="add-cart-btn" onclick="addToCart('divine')">
             Add to cart
-          </button></a>
+          </button>
         </div>
         <div class="books-card">
           <img src="./images/fiction/fire-blood.jpeg" class="books-img" />
-
           <p class="books-name">
             Fire And Blood: A Song Of Ice And Fire: Book One:
           </p>
           <p class="books-price">300/-</p>
-          <a href="./pages/cart.html">
           <button type="button" class="add-cart-btn" onclick="addToCart('fire')" >
             Add to cart
-          </button></a>
+          </button>
         </div>
         <div class="books-card">
           <img src="./images/fiction/game-of-thrones.jpeg" class="books-img" />
-
           <p class="books-name">
             A Game of Thrones: A Song of Ice and Fire: Book One: 1
           </p>
           <p class="books-price">700/-</p>
-          <a href="./pages/cart.html">
           <button type="button" class="add-cart-btn" onclick="addToCart('game')" >
             Add to cart
-          </button></a>
+          </button>
         </div>
         <div class="books-card">
           <img src="./images/fiction/fourth-wing.png" class="books-img" />
-
           <p class="books-name">
             Fourth Wing: The Empyrean Discover the Instant
           </p>
           <p class="books-price">499/-</p>
-          <a href="./pages/cart.html">
           <button type="button" class="add-cart-btn" onclick="addToCart('fourth')" >
             Add to cart
-          </button></a>
+          </button>
         </div>
         <div class="books-card">
           <img src="./images/fiction/iron-flame.jpg" class="books-img" />
-
           <p class="books-name">Iron Flame: The Sequel of Fourth Wing</p>
           <p class="books-price">499/-</p>
-          <a href="./pages/cart.html">
           <button type="button" class="add-cart-btn" onclick="addToCart('iron')" >
             Add to cart
           </button>
-        </a>
         </div>
       </div>
     </div>
+
+
+    <!-- Footer Section -->
+
     <div class="shop-footer">
       <div class="footer-sec">
         <p class="footer-sec-title">Quick Links</p>
@@ -594,11 +593,8 @@
         </div>
       </div>
     </div>
-    <script
-      src="https://kit.fontawesome.com/4d47a5db67.js"
-      crossorigin="anonymous"
-    ></script>
+
+    <script src="https://kit.fontawesome.com/4d47a5db67.js" crossorigin="anonymous"></script>
     <script src="functions.js"></script>
-    <script src="cart.js"></script>
   </body>
 </html>
