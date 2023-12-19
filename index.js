@@ -2,13 +2,17 @@ let bookName;
 let searchStatus = true;
 let totalPrice;
 let quantity;
+let wishlistStatus = true;
+let wishlistAllStatus = true;
+
+/* take input form the search bar in home page and store in bookName */
 function searchBook(){
     const searchedBook = document.getElementById('search-book');
     bookName = searchedBook.value;
     console.log(`Book searched : ${bookName}`);
 
 }
-
+/* Change display property of searched section and display on the home page*/
 function showBook(bookName){
     const searchCardDisplay = document.getElementById('hidden-search-id');
 
@@ -135,7 +139,7 @@ function showBook(bookName){
     console.log(bookNameId.innerText);      
     console.log(bookPriceId.innerText);  
 }
-
+/* Close the searched secton */
 function closeSearch(){
     const searchCardDisplay = document.getElementById('hidden-search-id');
     if(searchStatus){
@@ -148,6 +152,34 @@ function closeSearch(){
     }
 }
 
+function wishlistHeart() {
+    console.log(wishlistStatus);
+    const wishlistElement = document.getElementById('wishlistIconId');
+
+    if(wishlistStatus){
+        wishlistElement.src= "./images/home/heart-red.png";
+        wishlistStatus = false;
+    }
+    else{
+        wishlistElement.src= "./images/home/heart.png";
+        wishlistStatus = true;
+    }
+}
+
+function wishlistHeartAll(imgId){
+    console.log(imgId);
+    const wishlistElement = document.getElementById(imgId);
+
+    if(wishlistAllStatus){
+        wishlistElement.src= "./images/home/heart-red.png";
+        wishlistAllStatus = false;
+    }
+    else{
+        wishlistElement.src= "./images/home/heart.png";
+        wishlistAllStatus = true;
+    }
+}
+/* Interpage communication error */
 function addToCart(cartAddBookName){
     
 
@@ -213,6 +245,7 @@ function addToCart(cartAddBookName){
         console.log('Cart book name',cartAddBookName);
 }
 
+/* decrease quantity in cart  */
 function decreaseQuantity(){
     const countElement = document.getElementById('quantity');
     quantity = parseInt(countElement.innerText);
@@ -224,6 +257,7 @@ function decreaseQuantity(){
     }
 }
 
+/* increase quantity in cart*/
 function increaseQuantity(){
     const countElement = document.getElementById('quantity');
     quantity = parseInt(countElement.innerText);
@@ -234,7 +268,8 @@ function increaseQuantity(){
         alert('You can not buy more than 5 products at once');
     }   
 }
-
+ 
+/* Counts total price */
 function countTotal(){
     const priceElement = document.getElementById('priceBook');
 
@@ -267,3 +302,11 @@ function countTotal(){
     }
     totalPriceElement.innerText = Math.floor(totalPrice);
 }
+
+
+
+/*
+function showBookName(bookNameInCard){
+    console.log(`The Card you clicked has ${bookNameInCard}`);
+}
+*/

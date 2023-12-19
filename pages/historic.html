@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Historical Books</title>
+    <style>
+        
+          .hed{
+              text-align: center;
+              color: #ffbb00;
+          }
+            .shop-sections{
+              margin: 10px 0;
+              border-bottom: 2px solid #ffbb00;
+              display: flex;
+          }
+          .books-card:hover .add-cart-btn{
+            opacity: 1;
+            visibility: visible;
+          }
+          .books-card{
+              width:250px;
+              padding: 10px 15px; 
+              margin:5px 15px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              border-right: 1px solid black;
+          }
+          .books-img{
+              height:220px;
+              border: 1px solid white;
+          }
+          .books-name{
+              text-align: center;
+              
+              font-size: 17px;
+          }
+          .books-price{
+              font-size: 20px;
+              color:#000;
+              font-weight: bold;
+          }
+          .add-cart-btn{
+              background-color: #de1212;
+              padding: 5px 15px;
+              font-size: 17px;
+              border:none;
+              color:white;
+              cursor: pointer;
+              border-radius: 10px;
+          }
+      @media screen and (max-width:978px){
+      .container{
+          flex-wrap: wrap;
+          flex-direction: column;
+      }
+      .card{
+          max-width:700px;
+          margin: 20px 0;
+      }
+    } 
+    </style>
+</head>
+<body>
+    <div class="shop-header">
+        <a href="./index.html">
+          <div class="shop-container">
+            <img src="logo.png" alt="logo" class="shop-logo" />
+            <p class="shop-name">Readit</p>
+          </div>
+        </a>
+        <div class="search-container">
+          <input type="text" placeholder="Ramayana" class="search-bar" id="search-book" onchange="searchBook()"/>
+          <button type="button" class="search-button" onclick="showBook(bookName)">
+            Search
+          </button>
+        </div>
+  
+        <div class="navbar-menu-container">
+          <button type="button" class="navbar-menu">
+            <a href="./pages/login.html" class="navbar-anchor"> Login </a>
+          </button>
+          <button type="button" class="navbar-menu">
+            <a href="./pages/fiction.html" class="navbar-anchor"> Fiction </a>
+          </button>
+          <button type="button" class="navbar-menu">
+            <a href="./pages/non-fiction.html" class="navbar-anchor">
+              Non-fiction
+            </a>
+          </button>
+          <button type="button" class="navbar-menu">
+            <a href="./pages/novel.html" class="navbar-anchor"> Novel </a>
+          </button>
+          <button type="button" class="navbar-menu">
+            <a href="./pages/historic.html" class="navbar-anchor"> Historic </a>
+          </button>
+          <button type="button" class="navbar-menu">
+            <a href="./pages/cart.html" class="navbar-anchor"> Cart </a>
+          </button>
+        </div>
+      </div>
+    <h1 class="hed">Historical Books</h1>
+    <div class="shop-sections">
+            <div class="books-card">
+                <img src="C:\Users\TOSHIBA\Desktop\icp-6-group-10-html-css-javascript-project-2\images\historical\ramayana.jpg" class="books-img"  />
+                <h4 class="books-name" > Ramayana </h4>
+                <p class="books-price">499/- </p>
+                <button type="button" class="add-cart-btn" onclick="addToCart('ikigai')"> Add to cart</button>
+            </div>
+            <div class="books-card">
+                <img src="C:\Users\TOSHIBA\Desktop\icp-6-group-10-html-css-javascript-project-2\images\historical\kasturba gandhi.jpg" class="books-img"  />
+                <h4 class="books-name" >Kasturba Gandhi</h4>
+                <p class="books-price">600/-</p>
+                <button type="button" class="add-cart-btn" onclick="addToCart('atomic')"> Add to cart</button>
+            </div>
+            <div class="books-card">
+                <img src="C:\Users\TOSHIBA\Desktop\icp-6-group-10-html-css-javascript-project-2\images\historical\mahabharata.jpg" class="books-img"  />
+                <h4 class="books-name" > Mahabharata </h4>
+                <p class="books-price"> 550/-</p>
+                <button type="button" class="add-cart-btn" onclick="addToCart('psychology')"> Add to cart</button>
+            </div>
+            
+            <div class="books-card">
+                <img src="C:\Users\TOSHIBA\Desktop\icp-6-group-10-html-css-javascript-project-2\images\historical\chanakya.jpg" class="books-img"  />
+                <h4 class="books-name" > Chanakya Niti </h4>
+                <p class="books-price"> 400/-</p>
+                <button type="button" class="add-cart-btn" onclick="addToCart('rich')"> Add to cart</button>
+            </div>
+            <div class="books-card">
+                <img src="C:\Users\TOSHIBA\Desktop\icp-6-group-10-html-css-javascript-project-2\images\historical\bhagwatgitta.jpg" class="books-img"  />
+                <h4 class="books-name" > Bhagwatgitta  </h4>
+                <p class="books-price"> 649/-</p>
+                <button type="button" class="add-cart-btn" onclick="addToCart('think')"> Add to cart</button>
+            </div>
+        </div>
+        <div class="shop-sections">
+            <div class="books-card">
+                <img src="./../images/historical/buddhacharitra.jpg" class="books-img"  />
+                <h4 class="books-name" >Buddhacharitra</h4>
+                <p class="books-price">500/-</p>
+                <button type="button" class="add-cart-btn" onclick="addToCart('divine')"> Add to cart</button>
+            </div>
+            <div class="books-card">
+                <img src="C:\Users\TOSHIBA\Desktop\icp-6-group-10-html-css-javascript-project-2\images\historical\maharastra-itihas.jpg" class="books-img"  />
+                <h4 class="books-name" >Maharastra Itihas  </h4>
+                <p class="books-price">300/-</p>
+                <button type="button" class="add-cart-btn" onclick="addToCart('fire')"> Add to cart</button>
+            </div>
+            <div class="books-card">
+                <img src="C:\Users\TOSHIBA\Desktop\icp-6-group-10-html-css-javascript-project-2\images\historical\ranilaxmibai.jpg"  />
+                <h4 class="books-name" > Ranilaxmibai </h4>
+                <p class="books-price">700/-</p>
+                <button type="button" class="add-cart-btn" onclick="addToCart('game')"> Add to cart</button>
+            </div>
+            <div class="books-card">
+                <img src="C:\Users\TOSHIBA\Desktop\icp-6-group-10-html-css-javascript-project-2\images\historical\gandhi.jpg" class="books-img"  />
+                <h4 class="books-name" >Mahatma Gandhi </h4>
+                <p class="books-price">499/-</p>
+                <button type="button" class="add-cart-btn" onclick="addToCart('fourth')"> Add to cart</button>
+            </div>
+            <div class="books-card">
+                <img src="C:\Users\TOSHIBA\Desktop\icp-6-group-10-html-css-javascript-project-2\images\historical\sardar.jpg" class="books-img" />
+                <h4 class="books-name" >sardar vallabhbhai patel  </h4>
+                <p class="books-price"> 499/-</p>
+                <button type="button" class="add-cart-btn" onclick="addToCart('iron')"> Add to cart</button>
+            </div>
+            
+        </div>
+        <div class="shop-footer">
+            <div class="footer-sec">
+              <p class="footer-sec-title">Quick Links</p>
+              <div class="footer-data">
+                <p><a href="index.html">Home </a></p>
+                <p><a href="./pages/fiction.html">Fiction </a></p>
+                <p><a href="./pages/personality.html">Personality </a></p>
+                <p><a href="./pages/non-fiction.html">Non-fiction </a></p>
+                <p><a href="./pages/novel.html"> Novel </a></p>
+                <p><a href="./pages/historic.html"> Historic </a></p>
+                <p><a href="./pages/login.html"> Login </a></p>
+              </div>
+            </div>
+            <div class="footer-sec">
+              <p class="footer-sec-title">Social :</p>
+              <div class="footer-data">
+                <p>
+                  <i class="fa-solid fa-envelope"></i> &nbsp; &nbsp;
+                  <a href="mailto:ashishgore382@gmail.com">ashishgore382@gmail.com</a>
+                </p>
+      
+                <p>
+                  <i class="fa-solid fa-phone"></i> &nbsp; &nbsp;
+                  <a href="tel:+918805803087" class="footer-anchor">
+                    +91-8805803087</a
+                  >
+                </p>
+      
+                <p><i class="fa-brands fa-facebook"></i> &nbsp; &nbsp; Facebook</p>
+      
+                <p><i class="fa-brands fa-twitter"></i> &nbsp; &nbsp; Twitter</p>
+      
+                <p><i class="fa-brands fa-instagram"></i> &nbsp; &nbsp; Instagram</p>
+      
+                <p><i class="fa-brands fa-linkedin"></i> &nbsp; &nbsp; LinkedIn</p>
+              </div>
+            </div>
+            <div class="footer-sec">
+              <p class="footer-sec-title">
+                <a href="./pages/contact.html"> Contact us :</a>
+              </p>
+              <div class="footer-data">
+                <p>
+                  <i class="fa-solid fa-location-dot"></i> &nbsp; &nbsp;
+                  <a href="https://maps.app.goo.gl/N3ngnED1vBDYVvj19" target="blank">
+                    B.D.College of Engineering, Wardha</a
+                  >
+                </p>
+                <p>
+                  <i class="fa-solid fa-envelope"></i> &nbsp; &nbsp;
+                  <a href="mailto:ashishgore393@gmail.com">ashishgore393@gmail.com</a>
+                </p>
+      
+                <p>
+                  <i class="fa-solid fa-phone"></i> &nbsp; &nbsp;
+                  <a href="tel:+918975004427"> +91-8975004427</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          
+</body>
+</html> 
