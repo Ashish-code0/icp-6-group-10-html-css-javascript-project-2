@@ -2,6 +2,8 @@ let bookName;
 let searchStatus = true;
 let totalPrice;
 let quantity;
+
+
 function searchBook(){
     const searchedBook = document.getElementById('search-book');
     bookName = searchedBook.value;
