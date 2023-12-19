@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Group Project 2</title>
+    <style>
+      .colors {
+        color: #ffb700;
+        color: #ffdd98;
+        color: #ffa600;
+        color: #ffd60a;
+      }
+      body {
+        padding: 0;
+        margin: 0;
+        background-color: #fffefb;
+      }
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+      .shop-header {
+        background-color: #ffd60a;
+        padding: 2px 15px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        font-size: 20px;
+      }
+      .shop-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0px 40px;
+      }
+      .shop-logo {
+        height: 60px;
+        margin: 0;
+      }
+      .shop-name {
+        font-size: 25px;
+        font-weight: bolder;
+        margin: 0;
+      }
+      
+      
+      input {
+        border: none;
+        outline: none;
+        background: none;
+      }
+      
+    
+      .navbar-menu-container {
+        display: flex;
+        margin-top: 25px;
+      }
+      .navbar-menu {
+        margin: 0 15px;
+        font-size: 15px;
+        padding: 5px 25px;
+        border-radius: 10px;
+        border: none;
+        background-color: #000;
+        color: white;
+      }
+      .navbar-anchor {
+        color: white;
+      }
+      .shop-body {
+        display: flex;
+        flex-direction: column;
+        margin: 0 5px;
+      }
+      
+
+      .shop-sections {
+        margin: 13px 0;
+        padding: 20px 0;
+        border-bottom: 2px solid #ffbb00;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .books-card {
+        width: 250px;
+        padding: 10px 20px;
+        margin: 5px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-right: 1px solid black;
+        position: relative;
+      }
+      .books-card:hover {
+        width: 260px;
+        transition: 0.3s;
+        box-shadow: 1px 1px 10px 0 black;
+        border-radius: 10px;
+      }
+      .wishlist{
+        position: absolute;
+        top:10px;
+        right:10px;
+      }
+      .books-img {
+        height: 220px;
+        border: 1px solid white;
+      }
+      .books-name {
+        text-align: center;
+        font-size: 17px;
+      }
+      .books-price {
+        font-size: 20px;
+        color: #000;
+        font-weight: bold;
+      }
+      .add-cart-btn {
+        background-color: #de1212;
+        padding: 7px 15px;
+        font-size: 15px;
+        border: none;
+        color: white;
+        cursor: pointer;
+        border-radius: 10px;
+      }
+      .add-cart-btn:hover {
+        font-size: 17px;
+        padding: 7px 20px;
+      }
+      .quantity-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .btn-quantity {
+            width: 20px;
+            cursor: pointer;
+        }
+
+        .product-quantity {
+            font-size: 20px;
+        }
+
+      .shop-footer {
+        background-color: #ffd60a;
+        display: flex;
+        justify-content: space-around;
+        font-size: 15px;
+      }
+      .footer-sec {
+        width: 400px;
+        margin: 10px 10px;
+        border-right: 2px solid #de1212;
+      }
+      .footer-sec-title {
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .footer-data {
+        margin-left: 20px;
+      }
+
+      @media screen and (max-width: 700px) {
+        body {
+          overflow-x: hidden;
+        }
+        .shop-header {
+          flex-direction: column;
+        }
+        .shop-logo{
+            height: 50px;
+        }
+        .shop-name {
+          font-size: 25px;
+        }
+        .search-container {
+        
+        margin-bottom: 15px;
+        }
+        .navbar-menu-container {
+          display: flex;
+          margin: 15px 0;
+        }
+        .navbar-menu {
+          margin: 0 10px;
+          font-size: 10px;
+          padding: 5px 20px;
+          border-radius: 10px;
+          border: none;
+          background-color: #000;
+          color: white;
+        }
+        .shop-sections {
+          justify-content: space-around;
+          flex-wrap: wrap;
+        }
+        .books-card {
+          width: 250px;
+          padding: 10px 10px;
+          margin: 10px 10px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shop-header">
+      <a href="./index.html">
+        <div class="shop-container">
+          <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\logo.png" alt="logo" class="shop-logo" />
+          <p class="shop-name">Readit</p>
+        </div>
+      </a>
+
+
+      <div class="navbar-menu-container">
+        <button type="button" class="navbar-menu">
+          <a href="./pages/login.html" class="navbar-anchor"> Login </a>
+        </button>
+        <button type="button" class="navbar-menu">
+          <a href="./pages/fiction.html" class="navbar-anchor"> Fiction </a>
+        </button>
+        <button type="button" class="navbar-menu">
+          <a href="./pages/non-fiction.html" class="navbar-anchor">
+            Non-fiction
+          </a>
+        </button>
+        <button type="button" class="navbar-menu">
+          <a href="./pages/novel.html" class="navbar-anchor"> Novel </a>
+        </button>
+        <button type="button" class="navbar-menu">
+          <a href="./pages/historic.html" class="navbar-anchor"> Historic </a>
+        </button>
+        <button type="button" class="navbar-menu">
+          <a href="./pages/cart.html" class="navbar-anchor"> Cart </a>
+        </button>
+      </div>
+
+      </div>
+      <marquee direction="right"><h1>Non Fiction </h1></marquee>
+      <h1> Best Seller</h1>
+
+      <div class="shop-sections">
+        <div class="books-card"> <i class="fa-solid fa-heart wishlist" style="color: #e5dbff;"></i>
+          <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\attitude.jpg" class="books-img" />
+
+          <p class="books-name">
+            Attitude is Everything change 
+            Your Attitude change your Life
+          </p>
+          <p class="books-price">174/-</p>
+          <div class="quantity-container">
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
+
+            <span class="product-quantity" id="quantity-text">1</span>
+
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+        </div>
+        
+          <button type="button" class="add-cart-btn" onclick="addToCart('ikigai')" >
+    
+          Add to card
+          </button>
+        </div>
+        <div class="books-card">
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\2nd.nf.png" class="books-img" />
+  
+            <p class="books-name">Rationality  (English, Paperback, Pinker Steven)</p>
+            <p class="books-price">554/-</p>
+            <div class="quantity-container1">
+                <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
+    
+                <span class="product-quantity" id="quantity-text1 ">1</span>
+    
+                <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+            </div>
+            
+            <button type="button" class="add-cart-btn" onclick="addToCart('atomic')" >
+              Add to cart
+            </button>
+          </div>
+          <div class="books-card">
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\3rd.png" class="books-img"/>
+
+          <p class="books-name">
+            THINKING FAST AND SLOW BY DANIEL
+          </p>
+          <p class="books-price">208/-</p>
+          <div class="quantity-container">
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
+
+            <span class="product-quantity" id="quantity-text">1</span>
+
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+        </div>
+        
+          <button type="button" class="add-cart-btn" onclick="addToCart('psychology')" >
+            Add to cart
+          </button>
+        </div>
+
+        <div class="books-card">
+          <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\4th.jpg" class="books-img"/>
+
+          <p class="books-name">Immune – Philipp Dettmer</p>
+          <p class="books-price">400/-</p>
+          <div class="quantity-container">
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
+
+            <span class="product-quantity" id="quantity-text">1</span>
+
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+        </div>
+        
+          <button type="button" class="add-cart-btn" onclick="addToCart('rich')" >
+            Add to cart
+          </button>
+        </div>
+        <div class="books-card">
+          <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\5th.png" class="books-img" />
+
+          <p class="books-name">Sapiens: A Brief History Of Humankind
+        </p>
+          <p class="books-price">249/-</p>
+          <div class="quantity-container">
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
+
+            <span class="product-quantity" id="quantity-text">1</span>
+
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+        </div>
+        
+          <button type="button" class="add-cart-btn" onclick="addToCart('think')" >
+            Add to cart
+          </button>
+        </div>
+      </div>
+      <h1>New Release</h1>
+
+      <div class="shop-sections">
+        <div class="books-card"> <i class="fa-solid fa-heart wishlist" style="color: #e5dbff;"></i>
+          <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\6th.png" class="books-img" />
+
+          <p class="books-name">
+            Man's Search For Meaning
+          </p>
+          <p class="books-price">154/-</p>
+          <div class="quantity-container">
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
+
+            <span class="product-quantity" id="quantity-text">1</span>
+
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+        </div>
+        
+          <button type="button" class="add-cart-btn" onclick="addToCart('ikigai')" >
+    
+          Add to card
+          </button>
+        </div>
+        <div class="books-card">
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\7th.png" class="books-img" />
+  
+            <p class="books-name">The Science of Being Lucky</p>
+            <p class="books-price">1390/-</p>
+            <div class="quantity-container">
+                <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
+    
+                <span class="product-quantity" id="quantity-text">1</span>
+    
+                <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+            </div>
+            
+            <button type="button" class="add-cart-btn" onclick="addToCart('atomic')" >
+              Add to cart
+            </button>
+          </div>
+          <div class="books-card">
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\8th.png" class="books-img"/>
+
+          <p class="books-name">
+            Winning
+          </p>
+          <p class="books-price">99/-</p>
+          <div class="quantity-container">
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
+
+            <span class="product-quantity" id="quantity-text">1</span>
+
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+        </div>
+        
+          <button type="button" class="add-cart-btn" onclick="addToCart('psychology')" >
+            Add to cart
+          </button>
+        </div>
+
+        <div class="books-card">
+          <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\9th.jpg" class="books-img"/>
+
+          <p class="books-name">Empty Out the Negative</p>
+          <p class="books-price">400/-</p>
+          <div class="quantity-container">
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
+
+            <span class="product-quantity" id="quantity-text">1</span>
+
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+        </div>
+        
+          <button type="button" class="add-cart-btn" onclick="addToCart('rich')" >
+            Add to cart
+          </button>
+        </div>
+        <div class="books-card">
+          <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\10th.png" class="books-img" />
+
+          <p class="books-name">Miracles Now
+        </p>
+          <p class="books-price">249/-</p>
+          <div class="quantity-container">
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
+
+            <span class="product-quantity" id="quantity-text">1</span>
+
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+        </div>
+        
+          <button type="button" class="add-cart-btn" onclick="addToCart('think')" >
+            Add to cart
+          </button>
+        </div>
+      </div>
+      </div>
+    </div>
+    <h1> Popular Book</h1>
+
+      <div class="shop-sections">
+        <div class="books-card"> <i class="fa-solid fa-heart wishlist" style="color: #e5dbff;"></i>
+          <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\11th.png" class="books-img" />
+
+          <p class="books-name">
+            CMYK BOOKSTORE
+          </p>
+          <p class="books-price">2630/-</p>
+          <div class="quantity-container">
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
+
+            <span class="product-quantity" id="quantity-text">1</span>
+
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+        </div>
+        
+          <button type="button" class="add-cart-btn" onclick="addToCart('ikigai')" >
+    
+          Add to card
+          </button>
+        </div>
+        <div class="books-card">
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\12th.png" class="books-img" />
+  
+            <p class="books-name">Build</p>
+            <p class="books-price">754/-</p>
+            <div class="quantity-container">
+                <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
+    
+                <span class="product-quantity" id="quantity-text">1</span>
+    
+                <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+            </div>
+            
+            <button type="button" class="add-cart-btn" onclick="addToCart('atomic')" >
+              Add to cart
+            </button>
+          </div>
+          <div class="books-card">
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\13th.png" class="books-img"/>
+
+          <p class="books-name">
+            Zero to one
+          </p>
+          <p class="books-price">599/-</p>
+          <div class="quantity-container">
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
+
+            <span class="product-quantity" id="quantity-text">1</span>
+
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+        </div>
+        
+          <button type="button" class="add-cart-btn" onclick="addToCart('psychology')" >
+            Add to cart
+          </button>
+        </div>
+
+        <div class="books-card">
+          <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\14th.png" class="books-img"/>
+
+          <p class="books-name">Tim </p>
+          <p class="books-price">842/-</p>
+          <div class="quantity-container">
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
+
+            <span class="product-quantity" id="quantity-text">1</span>
+
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+        </div>
+        
+          <button type="button" class="add-cart-btn" onclick="addToCart('rich')" >
+            Add to cart
+          </button>
+        </div>
+        <div class="books-card">
+          <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\15th.png" class="books-img" />
+
+          <p class="books-name">U2 by John Jobling
+        </p>
+          <p class="books-price">2356/-</p>
+          <div class="quantity-container">
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
+
+            <span class="product-quantity" id="quantity-text">1</span>
+
+            <img src="C:\Users\User\Desktop\icp-6-group-10-html-css-javascript-project-2\images\nonfiction\plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+        </div>
+        
+          <button type="button" class="add-cart-btn" onclick="addToCart('think')" >
+            Add to cart
+          </button>
+        </div>
+      </div>
+    <div class="shop-footer">
+      <div class="footer-sec">
+        <p class="footer-sec-title">Quick Links</p>
+        <div class="footer-data">
+          <p><a href="index.html">Home </a></p>
+          <p><a href="./pages/fiction.html">Fiction </a></p>
+          <p><a href="./pages/personality.html">Personality </a></p>
+          <p><a href="./pages/non-fiction.html">Non-fiction </a></p>
+          <p><a href="./pages/novel.html"> Novel </a></p>
+          <p><a href="./pages/historic.html"> Historic </a></p>
+          <p><a href="./pages/login.html"> Login </a></p>
+        </div>
+      </div>
+      <div class="footer-sec">
+        <p class="footer-sec-title">Social :</p>
+        <div class="footer-data">
+          <p>
+            <i class="fa-solid fa-envelope"></i> &nbsp; &nbsp;
+            <a href="mailto:ashishgore382@gmail.com">ashishgore382@gmail.com</a>
+          </p>
+
+          <p>
+            <i class="fa-solid fa-phone"></i> &nbsp; &nbsp;
+            <a href="tel:+918805803087" class="footer-anchor">
+              +91-8805803087</a
+            >
+          </p>
+
+          <p><i class="fa-brands fa-facebook"></i> &nbsp; &nbsp; Facebook</p>
+
+          <p><i class="fa-brands fa-twitter"></i> &nbsp; &nbsp; Twitter</p>
+
+          <p><i class="fa-brands fa-instagram"></i> &nbsp; &nbsp; Instagram</p>
+
+          <p><i class="fa-brands fa-linkedin"></i> &nbsp; &nbsp; LinkedIn</p>
+        </div>
+      </div>
+      <div class="footer-sec">
+        <p class="footer-sec-title">
+          <a href="./pages/contact.html"> Contact us :</a>
+        </p>
+        <div class="footer-data">
+          <p>
+            <i class="fa-solid fa-location-dot"></i> &nbsp; &nbsp;
+            <a href="https://maps.app.goo.gl/N3ngnED1vBDYVvj19" target="blank">
+              B.D.College of Engineering, Wardha</a
+            >
+          </p>
+          <p>
+            <i class="fa-solid fa-envelope"></i> &nbsp; &nbsp;
+            <a href="mailto:ashishgore393@gmail.com">ashishgore393@gmail.com</a>
+          </p>
+
+          <p>
+            <i class="fa-solid fa-phone"></i> &nbsp; &nbsp;
+            <a href="tel:+918975004427"> +91-8975004427</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <script>
+        const quantityElement = document.getElementById("quantity-text");
+        function increaseQuantity() {
+            let quantity = parseInt(quantityElement.innerText);
+
+            if (quantity < 10) {
+                quantityElement.innerText = ++quantity;
+            }
+            else {
+                alert("You can't add than 10 items");
+            }
+
+        }
+
+        function decreaseQuantity() {
+            let quantity = parseInt(quantityElement.innerText);
+            if (quantity > 1) {
+                quantityElement.innerText = --quantity;
+            }
+            else {
+                alert("You can't add less than 1 item");
+            }
+        }
+    </script>
+  
+    <script
+      src="https://kit.fontawesome.com/4d47a5db67.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="functions.js"></script>
+    <script src="cart.js"></script>
+  </body>
+</html>
