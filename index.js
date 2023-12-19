@@ -2,6 +2,8 @@ let bookName;
 let searchStatus = true;
 let totalPrice;
 let quantity;
+let wishlistStatus = true;
+let wishlistAllStatus = true;
 
 /* take input form the search bar in home page and store in bookName */
 function searchBook(){
@@ -10,7 +12,6 @@ function searchBook(){
     console.log(`Book searched : ${bookName}`);
 
 }
-
 /* Change display property of searched section and display on the home page*/
 function showBook(bookName){
     const searchCardDisplay = document.getElementById('hidden-search-id');
@@ -151,6 +152,33 @@ function closeSearch(){
     }
 }
 
+function wishlistHeart() {
+    console.log(wishlistStatus);
+    const wishlistElement = document.getElementById('wishlistIconId');
+
+    if(wishlistStatus){
+        wishlistElement.src= "./images/home/heart3.png";
+        wishlistStatus = false;
+    }
+    else{
+        wishlistElement.src= "./images/home/heart.png";
+        wishlistStatus = true;
+    }
+}
+
+function wishlistHeartAll(imgId){
+    console.log(imgId);
+    const wishlistElement = document.getElementById(imgId);
+
+    if(wishlistAllStatus){
+        wishlistElement.src= "./images/home/heart3.png";
+        wishlistAllStatus = false;
+    }
+    else{
+        wishlistElement.src= "./images/home/heart.png";
+        wishlistAllStatus = true;
+    }
+}
 /* Interpage communication error */
 function addToCart(cartAddBookName){
     

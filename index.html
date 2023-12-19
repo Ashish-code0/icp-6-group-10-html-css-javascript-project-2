@@ -141,8 +141,25 @@
         display: flex;
         flex-direction: column;
         align-items: center;      
+        position: relative;
       }
-
+      .search-card:hover{
+        width: 260px;
+        background-color: #ffe97b;
+        transition: 0.3s;
+        box-shadow: 1px 1px 10px 0 black;
+        border-radius: 10px;
+      }
+      .wishlist-btn{
+        position: absolute;
+        height: 25px;
+        top:10px;
+        right:10px;
+      }
+      .wishlist-btn:hover{
+        cursor:pointer;
+      }
+    
       /* Section for products */
       .shop-sections {
         margin: 13px 0;
@@ -165,6 +182,7 @@
       }
       .books-card:hover {
         width: 260px;
+        background-color: #f2f2f2;
         transition: 0.3s;
         box-shadow: 1px 1px 10px 0 black;
         border-radius: 10px;
@@ -289,7 +307,7 @@
         .navbar-menu {
           margin: 0 10px;
           font-size: 15px;
-          padding: 5px 30px;
+          padding: 3px 30px;
           border-radius: 10px;
           border: none;
           background-color: #000;
@@ -368,7 +386,7 @@
     <div class="shop-header">
       <a href="./index.html">
         <div class="shop-container">
-          <img src="logo.png" alt="logo" class="shop-logo" />
+          <img src="./images/home/logo.png" alt="logo" class="shop-logo" />
           <p class="shop-name">Readit</p>
         </div>
       </a>
@@ -417,6 +435,7 @@
 
         <!-- Searched card -->
         <div class="search-card">
+          <img src="./images/home/heart.png" onclick="wishlistHeart()" class="wishlist-btn" id="wishlistIconId">
           <img src="./images/personality/ikigai.jpeg" class="books-img" id="book-img-id"/>
           <p class="books-name" id="book-name-id">
             Ikigai: The Japanese Secret to a Long and Happy Life
@@ -431,6 +450,8 @@
       <!-- Section 1-->
       <div class="shop-sections">
         <div class="books-card"> 
+          <img src="./images/home/heart.png" onclick="wishlistHeartAll('wishlist-1')" class="wishlist-btn" id="wishlist-1"/>
+
           <img src="./images/personality/ikigai.jpeg" class="books-img" />
           <p class="books-name">
             Ikigai: The Japanese Secret to a Long and Happy Life
@@ -441,8 +462,8 @@
           </button>
         </div>
         <div class="books-card">
+          <img src="./images/home/heart.png" onclick="wishlistHeartAll('wishlist-2')" class="wishlist-btn" id="wishlist-2"/>
           <img src="./images/personality/atomic-habit.jpeg" class="books-img" />
-
           <p class="books-name">Atomic Habits Paperback _ 1 January 2018</p>
           <p class="books-price">600/-</p>
             <button type="button" class="add-cart-btn" onclick="addToCart('atomic')" >
@@ -450,16 +471,18 @@
             </button>
         </div>
         <div class="books-card">
+          <img src="./images/home/heart.png" onclick="wishlistHeartAll('wishlist-3')" class="wishlist-btn" id="wishlist-3"/>
           <img src="./images/personality/psychology-of-money.jpg" class="books-img"/>
           <p class="books-name">
             The Psychology Of Money Paperback _ 1 September 2020
           </p>
           <p class="books-price">550/-</p>
-          <button type="button" class="add-cart-btn" onclick="addToCart('psychology')" >
+          <button type="button" class="add-cart-btn" onclick="addToCart('psychology')">
             Add to cart
           </button>
         </div>
         <div class="books-card">
+          <img src="./images/home/heart.png" onclick="wishlistHeartAll('wishlist-4')" class="wishlist-btn" id="wishlist-4"/>
           <img src="./images/personality/rich-dad-poor-dad.jpeg" class="books-img"/>
           <p class="books-name">Rich Dad Poor Dad: 25th Anniversary Edit</p>
           <p class="books-price">400/-</p>
@@ -468,6 +491,7 @@
           </button>
         </div>
         <div class="books-card">
+          <img src="./images/home/heart.png" onclick="wishlistHeartAll('wishlist-5')" class="wishlist-btn" id="wishlist-5"/>
           <img src="./images/personality/think-and-grow-rich.png" class="books-img" />
           <p class="books-name">Think and Grow Rich: The Landmark Bestseller</p>
           <p class="books-price">649/-</p>
@@ -480,6 +504,7 @@
       <!-- Section 2-->
       <div class="shop-sections">
         <div class="books-card">
+          <img src="./images/home/heart.png" onclick="wishlistHeartAll('wishlist-6')" class="wishlist-btn" id="wishlist-6">
           <img src="./images/fiction/divine-rivals.png" class="books-img" />
           <p class="books-name">
             Divine Rivals: A Novel: 1 (Letters of Enchantment, 1)
@@ -490,6 +515,7 @@
           </button>
         </div>
         <div class="books-card">
+          <img src="./images/home/heart.png" onclick="wishlistHeartAll('wishlist-7')" class="wishlist-btn" id="wishlist-7">
           <img src="./images/fiction/fire-blood.jpeg" class="books-img" />
           <p class="books-name">
             Fire And Blood: A Song Of Ice And Fire: Book One:
@@ -500,6 +526,7 @@
           </button>
         </div>
         <div class="books-card">
+          <img src="./images/home/heart.png" onclick="wishlistHeartAll('wishlist-8')" class="wishlist-btn" id="wishlist-8">
           <img src="./images/fiction/game-of-thrones.jpeg" class="books-img" />
           <p class="books-name">
             A Game of Thrones: A Song of Ice and Fire: Book One: 1
@@ -510,6 +537,7 @@
           </button>
         </div>
         <div class="books-card">
+          <img src="./images/home/heart.png" onclick="wishlistHeartAll('wishlist-9')" class="wishlist-btn" id="wishlist-9">
           <img src="./images/fiction/fourth-wing.png" class="books-img" />
           <p class="books-name">
             Fourth Wing: The Empyrean Discover the Instant
@@ -520,6 +548,7 @@
           </button>
         </div>
         <div class="books-card">
+          <img src="./images/home/heart.png" onclick="wishlistHeartAll('wishlist-10')" class="wishlist-btn" id="wishlist-10">
           <img src="./images/fiction/iron-flame.jpg" class="books-img" />
           <p class="books-name">Iron Flame: The Sequel of Fourth Wing</p>
           <p class="books-price">499/-</p>
@@ -595,6 +624,6 @@
     </div>
 
     <script src="https://kit.fontawesome.com/4d47a5db67.js" crossorigin="anonymous"></script>
-    <script src="functions.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
