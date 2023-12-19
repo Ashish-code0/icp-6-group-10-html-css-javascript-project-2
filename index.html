@@ -29,21 +29,25 @@
         align-items: center;
         font-size: 20px;
       }
+
       .shop-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin: 0px 40px;
       }
+
       .shop-logo {
         height: 60px;
         margin: 0;
       }
+
       .shop-name {
         font-size: 25px;
         font-weight: bolder;
         margin: 0;
       }
+
       .search-container {
         display: flex;
         margin: 0;
@@ -115,12 +119,14 @@
         align-items: center;
         padding: 2px 20px;
       }
+
       .search-book-title {
         text-align: center;
         font-size: 20px;
         font-weight: bold;
         margin: 5px 0;
       }
+
       .closeSearch {
         display: block;
         margin: 5px 0;
@@ -133,6 +139,7 @@
         background-color: #de1212;
         cursor: pointer;
       }
+
       .search-card {
         width: 250px;
         padding: 10px 15px;
@@ -143,6 +150,7 @@
         align-items: center;      
         position: relative;
       }
+
       .search-card:hover{
         width: 260px;
         background-color: #ffe97b;
@@ -150,12 +158,18 @@
         box-shadow: 1px 1px 10px 0 black;
         border-radius: 10px;
       }
+
+      .search-card:hover .wishlist-btn{
+        display: block;
+      }
       .wishlist-btn{
+        display: none;
         position: absolute;
         height: 25px;
         top:10px;
         right:10px;
       }
+
       .wishlist-btn:hover{
         cursor:pointer;
       }
@@ -186,6 +200,9 @@
         transition: 0.3s;
         box-shadow: 1px 1px 10px 0 black;
         border-radius: 10px;
+      }
+      .books-card:hover .wishlist-btn{
+        display: block;
       }
       
       .books-img {
@@ -461,6 +478,7 @@
             Add to cart
           </button>
         </div>
+        
         <div class="books-card">
           <img src="./images/home/heart.png" onclick="wishlistHeartAll('wishlist-2')" class="wishlist-btn" id="wishlist-2"/>
           <img src="./images/personality/atomic-habit.jpeg" class="books-img" />
@@ -470,7 +488,8 @@
               Add to cart
             </button>
         </div>
-        <div class="books-card">
+
+        <div class="books-card" >
           <img src="./images/home/heart.png" onclick="wishlistHeartAll('wishlist-3')" class="wishlist-btn" id="wishlist-3"/>
           <img src="./images/personality/psychology-of-money.jpg" class="books-img"/>
           <p class="books-name">
@@ -590,13 +609,13 @@
             >
           </p>
 
-          <p><i class="fa-brands fa-facebook"></i> &nbsp; &nbsp; Facebook</p>
+          <p style="cursor: pointer;"><i class="fa-brands fa-facebook" ></i> &nbsp; &nbsp; Facebook</p>
 
-          <p><i class="fa-brands fa-twitter"></i> &nbsp; &nbsp; Twitter</p>
+          <p style="cursor: pointer;"><i class="fa-brands fa-twitter"></i> &nbsp; &nbsp; Twitter</p>
 
-          <p><i class="fa-brands fa-instagram"></i> &nbsp; &nbsp; Instagram</p>
+          <p style="cursor: pointer;"><i class="fa-brands fa-instagram"></i> &nbsp; &nbsp; Instagram</p>
 
-          <p><i class="fa-brands fa-linkedin"></i> &nbsp; &nbsp; LinkedIn</p>
+          <p style="cursor: pointer;"><i class="fa-brands fa-linkedin"></i> &nbsp; &nbsp; LinkedIn</p>
         </div>
       </div>
       <div class="footer-sec">

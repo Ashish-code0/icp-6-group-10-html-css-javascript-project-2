@@ -157,7 +157,7 @@ function wishlistHeart() {
     const wishlistElement = document.getElementById('wishlistIconId');
 
     if(wishlistStatus){
-        wishlistElement.src= "./images/home/heart3.png";
+        wishlistElement.src= "./images/home/heart-red.png";
         wishlistStatus = false;
     }
     else{
@@ -171,7 +171,7 @@ function wishlistHeartAll(imgId){
     const wishlistElement = document.getElementById(imgId);
 
     if(wishlistAllStatus){
-        wishlistElement.src= "./images/home/heart3.png";
+        wishlistElement.src= "./images/home/heart-red.png";
         wishlistAllStatus = false;
     }
     else{
@@ -302,3 +302,11 @@ function countTotal(){
     }
     totalPriceElement.innerText = Math.floor(totalPrice);
 }
+
+
+
+/*
+function showBookName(bookNameInCard){
+    console.log(`The Card you clicked has ${bookNameInCard}`);
+}
+*/
