@@ -2,6 +2,8 @@ let bookName;
 let searchStatus = true;
 let totalPrice;
 let quantity;
+
+/* take input form the search bar in home page and store in bookName */
 function searchBook(){
     const searchedBook = document.getElementById('search-book');
     bookName = searchedBook.value;
@@ -9,6 +11,7 @@ function searchBook(){
 
 }
 
+/* Change display property of searched section and display on the home page*/
 function showBook(bookName){
     const searchCardDisplay = document.getElementById('hidden-search-id');
 
@@ -135,7 +138,7 @@ function showBook(bookName){
     console.log(bookNameId.innerText);      
     console.log(bookPriceId.innerText);  
 }
-
+/* Close the searched secton */
 function closeSearch(){
     const searchCardDisplay = document.getElementById('hidden-search-id');
     if(searchStatus){
@@ -148,6 +151,7 @@ function closeSearch(){
     }
 }
 
+/* Interpage communication error */
 function addToCart(cartAddBookName){
     
 
@@ -213,6 +217,7 @@ function addToCart(cartAddBookName){
         console.log('Cart book name',cartAddBookName);
 }
 
+/* decrease quantity in cart  */
 function decreaseQuantity(){
     const countElement = document.getElementById('quantity');
     quantity = parseInt(countElement.innerText);
@@ -224,6 +229,7 @@ function decreaseQuantity(){
     }
 }
 
+/* increase quantity in cart*/
 function increaseQuantity(){
     const countElement = document.getElementById('quantity');
     quantity = parseInt(countElement.innerText);
@@ -234,7 +240,8 @@ function increaseQuantity(){
         alert('You can not buy more than 5 products at once');
     }   
 }
-
+ 
+/* Counts total price */
 function countTotal(){
     const priceElement = document.getElementById('priceBook');
 
