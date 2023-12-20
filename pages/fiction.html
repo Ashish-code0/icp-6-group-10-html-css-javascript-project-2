@@ -2,14 +2,323 @@
 <html lang="en">
   <head>
     <title>Fiction</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css" integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
+    <style>
+      .colors {
+        color: #ffb700;
+        color: #ffdd98;
+        color: #ffa600;
+        color: #ffd60a;
+      }
+      body {
+        padding: 0;
+        margin: 0;
+        background-color: #fffefb;
+      }
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+      .shop-header {
+        background-color: #ffd60a;
+        padding: 2px 15px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        font-size: 20px;
+      }
+      .shop-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0px 40px;
+      }
+      .shop-logo {
+        height: 60px;
+        margin: 0;
+      }
+      .shop-name {
+        font-size: 25px;
+        font-weight: bolder;
+        margin: 0;
+      }
+      
+      
+      input {
+        border: none;
+        outline: none;
+        background: none;
+      }
+      
 
-<link   rel="stylesheet" href="./fiction.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css" integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
- 
+      .navbar-menu-container {
+        display: flex;
+        margin-top: 25px;
+      }
+      .navbar-menu {
+        margin: 0 15px;
+        font-size: 15px;
+        padding: 5px 25px;
+        border-radius: 10px;
+        border: none;
+        background-color: #000;
+        color: white;
+      }
+      .navbar-anchor {
+        color: white;
+      }
+      .shop-body {
+        display: flex;
+        flex-direction: column;
+        margin: 0 5px;
+      }
+      
+
+      .shop-sections {
+        margin: 13px 0;
+        padding: 20px 0;
+        border-bottom: 2px solid #ffbb00;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .books-card {
+        width: 250px;
+        padding: 10px 20px;
+        margin: 5px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-right: 1px solid black;
+        position: relative;
+      }
+      .books-card:hover {
+        width: 260px;
+        transition: 0.3s;
+        box-shadow: 1px 1px 10px 0 black;
+        border-radius: 10px;
+      }
+      .wishlist-btn{
+        display: none;
+        position: absolute;
+        height: 25px;
+        top:10px;
+        right:10px;
+      }
+
+      .wishlist-btn:hover{
+        cursor:pointer;
+      }
+      .books-img {
+        height: 220px;
+        border: 1px solid white;
+      }
+      .books-name {
+        text-align: center;
+        font-size: 17px;
+      }
+      .books-price {
+        font-size: 20px;
+        color: #000;
+        font-weight: bold;
+      }
+      .add-cart-btn {
+        background-color: #de1212;
+        padding: 7px 15px;
+        font-size: 15px;
+        border: none;
+        color: white;
+        cursor: pointer;
+        border-radius: 10px;
+      }
+      .add-cart-btn:hover {
+        font-size: 17px;
+        padding: 7px 20px;
+      }
+      .quantity-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .btn-quantity {
+            width: 20px;
+            cursor: pointer;
+        }
+
+        .product-quantity {
+            font-size: 20px;
+        }
+        .review-container {
+          width: 100%;
+          height: 500px;
+          background-color: #ffa600;
+          display: flex;
+          justify-content: space-around;
+          padding: 10px 10px;
+        }
+        .review{
+          height: 375px;
+          width: 320px;
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          border: #fffefb 1px solid;
+          border-radius: 10px;
+          margin-top: 55px;
+          position: relative;
+          background-color: #fffefb;
+        }
+        .review:hover{
+          height: 390px;
+          width: 340px;
+          transition: 0.3s;
+          box-shadow: 1px 1px 10px 0 black;
+        }
+        .reviewer-img{
+          margin-top: 20px;
+          border-radius: 50%;
+          height: 120px;
+          width: 120px;
+          border: 1px solid #fffefb;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .review-para{
+          margin-top: 20px;
+          margin-left: auto;
+          margin-right: auto;
+          text-align: center;
+          font-size: large;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .rating{
+          position :absolute;
+          bottom: 10%;
+          left: 30%;
+          transform: translate(8%, -10%) rotateY(180deg);
+          display: flex;
+
+        }
+        .rating input{
+          display: none;;
+        }
+        .rating label{
+          display: block;
+          cursor: pointer;
+          width: 20px;  
+        }
+        .rating label::before{
+          content: '\f005';
+          font-family:fontAwesome;
+          display: block;
+          position: relative;
+          font-size: 15px;
+          color: #101010; 
+        }
+        .rating label::after{
+          content: '\f005';
+          font-family:fontAwesome;
+          display: block;
+          position: absolute;
+          font-size: 15px;
+          color: #1f9cff; 
+          top: 0;
+          opacity: 0;
+          transition: 0.5s;
+          text-shadow: 0 2px 5px rgba(0,0,0,.5);
+        }
+        .rating label:hover:after, 
+        .rating label:hover ~ label::after,
+        .rating input:checked ~ label::after{
+          opacity: 1;
+        }
+
+      .shop-footer {
+        background-color: #ffd60a;
+        display: flex;
+        justify-content: space-around;
+        font-size: 15px;
+      }
+      .footer-sec {
+        width: 400px;
+        margin: 10px 10px;
+        border-right: 2px solid #de1212;
+      }
+      .footer-sec-title {
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .footer-data {
+        margin-left: 20px;
+      }
+
+      @media screen and (max-width: 700px) {
+        body {
+          overflow-x: hidden;
+        }
+        .shop-header {
+          flex-direction: column;
+        }
+        .shop-logo{
+            height: 50px;
+        }
+        .shop-name {
+          font-size: 25px;
+        }
+        .search-container {
+        
+        margin-bottom: 15px;
+        }
+        .navbar-menu-container {
+          display: flex;
+          margin: 15px 0;
+        }
+        .navbar-menu {
+          margin: 0 10px;
+          font-size: 10px;
+          padding: 5px 20px;
+          border-radius: 10px;
+          border: none;
+          background-color: #000;
+          color: white;
+        }
+        .shop-sections {
+          justify-content: space-around;
+          flex-wrap: wrap;
+        }
+        .books-card {
+          width: 250px;
+          padding: 10px 10px;
+          margin: 10px 10px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .review-container{
+          justify-content: space-around;
+          display: flex;
+          flex-wrap: wrap;
+          height: auto;
+        }
+        .review{
+          height: 350px;
+          width: 250px;
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+        }
+        .review:hover{
+          height: 350px;
+          width: 260px;
+        }
+      }
+  </style>
   </head>
   <body>
     <div class="shop-header">
-      <a href="./index.html">
+      <a href="./../index.html">
         <div class="shop-container">
           <img src="./../images/home/logo.png" alt="logo" class="shop-logo" />
           <p class="shop-name">Readit</p>
@@ -432,15 +741,64 @@
         </div>
       </div>
     </div>
-    <script src="fiction.js">
+    <script >
+        let wishlistStatus = true;
+        let wishlistAllStatus = true;
 
+
+        const quantityElement = document.getElementById("quantity-text");
+        function increaseQuantity() {
+            let quantity = parseInt(quantityElement.innerText);
+
+            if (quantity < 10) {
+                quantityElement.innerText = ++quantity;
+            }
+            else {
+                alert("You can't add than 10 items");
+            }
+
+        }
+
+        function decreaseQuantity() {
+            let quantity = parseInt(quantityElement.innerText);
+            if (quantity > 1) {
+                quantityElement.innerText = --quantity;
+            }
+            else {
+                alert("You can't add less than 1 item");
+            }
+        }
+
+        function wishlistHeart() {
+            console.log(wishlistStatus);
+            const wishlistElement = document.getElementById('wishlistIconId');
+
+            if(wishlistStatus){
+                wishlistElement.src= "./../images/home/heart-red.png";
+                wishlistStatus = false;
+            }
+            else{
+                wishlistElement.src= "./../images/home/heart.png";
+                wishlistStatus = true;
+            }
+        }
+
+        function wishlistHeartAll(imgId){
+            console.log(imgId);
+            const wishlistElement = document.getElementById(imgId);
+
+            if(wishlistAllStatus){
+                wishlistElement.src= "./../images/home/heart-red.png";
+                wishlistAllStatus = false;
+            }
+            else{
+                wishlistElement.src= "./../images/home/heart.png";
+                wishlistAllStatus = true;
+            }
+        }
     </script>
   
-    <script
-      src="https://kit.fontawesome.com/4d47a5db67.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="functions.js"></script>
-    <script src="cart.js"></script>
+    <script src="https://kit.fontawesome.com/4d47a5db67.js" crossorigin="anonymous"></script>
+    
   </body>
 </html>
