@@ -257,8 +257,24 @@ function addToCart(cartAddBookName){
         }
         console.log('Cart book name',cartAddBookName);
     }
+
+    cartSectionStatus = false;
+}
+function closeCartFun(){
+    if(cartSectionStatus == false){
+        const hiddenSection = document.getElementById('cart-hidden-section');
+        hiddenSection.style.display = "none";
+        cartSectionStatus=true;
+    }
 }
 
+/*
+function showTotalOnReceipt(){
+    const totalOnReceiptElement = document.getElementById('totalAmountReceiptId');
+
+    totalOnReceiptElement.innerText = `${totalPrice}`;
+}
+*/
 /* decrease quantity in cart  */
 function decreaseQuantity(){
     const countElement = document.getElementById('quantity');
@@ -300,19 +316,19 @@ function countTotal(){
     }
     else if(totalPrice > 300 && totalPrice <= 1000){
         totalPrice -= (totalPrice*0.05);
-        console.log(`Toatl price after 5 % discount is : ${totalPrice}`);
+        console.log(`Total price after 5 % discount is : ${totalPrice}`);
     }
     else if(totalPrice > 1000 && totalPrice <= 1500){
         totalPrice -= (totalPrice*0.10)
-        console.log(`Toatl price after 10 % discount is : ${totalPrice}`);
+        console.log(`Total price after 10 % discount is : ${totalPrice}`);
     }
     else if( totalPrice > 1500 && totalPrice <= 2500){
         totalPrice -= (totalPrice*0.15)
-        console.log(`Toatl price after 15 % discount is : ${totalPrice}`);
+        console.log(`Total price after 15 % discount is : ${totalPrice}`);
     }
     else{
         totalPrice -= (totalPrice*0.20)
-        console.log(`Toatl price after 20 % discount is : ${totalPrice}`);
+        console.log(`Total price after 20 % discount is : ${totalPrice}`);
     }
     totalPriceElement.innerText = Math.floor(totalPrice);
 }
