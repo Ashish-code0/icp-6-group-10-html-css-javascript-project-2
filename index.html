@@ -8,6 +8,9 @@
         color: #ffdd98;
         color: #ffa600;
         color: #ffd60a;
+        color: #ff7300;
+        color: #de1212;
+        color: #fff2b2;
       }
       body {
         padding: 0;
@@ -119,14 +122,12 @@
         align-items: center;
         padding: 2px 20px;
       }
-
       .search-book-title {
         text-align: center;
         font-size: 20px;
         font-weight: bold;
         margin: 5px 0;
       }
-
       .closeSearch {
         display: block;
         margin: 5px 0;
@@ -143,7 +144,7 @@
       .search-card {
         width: 250px;
         padding: 10px 15px;
-        margin: 5px auto;
+        margin: 5px 0;
         border-right: 1px solid black;
         display: flex;
         flex-direction: column;
@@ -153,7 +154,7 @@
 
       .search-card:hover{
         width: 260px;
-        background-color: #ffe97b;
+        background-color: #fff2b2;
         transition: 0.3s;
         box-shadow: 1px 1px 10px 0 black;
         border-radius: 10px;
@@ -173,8 +174,25 @@
       .wishlist-btn:hover{
         cursor:pointer;
       }
+      .book-summary{
+        display: block;
+        background-color: #fff6cc;
+        color:black;
+        font-size: 20px;
+        border-radius: 15px;
+        box-shadow: 1px 1px 10px 0 black;
+        padding: 40px;
+        width:350px;
+      }
     
       /* Section for products */
+      .book-section-title{
+        display: block;
+        margin:2px auto;
+        font-size: 25px;
+        font-weight: bold;
+        border-bottom: 3px solid #ff7300;
+      }
       .shop-sections {
         margin: 13px 0;
         padding: 20px 0;
@@ -230,6 +248,67 @@
         font-size: 17px;
         padding: 7px 20px;
       }
+      /* The cart section */
+      .cart-card-container{
+        
+            margin: 10px 0;
+            border-bottom: 2px solid #ffbb00;
+            display: flex;
+        }
+        .close-cart-up-arrow{
+          position: absolute;
+          padding: 5px;
+          border-radius: 50%;
+          font-size: 17px;
+          background-color: #de1212;
+          color: white;
+          top: -30px;
+          right: 10px;
+        }
+        .close-cart-up-arrow:hover{
+          font-size: 22px;
+          box-shadow:  1px 1px 10px 0 #aaa;
+        }
+        
+        .cart-book-sections{
+            
+            position:relative;
+        }
+        .cart-books-card{
+            width:250px;
+            padding: 10px 15px; 
+            margin:5px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-right: 1px solid black;
+        }
+        .cart-books-img{
+            height:220px;
+            border: 1px solid white;
+        }
+        .cart-books-name{
+            text-align: center;
+            font-size: 17px;
+        }
+        .cart-books-price{
+            font-size: 20px;
+            color:#000;
+            font-weight: bold;
+        }
+        .books-counter{
+            display: flex;
+            align-items: center;
+        }
+        .inc-dec-btn{
+            height:25px;
+        }
+        .books-quantity{
+            font-size: 25px;
+            margin : 2px 20px;
+            padding:1px 5px;
+            border-bottom: 2px dashed #000;
+        }
 
       /* Styles for the footer section */
       .shop-footer {
@@ -282,6 +361,9 @@
           background-color: #000;
           color: white;
         }
+        .book-section-title{
+          font-size: 20px;
+        }
         .shop-sections {
           justify-content: space-around;
           flex-wrap: wrap;
@@ -296,6 +378,9 @@
         }
         .books-img{
           height: 180px;
+        }
+        .cart-books-img{
+            height:180px; 
         }
       }
       /* Responsive for tablet screen */
@@ -330,6 +415,9 @@
           background-color: #000;
           color: white;
         }
+        .book-section-title{
+          font-size: 20px;
+        }
         .shop-sections {
           justify-content: space-around;
           flex-wrap: wrap;
@@ -344,6 +432,9 @@
         }
         .books-img{
           height: 200px;
+        }
+        .cart-books-img{
+            height:200px; 
         }
       }
       /* Responsive for laptop screen */
@@ -392,6 +483,9 @@
         }
         .books-img{
           height: 200px;
+        }
+        .cart-books-img{
+            height:200px; 
         }
       }
     </style>
@@ -451,24 +545,28 @@
         </div>
 
         <!-- Searched card -->
-        <div class="search-card">
-          <img src="./images/home/heart.png" onclick="wishlistHeart()" class="wishlist-btn" id="wishlistIconId">
-          <img src="./images/personality/ikigai.jpeg" class="books-img" id="book-img-id"/>
-          <p class="books-name" id="book-name-id">
-            Ikigai: The Japanese Secret to a Long and Happy Life
-          </p>
-          <p class="books-price" id="book-price-id">499/-</p>
-            <button type="button" class="add-cart-btn" onclick="addToCart(bookName)" >
-              Add to cart
-            </button>
+        <div style="display: flex; justify-content: space-around; align-items: center;">
+          <div class="search-card">
+            <img src="./images/home/heart.png" onclick="wishlistHeart()" class="wishlist-btn" id="wishlistIconId">
+            <img src="./images/personality/ikigai.jpeg" class="books-img" id="book-img-id"/>
+            <p class="books-name" id="book-name-id">
+              Ikigai: The Japanese Secret to a Long and Happy Life
+            </p>
+            <p class="books-price" id="book-price-id">499/-</p>
+              <button type="button" class="add-cart-btn" onclick="addToCart(bookName)" >
+                Add to cart
+              </button>
+          </div>
+          <p class="book-summary" id="bookSummaryId">Ikigai by Héctor García & Francesc Miralles is book which talks about finding your purpose and then following it with all heart to live a happy and satisfying life. The authors take us in this search along with them and make us understand how people of Japan have been living a long and a happy life.</p>
         </div>
       </div>
 
+      <span class="book-section-title"> Personality Development Books</span>
       <!-- Section 1-->
-      <div class="shop-sections">
+      <div class="shop-sections" >
+        
         <div class="books-card"> 
           <img src="./images/home/heart.png" onclick="wishlistHeartAll('wishlist-1')" class="wishlist-btn" id="wishlist-1"/>
-
           <img src="./images/personality/ikigai.jpeg" class="books-img" />
           <p class="books-name">
             Ikigai: The Japanese Secret to a Long and Happy Life
@@ -521,6 +619,7 @@
       </div>
 
       <!-- Section 2-->
+      <span class="book-section-title"> Fiction Based Books </span>
       <div class="shop-sections">
         <div class="books-card">
           <img src="./images/home/heart.png" onclick="wishlistHeartAll('wishlist-6')" class="wishlist-btn" id="wishlist-6">
@@ -537,7 +636,7 @@
           <img src="./images/home/heart.png" onclick="wishlistHeartAll('wishlist-7')" class="wishlist-btn" id="wishlist-7">
           <img src="./images/fiction/fire-blood.jpeg" class="books-img" />
           <p class="books-name">
-            Fire And Blood: A Song Of Ice And Fire: Book One:
+            Fire And Blood: The House Of Dragons : Book One: 1
           </p>
           <p class="books-price">300/-</p>
           <button type="button" class="add-cart-btn" onclick="addToCart('fire')" >
@@ -548,7 +647,7 @@
           <img src="./images/home/heart.png" onclick="wishlistHeartAll('wishlist-8')" class="wishlist-btn" id="wishlist-8">
           <img src="./images/fiction/game-of-thrones.jpeg" class="books-img" />
           <p class="books-name">
-            A Game of Thrones: A Song of Ice and Fire: Book One: 1
+            A Game of Thrones: A Song Of Ice And Fire: Book One: 1
           </p>
           <p class="books-price">700/-</p>
           <button type="button" class="add-cart-btn" onclick="addToCart('game')" >
@@ -576,9 +675,78 @@
           </button>
         </div>
       </div>
+    
+
+      <!-- The Cart Section -->
+      <span class="book-section-title"> Books in your cart </span>
+      <div class="cart-book-sections " id="cart-hidden-section">
+      <i class="fa-solid fa-chevron-up close-cart-up-arrow"></i>
+
+        <div class="cart-card-container" id="cart-cards-container-id">
+          <div class="cart-books-card">
+            <img src="./images/personality/ikigai.jpeg" class="cart-books-img" id="cart-book-img-id" />
+            <p class="cart-books-name" id="cart-books-name-id"> Ikigai: The Japanese Secret to a Long and Happy Life</p>
+            <p class="cart-books-price" id="priceBook">499/- </p>
+            <div class="books-counter">
+                <img class="inc-dec-btn" src="./images/cart/minus.png" onclick="decreaseQuantity()">
+                <span class="books-quantity" id="quantity"> 1 </span>
+                <img class="inc-dec-btn" src="./images/cart/add.png"  onclick="increaseQuantity()">
+            </div>
+          </div>
+          <div class="cart-books-card" style="display:none;">
+            <img src="./images/personality/ikigai.jpeg" class="cart-books-img" id="cart-book-img-id" />
+            <p class="cart-books-name" id="cart-books-name-id"> Ikigai: The Japanese Secret to a Long and Happy Life</p>
+            <p class="cart-books-price" id="priceBook">499/- </p>
+            <div class="books-counter">
+                <img class="inc-dec-btn" src="./images/cart/minus.png" onclick="decreaseQuantity()">
+                <span class="books-quantity" id="quantity"> 1 </span>
+                <img class="inc-dec-btn" src="./images/cart/add.png"  onclick="increaseQuantity()">
+            </div>
+          </div>
+          <div class="cart-books-card" style="display:none;">
+            <img src="./images/personality/ikigai.jpeg" class="cart-books-img" id="cart-book-img-id" />
+            <p class="cart-books-name" id="cart-books-name-id"> Ikigai: The Japanese Secret to a Long and Happy Life</p>
+            <p class="cart-books-price" id="priceBook">499/- </p>
+            <div class="books-counter">
+                <img class="inc-dec-btn" src="./images/cart/minus.png" onclick="decreaseQuantity()">
+                <span class="books-quantity" id="quantity"> 1 </span>
+                <img class="inc-dec-btn" src="./images/cart/add.png"  onclick="increaseQuantity()">
+            </div>
+          </div>
+          <div class="cart-books-card" style="display:none;">
+            <img src="./images/personality/ikigai.jpeg" class="cart-books-img" id="cart-book-img-id" />
+            <p class="cart-books-name" id="cart-books-name-id"> Ikigai: The Japanese Secret to a Long and Happy Life</p>
+            <p class="cart-books-price" id="priceBook">499/- </p>
+            <div class="books-counter">
+                <img class="inc-dec-btn" src="./images/cart/minus.png" onclick="decreaseQuantity()">
+                <span class="books-quantity" id="quantity"> 1 </span>
+                <img class="inc-dec-btn" src="./images/cart/add.png"  onclick="increaseQuantity()">
+            </div>
+          </div>
+          <div class="cart-books-card" style="display:none;">
+            <img src="./images/personality/ikigai.jpeg" class="cart-books-img" id="cart-book-img-id" />
+            <p class="cart-books-name" id="cart-books-name-id"> Ikigai: The Japanese Secret to a Long and Happy Life</p>
+            <p class="cart-books-price" id="priceBook">499/- </p>
+            <div class="books-counter">
+                <img class="inc-dec-btn" src="./images/cart/minus.png" onclick="decreaseQuantity()">
+                <span class="books-quantity" id="quantity"> 1 </span>
+                <img class="inc-dec-btn" src="./images/cart/add.png"  onclick="increaseQuantity()">
+            </div>
+          </div>
+        </div>
+        
+        <button type="button" onclick="countTotal()">
+          Total
+        </button>
+        <div>
+          The Total Price for all the Purcahse is :
+          <span id="totalPriceDisplay">0</span>
+        </div>
+      </div>
+
+     <!-- Body section end --> 
     </div>
-
-
+    
     <!-- Footer Section -->
 
     <div class="shop-footer">
