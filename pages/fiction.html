@@ -4,13 +4,14 @@
     <title>Fiction</title>
 
 <link   rel="stylesheet" href="./fiction.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css" integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
  
   </head>
   <body>
     <div class="shop-header">
       <a href="./index.html">
         <div class="shop-container">
-          <img src="./../logo.png" alt="logo" class="shop-logo" />
+          <img src="./../images/home/logo.png" alt="logo" class="shop-logo" />
           <p class="shop-name">Readit</p>
         </div>
       </a>
@@ -39,7 +40,8 @@
       <h1> Best Seller</h1>
 
       <div class="shop-sections">
-        <div class="books-card"> <i class="fa-solid fa-heart wishlist" style="color: #e5dbff;"></i>
+        <div class="books-card"> 
+          <img src="./images/home/heart.png" onclick="wishlistHeartAll('wishlist-1')" class="wishlist-btn" id="wishlist-1">
           <img src="./../images/fiction/divine-rivals.png" class="books-img" />
 
           <p class="books-name">
@@ -60,6 +62,7 @@
           </button>
         </div>
         <div class="books-card">
+          <img src="./../images/home/heart.png" onclick="wishlistHeartAll('wishlist-1')" class="wishlist-btn" id="wishlist-1">
             <img src="./../images/fiction/fire-blood.jpeg" class="books-img" />
   
             <p class="books-name">Fire Blood</p>
@@ -326,6 +329,49 @@
           </button>
         </div>
       </div>
+
+      <div class="review-container">
+        <div class="review">
+          <img src="./../images/home/heart-red.png" class="reviewer-img">
+          <p class="review-para">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <div class="rating">
+            <input type="radio" name="star" id="star11"><label for="star11"></label></input>
+            <input type="radio" name="star" id="star22"><label for="star22"></label></input>
+            <input type="radio" name="star" id="star33"><label for="star33"></label></input>
+            <input type="radio" name="star" id="star44"><label for="star44"></label></input>
+            <input type="radio" name="star" id="star55"><label for="star55"></label></input>
+          </div>
+        </div>
+        <div class="review">
+          <img src="./../images/home/heart-red.png" class="reviewer-img">
+          <p class="review-para">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <div class="rating">
+            <input type="radio" name="star-1" id="star1"><label for="star1"></label></input>
+            <input type="radio" name="star-1" id="star2"><label for="star2"></label></input>
+            <input type="radio" name="star-1" id="star3"><label for="star3"></label></input>
+            <input type="radio" name="star-1" id="star4"><label for="star4"></label></input>
+            <input type="radio" name="star-1" id="star5"><label for="star5"></label></input>
+          </div>
+        </div>
+        <div class="review">
+          <img src="./../images/home/heart-red.png" class="reviewer-img">
+          <p class="review-para">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <div class="rating">
+            <input type="radio" name="star-2" id="star6"><label for="star6"></label></input>
+            <input type="radio" name="star-2" id="star7"><label for="star7"></label></input>
+            <input type="radio" name="star-2" id="star8"><label for="star8"></label></input>
+            <input type="radio" name="star-2" id="star9"><label for="star9"></label></input>
+            <input type="radio" name="star-2" id="star10"><label for="star10"></label></input>
+          </div>
+        </div>
+      </div>
+
     <div class="shop-footer">
       <div class="footer-sec">
         <p class="footer-sec-title">Quick Links</p>
