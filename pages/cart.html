@@ -136,37 +136,32 @@
             <button type="button" class="navbar-menu"><a href="./fiction.html" class="navbar-anchor"> Fiction </a> </button>
             <button type="button" class="navbar-menu"><a href="./non-fiction.html" class="navbar-anchor"> Non-fiction </a> </button>
             <button type="button" class="navbar-menu"><a href="./novel.html" class="navbar-anchor"> Novel </a> </button>
-            <button type="button" class="navbar-menu"><a href="./historic.html" class="navbar-anchor"> Historic </a> </button>
-            
+            <button type="button" class="navbar-menu"><a href="./historic.html" class="navbar-anchor"> Historic </a> </button>  
         </div>
     </div>
 
     <div class="cart-body">
         <div class="cart-book-sections" id="cart-hidden-section">
             <div class="cart-card-container">
-            <div class="cart-books-card">
-                <img src="./../images/personality/ikigai.jpeg" class="cart-books-img" id="cart-book-img-id" />
-                <p class="cart-books-name" id="cart-books-name-id"> Ikigai: The Japanese Secret to a Long and Happy Life</p>
-                <p class="cart-books-price" id="priceBook">499/- </p>
+                <div class="cart-books-card">
+                    <img src="./../images/personality/ikigai.jpeg" class="cart-books-img" id="cart-book-img-id" />
+                    <p class="cart-books-name" id="cart-books-name-id"> Ikigai: The Japanese Secret to a Long and Happy Life</p>
+                    <p class="cart-books-price" id="priceBook">499/- </p>
 
-                <div class="books-counter">
+                    <div class="books-counter">
                         <img class="inc-dec-btn" src="./../images/cart/minus.png" onclick="decreaseQuantity()">
                         <span class="books-quantity" id="quantity"> 1 </span>
                         <img class="inc-dec-btn" src="./../images/cart/add.png"  onclick="increaseQuantity()">
+                    </div>
                 </div>
-
-            </div>
-            
             </div>
         </div>
-    </div>
         <button type="button" onclick="countTotal()">
             Total
         </button>
         <div>
             The Total Price for all the Purcahse is :
             <span id="totalPriceDisplay">0</span>
-
         </div>
 
     </div>
@@ -228,7 +223,7 @@
         </div>
     </div>
     <script src="https://kit.fontawesome.com/4d47a5db67.js" crossorigin="anonymous"></script>
-    <script src="./../functions.js">
+    <script src="./../index.js">
         /*
         let totalPrice;
         let quantity;

@@ -4,6 +4,8 @@ let totalPrice;
 let quantity;
 let wishlistStatus = true;
 let wishlistAllStatus = true;
+let cartSectionStatus = true;
+
 
 /* take input form the search bar in home page and store in bookName */
 function searchBook(){
@@ -28,57 +30,68 @@ function showBook(bookName){
     const bookImgId = document.getElementById('book-img-id');
     const bookNameId = document.getElementById('book-name-id');
     const bookPriceId = document.getElementById('book-price-id');
-    
+    const bookSummaryElement = document.getElementById('bookSummaryId');
+
     switch(bookName){
         case 'atomic':
             bookImgId.src="./images/personality/atomic-habit.jpeg";
             bookNameId.innerText = 'Atomic Habits Paperback _ 1 January 2018';
             bookPriceId.innerText = '600/-';
+            bookSummaryElement.innerText ='Atomic Habits by James Clear is a comprehensive, practical guide on how to change your habits and get 1% better every day. Using a framework called the Four Laws of Behavior Change, Atomic Habits teaches readers a simple set of rules for creating good habits and breaking bad ones. Read the full summary to glean 3 key lessons from Atomic Habits, learn how to build a habit in 4 simple steps, and get a handy reference guide for the strategies recommended throughout the book.';
         break;
         case 'ikigai':
             bookImgId.src="./images/personality/ikigai.jpeg"
             bookNameId.innerText = 'Ikigai: The Japanese Secret to a Long and Happy Life';
             bookPriceId.innerText = '499/-';
+            bookSummaryElement.innerText = 'Ikigai by Héctor García & Francesc Miralles is book which talks about finding your purpose and then following it with all heart to live a happy and satisfying life. The authors take us in this search along with them and make us understand how people of Japan have been living a long and a happy life.';
         break;
         case 'psychology':
             bookImgId.src="./images/personality/psychology-of-money.jpg";
             bookNameId.innerText = 'The Psychology Of Money Paperback _ 1 September 2020';
             bookPriceId.innerText = '550/-';
+            bookSummaryElement.innerText = 'The Psychology of Money by Morgan Housel explores the complex relationship between money and human behavior in an accessible way. It offers insights into how we perceive and manage our finances, and the impact of emotions on our financial decisions.';
         break;
         case 'rich':
             bookImgId.src="./images/personality/rich-dad-poor-dad.jpeg";
             bookNameId.innerText = 'Rich Dad Poor Dad: 25th Anniversary Edit';
             bookPriceId.innerText = '400/-';
+            bookSummaryElement.innerText = 'Rich Dad Poor Dad by Robert Kiyosaki and Sharon Lechter is a book that came out in 1997 and focuses on the importance of financial literacy from an early age. Throughout the book, the author explains how a person can increase their wealth by investing in assets and by being smart with money.';
         break;
         case 'think':
             bookImgId.src="./images/personality/think-and-grow-rich.png";
             bookNameId.innerText = 'Think and Grow Rich: The Landmark Bestseller';
             bookPriceId.innerText = '649/-';
+            bookSummaryElement.innerText = 'Think and Grow Rich is a classic work on how to lead a successful life. It was written at the commission of Andrew Carnegie and is based on interviews with men such as Henry Ford, J.P. Morgan, and John D. Rockefeller, the business titans of the early 20th century. This all-time best-seller lays out the steps needed to unleash one\'s potential, focusing on building individual self-confidence and a clear set of goals.';
         break;
         case 'divine':
             bookImgId.src="./images/fiction/divine-rivals.png";
             bookNameId.innerText = 'Divine Rivals: A Novel: 1 (Letters of Enchantment, 1)';
             bookPriceId.innerText = '500/-';
+            bookSummaryElement.innerText = 'Divine Rivals draws upon a time of world war for its setting. It feels quite historical, but added to that are the gods and mythology that makes this story unique. The war being fought is over two gods and their power to compel followers to the front lines. Winnow is a journalist. Forced to leave school and work since her brother followed Enva’s call to war and her mother found solace in a bottle. ';
         break;
         case 'fire':
             bookImgId.src="./images/fiction/fire-blood.jpeg";
-            bookNameId.innerText = 'Fire And Blood: A Song Of Ice And Fire: Book One:';
+            bookNameId.innerText = 'Fire And Blood: The House Of Dragons : Book One:';
             bookPriceId.innerText = '300/-';
+            bookSummaryElement.innerText = 'Fire & Blood begins their tale with the legendary Aegon the Conqueror, creator of the Iron Throne, and goes on to recount the generations of Targaryens who fought to hold that iconic seat, all the way up to the civil war that nearly tore their dynasty apart. What really happened during the Dance of the Dragons?';
         break;
         case 'game':
             bookImgId.src="./images/fiction/game-of-thrones.jpeg";
-            bookNameId.innerText = 'A Game of Thrones: A Song of Ice and Fire: Book One: 1';
+            bookNameId.innerText = 'A Game of Thrones: A Song Of Ice And Fire: Book One: 1';
             bookPriceId.innerText = '700/-';
+            bookSummaryElement.innerText = 'A Game of Thrones takes place over the course of one year on or near the fictional continent of Westeros. The story begins when King Robert visits the northern castle Winterfell to ask Ned Stark to be his right-hand assistant, or Hand of the King. The previous Hand, Jon Arryn, died under suspicious circumstances. Robert comes with his queen, Cersei Lannister, and his retinue, which includes a number of Lannisters';
         break;
         case 'fourth':
             bookImgId.src="./images/fiction/fourth-wing.png";
             bookNameId.innerText = 'Fourth Wing: The Empyrean Discover the Instant';
             bookPriceId.innerText = '499/-';
+            bookSummaryElement.innerText = 'Set at Basgiath War College in the fictional country of Navarre, the novel follows twenty-year-old Violet Sorrengail. Having trained her whole life to become a scribe members of the college responsible for documenting history she expects to enter the school\'s Scribe Quadrant.';
         break;
         case 'iron':
             bookImgId.src="./images/fiction/iron-flame.jpg";
             bookNameId.innerText = 'Iron Flame: The Sequel of Fourth Wing';
             bookPriceId.innerText = '499/-';
+            bookSummaryElement.innerText = 'Violet is an admirable heroine. Despite having a chronic illness, she tenaciously fights to help the revolution she joined in the end of book one. Again and again, she faces peril–she routinely gets beat up–but every time, she jumps back up, ready to try again, with the help of her friends and her dragons.';
         break;
     }
 
@@ -181,7 +194,7 @@ function wishlistHeartAll(imgId){
 }
 /* Interpage communication error */
 function addToCart(cartAddBookName){
-    
+        if(cartSectionStatus){
 
         const hiddenSection = document.getElementById('cart-hidden-section');
         hiddenSection.style.display = "block";
@@ -243,6 +256,7 @@ function addToCart(cartAddBookName){
             break;
         }
         console.log('Cart book name',cartAddBookName);
+    }
 }
 
 /* decrease quantity in cart  */
