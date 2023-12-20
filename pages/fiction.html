@@ -10,7 +10,9 @@
         color: #ffa600;
         color: #ffd60a;
       }
+      
       body {
+        overflow-x: hidden;
         padding: 0;
         margin: 0;
         background-color: #fffefb;
@@ -314,6 +316,163 @@
           width: 260px;
         }
       }
+      @media screen and (max-width: 700px) {
+          body {
+            overflow-x: hidden;
+          }
+          .shop-header {
+            flex-direction: column;
+          }
+          .shop-logo{
+              height: 50px;
+          }
+          .shop-name {
+            font-size: 25px;
+          }
+          .search-container {
+          
+          margin-bottom: 15px;
+          }
+          .navbar-menu-container {
+            display: flex;
+            margin: 15px 0;
+          }
+          .navbar-menu {
+            margin: 0 10px;
+            font-size: 10px;
+            padding: 5px 20px;
+            border-radius: 10px;
+            border: none;
+            background-color: #000;
+            color: white;
+          }
+          .book-section-title{
+            font-size: 20px;
+          }
+          .shop-sections {
+            justify-content: space-around;
+            flex-wrap: wrap;
+          }
+          .books-card {
+            width: 220px;
+            padding: 10px 10px;
+            margin: 10px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          .books-img{
+            height: 180px;
+          }
+          .cart-books-img{
+              height:180px; 
+          }
+        }
+        /* Responsive for tablet screen */
+        @media screen and (min-width: 701px)and (max-width:900px){
+          body {
+            overflow-x: hidden;
+          }
+          .shop-header {
+            flex-direction: row;
+            justify-content: space-around;
+          }
+          .shop-logo{
+              height: 70px;
+          }
+          .shop-name {
+            font-size: 25px;
+          }
+          .search-container {
+            margin-left:0;
+            margin-bottom: 0;
+          }
+          .navbar-menu-container {
+            display: flex;
+            margin: 15px 0;
+          }
+          .navbar-menu {
+            margin: 0 10px;
+            font-size: 15px;
+            padding: 3px 30px;
+            border-radius: 10px;
+            border: none;
+            background-color: #000;
+            color: white;
+          }
+          .book-section-title{
+            font-size: 20px;
+          }
+          .shop-sections {
+            justify-content: space-around;
+            flex-wrap: wrap;
+          }
+          .books-card {
+            width: 220px;
+            padding: 10px 10px;
+            margin: 10px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          .books-img{
+            height: 200px;
+          }
+          .cart-books-img{
+              height:200px; 
+          }
+        }
+        /* Responsive for laptop screen */
+        @media screen and (min-width: 901px)and (max-width:1299px){
+          body {
+            overflow-x: hidden;
+          }
+          .shop-header {
+            flex-direction: row;
+            justify-content: space-around;
+          }
+          .shop-logo{
+              height: 70px;
+          }
+          .shop-name {
+            font-size: 25px;
+          }
+          .search-container {
+            margin-left:0;
+            margin-bottom: 0;
+          }
+          .navbar-menu-container {
+            display: flex;
+            margin: 15px 0;
+          }
+          .navbar-menu {
+            margin: 0 10px;
+            font-size: 15px;
+            padding: 5px 45px;
+            border-radius: 10px;
+            border: none;
+            background-color: #000;
+            color: white;
+          }
+          .shop-sections {
+            justify-content: space-around;
+            flex-wrap: wrap;
+          }
+          .books-card {
+            width: 220px;
+            padding: 10px 10px;
+            margin: 10px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          .books-img{
+            height: 200px;
+          }
+          .cart-books-img{
+              height:200px; 
+          }
+        }
   </style>
   </head>
   <body>
@@ -328,20 +487,18 @@
 
       <div class="navbar-menu-container">
         <button type="button" class="navbar-menu">
-          <a href="./pages/login.html" class="navbar-anchor"> Login </a>
+          <a href="./login.html" class="navbar-anchor"> Login </a>
         </button>
         <button type="button" class="navbar-menu">
-          <a href="./pages/non-fiction.html" class="navbar-anchor"> Non Fiction </a>
+          <a href="./non-fiction.html" class="navbar-anchor"> Non Fiction </a>
         </button>
         <button type="button" class="navbar-menu">
-          <a href="./pages/novel.html" class="navbar-anchor"> Novel </a>
+          <a href="./novel.html" class="navbar-anchor"> Novel </a>
         </button>
         <button type="button" class="navbar-menu">
-          <a href="./pages/historic.html" class="navbar-anchor"> Historic </a>
+          <a href="./historic.html" class="navbar-anchor"> Historic </a>
         </button>
-        <button type="button" class="navbar-menu">
-          <a href="./pages/cart.html" class="navbar-anchor"> Cart </a>
-        </button>
+        
       </div>
 
       </div>
