@@ -40,12 +40,12 @@ The website is the frontend implementation of a online shopping store.
 Every member created a page in the project
 
 1. Home Page - Ashish Gore
-2. Login - Rushali 
-3. Register - Ashwini
+2. Login - Rushali Devtarse
+3. Register - Ashwini Malwade
 4. Fiction - Ratandeep Bulbake
 5. Non-fiction - Divya Kasule
-6. Novel - Chetana
-7. Historic - Harshvardhan
+6. Novel - Chetana Bahale
+7. Historic - Harshvardhan Patle
 8. Contact - Prachi Gawali
 
 
