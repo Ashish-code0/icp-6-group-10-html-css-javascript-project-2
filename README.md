@@ -7,31 +7,29 @@ Readit is a group project created by the members of Project Group 10 of Internsh
 ## The following are images from the website:
 
 ### The Home Page
-![Home](./img/readme/Screenshot%20(199).png)
+![Home](./images/readme/home-page.png)
 
-### The Electronics products section
-![Electronics](./img/readme/Screenshot%20(200).png)
+### The Login section
+![Login](./images/readme/login-page.png)
 
-### The Clothings section
-![Clothings](./img/readme/Screenshot%20(201).png)
+### The Register section
+![Register](./images/readme/register-page.png)
 
-### The Footwear section
-![Footwear](./img/readme/Screenshot%20(206).png)
+### The Fiction section
+![Fiction](./images/readme/fiction-page.png)
 
-### The Beauty and Care section
-![Beauty & Care](./img/readme/Screenshot%20(202).png)
+### The Non-Fiction section
+![Non-Fiction](./images/readme/non-fiction-page.png)
 
-### The Groceries section
-![Groceries](./img/readme/Screenshot%20(203).png)
+### The Novel section
+![Novel](./images/readme/novel-page.png)
 
-### The Food dection
-![Food](./img/readme/Screenshot%20(204).png)
+### The Historic dection
+![Historic](./images/readme/historic-page.png)
 
-### The Home and Kitchen section
-![Home & Kitchen](./img/readme/Screenshot%20(205).png)
+### The Contact section
+![Contact](./images/readme/contact-page.png)
 
-### The About section
-![About](./img/readme/Screenshot%20(207).png)
 
 ### Description 
 The project is made using the basics of **HTML**  and **CSS** and **JavaScript**.
