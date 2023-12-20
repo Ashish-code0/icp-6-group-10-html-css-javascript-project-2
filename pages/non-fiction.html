@@ -33,6 +33,91 @@
         align-items: center;
         margin: 0px 40px;
       }
+      .review-container {
+    width: 100%;
+    height: 500px;
+    background-color: #ffa600;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 10px;
+   }
+   .review{
+    height: 375px;
+    width: 320px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border: #fffefb 1px solid;
+    border-radius: 10px;
+    margin-top: 55px;
+    position: relative;
+    background-color: #fffefb;
+   }
+   .review:hover{
+    height: 390px;
+    width: 340px;
+    transition: 0.3s;
+    box-shadow: 1px 1px 10px 0 black;
+   }
+   .reviewer-img{
+    margin-top: 20px;
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    border: 1px solid #fffefb;
+    margin-left: auto;
+    margin-right: auto;
+   }
+   .review-para{
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   }
+   .rating{
+    position :absolute;
+    bottom: 10%;
+    left: 30%;
+    transform: translate(8%, -10%) rotateY(180deg);
+    display: flex;
+
+   }
+   .rating input{
+    display: none;;
+   }
+   .rating label{
+    display: block;
+    cursor: pointer;
+    width: 20px;  
+   }
+   .rating label::before{
+    content: '\f005';
+    font-family:fontAwesome;
+    display: block;
+    position: relative;
+    font-size: 15px;
+    color: #101010; 
+   }
+   .rating label::after{
+    content: '\f005';
+    font-family:fontAwesome;
+    display: block;
+    position: absolute;
+    font-size: 15px;
+    color: #1f9cff; 
+    top: 0;
+    opacity: 0;
+    transition: 0.5s;
+    text-shadow: 0 2px 5px rgba(0,0,0,.5);
+   }
+   .rating label:hover:after, 
+   .rating label:hover ~ label::after,
+   .rating input:checked ~ label::after{
+    opacity: 1;
+   }
+   
       .shop-logo {
         height: 60px;
         margin: 0;
@@ -533,6 +618,47 @@
           <button type="button" class="add-cart-btn" onclick="addToCart('think')" >
             Add to cart
           </button>
+        </div>
+      </div>
+      <div class="review-container">
+        <div class="review">
+          <img src="./../images/nonfiction/red heart.png" class="reviewer-img">
+          <p class="review-para">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <div class="rating">
+            <input type="radio" name="star" id="star11"><label for="star11"></label></input>
+            <input type="radio" name="star" id="star22"><label for="star22"></label></input>
+            <input type="radio" name="star" id="star33"><label for="star33"></label></input>
+            <input type="radio" name="star" id="star44"><label for="star44"></label></input>
+            <input type="radio" name="star" id="star55"><label for="star55"></label></input>
+          </div>
+        </div>
+        <div class="review">
+          <img src="./../images/nonfiction/red heart.png" class="reviewer-img">
+          <p class="review-para">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <div class="rating">
+            <input type="radio" name="star-1" id="star1"><label for="star1"></label></input>
+            <input type="radio" name="star-1" id="star2"><label for="star2"></label></input>
+            <input type="radio" name="star-1" id="star3"><label for="star3"></label></input>
+            <input type="radio" name="star-1" id="star4"><label for="star4"></label></input>
+            <input type="radio" name="star-1" id="star5"><label for="star5"></label></input>
+          </div>
+        </div>
+        <div class="review">
+          <img src="./../images/nonfiction/red heart.png" class="reviewer-img">
+          <p class="review-para">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <div class="rating">
+            <input type="radio" name="star-2" id="star6"><label for="star6"></label></input>
+            <input type="radio" name="star-2" id="star7"><label for="star7"></label></input>
+            <input type="radio" name="star-2" id="star8"><label for="star8"></label></input>
+            <input type="radio" name="star-2" id="star9"><label for="star9"></label></input>
+            <input type="radio" name="star-2" id="star10"><label for="star10"></label></input>
+          </div>
         </div>
       </div>
     <div class="shop-footer">
