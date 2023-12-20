@@ -12,7 +12,7 @@
         body{
             padding:0;
             margin:0;
-            background-color: #fffefb;
+            background-color: #fbf9d1;
         }
         a{
             text-decoration: none;
@@ -52,7 +52,15 @@
             outline:none;
             background: none;
         }
-        
+        .contact-container{
+            background-color: white;
+            display: block;
+            margin: 20px auto;
+            border-radius: 15px;
+            width: 600px;
+            box-shadow: 1px 1px 10px 0 black;
+            padding: 25px 30px;
+        }
         
         .navbar-menu-container{
             display: flex;
@@ -106,50 +114,67 @@
             margin-left: 20px;
             
         }
+        .submit-button{
+            padding:5px 20px;
+            font-size: 17px;
+            color: white;
+            background-color: #de1212;
+            border: none;
+            border-radius: 10px;
+        }
+        .submit-button:hover{
+            padding:5px 30px;
+            font-size: 22px;
+            border-radius: 10px;
+        }
         
     </style>
 
 </head>
 <body>
     <div class="shop-header">
-        <a href="./index.html">
+        <a href="./../index.html">
             <div class="shop-container">
+                <img src="./../images/home/logo.png" alt="logo" class="shop-logo" />
                 <p class="shop-name"> Readit</p>
             </div>
         </a>
         
         <div class="navbar-menu-container">
-            <button type="button" class="navbar-menu"><a href="./pages/login.html" class="navbar-anchor"> Login </a></button>
-            <button type="button" class="navbar-menu"><a href="./pages/fiction.html" class="navbar-anchor"> Fiction </a> </button>
-            <button type="button" class="navbar-menu"><a href="./pages/non-fiction.html" class="navbar-anchor"> Non-fiction </a> </button>
-            <button type="button" class="navbar-menu"><a href="./pages/novel.html" class="navbar-anchor"> Novel </a> </button>
-            <button type="button" class="navbar-menu"><a href="./pages/historic.html" class="navbar-anchor"> Historic </a> </button>
-            <button type="button" class="navbar-menu"><a href="./pages/cart.html" class="navbar-anchor"> Cart </a> </button>
+            <button type="button" class="navbar-menu"><a href="./login.html" class="navbar-anchor"> Login </a></button>
+            <button type="button" class="navbar-menu"><a href="./fiction.html" class="navbar-anchor"> Fiction </a> </button>
+            <button type="button" class="navbar-menu"><a href="./non-fiction.html" class="navbar-anchor"> Non-fiction </a> </button>
+            <button type="button" class="navbar-menu"><a href="./novel.html" class="navbar-anchor"> Novel </a> </button>
+            <button type="button" class="navbar-menu"><a href="./historic.html" class="navbar-anchor"> Historic </a> </button>
+
         </div>
     </div>
     <br>
-    <form id="contactForm" style="margin-left: 40%;">
-    <h1>Contact-Us</h1>
-       <i class="fa-solid fa-envelope" ></i> &nbsp;<label for="email">ashishgore382@gmail.com:</label>
+    <div class="contact-container">
+        <form id="contactForm" style="text-align: center;">
+        <h1 >Contact-Us</h1>
+        <div style="display: flex; flex-direction:column; justify-content: space-around; align-items: flex-start; padding-left: 20px;">
+             <div><i class="fa-solid fa-envelope" ></i> &nbsp;<label for="email">ashishgore382@gmail.com:</label></div>
+            
+            <br>
         
-        <br><br>
-    
-        <i class="fa-solid fa-location-dot"></i>&nbsp;<label for="address">B.D. College of Engineering. Wardha:</label>
+            <div><i class="fa-solid fa-location-dot"></i>&nbsp;<label for="address">B.D. College of Engineering. Wardha:</label></div>
+            
+            <br>
         
-        <br><br>
-    
-        <i class="fa-solid fa-phone"></i>&nbsp;<label for="contactno">+918805803087:</label>
+            <div><i class="fa-solid fa-phone"></i>&nbsp;<label for="contactno">+918805803087:</label></div>
+        </div>
+            <br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="3" required>
+            </textarea><br><br>
         
-        <br><br>
-    
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" rows="3" required>
-        </textarea><br><br>
-    
-        <button type="button" onclick="submitForm()">Submit</button>
-    </form>
+            <button type="button" class="submit-button" onclick="submitForm()">Submit</button>
+        </form>
+    </div>
     <br>
     <br>
+
     <div class="shop-footer">
         <div class="footer-sec">
             <p class="footer-sec-title"> Quick Links </p>
@@ -211,16 +236,7 @@
     <script src="cart.js"></script>
     <script>
         function submitForm() {
-            
-            var email = document.getElementById('email').value;
-            var address = document.getElementById('address').value;
-            var contactno = document.getElementById('contactno').value;
-            var message = document.getElementById('message').value;
-            
-           
-            console.log('email: ' + email);
-            console.log('address: ' + address);
-            console.log('contactno: ' + contactno);
+            const message = document.getElementById('message').value;
             console.log('message:' + message);
         }
     </script>
