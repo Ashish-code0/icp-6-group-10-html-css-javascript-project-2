@@ -1,10 +1,15 @@
 let bookName;
 let searchStatus = true;
 let totalPrice;
-let quantity;
+let quantity = 1;
 let wishlistStatus = true;
 let wishlistAllStatus = true;
 let cartSectionStatus = true;
+let cartCard1 = true;
+let cartCard2 = true;
+let cartCard3 = true;
+let cartCard4 = true;
+let cartCard5 = true;
 
 
 /* take input form the search bar in home page and store in bookName */
@@ -193,15 +198,269 @@ function wishlistHeartAll(imgId){
     }
 }
 /* Interpage communication error */
-function addToCart(cartAddBookName){
-        if(cartSectionStatus){
+function addToCart(cartAddBookName)
+{
+    const hiddenSection = document.getElementById('cart-hidden-section');
+    hiddenSection.style.display = "block";
 
-        const hiddenSection = document.getElementById('cart-hidden-section');
-        hiddenSection.style.display = "block";
 
-        const imgElement = document.getElementById('cart-book-img-id');
-        const nameElement = document.getElementById('cart-books-name-id');
-        const priceElement = document.getElementById('priceBook');
+    if(cartCard1){
+        console.log('else if 1');
+        const imgElement = document.getElementById('cart-book1-img-id');
+        const nameElement = document.getElementById('cart-books1-name-id');
+        const priceElement = document.getElementById('priceBook1');
+
+    switch(cartAddBookName){
+        case 'atomic':
+            imgElement.src="./images/personality/atomic-habit.jpeg";
+            nameElement.innerText = 'Atomic Habits Paperback _ 1 January 2018';
+            priceElement.innerText = '600/-';
+        break;
+        case 'ikigai':
+            imgElement.src="./images/personality/ikigai.jpeg"
+            nameElement.innerText = 'Ikigai: The Japanese Secret to a Long and Happy Life';
+            priceElement.innerText = '499/-';
+        break;
+        case 'psychology':
+            imgElement.src="./images/personality/psychology-of-money.jpg";
+            nameElement.innerText = 'The Psychology Of Money Paperback _ 1 September 2020';
+            priceElement.innerText = '550/-';
+        break;
+        case 'rich':
+            imgElement.src="./images/personality/rich-dad-poor-dad.jpeg";
+            nameElement.innerText = 'Rich Dad Poor Dad: 25th Anniversary Edit';
+            priceElement.innerText = '400/-';
+        break;
+        case 'think':
+            imgElement.src="./images/personality/think-and-grow-rich.png";
+            nameElement.innerText = 'Think and Grow Rich: The Landmark Bestseller';
+            priceElement.innerText = '649/-';
+        break;
+        case 'divine':
+            imgElement.src="./images/fiction/divine-rivals.png";
+            nameElement.innerText = 'Divine Rivals: A Novel: 1 (Letters of Enchantment, 1)';
+            priceElement.innerText = '500/-';
+        break;
+        case 'fire':
+            imgElement.src="./images/fiction/fire-blood.jpeg";
+            nameElement.innerText = 'Fire And Blood: A Song Of Ice And Fire: Book One:';
+            priceElement.innerText = '300/-';
+        break;
+        case 'game':
+            imgElement.src="./images/fiction/game-of-thrones.jpeg";
+            nameElement.innerText = 'A Game of Thrones: A Song of Ice and Fire: Book One: 1';
+            priceElement.innerText = '700/-';
+        break;
+        case 'fourth':
+            imgElement.src="./images/fiction/fourth-wing.png";
+            nameElement.innerText = 'Fourth Wing: The Empyrean Discover the Instant';
+            priceElement.innerText = '499/-';
+        break;
+        case 'iron':
+            imgElement.src="./images/fiction/iron-flame.jpg";
+            nameElement.innerText = 'Iron Flame: The Sequel of Fourth Wing';
+            priceElement.innerText = '499/-';
+        break;
+    }
+        cartCard1 = false;
+        console.log('Cart book name',cartAddBookName);
+    }
+    else if (cartCard2){
+        console.log('else if 2');
+        const cartCard2Element = document.getElementById('cart-card-2');
+        cartCard2Element.style.display = "flex";
+        const imgElement = document.getElementById('cart-book2-img-id');
+        const nameElement = document.getElementById('cart-books2-name-id');
+        const priceElement = document.getElementById('priceBook2');
+
+    switch(cartAddBookName){
+        case 'atomic':
+            imgElement.src="./images/personality/atomic-habit.jpeg";
+            nameElement.innerText = 'Atomic Habits Paperback _ 1 January 2018';
+            priceElement.innerText = '600/-';
+        break;
+        case 'ikigai':
+            imgElement.src="./images/personality/ikigai.jpeg"
+            nameElement.innerText = 'Ikigai: The Japanese Secret to a Long and Happy Life';
+            priceElement.innerText = '499/-';
+        break;
+        case 'psychology':
+            imgElement.src="./images/personality/psychology-of-money.jpg";
+            nameElement.innerText = 'The Psychology Of Money Paperback _ 1 September 2020';
+            priceElement.innerText = '550/-';
+        break;
+        case 'rich':
+            imgElement.src="./images/personality/rich-dad-poor-dad.jpeg";
+            nameElement.innerText = 'Rich Dad Poor Dad: 25th Anniversary Edit';
+            priceElement.innerText = '400/-';
+        break;
+        case 'think':
+            imgElement.src="./images/personality/think-and-grow-rich.png";
+            nameElement.innerText = 'Think and Grow Rich: The Landmark Bestseller';
+            priceElement.innerText = '649/-';
+        break;
+        case 'divine':
+            imgElement.src="./images/fiction/divine-rivals.png";
+            nameElement.innerText = 'Divine Rivals: A Novel: 1 (Letters of Enchantment, 1)';
+            priceElement.innerText = '500/-';
+        break;
+        case 'fire':
+            imgElement.src="./images/fiction/fire-blood.jpeg";
+            nameElement.innerText = 'Fire And Blood: A Song Of Ice And Fire: Book One:';
+            priceElement.innerText = '300/-';
+        break;
+        case 'game':
+            imgElement.src="./images/fiction/game-of-thrones.jpeg";
+            nameElement.innerText = 'A Game of Thrones: A Song of Ice and Fire: Book One: 1';
+            priceElement.innerText = '700/-';
+        break;
+        case 'fourth':
+            imgElement.src="./images/fiction/fourth-wing.png";
+            nameElement.innerText = 'Fourth Wing: The Empyrean Discover the Instant';
+            priceElement.innerText = '499/-';
+        break;
+        case 'iron':
+            imgElement.src="./images/fiction/iron-flame.jpg";
+            nameElement.innerText = 'Iron Flame: The Sequel of Fourth Wing';
+            priceElement.innerText = '499/-';
+        break;
+    }
+        cartCard2 = false;
+        console.log('Cart book name',cartAddBookName);
+    }
+    else if (cartCard3){
+        console.log('else if 3');
+        const cartCard3Element = document.getElementById('cart-card-3');
+        cartCard3Element.style.display = "flex";
+        const imgElement = document.getElementById('cart-book3-img-id');
+        const nameElement = document.getElementById('cart-books3-name-id');
+        const priceElement = document.getElementById('priceBook3');
+
+    switch(cartAddBookName){
+        case 'atomic':
+            imgElement.src="./images/personality/atomic-habit.jpeg";
+            nameElement.innerText = 'Atomic Habits Paperback _ 1 January 2018';
+            priceElement.innerText = '600/-';
+        break;
+        case 'ikigai':
+            imgElement.src="./images/personality/ikigai.jpeg"
+            nameElement.innerText = 'Ikigai: The Japanese Secret to a Long and Happy Life';
+            priceElement.innerText = '499/-';
+        break;
+        case 'psychology':
+            imgElement.src="./images/personality/psychology-of-money.jpg";
+            nameElement.innerText = 'The Psychology Of Money Paperback _ 1 September 2020';
+            priceElement.innerText = '550/-';
+        break;
+        case 'rich':
+            imgElement.src="./images/personality/rich-dad-poor-dad.jpeg";
+            nameElement.innerText = 'Rich Dad Poor Dad: 25th Anniversary Edit';
+            priceElement.innerText = '400/-';
+        break;
+        case 'think':
+            imgElement.src="./images/personality/think-and-grow-rich.png";
+            nameElement.innerText = 'Think and Grow Rich: The Landmark Bestseller';
+            priceElement.innerText = '649/-';
+        break;
+        case 'divine':
+            imgElement.src="./images/fiction/divine-rivals.png";
+            nameElement.innerText = 'Divine Rivals: A Novel: 1 (Letters of Enchantment, 1)';
+            priceElement.innerText = '500/-';
+        break;
+        case 'fire':
+            imgElement.src="./images/fiction/fire-blood.jpeg";
+            nameElement.innerText = 'Fire And Blood: A Song Of Ice And Fire: Book One:';
+            priceElement.innerText = '300/-';
+        break;
+        case 'game':
+            imgElement.src="./images/fiction/game-of-thrones.jpeg";
+            nameElement.innerText = 'A Game of Thrones: A Song of Ice and Fire: Book One: 1';
+            priceElement.innerText = '700/-';
+        break;
+        case 'fourth':
+            imgElement.src="./images/fiction/fourth-wing.png";
+            nameElement.innerText = 'Fourth Wing: The Empyrean Discover the Instant';
+            priceElement.innerText = '499/-';
+        break;
+        case 'iron':
+            imgElement.src="./images/fiction/iron-flame.jpg";
+            nameElement.innerText = 'Iron Flame: The Sequel of Fourth Wing';
+            priceElement.innerText = '499/-';
+        break;
+    }
+        cartCard3 = false;
+        console.log('Cart book name',cartAddBookName);
+    }
+    else if(cartCard4){
+        console.log('else if 4');
+        const cartCard4Element = document.getElementById('cart-card-4');
+        cartCard4Element.style.display = "flex";
+        const imgElement = document.getElementById('cart-book4-img-id');
+        const nameElement = document.getElementById('cart-books4-name-id');
+        const priceElement = document.getElementById('priceBook4');
+
+    switch(cartAddBookName){
+        case 'atomic':
+            imgElement.src="./images/personality/atomic-habit.jpeg";
+            nameElement.innerText = 'Atomic Habits Paperback _ 1 January 2018';
+            priceElement.innerText = '600/-';
+        break;
+        case 'ikigai':
+            imgElement.src="./images/personality/ikigai.jpeg"
+            nameElement.innerText = 'Ikigai: The Japanese Secret to a Long and Happy Life';
+            priceElement.innerText = '499/-';
+        break;
+        case 'psychology':
+            imgElement.src="./images/personality/psychology-of-money.jpg";
+            nameElement.innerText = 'The Psychology Of Money Paperback _ 1 September 2020';
+            priceElement.innerText = '550/-';
+        break;
+        case 'rich':
+            imgElement.src="./images/personality/rich-dad-poor-dad.jpeg";
+            nameElement.innerText = 'Rich Dad Poor Dad: 25th Anniversary Edit';
+            priceElement.innerText = '400/-';
+        break;
+        case 'think':
+            imgElement.src="./images/personality/think-and-grow-rich.png";
+            nameElement.innerText = 'Think and Grow Rich: The Landmark Bestseller';
+            priceElement.innerText = '649/-';
+        break;
+        case 'divine':
+            imgElement.src="./images/fiction/divine-rivals.png";
+            nameElement.innerText = 'Divine Rivals: A Novel: 1 (Letters of Enchantment, 1)';
+            priceElement.innerText = '500/-';
+        break;
+        case 'fire':
+            imgElement.src="./images/fiction/fire-blood.jpeg";
+            nameElement.innerText = 'Fire And Blood: A Song Of Ice And Fire: Book One:';
+            priceElement.innerText = '300/-';
+        break;
+        case 'game':
+            imgElement.src="./images/fiction/game-of-thrones.jpeg";
+            nameElement.innerText = 'A Game of Thrones: A Song of Ice and Fire: Book One: 1';
+            priceElement.innerText = '700/-';
+        break;
+        case 'fourth':
+            imgElement.src="./images/fiction/fourth-wing.png";
+            nameElement.innerText = 'Fourth Wing: The Empyrean Discover the Instant';
+            priceElement.innerText = '499/-';
+        break;
+        case 'iron':
+            imgElement.src="./images/fiction/iron-flame.jpg";
+            nameElement.innerText = 'Iron Flame: The Sequel of Fourth Wing';
+            priceElement.innerText = '499/-';
+        break;
+    }
+        cartCard4 = false;
+        console.log('Cart book name',cartAddBookName);
+    }
+    else if (cartCard5){
+        console.log('else if 5');
+        const cartCard5Element = document.getElementById('cart-card-5');
+        cartCard5Element.style.display = "flex";
+        const imgElement = document.getElementById('cart-book5-img-id');
+        const nameElement = document.getElementById('cart-books5-name-id');
+        const priceElement = document.getElementById('priceBook5');
 
         switch(cartAddBookName){
             case 'atomic':
@@ -255,11 +514,43 @@ function addToCart(cartAddBookName){
                 priceElement.innerText = '499/-';
             break;
         }
-        console.log('Cart book name',cartAddBookName);
+            cartCard5 = false;
+            console.log('Cart book name',cartAddBookName);
+    }
+    else {
+        alert("You can't buy more than 5 items");
     }
 
     cartSectionStatus = false;
 }
+
+function removeFromCart1(){
+    const cartCard1Element = document.getElementById('cart-card-1');
+        cartCard1Element.style.display = "none";
+        cartCard1 = true;
+}
+function removeFromCart2(){
+    const cartCard2Element = document.getElementById('cart-card-2');
+        cartCard2Element.style.display = "none";
+        cartCard2 = true;
+}
+function removeFromCart3(){
+    const cartCard3Element = document.getElementById('cart-card-3');
+        cartCard3Element.style.display = "none";
+        cartCard3 = true;
+}
+function removeFromCart4(){
+    const cartCard4Element = document.getElementById('cart-card-4');
+        cartCard4Element.style.display = "none";
+        cartCard4 = true;
+}
+function removeFromCart5(){
+    const cartCard5Element = document.getElementById('cart-card-5');
+        cartCard5Element.style.display = "none";
+        cartCard5 = true;
+}
+
+
 function closeCartFun(){
     if(cartSectionStatus == false){
         const hiddenSection = document.getElementById('cart-hidden-section');
@@ -286,7 +577,101 @@ function decreaseQuantity(){
         alert('Can not buy less than 1');
     }
 }
+function decreaseQuantity2(){
+    const countElement = document.getElementById('quantity2');
+    quantity = parseInt(countElement.innerText);
+    if(quantity > 1){
+        countElement.innerText = --quantity;
+    } else
+    {
+        alert('Can not buy less than 1');
+    }
+}
+function decreaseQuantity3(){
+    const countElement = document.getElementById('quantity3');
+    quantity = parseInt(countElement.innerText);
+    if(quantity > 1){
+        countElement.innerText = --quantity;
+    } else
+    {
+        alert('Can not buy less than 1');
+    }
+}
+function decreaseQuantity4(){
+    const countElement = document.getElementById('quantity4');
+    quantity = parseInt(countElement.innerText);
+    if(quantity > 1){
+        countElement.innerText = --quantity;
+    } else
+    {
+        alert('Can not buy less than 1');
+    }
+}
+function decreaseQuantity5(){
+    const countElement = document.getElementById('quantity5');
+    quantity = parseInt(countElement.innerText);
+    if(quantity > 1){
+        countElement.innerText = --quantity;
+    } else
+    {
+        alert('Can not buy less than 1');
+    }
+}
+function subCount1(){
+    const bookPriceElementSubCount = document.getElementById('priceBook1');
+    const bookQuantityElementSubCount = document.getElementById('quantity');
+    const bookSubTotalSubCount = document.getElementById('subCountOfTheCard1Id');
 
+    const bookPriceSubCount = parseInt(bookPriceElementSubCount.innerText);
+    const bookQuantitySubCount = parseInt(bookQuantityElementSubCount.innerText);
+    const subCountAmount = (bookPriceSubCount * bookQuantitySubCount);
+
+    bookSubTotalSubCount.innerText = subCountAmount;
+}
+function subCount2(){
+    const bookPriceElementSubCount = document.getElementById('priceBook2');
+    const bookQuantityElementSubCount = document.getElementById('quantity2');
+    const bookSubTotalSubCount = document.getElementById('subCountOfTheCard2Id');
+
+    const bookPriceSubCount = parseInt(bookPriceElementSubCount.innerText);
+    const bookQuantitySubCount = parseInt(bookQuantityElementSubCount.innerText);
+    const subCountAmount = (bookPriceSubCount * bookQuantitySubCount);
+
+    bookSubTotalSubCount.innerText = subCountAmount;
+}
+function subCount3(){
+    const bookPriceElementSubCount = document.getElementById('priceBook3');
+    const bookQuantityElementSubCount = document.getElementById('quantity3');
+    const bookSubTotalSubCount = document.getElementById('subCountOfTheCard3Id');
+
+    const bookPriceSubCount = parseInt(bookPriceElementSubCount.innerText);
+    const bookQuantitySubCount = parseInt(bookQuantityElementSubCount.innerText);
+    const subCountAmount = (bookPriceSubCount * bookQuantitySubCount);
+
+    bookSubTotalSubCount.innerText = subCountAmount;
+}
+function subCount4(){
+    const bookPriceElementSubCount = document.getElementById('priceBook4');
+    const bookQuantityElementSubCount = document.getElementById('quantity4');
+    const bookSubTotalSubCount = document.getElementById('subCountOfTheCard4Id');
+
+    const bookPriceSubCount = parseInt(bookPriceElementSubCount.innerText);
+    const bookQuantitySubCount = parseInt(bookQuantityElementSubCount.innerText);
+    const subCountAmount = (bookPriceSubCount * bookQuantitySubCount);
+
+    bookSubTotalSubCount.innerText = subCountAmount;
+}
+function subCount5(){
+    const bookPriceElementSubCount = document.getElementById('priceBook5');
+    const bookQuantityElementSubCount = document.getElementById('quantity5');
+    const bookSubTotalSubCount = document.getElementById('subCountOfTheCard5Id');
+
+    const bookPriceSubCount = parseInt(bookPriceElementSubCount.innerText);
+    const bookQuantitySubCount = parseInt(bookQuantityElementSubCount.innerText);
+    const subCountAmount = (bookPriceSubCount * bookQuantitySubCount);
+
+    bookSubTotalSubCount.innerText = subCountAmount;
+}
 /* increase quantity in cart*/
 function increaseQuantity(){
     const countElement = document.getElementById('quantity');
@@ -298,42 +683,90 @@ function increaseQuantity(){
         alert('You can not buy more than 5 products at once');
     }   
 }
+function increaseQuantity2(){
+    const countElement = document.getElementById('quantity2');
+    quantity = parseInt(countElement.innerText);
+    if(quantity < 5){
+        countElement.innerText = ++quantity;
+    } else
+    {
+        alert('You can not buy more than 5 products at once');
+    }   
+}
+function increaseQuantity3(){
+    const countElement = document.getElementById('quantity3');
+    quantity = parseInt(countElement.innerText);
+    if(quantity < 5){
+        countElement.innerText = ++quantity;
+    } else
+    {
+        alert('You can not buy more than 5 products at once');
+    }   
+}
+function increaseQuantity4(){
+    const countElement = document.getElementById('quantity4');
+    quantity = parseInt(countElement.innerText);
+    if(quantity < 5){
+        countElement.innerText = ++quantity;
+    } else
+    {
+        alert('You can not buy more than 5 products at once');
+    }   
+}
+function increaseQuantity5(){
+    const countElement = document.getElementById('quantity5');
+    quantity = parseInt(countElement.innerText);
+    if(quantity < 5){
+        countElement.innerText = ++quantity;
+    } else
+    {
+        alert('You can not buy more than 5 products at once');
+    }   
+}
  
 /* Counts total price */
 function countTotal(){
-    const priceElement = document.getElementById('priceBook');
+    const subCountCardElement1 = document.getElementById('subCountOfTheCard1Id');
+    const subCountCardElement2 = document.getElementById('subCountOfTheCard2Id');
+    const subCountCardElement3 = document.getElementById('subCountOfTheCard3Id');
+    const subCountCardElement4 = document.getElementById('subCountOfTheCard4Id');
+    const subCountCardElement5 = document.getElementById('subCountOfTheCard5Id');
 
-    const tempPrice = parseInt(priceElement.innerText);
-    console.log(`Book Price is : ${tempPrice}`);
-
-    totalPrice = (quantity * tempPrice);
-    console.log(`Total price is : ${totalPrice}`);
+    const subCountCard1 = parseInt(subCountCardElement1.innerText);
+    console.log(`SubCountCard1: ${subCountCard1}`);
+    const subCountCard2 = parseInt(subCountCardElement2.innerText);
+    console.log(`SubCountCard2: ${subCountCard2}`);
+    const subCountCard3 = parseInt(subCountCardElement3.innerText);
+    console.log(`SubCountCard3: ${subCountCard3}`);
+    const subCountCard4 = parseInt(subCountCardElement4.innerText);
+    console.log(`SubCountCard4: ${subCountCard4}`);
+    const subCountCard5 = parseInt(subCountCardElement5.innerText);
+    console.log(`SubCountCard5: ${subCountCard5}`);
 
     const totalPriceElement = document.getElementById('totalPriceDisplay');
+    let totalPrice = (subCountCard1 + subCountCard2 + subCountCard3 + subCountCard4 + subCountCard5);
 
-    if(totalPrice < 300){
+    if(totalPrice <= 500){
         console.log('Discount is liable for purchase below 300/- ');
     }
-    else if(totalPrice > 300 && totalPrice <= 1000){
-        totalPrice -= (totalPrice*0.05);
+    else if(totalPrice > 500 && totalPrice <= 1500){
+        totalPrice -= (totalPrice*0.1);
         console.log(`Total price after 5 % discount is : ${totalPrice}`);
     }
-    else if(totalPrice > 1000 && totalPrice <= 1500){
-        totalPrice -= (totalPrice*0.10)
+    else if(totalPrice > 1500 && totalPrice <= 2500){
+        totalPrice -= (totalPrice*0.15)
         console.log(`Total price after 10 % discount is : ${totalPrice}`);
     }
-    else if( totalPrice > 1500 && totalPrice <= 2500){
-        totalPrice -= (totalPrice*0.15)
+    else if( totalPrice > 2500 && totalPrice <= 3500){
+        totalPrice -= (totalPrice*0.2)
         console.log(`Total price after 15 % discount is : ${totalPrice}`);
     }
     else{
-        totalPrice -= (totalPrice*0.20)
+        totalPrice -= (totalPrice*0.25)
         console.log(`Total price after 20 % discount is : ${totalPrice}`);
     }
     totalPriceElement.innerText = Math.floor(totalPrice);
 }
-
-
 
 /*
 function showBookName(bookNameInCard){

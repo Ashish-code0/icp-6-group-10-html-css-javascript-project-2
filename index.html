@@ -309,15 +309,26 @@
             padding:1px 5px;
             border-bottom: 2px dashed #000;
         }
+        .sub-total-in-card{
+          background-color: #eee;
+          border-radius: 10px;
+          font-size: 22px;
+          color:black;
+          margin-top: 15px;
+          padding: 5px;
+        }
         .total-amount-btn{
           display: block;
-          margin:2px auto;
+          margin:5px auto;
           padding:5px 20px;
-          background-color: #de1212;
+          background-color: rgb(255, 119, 0);
           color:white;
           font-size: 15px;
           border:none;
           border-radius: 10px;
+        }
+        .total-amount-btn:hover{
+          cursor:pointer;
         }
         .total-amount-desc{
           text-align: center;
@@ -697,58 +708,78 @@
       <i class="fa-solid fa-chevron-up close-cart-up-arrow" onclick="closeCartFun()"></i>
 
         <div class="cart-card-container" id="cart-cards-container-id">
-          <div class="cart-books-card">
-            <img src="./images/personality/ikigai.jpeg" class="cart-books-img" id="cart-book-img-id" />
-            <p class="cart-books-name" id="cart-books-name-id"> Ikigai: The Japanese Secret to a Long and Happy Life</p>
-            <p class="cart-books-price" id="priceBook">499/- </p>
+          <div class="cart-books-card" id="cart-card-1">
+            <button type="button" class="total-amount-btn" onclick="removeFromCart1()">Remove from cart </button>
+            <img src="./images/personality/ikigai.jpeg" class="cart-books-img" id="cart-book1-img-id" />
+            <p class="cart-books-name" id="cart-books1-name-id"> Ikigai: The Japanese Secret to a Long and Happy Life</p>
+            <p class="cart-books-price" id="priceBook1">499/- </p>
             <div class="books-counter">
-                <img class="inc-dec-btn" src="./images/home/minus.png" onclick="decreaseQuantity()">
-                <span class="books-quantity" id="quantity"> 1 </span>
-                <img class="inc-dec-btn" src="./images/home/add.png"  onclick="increaseQuantity()">
+                <img class="inc-dec-btn" src="./images/home/minus.png" onclick="decreaseQuantity(), subCount1()">
+                <span class="books-quantity" id="quantity"> 0 </span>
+                <img class="inc-dec-btn" src="./images/home/add.png"  onclick="increaseQuantity(), subCount1()">
             </div>
+            <span class="sub-total-in-card"> Sub-Total: </span>
+            <span class="sub-total-in-card" id="subCountOfTheCard1Id"> 0 </span>
           </div>
-          <div class="cart-books-card" style="display:none;">
-            <img src="./images/personality/ikigai.jpeg" class="cart-books-img" id="cart-book-img-id" />
-            <p class="cart-books-name" id="cart-books-name-id"> Ikigai: The Japanese Secret to a Long and Happy Life</p>
-            <p class="cart-books-price" id="priceBook">499/- </p>
+
+          <div class="cart-books-card" style="display:none;" id="cart-card-2">
+            <button type="button" class="total-amount-btn" onclick="removeFromCart2()">Remove from cart </button>
+            <img src="./images/personality/ikigai.jpeg" class="cart-books-img" id="cart-book2-img-id" />
+            <p class="cart-books-name" id="cart-books2-name-id"> Ikigai: The Japanese Secret to a Long and Happy Life</p>
+            <p class="cart-books-price" id="priceBook2">499/- </p>
             <div class="books-counter">
-                <img class="inc-dec-btn" src="./images/home/minus.png" onclick="decreaseQuantity()">
-                <span class="books-quantity" id="quantity"> 1 </span>
-                <img class="inc-dec-btn" src="./images/home/add.png"  onclick="increaseQuantity()">
+                <img class="inc-dec-btn" src="./images/home/minus.png" onclick="decreaseQuantity2(), subCount2()">
+                <span class="books-quantity" id="quantity2"> 0 </span>
+                <img class="inc-dec-btn" src="./images/home/add.png"  onclick="increaseQuantity2(), subCount2()">
             </div>
+            <span class="sub-total-in-card"> Sub-Total: </span>
+            <span class="sub-total-in-card" id="subCountOfTheCard2Id"> 0 </span>
           </div>
-          <div class="cart-books-card" style="display:none;">
-            <img src="./images/personality/ikigai.jpeg" class="cart-books-img" id="cart-book-img-id" />
-            <p class="cart-books-name" id="cart-books-name-id"> Ikigai: The Japanese Secret to a Long and Happy Life</p>
-            <p class="cart-books-price" id="priceBook">499/- </p>
+
+          <div class="cart-books-card" style="display:none;" id="cart-card-3">
+            <button type="button" class="total-amount-btn" onclick="removeFromCart3()">Remove from cart </button>
+            <img src="./images/personality/ikigai.jpeg" class="cart-books-img" id="cart-book3-img-id" />
+            <p class="cart-books-name" id="cart-books3-name-id"> Ikigai: The Japanese Secret to a Long and Happy Life</p>
+            <p class="cart-books-price" id="priceBook3">499/- </p>
             <div class="books-counter">
-                <img class="inc-dec-btn" src="./images/home/minus.png" onclick="decreaseQuantity()">
-                <span class="books-quantity" id="quantity"> 1 </span>
-                <img class="inc-dec-btn" src="./images/home/add.png"  onclick="increaseQuantity()">
+                <img class="inc-dec-btn" src="./images/home/minus.png" onclick="decreaseQuantity3(), subCount3()">
+                <span class="books-quantity" id="quantity3"> 0 </span>
+                <img class="inc-dec-btn" src="./images/home/add.png"  onclick="increaseQuantity3(), subCount3()">
             </div>
+            <span class="sub-total-in-card"> Sub-Total: </span>
+            <span class="sub-total-in-card" id="subCountOfTheCard3Id"> 0 </span>
           </div>
-          <div class="cart-books-card" style="display:none;">
-            <img src="./images/personality/ikigai.jpeg" class="cart-books-img" id="cart-book-img-id" />
-            <p class="cart-books-name" id="cart-books-name-id"> Ikigai: The Japanese Secret to a Long and Happy Life</p>
-            <p class="cart-books-price" id="priceBook">499/- </p>
+
+          <div class="cart-books-card" style="display:none;" id="cart-card-4">
+            <button type="button" class="total-amount-btn" onclick="removeFromCart4()">Remove from cart </button>
+            <img src="./images/personality/ikigai.jpeg" class="cart-books-img" id="cart-book4-img-id" />
+            <p class="cart-books-name" id="cart-books4-name-id"> Ikigai: The Japanese Secret to a Long and Happy Life</p>
+            <p class="cart-books-price" id="priceBook4">499/- </p>
             <div class="books-counter">
-                <img class="inc-dec-btn" src="./images/home/minus.png" onclick="decreaseQuantity()">
-                <span class="books-quantity" id="quantity"> 1 </span>
-                <img class="inc-dec-btn" src="./images/home/add.png"  onclick="increaseQuantity()">
+                <img class="inc-dec-btn" src="./images/home/minus.png" onclick="decreaseQuantity4(), subCount4()">
+                <span class="books-quantity" id="quantity4"> 0 </span>
+                <img class="inc-dec-btn" src="./images/home/add.png"  onclick="increaseQuantity4(), subCount4()">
             </div>
+            <span class="sub-total-in-card"> Sub-Total: </span>
+            <span class="sub-total-in-card" id="subCountOfTheCard4Id"> 0 </span>
           </div>
-          <div class="cart-books-card" style="display:none;">
-            <img src="./images/personality/ikigai.jpeg" class="cart-books-img" id="cart-book-img-id" />
-            <p class="cart-books-name" id="cart-books-name-id"> Ikigai: The Japanese Secret to a Long and Happy Life</p>
-            <p class="cart-books-price" id="priceBook">499/- </p>
+
+          <div class="cart-books-card" style="display:none;" id="cart-card-5">
+            <button type="button" class="total-amount-btn" onclick="removeFromCart5()">Remove from cart </button>
+            <img src="./images/personality/ikigai.jpeg" class="cart-books-img" id="cart-book5-img-id" />
+            <p class="cart-books-name" id="cart-books5-name-id"> Ikigai: The Japanese Secret to a Long and Happy Life</p>
+            <p class="cart-books-price" id="priceBook5">499/- </p>
             <div class="books-counter">
-                <img class="inc-dec-btn" src="./images/home/minus.png" onclick="decreaseQuantity()">
-                <span class="books-quantity" id="quantity"> 1 </span>
-                <img class="inc-dec-btn" src="./images/home/add.png"  onclick="increaseQuantity()">
+                <img class="inc-dec-btn" src="./images/home/minus.png" onclick="decreaseQuantity5(), subCount5()">
+                <span class="books-quantity" id="quantity5"> 0 </span>
+                <img class="inc-dec-btn" src="./images/home/add.png"  onclick="increaseQuantity5(), subCount5()">
             </div>
+            <span class="sub-total-in-card"> Sub-Total: </span>
+            <span class="sub-total-in-card" id="subCountOfTheCard5Id"> 0 </span>
           </div>
         </div>
       
+
         <button type="button" class="total-amount-btn" style="cursor:pointer;" onclick="countTotal()">
           Total
         </button>
