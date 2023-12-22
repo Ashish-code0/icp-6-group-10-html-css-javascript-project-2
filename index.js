@@ -745,6 +745,7 @@ function countTotal(){
 
     const totalPriceElement = document.getElementById('totalPriceDisplay');
     let totalPrice = (subCountCard1 + subCountCard2 + subCountCard3 + subCountCard4 + subCountCard5);
+    console.log(`Total without discount ${totalPrice}`);
 
     if(totalPrice <= 500){
         console.log('Discount is liable for purchase below 300/- ');
