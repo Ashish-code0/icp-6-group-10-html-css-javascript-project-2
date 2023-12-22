@@ -8,18 +8,50 @@
         color: #ffdd98;
         color: #ffa600;
         color: #ffd60a;
+        color: #ff7300;
+        color: #de1212;
+        color: #fff2b2;
+        color: #294d4a;
+        color:#0c1821;
+        color:#ccc9dc;
+        color: #d4d4aa;
+        color: #bad4aa;
+        color:#e8871e;
+        color:#edb458;
+        color: #f8f32b;
+        color:#f8f32b;
+        color:#f1f5f2;
+        color: #c2a878;
+        color:#550c18;
+        color:#f7dad9;
+        color:#de89be;
+        color:#bcb6ff;
+        color:#b8e1ff;
+        color:#94fbab;
+        color:#a9fff7;
+        color:#44355b;
+        color:#7eb2dd;
+        color:#ffe8d4;
       }
+
       body {
         padding: 0;
         margin: 0;
-        background-color: #fffefb;
+        /*background-color: white;
+        background-image: url('./images/home/background.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;*/
       }
+      /* remove underline and styling on a tag*/
       a {
         text-decoration: none;
         color: #000;
       }
+       /* Styles for the header section */
       .shop-header {
-        background-color: #ffd60a;
+        color: black;
+        background-color: #bad4aa;
         padding: 2px 15px;
         display: flex;
         justify-content: space-between;
@@ -27,21 +59,25 @@
         align-items: center;
         font-size: 20px;
       }
+
       .shop-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin: 0px 40px;
       }
+
       .shop-logo {
         height: 60px;
         margin: 0;
       }
+
       .shop-name {
         font-size: 25px;
         font-weight: bolder;
         margin: 0;
       }
+
       .search-container {
         display: flex;
         margin: 0;
@@ -58,7 +94,7 @@
         font-size: 15px;
         border: none;
         border-radius: 25px 0 0 25px;
-        background-color: azure;
+        background-color: #f0ffff;
       }
       .search-button {
         display: block;
@@ -77,7 +113,6 @@
       }
       .navbar-menu-container {
         display: flex;
-        margin-top: 25px;
       }
       .navbar-menu {
         margin: 0 15px;
@@ -91,11 +126,14 @@
       .navbar-anchor {
         color: white;
       }
+
+      /* Styles for the body section */
       .shop-body {
         display: flex;
         flex-direction: column;
         margin: 0 5px;
       }
+      /* section to show searched book */
       .searched-sections {
         display: none;
         margin: 10px auto;
@@ -132,13 +170,55 @@
       .search-card {
         width: 250px;
         padding: 10px 15px;
-        margin: 5px auto;
+        margin: 5px 0;
         border-right: 1px solid black;
         display: flex;
         flex-direction: column;
         align-items: center;      
+        position: relative;
       }
 
+      .search-card:hover{
+        width: 260px;
+        background-color: #fff2b2;
+        transition: 0.3s;
+        box-shadow: 1px 1px 10px 0 black;
+        border-radius: 10px;
+      }
+
+      .search-card:hover .wishlist-btn{
+        display: block;
+      }
+      .wishlist-btn{
+        display: none;
+        position: absolute;
+        height: 25px;
+        top:10px;
+        right:10px;
+      }
+
+      .wishlist-btn:hover{
+        cursor:pointer;
+      }
+      .book-summary{
+        display: block;
+        background-color: #fff6cc;
+        color:black;
+        font-size: 20px;
+        border-radius: 15px;
+        box-shadow: 1px 1px 10px 0 black;
+        padding: 40px;
+        width:350px;
+      }
+    
+      /* Section for products */
+      .book-section-title{
+        display: block;
+        margin:2px auto;
+        font-size: 25px;
+        font-weight: bold;
+        border-bottom: 3px solid #ff7300;
+      }
       .shop-sections {
         margin: 13px 0;
         padding: 20px 0;
@@ -160,9 +240,13 @@
       }
       .books-card:hover {
         width: 260px;
+        background-color: #f2f2f2;
         transition: 0.3s;
         box-shadow: 1px 1px 10px 0 black;
         border-radius: 10px;
+      }
+      .books-card:hover .wishlist-btn{
+        display: block;
       }
       
       .books-img {
@@ -190,210 +274,321 @@
         font-size: 17px;
         padding: 7px 20px;
       }
-
-      .shop-footer {
-        background-color: #ffd60a;
-        display: flex;
-        justify-content: space-around;
-        font-size: 15px;
-      }
-      .footer-sec {
-        width: 400px;
-        margin: 10px 10px;
-        border-right: 2px solid #de1212;
-      }
-      .footer-sec-title {
-        font-size: 18px;
-        font-weight: bold;
-      }
-      .footer-data {
-        margin-left: 20px;
-      }
-
-      @media screen and (max-width: 700px) {
-        body {
-          overflow-x: hidden;
+      /* The cart section */
+      .cart-card-container{
+            margin: 10px 0;
+            border-bottom: 2px solid #ffbb00;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
         }
-        .shop-header {
-          flex-direction: column;
-        }
-        .shop-logo{
-            height: 50px;
-        }
-        .shop-name {
-          font-size: 25px;
-        }
-        .search-container {
-        
-        margin-bottom: 15px;
-        }
-        .navbar-menu-container {
-          display: flex;
-          margin: 15px 0;
-        }
-        .navbar-menu {
-          margin: 0 10px;
-          font-size: 10px;
-          padding: 5px 20px;
-          border-radius: 10px;
-          border: none;
-          background-color: #000;
+        .close-cart-up-arrow{
+          position: absolute;
+          padding: 5px;
+          border-radius: 50%;
+          font-size: 17px;
+          background-color: #ff7700;
           color: white;
+          top: -30px;
+          right: 10px;
         }
-        .shop-sections {
-          justify-content: space-around;
-          flex-wrap: wrap;
+        .close-cart-up-arrow:hover{
+          cursor: pointer;
+          font-size: 22px;
+          box-shadow:  1px 1px 10px 0 #aaa;
         }
-        .books-card {
-          width: 220px;
-          padding: 10px 10px;
-          margin: 10px 10px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
+        .cart-book-sections{   
+            display: none;
+            position:relative;
         }
-        .books-img{
-          height: 180px;
+        .cart-books-card{
+            width:230px;
+            padding: 10px 15px; 
+            margin:5px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-right: 1px solid black;
         }
-      }
-      @media screen and (min-width: 701px)and (max-width:900px){
-        body {
-          overflow-x: hidden;
+        .cart-books-img{
+            height:220px;
+            border: 1px solid white;
         }
-        .shop-header {
-          flex-direction: row;
-          justify-content: space-around;
+        .cart-books-name{
+            text-align: center;
+            font-size: 17px;
         }
-        .shop-logo{
-            height: 70px;
+        .cart-books-price{
+            font-size: 20px;
+            color:#000;
+            font-weight: bold;
         }
-        .shop-name {
-          font-size: 25px;
+        .books-counter{
+            display: flex;
+            align-items: center;
         }
-        .search-container {
-          margin-left:0;
-          margin-bottom: 0;
+        .inc-dec-btn{
+            height:25px;
         }
-        .navbar-menu-container {
-          display: flex;
-          margin: 15px 0;
+        .books-quantity{
+            font-size: 25px;
+            margin : 2px 20px;
+            padding:1px 5px;
+            border-bottom: 2px dashed #000;
         }
-        .navbar-menu {
-          margin: 0 10px;
+        .sub-total-in-card{
+          background-color: #eee;
+          border-radius: 10px;
+          font-size: 22px;
+          color:black;
+          margin-top: 15px;
+          padding: 5px;
+        }
+        .total-amount-btn{
+          display: block;
+          margin:5px auto;
+          padding:5px 20px;
+          background-color: #ff7700;
+          color:white;
           font-size: 15px;
-          padding: 5px 30px;
+          border:none;
           border-radius: 10px;
-          border: none;
-          background-color: #000;
-          color: white;
         }
-        .shop-sections {
-          justify-content: space-around;
-          flex-wrap: wrap;
+        .total-amount-btn:hover{
+          cursor:pointer;
         }
-        .books-card {
-          width: 220px;
-          padding: 10px 10px;
-          margin: 10px 10px;
+        .total-amount-desc{
+          text-align: center;
+          margin: 5px 0;
+          margin-bottom: 10px;
+          border-bottom: 3px solid #ffbb00;
           display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-        .books-img{
-          height: 200px;
-        }
-      }
-      @media screen and (min-width: 901px)and (max-width:1299px){
-        body {
-          overflow-x: hidden;
-        }
-        .shop-header {
-          flex-direction: row;
-          justify-content: space-around;
-        }
-        .shop-logo{
-            height: 70px;
-        }
-        .shop-name {
+          justify-content: center;
           font-size: 25px;
         }
-        .search-container {
-          margin-left:0;
-          margin-bottom: 0;
-        }
-        .navbar-menu-container {
+      /* Styles for the footer section */
+        .shop-footer {
+          background-color: #bad4aa;
           display: flex;
-          margin: 15px 0;
-        }
-        .navbar-menu {
-          margin: 0 10px;
-          font-size: 15px;
-          padding: 5px 45px;
-          border-radius: 10px;
-          border: none;
-          background-color: #000;
-          color: white;
-        }
-        .shop-sections {
           justify-content: space-around;
-          flex-wrap: wrap;
+          font-size: 15px;
         }
-        .books-card {
-          width: 220px;
-          padding: 10px 10px;
+        .footer-sec {
+          width: 400px;
           margin: 10px 10px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
+          border-right: 2px solid #de1212;
         }
-        .books-img{
-          height: 200px;
+        .footer-sec-title {
+          font-size: 18px;
+          font-weight: bold;
         }
-      }
+        .footer-data {
+          margin-left: 20px;
+        }
+
+        /* Responsive for small screen */
+        @media screen and (max-width: 700px) {
+          body {
+            overflow-x: hidden;
+          }
+          .shop-header {
+            flex-direction: column;
+          }
+          .shop-logo{
+              height: 50px;
+          }
+          .shop-name {
+            font-size: 25px;
+          }
+          .search-container {
+          
+          margin-bottom: 15px;
+          }
+          .navbar-menu-container {
+            display: flex;
+            margin: 15px 0;
+          }
+          .navbar-menu {
+            margin: 0 10px;
+            font-size: 10px;
+            padding: 5px 20px;
+            border-radius: 10px;
+            border: none;
+            background-color: #000;
+            color: white;
+          }
+          .book-section-title{
+            font-size: 20px;
+          }
+          .shop-sections {
+            justify-content: space-around;
+            flex-wrap: wrap;
+          }
+          .books-card {
+            width: 220px;
+            padding: 10px 10px;
+            margin: 10px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          .books-img{
+            height: 180px;
+          }
+          .cart-books-img{
+              height:180px; 
+          }
+        }
+        /* Responsive for tablet screen */
+        @media screen and (min-width: 701px)and (max-width:900px){
+          body {
+            overflow-x: hidden;
+          }
+          .shop-header {
+            flex-direction: row;
+            justify-content: space-around;
+          }
+          .shop-logo{
+              height: 70px;
+          }
+          .shop-name {
+            font-size: 25px;
+          }
+          .search-container {
+            margin-left:0;
+            margin-bottom: 0;
+          }
+          .navbar-menu-container {
+            display: flex;
+            margin: 15px 0;
+          }
+          .navbar-menu {
+            margin: 0 10px;
+            font-size: 15px;
+            padding: 3px 30px;
+            border-radius: 10px;
+            border: none;
+            background-color: #000;
+            color: white;
+          }
+          .book-section-title{
+            font-size: 20px;
+          }
+          .shop-sections {
+            justify-content: space-around;
+            flex-wrap: wrap;
+          }
+          .books-card {
+            width: 220px;
+            padding: 10px 10px;
+            margin: 10px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          .books-img{
+            height: 200px;
+          }
+          .cart-books-img{
+              height:200px; 
+          }
+        }
+        /* Responsive for laptop screen */
+        @media screen and (min-width: 901px)and (max-width:1299px){
+          body {
+            overflow-x: hidden;
+          }
+          .shop-header {
+            flex-direction: row;
+            justify-content: space-around;
+          }
+          .shop-logo{
+              height: 70px;
+          }
+          .shop-name {
+            font-size: 25px;
+          }
+          .search-container {
+            margin-left:0;
+            margin-bottom: 0;
+          }
+          .navbar-menu-container {
+            display: flex;
+            margin: 15px 0;
+          }
+          .navbar-menu {
+            margin: 0 10px;
+            font-size: 15px;
+            padding: 5px 45px;
+            border-radius: 10px;
+            border: none;
+            background-color: #000;
+            color: white;
+          }
+          .shop-sections {
+            justify-content: space-around;
+            flex-wrap: wrap;
+          }
+          .books-card {
+            width: 220px;
+            padding: 10px 10px;
+            margin: 10px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          .books-img{
+            height: 200px;
+          }
+          .cart-books-img{
+              height:200px; 
+          }
+        }
     </style>
   </head>
   <body>
-    <div class="shop-header">
-      <a href="./index.html">
-        <div class="shop-container">
-          <img src="logo.png" alt="logo" class="shop-logo" />
-          <p class="shop-name">Readit</p>
+      
+    <!-- Header code -->
+      <div class="shop-header">
+        <a href="./index.html">
+          <div class="shop-container">
+            <img src="./images/home/logo.png" alt="logo" class="shop-logo" />
+            <p class="shop-name">Readit</p>
+          </div>
+        </a>
+        <div class="search-container">
+          <input type="text" placeholder="Rich Dad Poor Dad" class="search-bar" id="search-book" onchange="searchBook()"/>
+          <button type="button" class="search-button" onclick="showBook(bookName)">
+            Search
+          </button>
         </div>
-      </a>
-      <div class="search-container">
-        <input type="text" placeholder="Rich Dad Poor Dad" class="search-bar" id="search-book" onchange="searchBook()"/>
-        <button type="button" class="search-button" onclick="showBook(bookName)">
-          Search
-        </button>
+
+        <div class="navbar-menu-container">
+          <button type="button" class="navbar-menu">
+            <a href="./pages/login.html" class="navbar-anchor"> Login </a>
+          </button>
+          <button type="button" class="navbar-menu">
+            <a href="./pages/fiction.html" class="navbar-anchor"> Fiction </a>
+          </button>
+          <button type="button" class="navbar-menu">
+            <a href="./pages/non-fiction.html" class="navbar-anchor">
+              Non-fiction
+            </a>
+          </button>
+          <button type="button" class="navbar-menu">
+            <a href="./pages/novel.html" class="navbar-anchor"> Novel </a>
+          </button>
+          <button type="button" class="navbar-menu">
+            <a href="./pages/historic.html" class="navbar-anchor"> Historic </a>
+          </button>
+          
+        </div>
       </div>
 
-      <div class="navbar-menu-container">
-        <button type="button" class="navbar-menu">
-          <a href="./pages/login.html" class="navbar-anchor"> Login </a>
-        </button>
-        <button type="button" class="navbar-menu">
-          <a href="./pages/fiction.html" class="navbar-anchor"> Fiction </a>
-        </button>
-        <button type="button" class="navbar-menu">
-          <a href="./pages/non-fiction.html" class="navbar-anchor">
-            Non-fiction
-          </a>
-        </button>
-        <button type="button" class="navbar-menu">
-          <a href="./pages/novel.html" class="navbar-anchor"> Novel </a>
-        </button>
-        <button type="button" class="navbar-menu">
-          <a href="./pages/historic.html" class="navbar-anchor"> Historic </a>
-        </button>
-        <button type="button" class="navbar-menu">
-          <a href="./pages/cart.html" class="navbar-anchor"> Cart </a>
-        </button>
-      </div>
-    </div>
-
-    <div class="shop-body">
-
+      <!--Page body code-->
+      <div class="shop-body">
       <div class="searched-sections" id="hidden-search-id">
+        <!-- Search book title and close button -->
         <div class="search-section-container">
           <p class="search-book-title">Searched Book:</p>
           <button type="button" class="closeSearch" onclick="closeSearch()">
@@ -401,139 +596,244 @@
           </button>
         </div>
 
-        <div class="search-card">
-          <img src="./images/personality/ikigai.jpeg" class="books-img" id="book-img-id"/>
-          <p class="books-name" id="book-name-id">
-            Ikigai: The Japanese Secret to a Long and Happy Life
-          </p>
-          <p class="books-price" id="book-price-id">499/-</p>
-          <a href="./pages/cart.html">
-            <button type="button" class="add-cart-btn" onclick="addToCart(bookName)" >
-              Add to cart
-            </button>
-          </a>
+        <!-- Searched card -->
+        <div style="display: flex; justify-content: space-around; align-items: center;">
+          <div class="search-card">
+            <img src="./images/home/heart.png" onclick="wishlistHeart()" class="wishlist-btn" id="wishlistIconId">
+            <img src="./images/personality/ikigai.jpeg" class="books-img" id="book-img-id"/>
+            <p class="books-name" id="book-name-id">
+              Ikigai: The Japanese Secret to a Long and Happy Life
+            </p>
+            <p class="books-price" id="book-price-id">499/-</p>
+              <button type="button" class="add-cart-btn" onclick="addToCart(bookName)" >
+                Add to cart
+              </button>
+          </div>
+          <p class="book-summary" id="bookSummaryId">Ikigai by Héctor García & Francesc Miralles is book which talks about finding your purpose and then following it with all heart to live a happy and satisfying life. The authors take us in this search along with them and make us understand how people of Japan have been living a long and a happy life.</p>
         </div>
       </div>
 
-      <div class="shop-sections">
+      <span class="book-section-title"> Personality Development Books</span>
+      <!-- Section 1-->
+      <div class="shop-sections" >
+        
         <div class="books-card"> 
+          <img src="./images/home/heart.png" onclick="wishlistHeartAll('wishlist-1')" class="wishlist-btn" id="wishlist-1"/>
           <img src="./images/personality/ikigai.jpeg" class="books-img" />
           <p class="books-name">
             Ikigai: The Japanese Secret to a Long and Happy Life
           </p>
           <p class="books-price">499/-</p>
-          <a href="./pages/cart.html">
           <button type="button" class="add-cart-btn" onclick="addToCart('ikigai')" >
             Add to cart
-          </button></a>
+          </button>
         </div>
+        
         <div class="books-card">
+          <img src="./images/home/heart.png" onclick="wishlistHeartAll('wishlist-2')" class="wishlist-btn" id="wishlist-2"/>
           <img src="./images/personality/atomic-habit.jpeg" class="books-img" />
-
           <p class="books-name">Atomic Habits Paperback _ 1 January 2018</p>
           <p class="books-price">600/-</p>
-          <a href="./pages/cart.html">
             <button type="button" class="add-cart-btn" onclick="addToCart('atomic')" >
               Add to cart
             </button>
-          </a>
         </div>
-        <div class="books-card">
-          <img src="./images/personality/psychology-of-money.jpg" class="books-img"/>
 
+        <div class="books-card" >
+          <img src="./images/home/heart.png" onclick="wishlistHeartAll('wishlist-3')" class="wishlist-btn" id="wishlist-3"/>
+          <img src="./images/personality/psychology-of-money.jpg" class="books-img"/>
           <p class="books-name">
             The Psychology Of Money Paperback _ 1 September 2020
           </p>
           <p class="books-price">550/-</p>
-          <a href="./pages/cart.html">
-          <button type="button" class="add-cart-btn" onclick="addToCart('psychology')" >
+          <button type="button" class="add-cart-btn" onclick="addToCart('psychology')">
             Add to cart
-          </button></a>
+          </button>
         </div>
-
         <div class="books-card">
+          <img src="./images/home/heart.png" onclick="wishlistHeartAll('wishlist-4')" class="wishlist-btn" id="wishlist-4"/>
           <img src="./images/personality/rich-dad-poor-dad.jpeg" class="books-img"/>
-
           <p class="books-name">Rich Dad Poor Dad: 25th Anniversary Edit</p>
           <p class="books-price">400/-</p>
-          <a href="./pages/cart.html">
           <button type="button" class="add-cart-btn" onclick="addToCart('rich')" >
             Add to cart
-          </button></a>
+          </button>
         </div>
         <div class="books-card">
+          <img src="./images/home/heart.png" onclick="wishlistHeartAll('wishlist-5')" class="wishlist-btn" id="wishlist-5"/>
           <img src="./images/personality/think-and-grow-rich.png" class="books-img" />
-
           <p class="books-name">Think and Grow Rich: The Landmark Bestseller</p>
           <p class="books-price">649/-</p>
-          <a href="./pages/cart.html">
           <button type="button" class="add-cart-btn" onclick="addToCart('think')" >
             Add to cart
-          </button></a>
+          </button>
         </div>
       </div>
+
+      <!-- Section 2-->
+      <span class="book-section-title"> Fiction Based Books </span>
       <div class="shop-sections">
         <div class="books-card">
+          <img src="./images/home/heart.png" onclick="wishlistHeartAll('wishlist-6')" class="wishlist-btn" id="wishlist-6">
           <img src="./images/fiction/divine-rivals.png" class="books-img" />
-
           <p class="books-name">
             Divine Rivals: A Novel: 1 (Letters of Enchantment, 1)
           </p>
           <p class="books-price">500/-</p>
-          <a href="./pages/cart.html">
           <button type="button" class="add-cart-btn" onclick="addToCart('divine')">
             Add to cart
-          </button></a>
+          </button>
         </div>
         <div class="books-card">
+          <img src="./images/home/heart.png" onclick="wishlistHeartAll('wishlist-7')" class="wishlist-btn" id="wishlist-7">
           <img src="./images/fiction/fire-blood.jpeg" class="books-img" />
-
           <p class="books-name">
-            Fire And Blood: A Song Of Ice And Fire: Book One:
+            Fire And Blood: The House Of Dragons : Book One: 1
           </p>
           <p class="books-price">300/-</p>
-          <a href="./pages/cart.html">
           <button type="button" class="add-cart-btn" onclick="addToCart('fire')" >
             Add to cart
-          </button></a>
+          </button>
         </div>
         <div class="books-card">
+          <img src="./images/home/heart.png" onclick="wishlistHeartAll('wishlist-8')" class="wishlist-btn" id="wishlist-8">
           <img src="./images/fiction/game-of-thrones.jpeg" class="books-img" />
-
           <p class="books-name">
-            A Game of Thrones: A Song of Ice and Fire: Book One: 1
+            A Game of Thrones: A Song Of Ice And Fire: Book One: 1
           </p>
           <p class="books-price">700/-</p>
-          <a href="./pages/cart.html">
           <button type="button" class="add-cart-btn" onclick="addToCart('game')" >
             Add to cart
-          </button></a>
+          </button>
         </div>
         <div class="books-card">
+          <img src="./images/home/heart.png" onclick="wishlistHeartAll('wishlist-9')" class="wishlist-btn" id="wishlist-9">
           <img src="./images/fiction/fourth-wing.png" class="books-img" />
-
           <p class="books-name">
             Fourth Wing: The Empyrean Discover the Instant
           </p>
           <p class="books-price">499/-</p>
-          <a href="./pages/cart.html">
           <button type="button" class="add-cart-btn" onclick="addToCart('fourth')" >
             Add to cart
-          </button></a>
+          </button>
         </div>
         <div class="books-card">
+          <img src="./images/home/heart.png" onclick="wishlistHeartAll('wishlist-10')" class="wishlist-btn" id="wishlist-10">
           <img src="./images/fiction/iron-flame.jpg" class="books-img" />
-
           <p class="books-name">Iron Flame: The Sequel of Fourth Wing</p>
           <p class="books-price">499/-</p>
-          <a href="./pages/cart.html">
           <button type="button" class="add-cart-btn" onclick="addToCart('iron')" >
             Add to cart
           </button>
-        </a>
         </div>
       </div>
+    
+
+      <!-- The Cart Section -->
+      <span class="book-section-title" style="margin-bottom: 10px;"> Books in your cart </span>
+      <div class="cart-book-sections" id="cart-hidden-section">
+      <i class="fa-solid fa-chevron-up close-cart-up-arrow" onclick="closeCartFun()"></i>
+
+        <div class="cart-card-container" id="cart-cards-container-id">
+          <div class="cart-books-card" id="cart-card-1">
+            <button type="button" class="total-amount-btn" onclick="removeFromCart1()">Remove from cart </button>
+            <img src="./images/personality/ikigai.jpeg" class="cart-books-img" id="cart-book1-img-id" />
+            <p class="cart-books-name" id="cart-books1-name-id"> Ikigai: The Japanese Secret to a Long and Happy Life</p>
+            <p class="cart-books-price" id="priceBook1">499/- </p>
+            <div class="books-counter">
+                <img class="inc-dec-btn" src="./images/home/minus.png" onclick="decreaseQuantity(), subCount1()">
+                <span class="books-quantity" id="quantity"> 0 </span>
+                <img class="inc-dec-btn" src="./images/home/add.png"  onclick="increaseQuantity(), subCount1()">
+            </div>
+            <span class="sub-total-in-card"> Sub-Total: </span>
+            <span class="sub-total-in-card" id="subCountOfTheCard1Id"> 0 </span>
+          </div>
+
+          <div class="cart-books-card" style="display:none;" id="cart-card-2">
+            <button type="button" class="total-amount-btn" onclick="removeFromCart2()">Remove from cart </button>
+            <img src="./images/personality/ikigai.jpeg" class="cart-books-img" id="cart-book2-img-id" />
+            <p class="cart-books-name" id="cart-books2-name-id"> Ikigai: The Japanese Secret to a Long and Happy Life</p>
+            <p class="cart-books-price" id="priceBook2">499/- </p>
+            <div class="books-counter">
+                <img class="inc-dec-btn" src="./images/home/minus.png" onclick="decreaseQuantity2(), subCount2()">
+                <span class="books-quantity" id="quantity2"> 0 </span>
+                <img class="inc-dec-btn" src="./images/home/add.png"  onclick="increaseQuantity2(), subCount2()">
+            </div>
+            <span class="sub-total-in-card"> Sub-Total: </span>
+            <span class="sub-total-in-card" id="subCountOfTheCard2Id"> 0 </span>
+          </div>
+
+          <div class="cart-books-card" style="display:none;" id="cart-card-3">
+            <button type="button" class="total-amount-btn" onclick="removeFromCart3()">Remove from cart </button>
+            <img src="./images/personality/ikigai.jpeg" class="cart-books-img" id="cart-book3-img-id" />
+            <p class="cart-books-name" id="cart-books3-name-id"> Ikigai: The Japanese Secret to a Long and Happy Life</p>
+            <p class="cart-books-price" id="priceBook3">499/- </p>
+            <div class="books-counter">
+                <img class="inc-dec-btn" src="./images/home/minus.png" onclick="decreaseQuantity3(), subCount3()">
+                <span class="books-quantity" id="quantity3"> 0 </span>
+                <img class="inc-dec-btn" src="./images/home/add.png"  onclick="increaseQuantity3(), subCount3()">
+            </div>
+            <span class="sub-total-in-card"> Sub-Total: </span>
+            <span class="sub-total-in-card" id="subCountOfTheCard3Id"> 0 </span>
+          </div>
+
+          <div class="cart-books-card" style="display:none;" id="cart-card-4">
+            <button type="button" class="total-amount-btn" onclick="removeFromCart4()">Remove from cart </button>
+            <img src="./images/personality/ikigai.jpeg" class="cart-books-img" id="cart-book4-img-id" />
+            <p class="cart-books-name" id="cart-books4-name-id"> Ikigai: The Japanese Secret to a Long and Happy Life</p>
+            <p class="cart-books-price" id="priceBook4">499/- </p>
+            <div class="books-counter">
+                <img class="inc-dec-btn" src="./images/home/minus.png" onclick="decreaseQuantity4(), subCount4()">
+                <span class="books-quantity" id="quantity4"> 0 </span>
+                <img class="inc-dec-btn" src="./images/home/add.png"  onclick="increaseQuantity4(), subCount4()">
+            </div>
+            <span class="sub-total-in-card"> Sub-Total: </span>
+            <span class="sub-total-in-card" id="subCountOfTheCard4Id"> 0 </span>
+          </div>
+
+          <div class="cart-books-card" style="display:none;" id="cart-card-5">
+            <button type="button" class="total-amount-btn" onclick="removeFromCart5()">Remove from cart </button>
+            <img src="./images/personality/ikigai.jpeg" class="cart-books-img" id="cart-book5-img-id" />
+            <p class="cart-books-name" id="cart-books5-name-id"> Ikigai: The Japanese Secret to a Long and Happy Life</p>
+            <p class="cart-books-price" id="priceBook5">499/- </p>
+            <div class="books-counter">
+                <img class="inc-dec-btn" src="./images/home/minus.png" onclick="decreaseQuantity5(), subCount5()">
+                <span class="books-quantity" id="quantity5"> 0 </span>
+                <img class="inc-dec-btn" src="./images/home/add.png"  onclick="increaseQuantity5(), subCount5()">
+            </div>
+            <span class="sub-total-in-card"> Sub-Total: </span>
+            <span class="sub-total-in-card" id="subCountOfTheCard5Id"> 0 </span>
+          </div>
+        </div>
+      
+
+        <button type="button" class="total-amount-btn" style="cursor:pointer;" onclick="countTotal()">
+          Total
+        </button>
+        <div class="total-amount-desc">
+          <span> The Total Price for all the Purcahse is :</span> &nbsp;
+          <span id="totalPriceDisplay"> 0 </span>
+        </div>
+        
+        <div style="display: flex; justify-content: space-around; margin-bottom: 10px;">
+          <button type="button" class="total-amount-btn" style=" cursor: pointer;" onclick="console.log(`Amount: paid`)">
+            Pay Now 
+          </button>
+          <button type="button" class="total-amount-btn" style=" cursor: pointer;" onclick="showTotalOnReceipt()">
+            <a href="./pages/receipt.html" style="color: white;">
+              Do yo want a receipt
+            </a>
+          </button>
+        </div>
+
+      </div>
+
+      
+     <!-- Body section end --> 
     </div>
+    
+    <!-- Footer Section -->
+
     <div class="shop-footer">
       <div class="footer-sec">
         <p class="footer-sec-title">Quick Links</p>
@@ -562,13 +862,13 @@
             >
           </p>
 
-          <p><i class="fa-brands fa-facebook"></i> &nbsp; &nbsp; Facebook</p>
+          <p style="cursor: pointer;"><i class="fa-brands fa-facebook" ></i> &nbsp; &nbsp; Facebook</p>
 
-          <p><i class="fa-brands fa-twitter"></i> &nbsp; &nbsp; Twitter</p>
+          <p style="cursor: pointer;"><i class="fa-brands fa-twitter"></i> &nbsp; &nbsp; Twitter</p>
 
-          <p><i class="fa-brands fa-instagram"></i> &nbsp; &nbsp; Instagram</p>
+          <p style="cursor: pointer;"><i class="fa-brands fa-instagram"></i> &nbsp; &nbsp; Instagram</p>
 
-          <p><i class="fa-brands fa-linkedin"></i> &nbsp; &nbsp; LinkedIn</p>
+          <p style="cursor: pointer;"><i class="fa-brands fa-linkedin"></i> &nbsp; &nbsp; LinkedIn</p>
         </div>
       </div>
       <div class="footer-sec">
@@ -594,11 +894,8 @@
         </div>
       </div>
     </div>
-    <script
-      src="https://kit.fontawesome.com/4d47a5db67.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="functions.js"></script>
-    <script src="cart.js"></script>
+
+    <script src="https://kit.fontawesome.com/4d47a5db67.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
   </body>
 </html>

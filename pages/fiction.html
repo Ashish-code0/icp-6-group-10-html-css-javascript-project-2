@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Fiction</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css" integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
+    <style>
+      .colors {
+        color: #ffb700;
+        color: #ffdd98;
+        color: #ffa600;
+        color: #ffd60a;
+      }
+      
+      body {
+        overflow-x: hidden;
+        padding: 0;
+        margin: 0;
+        background-color: #fffefb;
+      }
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+      .shop-header {
+        background-color: #ffd60a;
+        padding: 2px 15px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        font-size: 20px;
+      }
+      .shop-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0px 40px;
+      }
+      .shop-logo {
+        height: 60px;
+        margin: 0;
+      }
+      .shop-name {
+        font-size: 25px;
+        font-weight: bolder;
+        margin: 0;
+      }
+      
+      
+      input {
+        border: none;
+        outline: none;
+        background: none;
+      }
+      
+
+      .navbar-menu-container {
+        display: flex;
+        margin-top: 25px;
+      }
+      .navbar-menu {
+        margin: 0 15px;
+        font-size: 15px;
+        padding: 5px 25px;
+        border-radius: 10px;
+        border: none;
+        background-color: #000;
+        color: white;
+      }
+      .navbar-anchor {
+        color: white;
+      }
+      .shop-body {
+        display: flex;
+        flex-direction: column;
+        margin: 0 5px;
+      }
+      
+
+      .shop-sections {
+        margin: 13px 0;
+        padding: 20px 0;
+        border-bottom: 2px solid #ffbb00;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .books-card {
+        width: 250px;
+        padding: 10px 20px;
+        margin: 5px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-right: 1px solid black;
+        position: relative;
+      }
+      .books-card:hover {
+        width: 260px;
+        transition: 0.3s;
+        box-shadow: 1px 1px 10px 0 black;
+        border-radius: 10px;
+      }
+      .wishlist-btn{
+        display: none;
+        position: absolute;
+        height: 25px;
+        top:10px;
+        right:10px;
+      }
+
+      .wishlist-btn:hover{
+        cursor:pointer;
+      }
+      .books-img {
+        height: 220px;
+        border: 1px solid white;
+      }
+      .books-name {
+        text-align: center;
+        font-size: 17px;
+      }
+      .books-price {
+        font-size: 20px;
+        color: #000;
+        font-weight: bold;
+      }
+      .add-cart-btn {
+        background-color: #de1212;
+        padding: 7px 15px;
+        font-size: 15px;
+        border: none;
+        color: white;
+        cursor: pointer;
+        border-radius: 10px;
+      }
+      .add-cart-btn:hover {
+        font-size: 17px;
+        padding: 7px 20px;
+      }
+      .quantity-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .btn-quantity {
+            width: 20px;
+            cursor: pointer;
+        }
+
+        .product-quantity {
+            font-size: 20px;
+        }
+        .review-container {
+          width: 100%;
+          height: 500px;
+          background-color: #ffa600;
+          display: flex;
+          justify-content: space-around;
+          padding: 10px 10px;
+        }
+        .review{
+          height: 375px;
+          width: 320px;
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          border: #fffefb 1px solid;
+          border-radius: 10px;
+          margin-top: 55px;
+          position: relative;
+          background-color: #fffefb;
+        }
+        .review:hover{
+          height: 390px;
+          width: 340px;
+          transition: 0.3s;
+          box-shadow: 1px 1px 10px 0 black;
+        }
+        .reviewer-img{
+          margin-top: 20px;
+          border-radius: 50%;
+          height: 120px;
+          width: 120px;
+          border: 1px solid #fffefb;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .review-para{
+          margin-top: 20px;
+          margin-left: auto;
+          margin-right: auto;
+          text-align: center;
+          font-size: large;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .rating{
+          position :absolute;
+          bottom: 10%;
+          left: 30%;
+          transform: translate(8%, -10%) rotateY(180deg);
+          display: flex;
+
+        }
+        .rating input{
+          display: none;;
+        }
+        .rating label{
+          display: block;
+          cursor: pointer;
+          width: 20px;  
+        }
+        .rating label::before{
+          content: '\f005';
+          font-family:fontAwesome;
+          display: block;
+          position: relative;
+          font-size: 15px;
+          color: #101010; 
+        }
+        .rating label::after{
+          content: '\f005';
+          font-family:fontAwesome;
+          display: block;
+          position: absolute;
+          font-size: 15px;
+          color: #1f9cff; 
+          top: 0;
+          opacity: 0;
+          transition: 0.5s;
+          text-shadow: 0 2px 5px #00000080;
+        }
+        .rating label:hover:after, 
+        .rating label:hover ~ label::after,
+        .rating input:checked ~ label::after{
+          opacity: 1;
+        }
+
+      .shop-footer {
+        background-color: #ffd60a;
+        display: flex;
+        justify-content: space-around;
+        font-size: 15px;
+      }
+      .footer-sec {
+        width: 400px;
+        margin: 10px 10px;
+        border-right: 2px solid #de1212;
+      }
+      .footer-sec-title {
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .footer-data {
+        margin-left: 20px;
+      }
+
+      @media screen and (max-width: 700px) {
+        body {
+          overflow-x: hidden;
+        }
+        .shop-header {
+          flex-direction: column;
+        }
+        .shop-logo{
+            height: 50px;
+        }
+        .shop-name {
+          font-size: 25px;
+        }
+        .search-container {
+        
+        margin-bottom: 15px;
+        }
+        .navbar-menu-container {
+          display: flex;
+          margin: 15px 0;
+        }
+        .navbar-menu {
+          margin: 0 10px;
+          font-size: 10px;
+          padding: 5px 20px;
+          border-radius: 10px;
+          border: none;
+          background-color: #000;
+          color: white;
+        }
+        .shop-sections {
+          justify-content: space-around;
+          flex-wrap: wrap;
+        }
+        .books-card {
+          width: 250px;
+          padding: 10px 10px;
+          margin: 10px 10px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .review-container{
+          justify-content: space-around;
+          display: flex;
+          flex-wrap: wrap;
+          height: auto;
+        }
+        .review{
+          height: 350px;
+          width: 250px;
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+        }
+        .review:hover{
+          height: 350px;
+          width: 260px;
+        }
+      }
+      @media screen and (max-width: 700px) {
+          body {
+            overflow-x: hidden;
+          }
+          .shop-header {
+            flex-direction: column;
+          }
+          .shop-logo{
+              height: 50px;
+          }
+          .shop-name {
+            font-size: 25px;
+          }
+          .search-container {
+          
+          margin-bottom: 15px;
+          }
+          .navbar-menu-container {
+            display: flex;
+            margin: 15px 0;
+          }
+          .navbar-menu {
+            margin: 0 10px;
+            font-size: 10px;
+            padding: 5px 20px;
+            border-radius: 10px;
+            border: none;
+            background-color: #000;
+            color: white;
+          }
+          .book-section-title{
+            font-size: 20px;
+          }
+          .shop-sections {
+            justify-content: space-around;
+            flex-wrap: wrap;
+          }
+          .books-card {
+            width: 220px;
+            padding: 10px 10px;
+            margin: 10px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          .books-img{
+            height: 180px;
+          }
+          .cart-books-img{
+              height:180px; 
+          }
+        }
+        /* Responsive for tablet screen */
+        @media screen and (min-width: 701px)and (max-width:900px){
+          body {
+            overflow-x: hidden;
+          }
+          .shop-header {
+            flex-direction: row;
+            justify-content: space-around;
+          }
+          .shop-logo{
+              height: 70px;
+          }
+          .shop-name {
+            font-size: 25px;
+          }
+          .search-container {
+            margin-left:0;
+            margin-bottom: 0;
+          }
+          .navbar-menu-container {
+            display: flex;
+            margin: 15px 0;
+          }
+          .navbar-menu {
+            margin: 0 10px;
+            font-size: 15px;
+            padding: 3px 30px;
+            border-radius: 10px;
+            border: none;
+            background-color: #000;
+            color: white;
+          }
+          .book-section-title{
+            font-size: 20px;
+          }
+          .shop-sections {
+            justify-content: space-around;
+            flex-wrap: wrap;
+          }
+          .books-card {
+            width: 220px;
+            padding: 10px 10px;
+            margin: 10px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          .books-img{
+            height: 200px;
+          }
+          .cart-books-img{
+              height:200px; 
+          }
+        }
+        /* Responsive for laptop screen */
+        @media screen and (min-width: 901px)and (max-width:1299px){
+          body {
+            overflow-x: hidden;
+          }
+          .shop-header {
+            flex-direction: row;
+            justify-content: space-around;
+          }
+          .shop-logo{
+              height: 70px;
+          }
+          .shop-name {
+            font-size: 25px;
+          }
+          .search-container {
+            margin-left:0;
+            margin-bottom: 0;
+          }
+          .navbar-menu-container {
+            display: flex;
+            margin: 15px 0;
+          }
+          .navbar-menu {
+            margin: 0 10px;
+            font-size: 15px;
+            padding: 5px 45px;
+            border-radius: 10px;
+            border: none;
+            background-color: #000;
+            color: white;
+          }
+          .shop-sections {
+            justify-content: space-around;
+            flex-wrap: wrap;
+          }
+          .books-card {
+            width: 220px;
+            padding: 10px 10px;
+            margin: 10px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          .books-img{
+            height: 200px;
+          }
+          .cart-books-img{
+              height:200px; 
+          }
+        }
+  </style>
+  </head>
+  <body>
+    <div class="shop-header">
+      <a href="./../index.html">
+        <div class="shop-container">
+          <img src="./../images/home/logo.png" alt="logo" class="shop-logo" />
+          <p class="shop-name">Readit</p>
+        </div>
+      </a>
+
+
+      <div class="navbar-menu-container">
+        <button type="button" class="navbar-menu">
+          <a href="./login.html" class="navbar-anchor"> Login </a>
+        </button>
+        <button type="button" class="navbar-menu">
+          <a href="./non-fiction.html" class="navbar-anchor"> Non Fiction </a>
+        </button>
+        <button type="button" class="navbar-menu">
+          <a href="./novel.html" class="navbar-anchor"> Novel </a>
+        </button>
+        <button type="button" class="navbar-menu">
+          <a href="./historic.html" class="navbar-anchor"> Historic </a>
+        </button>
+        
+      </div>
+
+      </div>
+
+      <marquee direction="right"><h1>Fiction </h1></marquee>
+      <h1> Best Seller</h1>
+
+      <div class="shop-sections">
+        <div class="books-card"> 
+          <img src="./../images/fiction/divine-rivals.png" class="books-img" />
+
+          <p class="books-name">
+            Divine Rivals
+          </p>
+          <p class="books-price">174/-</p>
+          <div class="quantity-container">
+            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-1')" />
+
+            <span class="product-quantity" id="quantity-text-1">1</span>
+
+            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-1')" />
+        </div>
+        
+          <button type="button" class="add-cart-btn" >
+    
+          Add to card
+          </button>
+        </div>
+        <div class="books-card">
+            <img src="./../images/fiction/fire-blood.jpeg" class="books-img" />
+            <p class="books-name">Fire Blood</p>
+            <p class="books-price">554/-</p>
+            <div class="quantity-container1">
+                <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-2')" />
+                <span class="product-quantity" id="quantity-text-2">1</span>
+                <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-2')" />
+            </div>
+            <button type="button" class="add-cart-btn"  >
+              Add to cart
+            </button>
+          </div>
+
+          <div class="books-card">
+            <img src="./../images/fiction/fourth-wing.png" class="books-img"/>
+
+          <p class="books-name">
+            Fourth Wing
+          </p>
+          <p class="books-price">208/-</p>
+          <div class="quantity-container">
+            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-3')" />
+            <span class="product-quantity" id="quantity-text-3">1</span>
+            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-3')" />
+        </div>
+          <button type="button" class="add-cart-btn"  >
+            Add to cart
+          </button>
+        </div>
+
+        <div class="books-card">
+          <img src="./../images/fiction/game-of-thrones.jpeg" class="books-img"/>
+          <p class="books-name">Game OF Thrones</p>
+          <p class="books-price">400/-</p>
+          <div class="quantity-container">
+            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-4')" />
+            <span class="product-quantity" id="quantity-text-4">1</span>
+            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-4')" />
+        </div>
+        
+          <button type="button" class="add-cart-btn"  >
+            Add to cart
+          </button>
+        </div>
+        <div class="books-card">
+          <img src="./../images/fiction/iron-flame.jpg" class="books-img" />
+          <p class="books-name">Iron Flame</p>
+          <p class="books-price">249/-</p>
+          <div class="quantity-container">
+            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-5')" />
+            <span class="product-quantity" id="quantity-text-5">1</span>
+            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-5')" />
+        </div>
+        
+          <button type="button" class="add-cart-btn"  >
+            Add to cart
+          </button>
+        </div>
+      </div>
+      <h1>New Release</h1>
+
+      <div class="shop-sections">
+        <div class="books-card"> <i class="fa-solid fa-heart wishlist" style="color: #e5dbff;"></i>
+          <img src="./../images/fiction/pic-1.webp" class="books-img" />
+          <p class="books-name">
+            14 April (Telugu Dalit Short Stories)</p>
+          <p class="books-price">154/-</p>
+          <div class="quantity-container">
+            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-6')" />
+
+            <span class="product-quantity" id="quantity-text-6">1</span>
+
+            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-6')" />
+        </div>
+        
+          <button type="button" class="add-cart-btn"  >
+    
+          Add to card
+          </button>
+        </div>
+        <div class="books-card">
+            <img src="./../images/fiction/pic-2.webp" class="books-img" />
+  
+            <p class="books-name">1989</p>
+            <p class="books-price">1390/-</p>
+            <div class="quantity-container">
+                <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-7')" />
+    
+                <span class="product-quantity" id="quantity-text-7">1</span>
+    
+                <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-7')" />
+            </div>
+            
+            <button type="button" class="add-cart-btn"  >
+              Add to cart
+            </button>
+          </div>
+          <div class="books-card">
+            <img src="./../images/fiction/pic-3.webp" class="books-img"/>
+
+          <p class="books-name">
+            365 Penguins
+          </p>
+          <p class="books-price">99/-</p>
+          <div class="quantity-container">
+            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-8')" />
+
+            <span class="product-quantity" id="quantity-text-8">1</span>
+
+            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-8')" />
+        </div>
+        
+          <button type="button" class="add-cart-btn" >
+            Add to cart
+          </button>
+        </div>
+
+        <div class="books-card">
+          <img src="./../images/fiction/pic-4.webp" class="books-img"/>
+
+          <p class="books-name">Empty Out the Negative</p>
+          <p class="books-price">400/-</p>
+          <div class="quantity-container">
+            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-9')" />
+
+            <span class="product-quantity" id="quantity-text-9">1</span>
+
+            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-9')" />
+        </div>
+        
+          <button type="button" class="add-cart-btn"  >
+            Add to cart
+          </button>
+        </div>
+        <div class="books-card">
+          <img src="./../images/fiction/pic-5.jpg" class="books-img" />
+
+          <p class="books-name">A Confusion of Princes
+        </p>
+          <p class="books-price">249/-</p>
+          <div class="quantity-container">
+            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-10')" />
+
+            <span class="product-quantity" id="quantity-text-10">1</span>
+
+            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-10')" />
+        </div>
+        
+          <button type="button" class="add-cart-btn"  >
+            Add to cart
+          </button>
+        </div>
+      </div>
+      </div>
+    </div>
+    <h1> Popular Book</h1>
+
+      <div class="shop-sections">
+        <div class="books-card"> <i class="fa-solid fa-heart wishlist" style="color: #e5dbff;"></i>
+          <img src="./../images/fiction/pic-6.jpg" class="books-img" />
+
+          <p class="books-name">
+            A Close and Common Orbit
+          </p>
+          <p class="books-price">2630/-</p>
+          <div class="quantity-container">
+            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-11')" />
+
+            <span class="product-quantity" id="quantity-text-11">1</span>
+
+            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-11')" />
+        </div>
+        
+          <button type="button" class="add-cart-btn"  >
+    
+          Add to card
+          </button>
+        </div>
+        <div class="books-card">
+            <img src="./../images/fiction/pic-7.webp" class="books-img" />
+  
+            <p class="books-name">A Death At The Party</p>
+            <p class="books-price">754/-</p>
+            <div class="quantity-container">
+                <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-12')" />
+    
+                <span class="product-quantity" id="quantity-text-12">1</span>
+    
+                <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-12')" />
+            </div>
+            
+            <button type="button" class="add-cart-btn"  >
+              Add to cart
+            </button>
+          </div>
+          <div class="books-card">
+            <img src="./../images/fiction/pic-8.webp" class="books-img"/>
+
+          <p class="books-name">
+            A Hat Full Of Sky
+          </p>
+          <p class="books-price">599/-</p>
+          <div class="quantity-container">
+            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-13')" />
+
+            <span class="product-quantity" id="quantity-text-13">1</span>
+
+            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-13')" />
+        </div>
+        
+          <button type="button" class="add-cart-btn"  >
+            Add to cart
+          </button>
+        </div>
+
+        <div class="books-card">
+          <img src="./../images/fiction/song-of-ice-fire.jpeg" class="books-img"/>
+
+          <p class="books-name">A Song Of Ice and Fire</p>
+          <p class="books-price">842/-</p>
+          <div class="quantity-container">
+            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-14')" />
+
+            <span class="product-quantity" id="quantity-text-14">1</span>
+
+            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-14')" />
+        </div>
+        
+          <button type="button" class="add-cart-btn" >
+            Add to cart
+          </button>
+        </div>
+        <div class="books-card">
+          <img src="./../images/fiction/pic-9.webp" class="books-img" />
+
+          <p class="books-name">A Thousand Times Over
+        </p>
+          <p class="books-price">2356/-</p>
+          <div class="quantity-container">
+            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-15')" />
+
+            <span class="product-quantity" id="quantity-text-15">1</span>
+
+            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-15')" />
+        </div>
+        
+          <button type="button" class="add-cart-btn">
+            Add to cart
+          </button>
+        </div>
+      </div>
+
+      <div class="review-container">
+        <div class="review">
+          <img src="https://i.pravatar.cc/150?img=3" class="reviewer-img">
+          <p class="review-para">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <div class="rating">
+            <input type="radio" name="star" id="star11"><label for="star11"></label></input>
+            <input type="radio" name="star" id="star22"><label for="star22"></label></input>
+            <input type="radio" name="star" id="star33"><label for="star33"></label></input>
+            <input type="radio" name="star" id="star44"><label for="star44"></label></input>
+            <input type="radio" name="star" id="star55"><label for="star55"></label></input>
+          </div>
+        </div>
+        <div class="review">
+          <img src="https://i.pravatar.cc/150?img=5" class="reviewer-img">
+          <p class="review-para">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <div class="rating">
+            <input type="radio" name="star-1" id="star1"><label for="star1"></label></input>
+            <input type="radio" name="star-1" id="star2"><label for="star2"></label></input>
+            <input type="radio" name="star-1" id="star3"><label for="star3"></label></input>
+            <input type="radio" name="star-1" id="star4"><label for="star4"></label></input>
+            <input type="radio" name="star-1" id="star5"><label for="star5"></label></input>
+          </div>
+        </div>
+        <div class="review">
+          <img src="https://i.pravatar.cc/150?img=8" class="reviewer-img">
+          <p class="review-para">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <div class="rating">
+            <input type="radio" name="star-2" id="star6"><label for="star6"></label></input>
+            <input type="radio" name="star-2" id="star7"><label for="star7"></label></input>
+            <input type="radio" name="star-2" id="star8"><label for="star8"></label></input>
+            <input type="radio" name="star-2" id="star9"><label for="star9"></label></input>
+            <input type="radio" name="star-2" id="star10"><label for="star10"></label></input>
+          </div>
+        </div>
+      </div>
+
+    <div class="shop-footer">
+      <div class="footer-sec">
+        <p class="footer-sec-title">Quick Links</p>
+        <div class="footer-data">
+          <p><a href="index.html">Home </a></p>
+          <p><a href="./pages/fiction.html">Fiction </a></p>
+          <p><a href="./pages/personality.html">Personality </a></p>
+          <p><a href="./pages/non-fiction.html">Non-fiction </a></p>
+          <p><a href="./pages/novel.html"> Novel </a></p>
+          <p><a href="./pages/historic.html"> Historic </a></p>
+          <p><a href="./pages/login.html"> Login </a></p>
+        </div>
+      </div>
+      <div class="footer-sec">
+        <p class="footer-sec-title">Social :</p>
+        <div class="footer-data">
+          <p>
+            <i class="fa-solid fa-envelope"></i> &nbsp; &nbsp;
+            <a href="mailto:ashishgore382@gmail.com">ashishgore382@gmail.com</a>
+          </p>
+
+          <p>
+            <i class="fa-solid fa-phone"></i> &nbsp; &nbsp;
+            <a href="tel:+918805803087" class="footer-anchor">
+              +91-8805803087</a
+            >
+          </p>
+
+          <p><i class="fa-brands fa-facebook"></i> &nbsp; &nbsp; Facebook</p>
+
+          <p><i class="fa-brands fa-twitter"></i> &nbsp; &nbsp; Twitter</p>
+
+          <p><i class="fa-brands fa-instagram"></i> &nbsp; &nbsp; Instagram</p>
+
+          <p><i class="fa-brands fa-linkedin"></i> &nbsp; &nbsp; LinkedIn</p>
+        </div>
+      </div>
+      <div class="footer-sec">
+        <p class="footer-sec-title">
+          <a href="./contact.html"> Contact us :</a>
+        </p>
+        <div class="footer-data">
+          <p>
+            <i class="fa-solid fa-location-dot"></i> &nbsp; &nbsp;
+            <a href="https://maps.app.goo.gl/N3ngnED1vBDYVvj19" target="blank">
+              B.D.College of Engineering, Wardha</a
+            >
+          </p>
+          <p>
+            <i class="fa-solid fa-envelope"></i> &nbsp; &nbsp;
+            <a href="mailto:ashishgore393@gmail.com">ashishgore393@gmail.com</a>
+          </p>
+
+          <p>
+            <i class="fa-solid fa-phone"></i> &nbsp; &nbsp;
+            <a href="tel:+918975004427"> +91-8975004427</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <script >
+        let wishlistStatus = true;
+        let wishlistAllStatus = true;
+
+
+        
+      function increaseQuantity(quantityTextId) {
+          console.log(`Quantity Id: ${quantityTextId}`)
+          const quantityElement = document.getElementById(quantityTextId);
+          console.log(quantityElement);
+
+            let quantity = parseInt(quantityElement.innerText);
+            console.log(`Quantity: ${quantity}`);
+
+            if (quantity < 10) {
+                quantityElement.innerText = ++quantity;
+            }
+            else {
+                alert("You can't add than 10 items");
+            }
+
+        }
+
+        function decreaseQuantity(quantityTextId) {
+          console.log(`Quantity Id: ${quantityTextId}`)
+          const quantityElement = document.getElementById(quantityTextId)
+          console.log(quantityElement);
+
+          let quantity = parseInt(quantityElement.innerText);
+            if (quantity > 1) {
+                quantityElement.innerText = --quantity;
+            }
+            else {
+                alert("You can't add less than 1 item");
+            }
+        }
+
+        function wishlistHeart() {
+            console.log(wishlistStatus);
+            const wishlistElement = document.getElementById('wishlistIconId');
+
+            if(wishlistStatus){
+                wishlistElement.src= "./../images/home/heart-red.png";
+                wishlistStatus = false;
+            }
+            else{
+                wishlistElement.src= "./../images/home/heart.png";
+                wishlistStatus = true;
+            }
+        }
+
+        function wishlistHeartAll(imgId){
+            console.log(imgId);
+            const wishlistElement = document.getElementById(imgId);
+
+            if(wishlistAllStatus){
+                wishlistElement.src= "./../images/home/heart-red.png";
+                wishlistAllStatus = false;
+            }
+            else{
+                wishlistElement.src= "./../images/home/heart.png";
+                wishlistAllStatus = true;
+            }
+        }
+    </script>
+  
+    <script src="https://kit.fontawesome.com/4d47a5db67.js" crossorigin="anonymous"></script>
+    
+  </body>
+</html>

@@ -3,12 +3,13 @@
 
 <head>
     <title>Welcome to the Novel Section</title>
-    <script src="functions.js"></script>
+    
     <style>
         body {
             padding: 0;
             margin: 0;
             background-color: #fffefb;
+            overflow-x: hidden;
         }
 
         a {
@@ -420,31 +421,24 @@
 
 <body>
     <div class="shop-header">
-        <div class="shop-container">
-            <img src="../logo.png" alt="logo" class="shop-logo">
-            <p class="shop-name"> Readit</p>
-        </div>
-        <div class="search-container">
-            <input type="text" placeholder="The Black Beuty" class="search-bar" id="search-book"
-                onchange="searchBook()" />
-            <button type="button" class="search-button" onclick="showBook(name)">
-                Search
-            </button>
-        </div>
+        <a href="./../index.html">
+            <div class="shop-container">
+                <img src="./../images/home/logo.png" alt="logo" class="shop-logo">
+                <p class="shop-name"> Readit</p>
+            </div>
+        </a>
 
         <div class="navbar-menu-container">
-            <button type="button" class="navbar-menu"><a href="./pages/login.html" class="navbar-anchor"> Login
+            <button type="button" class="navbar-menu"><a href="./login.html" class="navbar-anchor"> Login
                 </a></button>
-            <button type="button" class="navbar-menu"><a href="./pages/fiction.html" class="navbar-anchor"> Fiction </a>
+            <button type="button" class="navbar-menu"><a href="./fiction.html" class="navbar-anchor"> Fiction </a>
             </button>
-            <button type="button" class="navbar-menu"><a href="./pages/non-fiction.html" class="navbar-anchor">
+            <button type="button" class="navbar-menu"><a href="./non-fiction.html" class="navbar-anchor">
                     Non-fiction </a> </button>
-            <button type="button" class="navbar-menu"><a href="./pages/novel.html" class="navbar-anchor"> Novel </a>
+            <button type="button" class="navbar-menu"><a href="./novel.html" class="navbar-anchor"> Novel </a>
             </button>
-            <button type="button" class="navbar-menu"><a href="./pages/historic.html" class="navbar-anchor"> Historic
+            <button type="button" class="navbar-menu"><a href="./historic.html" class="navbar-anchor"> Historic
                 </a> </button>
-            <button type="button" class="navbar-menu"><a href="./pages/cart.html" class="navbar-anchor"> Cart </a>
-            </button>
         </div>
     </div>
 
@@ -464,33 +458,32 @@
                 <img src="../images/novel/black-beuty.jpg" class="book-img" />
                 <p class="books-name" id="name"> The Black-Beuty</p>
                 <p class="books-price">499/- </p>
-                <button type="button" class="add-cart-btn" onclick="addToCart()"><a href="Shoppingcart.html">Add to cart
-                    </a></button>
+                <button type="button" class="add-cart-btn" onclick="addToCart()">Add to cart </button>
             </div>
             <div class="books-card">
                 <img src="../images/novel/brave.jpg" class="book-img"  />
                 <p class="books-name"> Brave The World </p>
                 <p class="books-price">600/-</p>
-                <button type="button" class="add-cart-btn"> <a href="Shoppingcart.html">Add to cart </a></button>
+                <button type="button" class="add-cart-btn">Add to cart </button>
             </div>
             <div class="books-card">
                 <img src="../images/novel/dracula.jpg" class="book-img" />
                 <p class="books-name"> The Dracula</p>
                 <p class="books-price"> 550/-</p>
-                <button type="button" class="add-cart-btn"> <a href="Shoppingcart.html">Add to cart </a></button>
+                <button type="button" class="add-cart-btn">Add to cart </button>
             </div>
 
             <div class="books-card">
                 <img src="../images/novel/gatspy.jpg" class="book-img" />
                 <p class="books-name">Gatspy </p>
                 <p class="books-price"> 400/-</p>
-                <button type="button" class="add-cart-btn"><a href="Shoppingcart.html">Add to cart </a></button>
+                <button type="button" class="add-cart-btn">Add to cart</button>
             </div>
             <div class="books-card">
                 <img src="../images/novel/oliver.jpg" class="book-img" />
                 <p class="books-name"> The Oliver Twist</p>
                 <p class="books-price">500/-</p>
-                <button type="button" class="add-cart-btn"><a href="Shoppingcart.html">Add to cart </a></button>
+                <button type="button" class="add-cart-btn">Add to cart</button>
             </div>
 
         </div>
@@ -499,32 +492,32 @@
                 <img src="../images/novel/oliver.jpg" class="book-img" />
                 <p class="books-name">The Oliver Twist</p>
                 <p class="books-price">500/-</p>
-                <button type="button" class="add-cart-btn"><a href="Shoppingcart.html">Add to cart </a></button>
+                <button type="button" class="add-cart-btn">Add to cart</button>
             </div>
             <div class="books-card">
                 <img src="../images/novel/king.jpg" class="book-img" />
                 <p class="books-name">The Return Of The King</p>
                 <p class="books-price"> 649/-</p>
-                <button type="button" class="add-cart-btn"><a href="Shoppingcart.html">Add to cart </a></button>
+                <button type="button" class="add-cart-btn">Add to cart</button>
             </div>
 
             <div class="books-card">
                 <img src="../images/novel/oliver.jpg" class="book-img" id="ikigai-id" />
                 <p class="books-name">The Oliver Twist</p>
                 <p class="books-price">500/-</p>
-                <button type="button" class="add-cart-btn"> <a href="Shoppingcart.html">Add to cart </a></button>
+                <button type="button" class="add-cart-btn"> Add to cart </button>
             </div>
             <div class="books-card">
                 <img src="../images/novel/sherlocks.jpg" class="book-img" />
                 <p class="books-name">The Complete sherlocks Home </p>
                 <p class="books-price">300/-</p>
-                <button type="button" class="add-cart-btn"><a href="Shoppingcart.html">Add to cart </a></button>
+                <button type="button" class="add-cart-btn">Add to cart</button>
             </div>
             <div class="books-card">
                 <img src="../images/novel/solitute.jpg" class="book-img" />
                 <p class="books-name">One Hundred Years Of solitute</p>
                 <p class="books-price">700/-</p>
-                <button type="button" class="add-cart-btn"><a href="Shoppingcart.html">Add to cart </a></button>
+                <button type="button" class="add-cart-btn">Add to cart</button>
             </div>
         </div>
         <div class="shop-sections">
@@ -532,31 +525,31 @@
                 <img src="../images/novel/uncle-tom.jpg" class="book-img" />
                 <p class="books-name"> Uncle Tom's Cabin </p>
                 <p class="books-price">499/-</p>
-                <button type="button" class="add-cart-btn"><a href="Shoppingcart.html">Add to cart </a></button>
+                <button type="button" class="add-cart-btn">Add to cart</button>
             </div>
             <div class="books-card">
                 <img src="../images/novel/vanier.jpg" class="book-img"  />
                 <p class="books-name"> The vaniety Fair</p>
                 <p class="books-price"> 499/-</p>
-                <button type="button" class="add-cart-btn"><a href="Shoppingcart.html">Add to cart </a></button>
+                <button type="button" class="add-cart-btn"> Add to cart</button>
             </div>
             <div class="books-card">
                 <img src="../images/novel/war.jpg" class="book-img" />
                 <p class="books-name">War And Peace </p>
                 <p class="books-price"> 499/-</p>
-                <button type="button" class="add-cart-btn"><a href="Shoppingcart.html">Add to cart </a></button>
+                <button type="button" class="add-cart-btn">Add to cart</button>
             </div>
             <div class="books-card">
                 <img src="../images/novel/portrait.jpg" class="book-img"  />
                 <p class="books-name"> A portraitof he Artist As a young MAN</p>
                 <p class="books-price"> 499/-</p>
-                <button type="button" class="add-cart-btn"><a href="Shoppingcart.html">Add to cart </a></button>
+                <button type="button" class="add-cart-btn">Add to cart</button>
             </div>
             <div class="books-card">
                 <img src="../images/novel/oliver.jpg" class="book-img"  />
                 <p class="books-name"> THe Oliver of the Twist</p>
                 <p class="books-price">500/-</p>
-                <button type="button" class="add-cart-btn"><a href="Shoppingcart.html">Add to cart </a></button>
+                <button type="button" class="add-cart-btn"> Add to cart</button>
             </div>
         </div>
 
@@ -565,22 +558,22 @@
         <div class="footer-sec">
             <p class="footer-sec-title"> Quick Links </p>
             <div class="footer-data">
-                <p><a href="index.html">Home </a></p>
-                <p><a href="./pages/fiction.html">Fiction
+                <p><a href="./../index.html">Home </a></p>
+                <p><a href="./fiction.html">Fiction
                     </a></p>
                 <p><a href="./pages/personality.html">Personality </a></p>
-                <p><a href="./pages/non-fiction.html">Non-fiction </a>
+                <p><a href="./non-fiction.html">Non-fiction </a>
                 </p>
-                <p><a href="./pages/academic.html">
-                        Academic </a></p>
-                <p><a href="./pages/login.html"> Login </a>
+                <p><a href="./historic.html">
+                       historical </a></p>
+                <p><a href="./login.html"> Login </a>
             </div>
         </div>
         <div class="footer-sec">
             <p class="footer-sec-title"> Social :</p>
             <div class="footer-data">
                 <p> <i class="fa-solid fa-envelope"></i>
-                    &nbsp; &nbsp; <a href="mailto:ashishgore382@gmail.com">ashishgore382@gmail.com</a>
+                    &nbsp; &nbsp; <a href="mailto:ashishgore382@gmail.com">chetanab123@gmail.com</a>
                 </p>
 
                 <p> <i class="fa-solid fa-phone"></i>
@@ -609,7 +602,7 @@
                         Engineering, Wardha</a>
                 </p>
                 <p> <i class="fa-solid fa-envelope"></i>
-                    &nbsp; &nbsp; <a href="mailto:ashishgore393@gmail.com">ashishgore393@gmail.com</a>
+                    &nbsp; &nbsp; <a href="mailto:ashishgore393@gmail.com">chetanab123@gmail.com</a>
                 </p>
 
                 <p> <i class="fa-solid fa-phone"></i>
@@ -619,7 +612,41 @@
         </div>
     </div>
     <script src="https://kit.fontawesome.com/4d47a5db67.js" crossorigin="anonymous"></script>
+    <script>
+        const addToCartButtons = document.querySelectorAll('.buy-now');
+        const cartList = document.querySelector('.cart-list');
+        const totalPriceEl = document.getElementById('total');
 
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', function (event) {
+                const book = this.parentNode.parentNode;
+                const bookName = book.querySelector('h3').textContent;
+                const bookPrice = parseFloat(book.querySelector('.price').textContent.slice(1));
+
+                const cartItem = document.createElement('li');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `<img src="../images/novel/book.png" alt="${bookName}">
+                        <span>${bookName}</span>
+                        <span class="price">$${bookPrice.toFixed(2)}</span>
+                        <button class="remove-from-cart">Remove</button>`;
+
+                cartList.appendChild(cartItem);
+
+                updateTotalPrice(bookPrice);
+
+                const removeButton = cartItem.querySelector('.remove-from-cart');
+                removeButton.addEventListener('click', function () {
+                    cartList.removeChild(cartItem);
+                    updateTotalPrice(-bookPrice);
+                });
+            });
+        });
+
+        function updateTotalPrice(price) {
+            const currentTotal = parseFloat(totalPriceEl.textContent);
+            totalPriceEl.textContent = (currentTotal + price).toFixed(2);
+        }
+    </script>
 </body>
 
 
