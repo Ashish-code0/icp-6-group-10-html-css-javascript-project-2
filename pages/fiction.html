@@ -502,12 +502,12 @@
       </div>
 
       </div>
+
       <marquee direction="right"><h1>Fiction </h1></marquee>
       <h1> Best Seller</h1>
 
       <div class="shop-sections">
         <div class="books-card"> 
-          <img src="./images/home/heart.png" onclick="wishlistHeartAll('wishlist-1')" class="wishlist-btn" id="wishlist-1">
           <img src="./../images/fiction/divine-rivals.png" class="books-img" />
 
           <p class="books-name">
@@ -515,36 +515,32 @@
           </p>
           <p class="books-price">174/-</p>
           <div class="quantity-container">
-            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
+            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-1')" />
 
-            <span class="product-quantity" id="quantity-text">1</span>
+            <span class="product-quantity" id="quantity-text-1">1</span>
 
-            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-1')" />
         </div>
         
-          <button type="button" class="add-cart-btn" onclick="addToCart('divine-rivals')" >
+          <button type="button" class="add-cart-btn" >
     
           Add to card
           </button>
         </div>
         <div class="books-card">
-          <img src="./../images/home/heart.png" onclick="wishlistHeartAll('wishlist-1')" class="wishlist-btn" id="wishlist-1">
             <img src="./../images/fiction/fire-blood.jpeg" class="books-img" />
-  
             <p class="books-name">Fire Blood</p>
             <p class="books-price">554/-</p>
             <div class="quantity-container1">
-                <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
-    
-                <span class="product-quantity" id="quantity-text1 ">1</span>
-    
-                <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+                <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-2')" />
+                <span class="product-quantity" id="quantity-text-2 ">1</span>
+                <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-2')" />
             </div>
-            
-            <button type="button" class="add-cart-btn" onclick="addToCart('atomic')" >
+            <button type="button" class="add-cart-btn"  >
               Add to cart
             </button>
           </div>
+
           <div class="books-card">
             <img src="./../images/fiction/fourth-wing.png" class="books-img"/>
 
@@ -553,50 +549,40 @@
           </p>
           <p class="books-price">208/-</p>
           <div class="quantity-container">
-            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
-
-            <span class="product-quantity" id="quantity-text">1</span>
-
-            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-3')" />
+            <span class="product-quantity" id="quantity-text-3">1</span>
+            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-3')" />
         </div>
-        
-          <button type="button" class="add-cart-btn" onclick="addToCart('psychology')" >
+          <button type="button" class="add-cart-btn"  >
             Add to cart
           </button>
         </div>
 
         <div class="books-card">
           <img src="./../images/fiction/game-of-thrones.jpeg" class="books-img"/>
-
           <p class="books-name">Game OF Thrones</p>
           <p class="books-price">400/-</p>
           <div class="quantity-container">
-            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
-
-            <span class="product-quantity" id="quantity-text">1</span>
-
-            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-4')" />
+            <span class="product-quantity" id="quantity-text-4">1</span>
+            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-4')" />
         </div>
         
-          <button type="button" class="add-cart-btn" onclick="addToCart('rich')" >
+          <button type="button" class="add-cart-btn"  >
             Add to cart
           </button>
         </div>
         <div class="books-card">
           <img src="./../images/fiction/iron-flame.jpg" class="books-img" />
-
-          <p class="books-name">Iron Flame
-        </p>
+          <p class="books-name">Iron Flame</p>
           <p class="books-price">249/-</p>
           <div class="quantity-container">
-            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
-
-            <span class="product-quantity" id="quantity-text">1</span>
-
-            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-5')" />
+            <span class="product-quantity" id="quantity-text-5">1</span>
+            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-5')" />
         </div>
         
-          <button type="button" class="add-cart-btn" onclick="addToCart('think')" >
+          <button type="button" class="add-cart-btn"  >
             Add to cart
           </button>
         </div>
@@ -606,20 +592,18 @@
       <div class="shop-sections">
         <div class="books-card"> <i class="fa-solid fa-heart wishlist" style="color: #e5dbff;"></i>
           <img src="./../images/fiction/pic-1.webp" class="books-img" />
-
           <p class="books-name">
-            14 April (Telugu Dalit Short Stories)
-          </p>
+            14 April (Telugu Dalit Short Stories)</p>
           <p class="books-price">154/-</p>
           <div class="quantity-container">
-            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
+            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-6')" />
 
-            <span class="product-quantity" id="quantity-text">1</span>
+            <span class="product-quantity" id="quantity-text-6">1</span>
 
-            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-6')" />
         </div>
         
-          <button type="button" class="add-cart-btn" onclick="addToCart('14-april')" >
+          <button type="button" class="add-cart-btn"  >
     
           Add to card
           </button>
@@ -630,14 +614,14 @@
             <p class="books-name">1989</p>
             <p class="books-price">1390/-</p>
             <div class="quantity-container">
-                <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
+                <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-7')" />
     
-                <span class="product-quantity" id="quantity-text">1</span>
+                <span class="product-quantity" id="quantity-text-7">1</span>
     
-                <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+                <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-7')" />
             </div>
             
-            <button type="button" class="add-cart-btn" onclick="addToCart('1989')" >
+            <button type="button" class="add-cart-btn"  >
               Add to cart
             </button>
           </div>
@@ -649,14 +633,14 @@
           </p>
           <p class="books-price">99/-</p>
           <div class="quantity-container">
-            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
+            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-8')" />
 
-            <span class="product-quantity" id="quantity-text">1</span>
+            <span class="product-quantity" id="quantity-text-8">1</span>
 
-            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-8')" />
         </div>
         
-          <button type="button" class="add-cart-btn" onclick="addToCart('365-Penguins')" >
+          <button type="button" class="add-cart-btn" >
             Add to cart
           </button>
         </div>
@@ -667,14 +651,14 @@
           <p class="books-name">Empty Out the Negative</p>
           <p class="books-price">400/-</p>
           <div class="quantity-container">
-            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
+            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-9')" />
 
-            <span class="product-quantity" id="quantity-text">1</span>
+            <span class="product-quantity" id="quantity-text-9">1</span>
 
-            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-9')" />
         </div>
         
-          <button type="button" class="add-cart-btn" onclick="addToCart('empty-out-the-negative')" >
+          <button type="button" class="add-cart-btn"  >
             Add to cart
           </button>
         </div>
@@ -685,14 +669,14 @@
         </p>
           <p class="books-price">249/-</p>
           <div class="quantity-container">
-            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
+            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-10')" />
 
-            <span class="product-quantity" id="quantity-text">1</span>
+            <span class="product-quantity" id="quantity-text-10">1</span>
 
-            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-10')" />
         </div>
         
-          <button type="button" class="add-cart-btn" onclick="addToCart('confusion-of-princes')" >
+          <button type="button" class="add-cart-btn"  >
             Add to cart
           </button>
         </div>
@@ -710,14 +694,14 @@
           </p>
           <p class="books-price">2630/-</p>
           <div class="quantity-container">
-            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
+            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-11')" />
 
-            <span class="product-quantity" id="quantity-text">1</span>
+            <span class="product-quantity" id="quantity-text-11">1</span>
 
-            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-11')" />
         </div>
         
-          <button type="button" class="add-cart-btn" onclick="addToCart('Closee-and-commom-orbit')" >
+          <button type="button" class="add-cart-btn"  >
     
           Add to card
           </button>
@@ -728,14 +712,14 @@
             <p class="books-name">A Death At The Party</p>
             <p class="books-price">754/-</p>
             <div class="quantity-container">
-                <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
+                <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-12')" />
     
-                <span class="product-quantity" id="quantity-text">1</span>
+                <span class="product-quantity" id="quantity-text-12">1</span>
     
-                <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+                <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-12')" />
             </div>
             
-            <button type="button" class="add-cart-btn" onclick="addToCart('death-at-the-party')" >
+            <button type="button" class="add-cart-btn"  >
               Add to cart
             </button>
           </div>
@@ -747,14 +731,14 @@
           </p>
           <p class="books-price">599/-</p>
           <div class="quantity-container">
-            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
+            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-13')" />
 
-            <span class="product-quantity" id="quantity-text">1</span>
+            <span class="product-quantity" id="quantity-text-13">1</span>
 
-            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-13')" />
         </div>
         
-          <button type="button" class="add-cart-btn" onclick="addToCart('hat-full-of-sky')" >
+          <button type="button" class="add-cart-btn"  >
             Add to cart
           </button>
         </div>
@@ -765,14 +749,14 @@
           <p class="books-name">A Song Of Ice and Fire</p>
           <p class="books-price">842/-</p>
           <div class="quantity-container">
-            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
+            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-14')" />
 
-            <span class="product-quantity" id="quantity-text">1</span>
+            <span class="product-quantity" id="quantity-text-14">1</span>
 
-            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-14')" />
         </div>
         
-          <button type="button" class="add-cart-btn" onclick="addToCart('song-of-ice-and-fire')" >
+          <button type="button" class="add-cart-btn" >
             Add to cart
           </button>
         </div>
@@ -783,14 +767,14 @@
         </p>
           <p class="books-price">2356/-</p>
           <div class="quantity-container">
-            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity()" />
+            <img src="./../images/nonfiction/minus.png" class="btn-quantity" onclick="decreaseQuantity('quantity-text-15')" />
 
-            <span class="product-quantity" id="quantity-text">1</span>
+            <span class="product-quantity" id="quantity-text-15">1</span>
 
-            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity()" />
+            <img src="./../images/nonfiction/plus.png" class="btn-quantity" onclick="increaseQuantity('quantity-text-15')" />
         </div>
         
-          <button type="button" class="add-cart-btn" onclick="addToCart('thousand-times-over')" >
+          <button type="button" class="add-cart-btn">
             Add to cart
           </button>
         </div>
@@ -903,9 +887,14 @@
         let wishlistAllStatus = true;
 
 
-        const quantityElement = document.getElementById("quantity-text");
-        function increaseQuantity() {
+        
+      function increaseQuantity(quantityTextId) {
+          console.log(`Quantity Id: ${quantityTextId}`)
+          const quantityElement = document.getElementById(quantityTextId);
+          console.log(quantityElement);
+
             let quantity = parseInt(quantityElement.innerText);
+            console.log(`Quantity: ${quantity}`);
 
             if (quantity < 10) {
                 quantityElement.innerText = ++quantity;
@@ -916,8 +905,12 @@
 
         }
 
-        function decreaseQuantity() {
-            let quantity = parseInt(quantityElement.innerText);
+        function decreaseQuantity(quantityTextId) {
+          console.log(`Quantity Id: ${quantityTextId}`)
+          const quantityElement = document.getElementById(quantityTextId)
+          console.log(quantityElement);
+
+          let quantity = parseInt(quantityElement.innerText);
             if (quantity > 1) {
                 quantityElement.innerText = --quantity;
             }
