@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background: linear-gradient(to left, #1FA2FF, #12D8FA, #A6FFCB);
+            font-family:'Times New Roman', Times, serif;
+            overflow-x: hidden;
+        }
+        a {
+            text-decoration: none;
+            color:black;
+        }
+        .receipt-container {
+            width: 50%;
+            background-color: #fff;
+            border-radius: 3px ;
+            margin: 20px auto;
+            padding: 5px;
+            box-shadow: 1px 1px 10px 0 rgb(55, 55, 55);
+            position: relative;
+        }
+        .receipt-header {
+            background-color: #1FA2FF ;
+            margin:0;
+            font-size: 25px;
+            padding: 0 15px;
+            font-weight: bold;
+            text-align: start;
+            display: flex;
+        }
+        .shop-container{
+            width:180px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .shop-logo{
+            height: 50px;
+        }
+        .shop-name{
+            font-size: 25px;
+            color:black;
+        }
+        .shop-detail{
+            width:300px;
+            padding: 10px 20px;
+            font-size: 12px;
+            margin-left: auto;
+            color: black;
+            text-align: end;
+        }
+        .receipt-body{
+            margin-top: 10px;;
+            border-top: 2px  dotted #000;
+            padding: 10px 50px;
+        }
+        .receipt-no{
+            position: absolute;
+            font-size: 13px;
+            right: 5px;
+            top : 130px;
+        }
+        .items-details{
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        .body-items{
+            text-align: start;
+            width:250px;
+        }
+        .item-price{
+            font-size: 15px;
+            font-weight: bold;
+            text-align: center;
+            width:200px;
+        }
+        .items-total{
+            display: flex;
+            justify-content: center;
+            padding:5px 0;
+            margin:10px 0;
+            border-top: 2px dashed #000;
+        }
+        .payment-details{
+            display: flex;
+            justify-content: space-around;
+            margin: 10px 0;
+        }
+        .payment-items{
+            text-align: start;
+            font-size: 20px;
+            width:150px;
+        }
+        .payment-value{
+            font-size: 20px;
+            font-weight: bold;
+            text-align: start;
+            width:180px;
+            border-bottom: 2px dotted #000;
+        }
+        .footer {
+            border-top: 2px solid #000;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+            padding: 5px;
+        }
+        .footer-signature{
+            margin-right: 25px;
+            position: relative;
+        }
+        .footer-stamp{
+            width: 100px;
+            position: absolute;
+            bottom: 5px;
+            right: -30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="receipt-container">
+    <div class="receipt-header">
+        <div class="shop-container">
+            <img src="./../images/home/logo.png" class="shop-logo"/>
+            <p class="shop-name"> Readit </p>
+        </div>
+        <div class="shop-detail">
+            
+            <p>
+                <i class="fa-solid fa-location-dot"></i> &nbsp; 
+                Near Kasturba Hospital, <br/> Sevagram 442003 <br/> Wardha
+            </p>
+            <p>
+                <i class="fa-solid fa-phone"></i> &nbsp; 
+                <a href="tel: +91 8975004427"> +91-8975004427 </a>
+            </p>
+        </div>
+    </div>
+    <span class="receipt-no"> Receipt no : 12345 </span>
+    <div class="receipt-body">
+        <p style="text-align: center; font-size: 20px;"><b>  Payment Receipt </b>  </p>
+        
+            <!--
+            <div class="items-total">
+                <div class="body-items"> Total : </div> <div class="item-price" id="totalAmountReceiptId"> 0 </div>
+            </div>
+            -->
+            
+            
+            <div class="payment-details">
+                <div class="payment-items"> Payment Mode : </div> <div class="payment-value"> Card </div> 
+            </div>
+            <div class="payment-details">
+                <div class="payment-items"> Payment Date : </div> <div class="payment-value"> 20 December 2023 </div> 
+            </div>
+    </div>
+    
+    <div class="footer">
+        <div>
+            Thank you for shopping with us!
+        </div>
+        <div class="footer-signature">
+            <img src="./../images/home/stamp.png" class="footer-stamp">
+            Signature 
+        </div>
+    </div>
+</div>
+<script src="./../index.js">
+    
+</script>
+ <script src="https://kit.fontawesome.com/4d47a5db67.js" crossorigin="anonymous"></script>
+</body>
+</html>

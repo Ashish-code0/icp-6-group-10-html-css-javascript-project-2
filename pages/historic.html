@@ -1,231 +1,808 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Historical Books</title>
-    <style>
-        
-          .hed{
-              text-align: center;
-              color: #ffbb00;
-          }
-            .shop-sections{
-              margin: 10px 0;
-              border-bottom: 2px solid #ffbb00;
-              display: flex;
-          }
-          .books-card:hover .add-cart-btn{
-            opacity: 1;
-            visibility: visible;
-          }
-          .books-card{
-              width:250px;
-              padding: 10px 15px; 
-              margin:5px 15px;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              border-right: 1px solid black;
-          }
-          .books-img{
-              height:220px;
-              border: 1px solid white;
-          }
-          .books-name{
-              text-align: center;
-              
-              font-size: 17px;
-          }
-          .books-price{
-              font-size: 20px;
-              color:#000;
-              font-weight: bold;
-          }
-          .add-cart-btn{
-              background-color: #de1212;
-              padding: 5px 15px;
-              font-size: 17px;
-              border:none;
-              color:white;
-              cursor: pointer;
-              border-radius: 10px;
-          }
-      @media screen and (max-width:978px){
-      .container{
-          flex-wrap: wrap;
-          flex-direction: column;
+  <title>Historical Books Page</title>
+  <style>
+    body {
+      overflow-x: hidden;
+      padding: 0;
+      margin: 0;
+      background-color: #fffefb;
+    }
+
+    /* remove underline and styling on a tag*/
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    /* Styles for the header section */
+    .shop-header {
+      background: linear-gradient(to left, #1FA2FF, #12D8FA, #A6FFCB);
+      padding: 2px 15px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      font-size: 20px;
+    }
+
+    .shop-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0px 40px;
+    }
+
+    .shop-logo {
+      height: 60px;
+      margin: 0;
+    }
+
+    .shop-name {
+      font-size: 25px;
+      font-weight: bolder;
+      margin: 0;
+    }
+
+    .search-container {
+      display: flex;
+      margin: 0;
+      margin-bottom: 35px;
+    }
+
+    input {
+      border: none;
+      outline: none;
+      background: none;
+    }
+
+    .search-bar {
+      width: 330px;
+      padding: 8px 15px;
+      font-size: 15px;
+      border: none;
+      border-radius: 25px 0 0 25px;
+      background-color: azure;
+    }
+
+    .search-button {
+      display: block;
+      margin-left: auto;
+      padding: 5px 15px;
+      font-size: 15px;
+      height: 33px;
+      border: none;
+      border-radius: 0 25px 25px 0;
+      background-color: #000;
+      color: white;
+    }
+
+    .search-button:hover {
+      cursor: pointer;
+      height: 37px;
+    }
+
+    .navbar-menu-container {
+      display: flex;
+      margin-top: 25px;
+    }
+
+    .navbar-menu {
+      margin: 0 15px;
+      font-size: 15px;
+      padding: 5px 25px;
+      border-radius: 10px;
+      border: none;
+      background-color: #000;
+      color: white;
+    }
+
+    .navbar-anchor {
+      color: white;
+    }
+
+    /* Styles for the body section */
+    .shop-body {
+      display: flex;
+      flex-direction: column;
+      margin: 0 5px;
+    }
+
+    /* section to show searched book */
+    .searched-sections {
+      display: none;
+      margin: 10px auto;
+      background-color: #ffd60a;
+      width: 98vw;
+      border-bottom: 2px solid #ffbb00;
+    }
+
+    .search-section-container {
+      border-top: 1px solid #de1212;
+      border-bottom: 1px solid #de1212;
+      display: flex;
+      align-items: center;
+      padding: 2px 20px;
+    }
+
+    .search-book-title {
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      margin: 5px 0;
+    }
+
+    .closeSearch {
+      display: block;
+      margin: 5px 0;
+      margin-left: auto;
+      border: none;
+      padding: 2px 10px;
+      color: white;
+      font-size: 17px;
+      border-radius: 10px;
+      background-color: #de1212;
+      cursor: pointer;
+    }
+
+    .search-card {
+      width: 250px;
+      padding: 10px 15px;
+      margin: 5px auto;
+      border-right: 1px solid black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Section for products */
+    .shop-sections {
+      margin: 13px 0;
+      padding: 20px 0;
+      border-bottom: 2px solid #ffbb00;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .books-card {
+      width: 250px;
+      padding: 10px 20px;
+      margin: 5px 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-right: 1px solid black;
+      position: relative;
+    }
+
+    .books-card:hover {
+      width: 260px;
+      transition: 0.3s;
+      box-shadow: 1px 1px 10px 0 black;
+      border-radius: 10px;
+    }
+
+    .books-img {
+      height: 220px;
+    }
+
+    .books-name {
+      text-align: center;
+      font-size: 17px;
+    }
+
+    .books-price {
+      font-size: 20px;
+      color: #000;
+      font-weight: bold;
+    }
+     /*  increment decrement */
+     .quantity-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .btn-quantity {
+            width: 20px;
+            cursor: pointer;
+        }
+
+        .product-quantity {
+            font-size: 20px;
+        }
+
+        /*  increment decrement end */
+
+    .add-cart-btn {
+     
+      background: linear-gradient(to left, #ff6500, #ff1701);
+      padding: 7px 15px;
+      font-size: 15px;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+
+    .add-cart-btn:hover {
+      font-size: 17px;
+      padding: 7px 20px;
+    }
+
+    /* Styles for the footer section */
+   /* footer section start */
+   .shop-footer {
+            /*   background: linear-gradient(to left , #1FA2FF, #12D8FA ); */
+            background: #232f3f;
+            background: linear-gradient(to left, #000428, #004e92);
+            display: flex;
+            color: #ffffff;
+            justify-content: space-around;
+            font-size: 15px;
+        }
+
+        .footer-sec {
+            width: 400px;
+            margin: 10px 10px;
+            border-right: 2px solid #000000;
+            color: #ffffff;
+        }
+
+        .footer-sec-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .footer-data {
+            margin-left: 20px;
+            color: #ffffff;
+        }
+
+        .footer-data p a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        /* footer section end */
+    /* Responsive for small screen */
+    @media screen and (max-width: 700px) {
+      body {
+        overflow-x: hidden;
       }
-      .card{
-          max-width:700px;
-          margin: 20px 0;
+
+      .shop-header {
+        flex-direction: column;
       }
-    } 
-    </style>
+
+      .shop-logo {
+        height: 50px;
+      }
+
+      .shop-name {
+        font-size: 25px;
+      }
+
+      .search-container {
+
+        margin-bottom: 15px;
+      }
+
+      .navbar-menu-container {
+        display: flex;
+        margin: 15px 0;
+      }
+
+      .navbar-menu {
+        margin: 0 10px;
+        font-size: 10px;
+        padding: 5px 20px;
+        border-radius: 10px;
+        border: none;
+        background-color: #000;
+        color: white;
+      }
+
+      .shop-sections {
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+
+      .books-card {
+        width: 220px;
+        padding: 10px 10px;
+        margin: 10px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .books-img {
+        height: 180px;
+      }
+    }
+
+    /* Responsive for tablet screen */
+    @media screen and (min-width: 701px)and (max-width:900px) {
+      body {
+        overflow-x: hidden;
+      }
+
+      .shop-header {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+
+      .shop-logo {
+        height: 70px;
+      }
+
+      .shop-name {
+        font-size: 25px;
+      }
+
+      .search-container {
+        margin-left: 0;
+        margin-bottom: 0;
+      }
+
+      .navbar-menu-container {
+        display: flex;
+        margin: 15px 0;
+      }
+
+      .navbar-menu {
+        margin: 0 10px;
+        font-size: 15px;
+        padding: 5px 30px;
+        border-radius: 10px;
+        border: none;
+        background-color: #000;
+        color: white;
+      }
+
+      .shop-sections {
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+
+      .books-card {
+        width: 220px;
+        padding: 10px 10px;
+        margin: 10px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .books-img {
+        height: 200px;
+      }
+    }
+
+    /* Responsive for laptop screen */
+    @media screen and (min-width: 901px)and (max-width:1299px) {
+      body {
+        overflow-x: hidden;
+      }
+
+      .shop-header {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+
+      .shop-logo {
+        height: 70px;
+      }
+
+      .shop-name {
+        font-size: 25px;
+      }
+
+      .search-container {
+        margin-left: 0;
+        margin-bottom: 0;
+      }
+
+      .navbar-menu-container {
+        display: flex;
+        margin: 15px 0;
+      }
+
+      .navbar-menu {
+        margin: 0 10px;
+        font-size: 15px;
+        padding: 5px 45px;
+        border-radius: 10px;
+        border: none;
+        background-color: #000;
+        color: white;
+      }
+
+      .shop-sections {
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+
+      .books-card {
+        width: 220px;
+        padding: 10px 10px;
+        margin: 10px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .books-img {
+        height: 200px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <div class="shop-header">
-        <a href="./index.html">
-          <div class="shop-container">
-            <img src="logo.png" alt="logo" class="shop-logo" />
-            <p class="shop-name">Readit</p>
-          </div>
-        </a>
-        <div class="search-container">
-          <input type="text" placeholder="Ramayana" class="search-bar" id="search-book" onchange="searchBook()"/>
-          <button type="button" class="search-button" onclick="showBook(bookName)">
-            Search
-          </button>
-        </div>
-  
-        <div class="navbar-menu-container">
-          <button type="button" class="navbar-menu">
-            <a href="./pages/login.html" class="navbar-anchor"> Login </a>
-          </button>
-          <button type="button" class="navbar-menu">
-            <a href="./pages/fiction.html" class="navbar-anchor"> Fiction </a>
-          </button>
-          <button type="button" class="navbar-menu">
-            <a href="./pages/non-fiction.html" class="navbar-anchor">
-              Non-fiction
-            </a>
-          </button>
-          <button type="button" class="navbar-menu">
-            <a href="./pages/novel.html" class="navbar-anchor"> Novel </a>
-          </button>
-          <button type="button" class="navbar-menu">
-            <a href="./pages/historic.html" class="navbar-anchor"> Historic </a>
-          </button>
-          <button type="button" class="navbar-menu">
-            <a href="./pages/cart.html" class="navbar-anchor"> Cart </a>
-          </button>
-        </div>
+
+  <div class="shop-header">
+    <a href="./../index.html">
+      <div class="shop-container">
+        <img src="./../images/home/logo.png" alt="logo" class="shop-logo" />
+        <p class="shop-name">Readit</p>
       </div>
-    <h1 class="hed">Historical Books</h1>
+    </a>
+
+
+    <div class="navbar-menu-container">
+      <button type="button" class="navbar-menu"><a href="../index.html" class="navbar-anchor"> Home </a>
+      </button>
+      <button type="button" class="navbar-menu">
+        <a href="./login.html" class="navbar-anchor"> Login </a>
+      </button>
+      <button type="button" class="navbar-menu">
+        <a href="./fiction.html" class="navbar-anchor"> Fiction </a>
+      </button>
+      <button type="button" class="navbar-menu">
+        <a href="./non-fiction.html" class="navbar-anchor">
+          Non-fiction
+        </a>
+      </button>
+      <button type="button" class="navbar-menu">
+        <a href="./novel.html" class="navbar-anchor"> Novel </a>
+      </button>
+      <button type="button" class="navbar-menu">
+        <a href="./historic.html" class="navbar-anchor"> Historic </a>
+      </button>
+
+    </div>
+  </div>
+
+  <!--Page body code-->
+
+  <div class="shop-body">
+    <div class="searched-sections" id="hidden-search-id">
+      <!-- Search book title and close button -->
+      <div class="search-section-container">
+        <p class="search-book-title">Searched Book:</p>
+        <button type="button" class="closeSearch" onclick="closeSearch()">
+          <i class="fa-solid fa-xmark" style="color: white"></i>
+        </button>
+      </div>
+
+      <!-- Searched card -->
+      <div class="search-card">
+        <img src="./../images/historical/bhagwatgitta.jpg" class="books-img" id="book-img-id" />
+        <h4 class="books-name">Bhagwatgitta</h4>
+        <p class="books-price" id="book-price-id">499/-</p>
+        <button type="button" class="add-cart-btn" onclick="addToCart(bookName)">
+          Add to cart
+        </button>
+      </div>
+    </div>
+    <marquee direction="right">
+      <h1>Historic Books</h1>
+  </marquee>
+    <!-- Section 1-->
     <div class="shop-sections">
-            <div class="books-card">
-                <img src="C:\Users\TOSHIBA\Desktop\icp-6-group-10-html-css-javascript-project-2\images\historical\ramayana.jpg" class="books-img"  />
-                <h4 class="books-name" > Ramayana </h4>
-                <p class="books-price">499/- </p>
-                <button type="button" class="add-cart-btn" onclick="addToCart('ikigai')"> Add to cart</button>
-            </div>
-            <div class="books-card">
-                <img src="C:\Users\TOSHIBA\Desktop\icp-6-group-10-html-css-javascript-project-2\images\historical\kasturba gandhi.jpg" class="books-img"  />
-                <h4 class="books-name" >Kasturba Gandhi</h4>
-                <p class="books-price">600/-</p>
-                <button type="button" class="add-cart-btn" onclick="addToCart('atomic')"> Add to cart</button>
-            </div>
-            <div class="books-card">
-                <img src="C:\Users\TOSHIBA\Desktop\icp-6-group-10-html-css-javascript-project-2\images\historical\mahabharata.jpg" class="books-img"  />
-                <h4 class="books-name" > Mahabharata </h4>
-                <p class="books-price"> 550/-</p>
-                <button type="button" class="add-cart-btn" onclick="addToCart('psychology')"> Add to cart</button>
-            </div>
-            
-            <div class="books-card">
-                <img src="C:\Users\TOSHIBA\Desktop\icp-6-group-10-html-css-javascript-project-2\images\historical\chanakya.jpg" class="books-img"  />
-                <h4 class="books-name" > Chanakya Niti </h4>
-                <p class="books-price"> 400/-</p>
-                <button type="button" class="add-cart-btn" onclick="addToCart('rich')"> Add to cart</button>
-            </div>
-            <div class="books-card">
-                <img src="C:\Users\TOSHIBA\Desktop\icp-6-group-10-html-css-javascript-project-2\images\historical\bhagwatgitta.jpg" class="books-img"  />
-                <h4 class="books-name" > Bhagwatgitta  </h4>
-                <p class="books-price"> 649/-</p>
-                <button type="button" class="add-cart-btn" onclick="addToCart('think')"> Add to cart</button>
-            </div>
-        </div>
-        <div class="shop-sections">
-            <div class="books-card">
-                <img src="./../images/historical/buddhacharitra.jpg" class="books-img"  />
-                <h4 class="books-name" >Buddhacharitra</h4>
-                <p class="books-price">500/-</p>
-                <button type="button" class="add-cart-btn" onclick="addToCart('divine')"> Add to cart</button>
-            </div>
-            <div class="books-card">
-                <img src="C:\Users\TOSHIBA\Desktop\icp-6-group-10-html-css-javascript-project-2\images\historical\maharastra-itihas.jpg" class="books-img"  />
-                <h4 class="books-name" >Maharastra Itihas  </h4>
-                <p class="books-price">300/-</p>
-                <button type="button" class="add-cart-btn" onclick="addToCart('fire')"> Add to cart</button>
-            </div>
-            <div class="books-card">
-                <img src="C:\Users\TOSHIBA\Desktop\icp-6-group-10-html-css-javascript-project-2\images\historical\ranilaxmibai.jpg"  />
-                <h4 class="books-name" > Ranilaxmibai </h4>
-                <p class="books-price">700/-</p>
-                <button type="button" class="add-cart-btn" onclick="addToCart('game')"> Add to cart</button>
-            </div>
-            <div class="books-card">
-                <img src="C:\Users\TOSHIBA\Desktop\icp-6-group-10-html-css-javascript-project-2\images\historical\gandhi.jpg" class="books-img"  />
-                <h4 class="books-name" >Mahatma Gandhi </h4>
-                <p class="books-price">499/-</p>
-                <button type="button" class="add-cart-btn" onclick="addToCart('fourth')"> Add to cart</button>
-            </div>
-            <div class="books-card">
-                <img src="C:\Users\TOSHIBA\Desktop\icp-6-group-10-html-css-javascript-project-2\images\historical\sardar.jpg" class="books-img" />
-                <h4 class="books-name" >sardar vallabhbhai patel  </h4>
-                <p class="books-price"> 499/-</p>
-                <button type="button" class="add-cart-btn" onclick="addToCart('iron')"> Add to cart</button>
-            </div>
-            
-        </div>
-        <div class="shop-footer">
-            <div class="footer-sec">
-              <p class="footer-sec-title">Quick Links</p>
-              <div class="footer-data">
-                <p><a href="index.html">Home </a></p>
-                <p><a href="./pages/fiction.html">Fiction </a></p>
-                <p><a href="./pages/personality.html">Personality </a></p>
-                <p><a href="./pages/non-fiction.html">Non-fiction </a></p>
-                <p><a href="./pages/novel.html"> Novel </a></p>
-                <p><a href="./pages/historic.html"> Historic </a></p>
-                <p><a href="./pages/login.html"> Login </a></p>
-              </div>
-            </div>
-            <div class="footer-sec">
-              <p class="footer-sec-title">Social :</p>
-              <div class="footer-data">
-                <p>
-                  <i class="fa-solid fa-envelope"></i> &nbsp; &nbsp;
-                  <a href="mailto:ashishgore382@gmail.com">ashishgore382@gmail.com</a>
-                </p>
-      
-                <p>
-                  <i class="fa-solid fa-phone"></i> &nbsp; &nbsp;
-                  <a href="tel:+918805803087" class="footer-anchor">
-                    +91-8805803087</a
-                  >
-                </p>
-      
-                <p><i class="fa-brands fa-facebook"></i> &nbsp; &nbsp; Facebook</p>
-      
-                <p><i class="fa-brands fa-twitter"></i> &nbsp; &nbsp; Twitter</p>
-      
-                <p><i class="fa-brands fa-instagram"></i> &nbsp; &nbsp; Instagram</p>
-      
-                <p><i class="fa-brands fa-linkedin"></i> &nbsp; &nbsp; LinkedIn</p>
-              </div>
-            </div>
-            <div class="footer-sec">
-              <p class="footer-sec-title">
-                <a href="./pages/contact.html"> Contact us :</a>
-              </p>
-              <div class="footer-data">
-                <p>
-                  <i class="fa-solid fa-location-dot"></i> &nbsp; &nbsp;
-                  <a href="https://maps.app.goo.gl/N3ngnED1vBDYVvj19" target="blank">
-                    B.D.College of Engineering, Wardha</a
-                  >
-                </p>
-                <p>
-                  <i class="fa-solid fa-envelope"></i> &nbsp; &nbsp;
-                  <a href="mailto:ashishgore393@gmail.com">ashishgore393@gmail.com</a>
-                </p>
-      
-                <p>
-                  <i class="fa-solid fa-phone"></i> &nbsp; &nbsp;
-                  <a href="tel:+918975004427"> +91-8975004427</a>
-                </p>
-              </div>
-            </div>
-          </div>
-          
+      <div class="books-card">
+        <img src="./../images/historical/buddhacharitra.jpg" class="books-img" />
+        <h4 class="books-name">Buddhacharitra</h4>
+        <p class="books-price">499/-</p>
+        <!--Increament decrement-->
+        <div class="quantity-container">
+          <img src="./../images/nonfiction/minus.png" class="btn-quantity"
+              onclick="decreaseQuantity('quantity-text-1')" />
+
+          <span class="product-quantity" id="quantity-text-1">1</span>
+
+          <img src="../images/nonfiction/plus.png" class="btn-quantity"
+              onclick="increaseQuantity('quantity-text-1')" />
+      </div>
+      <!--Increament decrement end -->
+        <button type="button" class="add-cart-btn" onclick="addToCart('ikigai')">
+          Add to cart
+        </button>
+      </div>
+      <div class="books-card">
+        <img src="./../images/historical/chanakya.jpg" class="books-img" />
+
+        <h4 class="books-name"> Chanakya Nitti</h4>
+        <p class="books-price">600/-</p>
+        <!--Increament decrement-->
+        <div class="quantity-container">
+          <img src="./../images/nonfiction/minus.png" class="btn-quantity"
+              onclick="decreaseQuantity('quantity-text-2')" />
+
+          <span class="product-quantity" id="quantity-text-2">1</span>
+
+          <img src="./../images/nonfiction/plus.png" class="btn-quantity"
+              onclick="increaseQuantity('quantity-text-2')" />
+      </div>
+      <!--Increament decrement end -->
+        <button type="button" class="add-cart-btn" onclick="addToCart('atomic')">
+          Add to cart
+        </button>
+      </div>
+      <div class="books-card">
+        <img src="./../images/historical/gandhi.jpg" class="books-img" />
+        <h4 class="books-name">Mahatama Gandhi</h4>
+        <p class="books-price">550/-</p>
+         <!--Increament decrement-->
+         <div class="quantity-container">
+          <img src="./../images/nonfiction/minus.png" class="btn-quantity"
+              onclick="decreaseQuantity('quantity-text-3')" />
+
+          <span class="product-quantity" id="quantity-text-3">1</span>
+
+          <img src="./../images/nonfiction/plus.png" class="btn-quantity"
+              onclick="increaseQuantity('quantity-text-3')" />
+      </div>
+      <!--Increament decrement end -->
+        <button type="button" class="add-cart-btn" onclick="addToCart('psychology')">
+          Add to cart
+        </button>
+      </div>
+      <div class="books-card">
+        <img src="./../images/historical/kasturba gandhi.jpg" class="books-img" />
+        <h4 class="books-name">Kasturba Gandhi</h4>
+        <p class="books-price">400/-</p>
+         <!--Increament decrement-->
+         <div class="quantity-container">
+          <img src="./../images/nonfiction/minus.png" class="btn-quantity"
+              onclick="decreaseQuantity('quantity-text-4')" />
+
+          <span class="product-quantity" id="quantity-text-4">1</span>
+
+          <img src="./../images/nonfiction/plus.png" class="btn-quantity"
+              onclick="increaseQuantity('quantity-text-4')" />
+      </div>
+      <!--Increament decrement end -->
+        <button type="button" class="add-cart-btn" onclick="addToCart('rich')">
+          Add to cart
+        </button>
+      </div>
+      <div class="books-card">
+        <img src="./../images/historical/mahabharata.jpg" class="books-img" />
+        <h4 class="books-name">Mahabharata</h4>
+        <p class="books-price">649/-</p>
+         <!--Increament decrement-->
+         <div class="quantity-container">
+          <img src="./../images/nonfiction/minus.png" class="btn-quantity"
+              onclick="decreaseQuantity('quantity-text-5')" />
+
+          <span class="product-quantity" id="quantity-text-5">1</span>
+
+          <img src="./../images/nonfiction/plus.png" class="btn-quantity"
+              onclick="increaseQuantity('quantity-text-5')" />
+      </div>
+      <!--Increament decrement end -->
+        <button type="button" class="add-cart-btn" onclick="addToCart('think')">
+          Add to cart
+        </button>
+      </div>
+    </div>
+
+    <!-- Section 2-->
+    <div class="shop-sections">
+      <div class="books-card">
+        <img src="./../images/historical/maharastra-itihas.jpg" class="books-img" />
+        <h4 class="books-name">Maharastra Itihas</h4>
+        <p class="books-price">500/-</p>
+         <!--Increament decrement-->
+         <div class="quantity-container">
+          <img src="./../images/nonfiction/minus.png" class="btn-quantity"
+              onclick="decreaseQuantity('quantity-text-6')" />
+
+          <span class="product-quantity" id="quantity-text-6">1</span>
+
+          <img src="./../images/nonfiction/plus.png" class="btn-quantity"
+              onclick="increaseQuantity('quantity-text-6')" />
+      </div>
+      <!--Increament decrement end -->
+        <button type="button" class="add-cart-btn" onclick="addToCart('divine')">
+          Add to cart
+        </button>
+      </div>
+      <div class="books-card">
+        <img src="./../images/historical/ramayana.jpg" class="books-img" />
+        <h4 class="books-name">Ramayana</h4>
+        <p class="books-price">300/-</p>
+        <!--Increament decrement-->
+        <div class="quantity-container">
+          <img src="./../images/nonfiction/minus.png" class="btn-quantity"
+              onclick="decreaseQuantity('quantity-text-7')" />
+
+          <span class="product-quantity" id="quantity-text-7">1</span>
+
+          <img src="./../images/nonfiction/plus.png" class="btn-quantity"
+              onclick="increaseQuantity('quantity-text-7')" />
+      </div>
+      <!--Increament decrement end -->
+        <button type="button" class="add-cart-btn" onclick="addToCart('fire')">
+          Add to cart
+        </button>
+      </div>
+      <div class="books-card">
+        <img src="./../images/historical/ranilaxmibai.jpg" class="books-img" />
+        <h4 class="books-name">Rani Laxmibai</h4>
+        <p class="books-price">300/-</p>
+         <!--Increament decrement-->
+         <div class="quantity-container">
+          <img src="./../images/nonfiction/minus.png" class="btn-quantity"
+              onclick="decreaseQuantity('quantity-text-8')" />
+
+          <span class="product-quantity" id="quantity-text-8">1</span>
+
+          <img src="./../images/nonfiction/plus.png" class="btn-quantity"
+              onclick="increaseQuantity('quantity-text-8')" />
+      </div>
+      <!--Increament decrement end -->
+        <button type="button" class="add-cart-btn" onclick="addToCart('game')">
+          Add to cart
+        </button>
+      </div>
+      <div class="books-card">
+        <img src="./../images/historical/sardar.jpg" class="books-img" />
+        <h4 class="books-name">Sardar vallabhbhai patel </h4>
+        <p class="books-price">499/-</p>
+         <!--Increament decrement-->
+         <div class="quantity-container">
+          <img src="./../images/nonfiction/minus.png" class="btn-quantity"
+              onclick="decreaseQuantity('quantity-text-9')" />
+
+          <span class="product-quantity" id="quantity-text-9">1</span>
+
+          <img src="./../images/nonfiction/plus.png" class="btn-quantity"
+              onclick="increaseQuantity('quantity-text-9')" />
+      </div>
+      <!--Increament decrement end -->
+        <button type="button" class="add-cart-btn" onclick="addToCart('fourth')">
+          Add to cart
+        </button>
+      </div>
+      <div class="books-card">
+        <img src="./../images/historical/bhagwatgitta.jpg" class="books-img" id="book-img-id" />
+        <h4 class="books-name">Bhagwatgitta</h4>
+        <p class="books-price">499/-</p>
+         <!--Increament decrement-->
+         <div class="quantity-container">
+          <img src="./../images/nonfiction/minus.png" class="btn-quantity"
+              onclick="decreaseQuantity('quantity-text-10')" />
+
+          <span class="product-quantity" id="quantity-text-10">1</span>
+
+          <img src="./../images/nonfiction/plus.png" class="btn-quantity"
+              onclick="increaseQuantity('quantity-text-10')" />
+      </div>
+      <!--Increament decrement end -->
+        <button type="button" class="add-cart-btn" onclick="addToCart('iron')">
+          Add to cart
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer Section -->
+
+  <div class="shop-footer">
+    <div class="footer-sec">
+      <p class="footer-sec-title">Quick Links</p>
+      <div class="footer-data">
+        <p><a href="./../index.html">Home </a></p>
+        <p><a href="./fiction.html">Fiction </a></p>
+        <p><a href="./pages/personality.html">Personality </a></p>
+        <p><a href="./non-fiction.html">Non-fiction </a></p>
+        <p><a href="./novel.html"> Novel </a></p>
+        <p><a href="./historic.html"> Historic </a></p>
+        <p><a href="./login.html"> Login </a></p>
+      </div>
+    </div>
+    <div class="footer-sec">
+      <p class="footer-sec-title">Social :</p>
+      <div class="footer-data">
+        <p>
+          <i class="fa-solid fa-envelope"></i> &nbsp; &nbsp;
+          <a href="mailto:ashishgore382@gmail.com">harshwardhanpatle1810@gmail.com.com</a>
+        </p>
+
+        <p>
+          <i class="fa-solid fa-phone"></i> &nbsp; &nbsp;
+          <a href="tel:+919325403055" class="footer-anchor">
+            +91-9325403055</a>
+        </p>
+
+        <p><i class="fa-brands fa-facebook"></i> &nbsp; &nbsp; Facebook</p>
+
+        <p><i class="fa-brands fa-twitter"></i> &nbsp; &nbsp; Twitter</p>
+
+        <p><i class="fa-brands fa-instagram"></i> &nbsp; &nbsp; Instagram</p>
+
+        <p><i class="fa-brands fa-linkedin"></i> &nbsp; &nbsp; LinkedIn</p>
+      </div>
+    </div>
+    <div class="footer-sec">
+      <p class="footer-sec-title">
+        <a href="./contact.html"> Contact us :</a>
+      </p>
+      <div class="footer-data">
+        <p>
+          <i class="fa-solid fa-location-dot"></i> &nbsp; &nbsp;
+          <a href="https://maps.app.goo.gl/N3ngnED1vBDYVvj19" target="blank">
+            Government Polytechnic Gondia</a>
+        </p>
+        <p>
+          <i class="fa-solid fa-envelope"></i> &nbsp; &nbsp;
+          <a href="mailto:harshwardhanpatle1810@gmail.com">harshwardhanpatle1810@gmail.com</a>
+        </p>
+
+        <p>
+          <i class="fa-solid fa-phone"></i> &nbsp; &nbsp;
+          <a href="tel:+919325403055"> +91-9325403055</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://kit.fontawesome.com/4d47a5db67.js" crossorigin="anonymous"></script>
+  <script>
+  /* increments decrements */
+    function increaseQuantity(quantityTextId) {
+      console.log(`Quantity Id: ${quantityTextId}`)
+      const quantityElement = document.getElementById(quantityTextId);
+      console.log(quantityElement);
+
+      let quantity = parseInt(quantityElement.innerText);
+      console.log(`Quantity: ${quantity}`);
+
+      if (quantity < 10) {
+        quantityElement.innerText = ++quantity;
+      }
+      else {
+        alert("You can't add than 10 items");
+      }
+
+    }
+
+    function decreaseQuantity(quantityTextId) {
+      console.log(`Quantity Id: ${quantityTextId}`)
+      const quantityElement = document.getElementById(quantityTextId)
+      console.log(quantityElement);
+
+      let quantity = parseInt(quantityElement.innerText);
+      if (quantity > 1) {
+        quantityElement.innerText = --quantity;
+      }
+      else {
+        alert("You can't add less than 1 item");
+      }
+    }
+
+      /* increments decrements end  */
+  </script>
 </body>
-</html> 
+
+</html>

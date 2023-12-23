@@ -1,97 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Form</title>
+    <title>Group Project 2</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f3c438;
-            margin: 0;
-            padding: 0;
-            display: flex;
+        .colors{
+           color: #ffb700;
+           color: #ffdd98;
+           color: #ffa600;
+           color: #ffd60a;
+        }
+        body{
+            padding:0;
+            margin:0;
+            background-color: #fbf9d1;
+        }
+        a{
+            text-decoration: none;
+            color:#000;
+        }
+        .shop-header{
+            background-color: #ffd60a;
+            padding:2px 15px;
+            display:flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
+            font-size: 20px;
         }
-
-        form {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 100%;
+        .shop-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0px 40px;
         }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
+        .shop-logo{
+            height:60px;
+            margin: 0;
         }
-
-        input,
-        textarea {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 16px;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+        .shop-name{
+            font-size: 25px;
+            font-weight: bolder;
+            margin: 0;
         }
-
-        button {
-            background-color: #f4f7f4;
-            color: #0d0101;
-            padding: 10px 15px;
+        .search-container{
+            display: flex;
+            margin: 0;
+            margin-bottom: 35px;
+        }
+    
+        input{
             border: none;
-            border-radius: 4px;
-            cursor: pointer;
+            outline:none;
+            background: none;
         }
-
-        button:hover {
+        .contact-container{
+            background-color: white;
+            display: block;
+            margin: 20px auto;
+            border-radius: 15px;
+            width: 600px;
+            box-shadow: 1px 1px 10px 0 black;
+            padding: 25px 30px;
+        }
+        
+        .navbar-menu-container{
+            display: flex;
+            margin-top: 25px;
+        }
+        .navbar-menu{
+            margin : 0 15px;
+            font-size: 15px;
+            padding: 5px 25px;
+            border-radius: 10px;
+            border : none;
+            background-color: #000;
+            color: white;
+        }
+        .navbar-anchor{
+            color:white;
+        }
+        .shop-body{
+            display: flex;
+            flex-direction: column;
+            margin: 0 5px;
+        }
+        
+        
+        .shop-sections{
+            margin: 10px 0;
+            border-bottom: 2px solid #ffbb00;
+            display: flex;
+        }
+        
+        
+        .shop-footer{
+            background-color: #ffd60a;
+            display: flex;
+            justify-content: space-around;
+            font-size: 15px;
+            margin-bottom: 200px;
+        }
+        .footer-sec{
+            width:400px;
+            margin: 10px 10px;
+            border-right: 2px solid #de1212;
+            margin-bottom: 70px;
+        }
+        .footer-sec-title{
+            font-size: 18px;
+            font-weight: bold;
+           
+        }
+        .footer-data{
+            margin-left: 20px;
+            
+        }
+        .submit-button{
+            padding:5px 20px;
+            font-size: 17px;
+            color: white;
+            background-color: #3a3a3a;
+            border: none;
+            border-radius: 10px;
+        }
+        .submit-button:hover{
+            padding:5px 30px;
             background-color: #de1212;
+            border-radius: 10px;
         }
+        
     </style>
+
 </head>
 <body>
-
-<form id="contactForm">
-    
-    
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="address">Address:</label>
-    <input type="address" id="address" name="address" required>
-
-    <label for="contactno">ContactNo:</label>
-    <input type="contactno" id="contactno" name="contactno" required>
-
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" rows="4" required></textarea>
-
-    <button type="button" onclick="submitForm()">Submit</button>
-</form>
-
-<script>
-    function submitForm() {
-        var name = document.getElementById('name').value;
-        var email = document.getElementById('email').value;
-        var address = document.getElementById('address').value;
-        var contactno = document.getElementById('contactno').value;
-        var message = document.getElementById('message').value;
+    <div class="shop-header">
+        <a href="./../index.html">
+            <div class="shop-container">
+                <img src="./../images/home/logo.png" alt="logo" class="shop-logo" />
+                <p class="shop-name"> Readit</p>
+            </div>
+        </a>
         
-        console.log('Name: ' + name);
-        console.log('Email: ' + email);
-        console.log('Address: ' + address);
-        console.log('contactno: ' + contactno);
-        console.log('Message: ' + message);
-    }
-</script>
+        <div class="navbar-menu-container">
+            <button type="button" class="navbar-menu"><a href="../index.html" class="navbar-anchor"> Home </a></button>
+            <button type="button" class="navbar-menu"><a href="./login.html" class="navbar-anchor"> Login </a></button>
+            <button type="button" class="navbar-menu"><a href="./fiction.html" class="navbar-anchor"> Fiction </a> </button>
+            <button type="button" class="navbar-menu"><a href="./non-fiction.html" class="navbar-anchor"> Non-fiction </a> </button>
+            <button type="button" class="navbar-menu"><a href="./novel.html" class="navbar-anchor"> Novel </a> </button>
+            <button type="button" class="navbar-menu"><a href="./historic.html" class="navbar-anchor"> Historic </a> </button>
 
+        </div>
+    </div>
+    <br>
+    <div class="contact-container">
+        <form id="contactForm" style="text-align: center;">
+        <h1 >Contact-Us</h1>
+        <div style="display: flex; flex-direction:column; justify-content: space-around; align-items: flex-start; padding-left: 20px;">
+             <div><i class="fa-solid fa-envelope" ></i> &nbsp;<label for="email">ashishgore382@gmail.com:</label></div>
+            
+            <br>
+        
+            <div><i class="fa-solid fa-location-dot"></i>&nbsp;<label for="address">B.D. College of Engineering. Wardha:</label></div>
+            
+            <br>
+        
+            <div><i class="fa-solid fa-phone"></i>&nbsp;<label for="contactno">+918805803087:</label></div>
+        </div>
+            <br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="3" required>
+            </textarea><br><br>
+        
+            <button type="button" class="submit-button" onclick="submitForm()">Submit</button>
+        </form>
+    </div>
+    <br>
+    <br>
+
+    <div class="shop-footer">
+        <div class="footer-sec">
+            <p class="footer-sec-title"> Quick Links </p>
+                <div class="footer-data">
+                    <p><a href="index.html">Home </a></p>
+                    <p><a href="./pages/fiction.html">Fiction
+                        </a></p>
+                    <p><a href="./pages/personality.html">Personality </a></p>
+                    <p><a href="./pages/non-fiction.html">Non-fiction </a>
+                    </p>
+                    <p><a href="./pages/academic.html">
+                            Academic </a></p>
+                    <p><a href="./pages/login.html"> Login </a>
+                </div>
+        </div>
+        <div class="footer-sec">
+            <p class="footer-sec-title"> Social :</p>
+                <div class="footer-data">
+                    <p> <i class="fa-solid fa-envelope" ></i>
+                        &nbsp; &nbsp; <a href="mailto:ashishgore382@gmail.com">ashishgore382@gmail.com</a>
+                    </p>
+
+                    <p> <i class="fa-solid fa-phone" ></i>
+                        &nbsp; &nbsp; <a href="tel:+918805803087" class="footer-anchor"> +91-8805803087</a>
+                    </p>
+
+                    <p> <i class="fa-brands fa-facebook" ></i> &nbsp;
+                        &nbsp; Facebook </p>
+
+                    <p> <i class="fa-brands fa-twitter" ></i> &nbsp;
+                        &nbsp; Twitter</p>
+
+                    <p> <i class="fa-brands fa-instagram" ></i> &nbsp;
+                        &nbsp; Instagram</p>
+
+                    <p> <i class="fa-brands fa-linkedin" ></i> &nbsp;
+                        &nbsp; LinkedIn</p>
+                </div>
+        </div>
+        <div class="footer-sec">
+            <p class="footer-sec-title"> <a href="./pages/contact.html"> Contact us :</a></p>
+                <div class="footer-data">
+                    
+                    <p><i class="fa-solid fa-location-dot"></i>
+                        &nbsp; &nbsp; <a href="https://maps.app.goo.gl/N3ngnED1vBDYVvj19" target="blank"> B.D.College of Engineering, Wardha</a>
+                    </p>
+                    <p> <i class="fa-solid fa-envelope" ></i>
+                        &nbsp; &nbsp; <a href="mailto:ashishgore393@gmail.com">ashishgore393@gmail.com</a>
+                    </p>
+
+                    <p> <i class="fa-solid fa-phone" ></i>
+                        &nbsp; &nbsp; <a href="tel:+918975004427"> +91-8975004427</a>
+                    </p>
+                </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/4d47a5db67.js" crossorigin="anonymous"></script>
+    <script src="functions.js"></script>
+    <script src="cart.js"></script>
+    <script>
+        function submitForm() {
+            const message = document.getElementById('message').value;
+            console.log('message:' + message);
+        }
+    </script>
 </body>
+
+
+
 </html>
