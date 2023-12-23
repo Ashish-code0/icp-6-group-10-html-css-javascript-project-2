@@ -3,23 +3,23 @@
 <head>
     <title>Group Project 2</title>
     <style>
-        .colors{
-           color: #ffb700;
-           color: #ffdd98;
-           color: #ffa600;
-           color: #ffd60a;
-        }
+        .colors {
+            background: linear-gradient(to left, #1FA2FF, #12D8FA, #A6FFCB);
+            background: linear-gradient(to left, #000428, #004e92);
+            background: linear-gradient(to left, #ff6500, #ff1701);
+            background: linear-gradient(to left, #000428, #004e92);
+      }
         body{
             padding:0;
             margin:0;
-            background-color: #fbf9d1;
+            background-color: #fffefb;
         }
         a{
             text-decoration: none;
-            color:#000;
+            color: #ffffff;
         }
         .shop-header{
-            background-color: #ffd60a;
+            background: linear-gradient(to left, #1FA2FF, #12D8FA, #A6FFCB);
             padding:2px 15px;
             display:flex;
             justify-content: space-between;
@@ -40,6 +40,7 @@
             font-size: 25px;
             font-weight: bolder;
             margin: 0;
+            color: #000000;
         }
         .search-container{
             display: flex;
@@ -53,12 +54,12 @@
             background: none;
         }
         .contact-container{
-            background-color: white;
+            background-color: rgb(243, 238, 238);
             display: block;
             margin: 20px auto;
             border-radius: 15px;
             width: 600px;
-            box-shadow: 1px 1px 10px 0 black;
+            box-shadow: 1px 1px 10px 0 rgb(35, 3, 217);
             padding: 25px 30px;
         }
         
@@ -72,11 +73,11 @@
             padding: 5px 25px;
             border-radius: 10px;
             border : none;
-            background-color: #000;
-            color: white;
+            background: linear-gradient(to left, #000428, #004e92);
+            color: rgb(254, 245, 245);
         }
         .navbar-anchor{
-            color:white;
+            color:rgb(244, 238, 238);
         }
         .shop-body{
             display: flex;
@@ -85,46 +86,46 @@
         }
         
         
-        .shop-sections{
-            margin: 10px 0;
-            border-bottom: 2px solid #ffbb00;
+        .shop-footer {
+            /*   background: linear-gradient(to left , #1FA2FF, #12D8FA ); */
+            background: #232f3f;
+            background: linear-gradient(to left, #000428, #004e92);
             display: flex;
-        }
-        
-        
-        .shop-footer{
-            background-color: #ffd60a;
-            display: flex;
+            color: #ffffff;
             justify-content: space-around;
             font-size: 15px;
-            margin-bottom: 200px;
         }
-        .footer-sec{
-            width:400px;
+
+        .footer-sec {
+            width: 400px;
             margin: 10px 10px;
-            border-right: 2px solid #de1212;
-            margin-bottom: 70px;
+            border-right: 2px solid #000000;
         }
-        .footer-sec-title{
+
+        .footer-sec-title {
             font-size: 18px;
             font-weight: bold;
-           
         }
-        .footer-data{
+
+        .footer-data {
             margin-left: 20px;
-            
+        }
+
+        .footer-data p a {
+            color: #ffffff;
+            text-decoration: none;
         }
         .submit-button{
             padding:5px 20px;
             font-size: 17px;
             color: white;
-            background-color: #3a3a3a;
+            background: linear-gradient(to left, #ff6500, #ff1701);
             border: none;
             border-radius: 10px;
         }
         .submit-button:hover{
             padding:5px 30px;
-            background-color: #de1212;
+            font-size: 22px;
             border-radius: 10px;
         }
         
@@ -141,7 +142,6 @@
         </a>
         
         <div class="navbar-menu-container">
-            <button type="button" class="navbar-menu"><a href="../index.html" class="navbar-anchor"> Home </a></button>
             <button type="button" class="navbar-menu"><a href="./login.html" class="navbar-anchor"> Login </a></button>
             <button type="button" class="navbar-menu"><a href="./fiction.html" class="navbar-anchor"> Fiction </a> </button>
             <button type="button" class="navbar-menu"><a href="./non-fiction.html" class="navbar-anchor"> Non-fiction </a> </button>
