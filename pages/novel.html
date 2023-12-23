@@ -3,7 +3,7 @@
 
 <head>
     <title>Welcome to the Novel Section</title>
-    
+
     <style>
         body {
             padding: 0;
@@ -12,13 +12,14 @@
             overflow-x: hidden;
         }
 
+        /* header section start */
         a {
             text-decoration: none;
-            color: #000;
+            color: #ffffff;
         }
 
         .shop-header {
-            background-color: #ffd60a;
+            background: linear-gradient(to left, #1FA2FF, #12D8FA, #A6FFCB);
             padding: 2px 15px;
             display: flex;
             justify-content: space-between;
@@ -43,44 +44,7 @@
             font-size: 25px;
             font-weight: bolder;
             margin: 0;
-        }
-
-        .search-container {
-            display: flex;
-            margin: 0;
-            margin-bottom: 35px;
-        }
-
-        input {
-            border: none;
-            outline: none;
-            background: none;
-        }
-
-        .search-bar {
-            width: 330px;
-            padding: 8px 15px;
-            font-size: 15px;
-            border: none;
-            border-radius: 25px 0 0 25px;
-            background-color: azure;
-        }
-
-        .search-button {
-            display: block;
-            margin-left: auto;
-            padding: 5px 15px;
-            font-size: 15px;
-            height: 33px;
-            border: none;
-            border-radius: 0 25px 25px 0;
-            background-color: #000;
-            color: white;
-        }
-
-        .search-button:hover {
-            cursor: pointer;
-            height: 37px;
+            color: #000;
         }
 
         .navbar-menu-container {
@@ -94,64 +58,25 @@
             padding: 5px 25px;
             border-radius: 10px;
             border: none;
-            background-color: #000;
+            background: linear-gradient(to left, #000428, #004e92);
             color: white;
+        }
+
+        .navbar-menu:hover {
+            font-size: 17px;
+            transition: 0.5s;
         }
 
         .navbar-anchor {
             color: white;
         }
 
+        /* header section end */
+
         .shop-body {
             display: flex;
             flex-direction: column;
             margin: 0 5px;
-        }
-
-        .searched-sections {
-            display: none;
-            margin: 10px auto;
-            background-color: #ffd60a;
-            width: 98vw;
-            border-bottom: 2px solid #ffbb00;
-        }
-
-        .search-section-container {
-            border-top: 1px solid #de1212;
-            border-bottom: 1px solid #de1212;
-            display: flex;
-            align-items: center;
-            padding: 2px 20px;
-        }
-
-        .search-book-title {
-            text-align: center;
-            font-size: 20px;
-            font-weight: bold;
-            margin: 5px 0;
-        }
-
-        .closeSearch {
-            display: block;
-            margin: 5px 0;
-            margin-left: auto;
-            border: none;
-            padding: 2px 10px;
-            color: white;
-            font-size: 17px;
-            border-radius: 10px;
-            background-color: #de1212;
-            cursor: pointer;
-        }
-
-        .search-card {
-            width: 250px;
-            padding: 10px 15px;
-            margin: 5px auto;
-            border-right: 1px solid black;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
         .shop-sections {
@@ -164,6 +89,7 @@
             align-items: center;
         }
 
+        /* book card */
         .books-card {
             width: 250px;
             padding: 10px 20px;
@@ -198,12 +124,31 @@
             font-weight: bold;
         }
 
+        /*  increment decrement */
+        .quantity-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .btn-quantity {
+            width: 20px;
+            cursor: pointer;
+        }
+
+        .product-quantity {
+            font-size: 20px;
+        }
+
+        /*  increment decrement end */
+
         .add-cart-btn {
             background-color: #ea0e0e;
+            background: linear-gradient(to left, #ff6500, #ff1701);
             padding: 7px 15px;
             font-size: 15px;
             border: none;
-            color:white;
+            color: white;
             text-decoration: none;
             cursor: pointer;
             border-radius: 10px;
@@ -214,9 +159,129 @@
             padding: 7px 20px;
         }
 
-        .shop-footer {
-            background-color: #ffd60a;
+        /* book card end */
+        /* The cart section */
+        .cart-card-container {
+            margin: 10px 0;
+            border-bottom: 2px solid #ffbb00;
             display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .close-cart-up-arrow {
+            position: absolute;
+            padding: 5px;
+            border-radius: 50%;
+            font-size: 17px;
+            background-color: #ff7700;
+            color: white;
+            top: -30px;
+            right: 10px;
+        }
+
+        .close-cart-up-arrow:hover {
+            cursor: pointer;
+            font-size: 22px;
+            box-shadow: 1px 1px 10px 0 #aaa;
+        }
+
+        .cart-book-sections {
+            display: none;
+            position: relative;
+        }
+
+        .cart-books-card {
+            width: 230px;
+            padding: 10px 15px;
+            margin: 5px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-right: 1px solid black;
+        }
+
+        .cart-books-img {
+            height: 220px;
+            border: 1px solid white;
+        }
+
+        .cart-books-name {
+            text-align: center;
+            font-size: 17px;
+        }
+
+        .cart-books-price {
+            font-size: 20px;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .books-counter {
+            display: flex;
+            align-items: center;
+        }
+
+        .inc-dec-btn {
+            height: 25px;
+        }
+
+        .books-quantity {
+            font-size: 25px;
+            margin: 2px 20px;
+            padding: 1px 5px;
+            border-bottom: 2px dashed #000;
+        }
+
+        .sub-total-in-card {
+            background-color: #eee;
+            border-radius: 10px;
+            font-size: 22px;
+            color: black;
+            margin-top: 15px;
+            padding: 5px;
+        }
+
+        .total-amount-btn {
+            display: block;
+            margin: 5px auto;
+            padding: 5px 20px;
+            background-color: #ff7700;
+            color: white;
+            font-size: 15px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .total-amount-btn:hover {
+            cursor: pointer;
+        }
+
+        .total-amount-desc {
+            text-align: center;
+            margin: 5px 0;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #ffbb00;
+            display: flex;
+            justify-content: center;
+            font-size: 25px;
+        }
+
+        .book-section-title{
+
+            font-size: 30px;
+            display: block;
+            font-weight: bolder;
+           
+        }
+
+        /* footer section start */
+        .shop-footer {
+            /*   background: linear-gradient(to left , #1FA2FF, #12D8FA ); */
+            background: #232f3f;
+            background: linear-gradient(to left, #000428, #004e92);
+            display: flex;
+            color: #ffffff;
             justify-content: space-around;
             font-size: 15px;
         }
@@ -224,7 +289,7 @@
         .footer-sec {
             width: 400px;
             margin: 10px 10px;
-            border-right: 2px solid #de1212;
+            border-right: 2px solid #000000;
         }
 
         .footer-sec-title {
@@ -235,6 +300,13 @@
         .footer-data {
             margin-left: 20px;
         }
+
+        .footer-data p a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        /* footer section end */
 
         @media screen and (max-width: 700px) {
             body {
@@ -409,6 +481,7 @@
 </head>
 
 <body>
+    <!--header section start -->
     <div class="shop-header">
         <a href="./../index.html">
             <div class="shop-container">
@@ -418,8 +491,8 @@
         </a>
 
         <div class="navbar-menu-container">
-            <button type="button" class="navbar-menu"><a href="./login.html" class="navbar-anchor"> Login
-                </a></button>
+            <button type="button" class="navbar-menu"><a href="../index.html" class="navbar-anchor"> Home </a>
+            </button>
             <button type="button" class="navbar-menu"><a href="./fiction.html" class="navbar-anchor"> Fiction </a>
             </button>
             <button type="button" class="navbar-menu"><a href="./non-fiction.html" class="navbar-anchor">
@@ -428,121 +501,385 @@
             </button>
             <button type="button" class="navbar-menu"><a href="./historic.html" class="navbar-anchor"> Historic
                 </a> </button>
+            <button type="button" class="navbar-menu"><a href="./login.html" class="navbar-anchor"> Login
+                </a></button>
         </div>
     </div>
+    <!--header section end -->
+    <!-- Body section start -->
+    <marquee direction="right">
+        <h1>Novel </h1>
+    </marquee>
+    <!--  section 1 start -->
+    <div class="shop-sections">
+        <div class="books-card">
+            <img src="../images/novel/black-beuty.jpg" class="book-img" />
+            <p class="books-name" id="name"> The Black-Beuty</p>
+            <p class="books-price">499/- </p>
+            <!--Increament decrement-->
+            <div class="quantity-container">
+                <img src="./../images/nonfiction/minus.png" class="btn-quantity"
+                    onclick="decreaseQuantity('quantity-text-1')" />
 
-    <div class="shop-body">
-        <div class="searched-sections" id="hidden-search-id">
-            <div class="search-section-container">
-                <p class="search-book-title">Searched Book:</p>
-                <button type="button" class="closeSearch" onclick="closeSearch()">
-                    <i class="fa-solid fa-xmark" style="color: white"></i>
-                </button>
+                <span class="product-quantity" id="quantity-text-1">1</span>
+
+                <img src="../images/nonfiction/plus.png" class="btn-quantity"
+                    onclick="increaseQuantity('quantity-text-1')" />
             </div>
-            
+            <!--Increament decrement end -->
+            <button type="button" class="add-cart-btn" onclick="addToCart('black')">Add to cart </button>
+        </div>
+        <div class="books-card">
+            <img src="../images/novel/brave.jpg" class="book-img" />
+            <p class="books-name"> Brave The World </p>
+            <p class="books-price">600/-</p>
+            <!--Increament decrement-->
+            <div class="quantity-container">
+                <img src="./../images/nonfiction/minus.png" class="btn-quantity"
+                    onclick="decreaseQuantity('quantity-text-2')" />
+
+                <span class="product-quantity" id="quantity-text-2">1</span>
+
+                <img src="./../images/nonfiction/plus.png" class="btn-quantity"
+                    onclick="increaseQuantity('quantity-text-2')" />
+            </div>
+            <!--Increament decrement end -->
+            <button type="button" class="add-cart-btn" onclick="addToCart('brave')">Add to cart </button>
+        </div>
+        <div class="books-card">
+            <img src="../images/novel/dracula.jpg" class="book-img" />
+            <p class="books-name"> The Dracula</p>
+            <p class="books-price"> 550/-</p>
+            <!--Increament decrement-->
+            <div class="quantity-container">
+                <img src="./../images/nonfiction/minus.png" class="btn-quantity"
+                    onclick="decreaseQuantity('quantity-text-3')" />
+
+                <span class="product-quantity" id="quantity-text-3">1</span>
+
+                <img src="./../images/nonfiction/plus.png" class="btn-quantity"
+                    onclick="increaseQuantity('quantity-text-3')" />
+            </div>
+            <!--Increament decrement end -->
+            <button type="button" class="add-cart-btn" onclick="addToCart('dracula')">Add to cart </button>
         </div>
 
-        <div class="shop-sections">
-            <div class="books-card">
-                <img src="../images/novel/black-beuty.jpg" class="book-img" />
-                <p class="books-name" id="name"> The Black-Beuty</p>
-                <p class="books-price">499/- </p>
-                <button type="button" class="add-cart-btn" onclick="addToCart()">Add to cart </button>
-            </div>
-            <div class="books-card">
-                <img src="../images/novel/brave.jpg" class="book-img"  />
-                <p class="books-name"> Brave The World </p>
-                <p class="books-price">600/-</p>
-                <button type="button" class="add-cart-btn">Add to cart </button>
-            </div>
-            <div class="books-card">
-                <img src="../images/novel/dracula.jpg" class="book-img" />
-                <p class="books-name"> The Dracula</p>
-                <p class="books-price"> 550/-</p>
-                <button type="button" class="add-cart-btn">Add to cart </button>
-            </div>
+        <div class="books-card">
+            <img src="../images/novel/gatspy.jpg" class="book-img" />
+            <p class="books-name">Gatspy </p>
+            <p class="books-price"> 400/-</p>
+            <!--Increament decrement-->
+            <div class="quantity-container">
+                <img src="./../images/nonfiction/minus.png" class="btn-quantity"
+                    onclick="decreaseQuantity('quantity-text-4')" />
 
-            <div class="books-card">
-                <img src="../images/novel/gatspy.jpg" class="book-img" />
-                <p class="books-name">Gatspy </p>
-                <p class="books-price"> 400/-</p>
-                <button type="button" class="add-cart-btn">Add to cart</button>
-            </div>
-            <div class="books-card">
-                <img src="../images/novel/oliver.jpg" class="book-img" />
-                <p class="books-name"> The Oliver Twist</p>
-                <p class="books-price">500/-</p>
-                <button type="button" class="add-cart-btn">Add to cart</button>
-            </div>
+                <span class="product-quantity" id="quantity-text-4">1</span>
 
+                <img src="./../images/nonfiction/plus.png" class="btn-quantity"
+                    onclick="increaseQuantity('quantity-text-4')" />
+            </div>
+            <!--Increament decrement end -->
+            <button type="button" class="add-cart-btn" onclick="addToCart('gatspy')">Add to cart</button>
         </div>
-        <div class="shop-sections">
-            <div class="books-card">
-                <img src="../images/novel/oliver.jpg" class="book-img" />
-                <p class="books-name">The Oliver Twist</p>
-                <p class="books-price">500/-</p>
-                <button type="button" class="add-cart-btn">Add to cart</button>
-            </div>
-            <div class="books-card">
-                <img src="../images/novel/king.jpg" class="book-img" />
-                <p class="books-name">The Return Of The King</p>
-                <p class="books-price"> 649/-</p>
-                <button type="button" class="add-cart-btn">Add to cart</button>
-            </div>
+        <div class="books-card">
+            <img src="../images/novel/oliver.jpg" class="book-img" />
+            <p class="books-name"> The Oliver Twist</p>
+            <p class="books-price">500/-</p>
+            <!--Increament decrement-->
+            <div class="quantity-container">
+                <img src="./../images/nonfiction/minus.png" class="btn-quantity"
+                    onclick="decreaseQuantity('quantity-text-5')" />
 
-            <div class="books-card">
-                <img src="../images/novel/oliver.jpg" class="book-img" id="ikigai-id" />
-                <p class="books-name">The Oliver Twist</p>
-                <p class="books-price">500/-</p>
-                <button type="button" class="add-cart-btn"> Add to cart </button>
+                <span class="product-quantity" id="quantity-text-5">1</span>
+
+                <img src="./../images/nonfiction/plus.png" class="btn-quantity"
+                    onclick="increaseQuantity('quantity-text-5')" />
             </div>
-            <div class="books-card">
-                <img src="../images/novel/sherlocks.jpg" class="book-img" />
-                <p class="books-name">The Complete sherlocks Home </p>
-                <p class="books-price">300/-</p>
-                <button type="button" class="add-cart-btn">Add to cart</button>
-            </div>
-            <div class="books-card">
-                <img src="../images/novel/solitute.jpg" class="book-img" />
-                <p class="books-name">One Hundred Years Of solitute</p>
-                <p class="books-price">700/-</p>
-                <button type="button" class="add-cart-btn">Add to cart</button>
-            </div>
-        </div>
-        <div class="shop-sections">
-            <div class="books-card">
-                <img src="../images/novel/uncle-tom.jpg" class="book-img" />
-                <p class="books-name"> Uncle Tom's Cabin </p>
-                <p class="books-price">499/-</p>
-                <button type="button" class="add-cart-btn">Add to cart</button>
-            </div>
-            <div class="books-card">
-                <img src="../images/novel/vanier.jpg" class="book-img"  />
-                <p class="books-name"> The vaniety Fair</p>
-                <p class="books-price"> 499/-</p>
-                <button type="button" class="add-cart-btn"> Add to cart</button>
-            </div>
-            <div class="books-card">
-                <img src="../images/novel/war.jpg" class="book-img" />
-                <p class="books-name">War And Peace </p>
-                <p class="books-price"> 499/-</p>
-                <button type="button" class="add-cart-btn">Add to cart</button>
-            </div>
-            <div class="books-card">
-                <img src="../images/novel/portrait.jpg" class="book-img"  />
-                <p class="books-name"> A portraitof he Artist As a young MAN</p>
-                <p class="books-price"> 499/-</p>
-                <button type="button" class="add-cart-btn">Add to cart</button>
-            </div>
-            <div class="books-card">
-                <img src="../images/novel/oliver.jpg" class="book-img"  />
-                <p class="books-name"> THe Oliver of the Twist</p>
-                <p class="books-price">500/-</p>
-                <button type="button" class="add-cart-btn"> Add to cart</button>
-            </div>
+            <!--Increament decrement end -->
+            <button type="button" class="add-cart-btn" onclick="addToCart('oliver')">Add to cart</button>
         </div>
 
     </div>
+    <!--Section 2-->
+    <div class="shop-sections">
+        <div class="books-card">
+            <img src="../images/novel/oliver.jpg" class="book-img" />
+            <p class="books-name">The Oliver Twist</p>
+            <p class="books-price">500/-</p>
+            <!--Increament decrement-->
+            <div class="quantity-container">
+                <img src="./../images/nonfiction/minus.png" class="btn-quantity"
+                    onclick="decreaseQuantity('quantity-text-6')" />
+
+                <span class="product-quantity" id="quantity-text-6">1</span>
+
+                <img src="./../images/nonfiction/plus.png" class="btn-quantity"
+                    onclick="increaseQuantity('quantity-text-6')" />
+            </div>
+            <!--Increament decrement end -->
+            <button type="button" class="add-cart-btn" onclick="addToCart('oliver1')">Add to cart</button>
+        </div>
+        <div class="books-card">
+            <img src="../images/novel/king.jpg" class="book-img" />
+            <p class="books-name">The Return Of The King</p>
+            <p class="books-price"> 649/-</p>
+            <!--Increament decrement-->
+            <div class="quantity-container">
+                <img src="./../images/nonfiction/minus.png" class="btn-quantity"
+                    onclick="decreaseQuantity('quantity-text-7')" />
+
+                <span class="product-quantity" id="quantity-text-7">1</span>
+
+                <img src="./../images/nonfiction/plus.png" class="btn-quantity"
+                    onclick="increaseQuantity('quantity-text-7')" />
+            </div>
+            <!--Increament decrement end -->
+            <button type="button" class="add-cart-btn" onclick="addToCart('king')">Add to cart</button>
+        </div>
+
+        <div class="books-card">
+            <img src="../images/novel/oliver.jpg" class="book-img" id="ikigai-id" />
+            <p class="books-name">The Oliver Twist</p>
+            <p class="books-price">500/-</p>
+            <!--Increament decrement-->
+            <div class="quantity-container">
+                <img src="./../images/nonfiction/minus.png" class="btn-quantity"
+                    onclick="decreaseQuantity('quantity-text-8')" />
+
+                <span class="product-quantity" id="quantity-text-8">1</span>
+
+                <img src="./../images/nonfiction/plus.png" class="btn-quantity"
+                    onclick="increaseQuantity('quantity-text-8')" />
+            </div>
+            <!--Increament decrement end -->
+            <button type="button" class="add-cart-btn" onclick="addToCart('oliver2')"> Add to cart </button>
+        </div>
+        <div class="books-card">
+            <img src="../images/novel/sherlocks.jpg" class="book-img" />
+            <p class="books-name">The Complete sherlocks Home </p>
+            <p class="books-price">300/-</p>
+            <!--Increament decrement-->
+            <div class="quantity-container">
+                <img src="./../images/nonfiction/minus.png" class="btn-quantity"
+                    onclick="decreaseQuantity('quantity-text-9')" />
+
+                <span class="product-quantity" id="quantity-text-9">1</span>
+
+                <img src="./../images/nonfiction/plus.png" class="btn-quantity"
+                    onclick="increaseQuantity('quantity-text-9')" />
+            </div>
+            <!--Increament decrement end -->
+            <button type="button" class="add-cart-btn" onclick="addToCart('sherlocks')">Add to cart</button>
+        </div>
+        <div class="books-card">
+            <img src="../images/novel/solitute.jpg" class="book-img" />
+            <p class="books-name">One Hundred Years Of solitute</p>
+            <p class="books-price">700/-</p>
+            <!--Increament decrement-->
+            <div class="quantity-container">
+                <img src="./../images/nonfiction/minus.png" class="btn-quantity"
+                    onclick="decreaseQuantity('quantity-text-10')" />
+
+                <span class="product-quantity" id="quantity-text-10">1</span>
+
+                <img src="./../images/nonfiction/plus.png" class="btn-quantity"
+                    onclick="increaseQuantity('quantity-text-10')" />
+            </div>
+            <!--Increament decrement end -->
+            <button type="button" class="add-cart-btn" onclick="addToCart('solitute')">Add to cart</button>
+        </div>
+    </div>
+    <div class="shop-sections">
+        <div class="books-card">
+            <img src="../images/novel/uncle-tom.jpg" class="book-img" />
+            <p class="books-name"> Uncle Tom's Cabin </p>
+            <p class="books-price">499/-</p>
+            <!--Increament decrement-->
+            <div class="quantity-container">
+                <img src="./../images/nonfiction/minus.png" class="btn-quantity"
+                    onclick="decreaseQuantity('quantity-text-11')" />
+
+                <span class="product-quantity" id="quantity-text-11">1</span>
+
+                <img src="./../images/nonfiction/plus.png" class="btn-quantity"
+                    onclick="increaseQuantity('quantity-text-11')" />
+            </div>
+            <!--Increament decrement end -->
+            <button type="button" class="add-cart-btn" onclick="addToCart('Uncle')">Add to cart</button>
+        </div>
+        <div class="books-card">
+            <img src="../images/novel/vanier.jpg" class="book-img" />
+            <p class="books-name"> The vaniety Fair</p>
+            <p class="books-price"> 499/-</p>
+            <!--Increament decrement-->
+            <div class="quantity-container">
+                <img src="./../images/nonfiction/minus.png" class="btn-quantity"
+                    onclick="decreaseQuantity('quantity-text-12')" />
+
+                <span class="product-quantity" id="quantity-text-12">1</span>
+
+                <img src="./../images/nonfiction/plus.png" class="btn-quantity"
+                    onclick="increaseQuantity('quantity-text-12')" />
+            </div>
+            <!--Increament decrement end -->
+            <button type="button" class="add-cart-btn" onclick="addToCart('vanier')"> Add to cart</button>
+        </div>
+        <div class="books-card">
+            <img src="../images/novel/war.jpg" class="book-img" />
+            <p class="books-name">War And Peace </p>
+            <p class="books-price"> 499/-</p>
+            <!--Increament decrement-->
+            <div class="quantity-container">
+                <img src="./../images/nonfiction/minus.png" class="btn-quantity"
+                    onclick="decreaseQuantity('quantity-text-13')" />
+
+                <span class="product-quantity" id="quantity-text-13">1</span>
+
+                <img src="./../images/nonfiction/plus.png" class="btn-quantity"
+                    onclick="increaseQuantity('quantity-text-13')" />
+            </div>
+            <!--Increament decrement end -->
+            <button type="button" class="add-cart-btn" onclick="addToCart('war')">Add to cart</button>
+        </div>
+        <div class="books-card">
+            <img src="../images/novel/portrait.jpg" class="book-img" />
+            <p class="books-name"> A portraitof he Artist As a young MAN</p>
+            <p class="books-price"> 499/-</p>
+            <!--Increament decrement-->
+            <div class="quantity-container">
+                <img src="./../images/nonfiction/minus.png" class="btn-quantity"
+                    onclick="decreaseQuantity('quantity-text-14')" />
+
+                <span class="product-quantity" id="quantity-text-14">1</span>
+
+                <img src="./../images/nonfiction/plus.png" class="btn-quantity"
+                    onclick="increaseQuantity('quantity-text-14')" />
+            </div>
+            <!--Increament decrement end -->
+            <button type="button" class="add-cart-btn" onclick="addToCart('portrait')">Add to cart</button>
+        </div>
+        <div class="books-card">
+            <img src="../images/novel/oliver.jpg" class="book-img" />
+            <p class="books-name"> THe Oliver of the Twist</p>
+            <p class="books-price">500/-</p>
+            <!--Increament decrement-->
+            <div class="quantity-container">
+                <img src="./../images/nonfiction/minus.png" class="btn-quantity"
+                    onclick="decreaseQuantity('quantity-text-15')" />
+
+                <span class="product-quantity" id="quantity-text-15">1</span>
+
+                <img src="./../images/nonfiction/plus.png" class="btn-quantity"
+                    onclick="increaseQuantity('quantity-text-15')" />
+            </div>
+            <!--Increament decrement end -->
+            <button type="button" class="add-cart-btn" onclick="addToCart('oliver3')"> Add to cart</button>
+        </div>
+    </div>
+
+    </div>
+    <!-- The Cart Section -->
+    <span class="book-section-title" style="margin-bottom: 10px;"> Books in your cart </span>
+    <div class="cart-book-sections" id="cart-hidden-section">
+        <i class="fa-solid fa-chevron-up close-cart-up-arrow" onclick="closeCartFun()"></i>
+
+        <div class="cart-card-container" id="cart-cards-container-id">
+            <div class="cart-books-card" id="cart-card-1">
+                <button type="button" class="total-amount-btn" onclick="removeFromCart1()">Remove from cart </button>
+                <img src="../images/novel/black-beuty.jpg" class="cart-books-img" id="cart-book1-img-id" />
+                <p class="cart-books-name" id="cart-books1-name-id"> The  Black-Beuty
+                    </p>
+                <p class="cart-books-price" id="priceBook1">499/- </p>
+                <div class="books-counter">
+                    <img class="inc-dec-btn" src="../images/home/minus.png" onclick="decreaseQuantity(), subCount1()">
+                    <span class="books-quantity" id="quantity"> 0 </span>
+                    <img class="inc-dec-btn" src="../images/home/add.png" onclick="increaseQuantity(), subCount1()">
+                </div>
+                <span class="sub-total-in-card"> Sub-Total: </span>
+                <span class="sub-total-in-card" id="subCountOfTheCard1Id"> 0 </span>
+            </div>
+
+            <div class="cart-books-card" style="display:none;" id="cart-card-2">
+                <button type="button" class="total-amount-btn" onclick="removeFromCart2()">Remove from cart </button>
+                <img src="../images/novel/war.jpg" class="cart-books-img" id="cart-book2-img-id" />
+                <p class="cart-books-name" id="cart-books2-name-id"> THe War and Piece</p>
+                <p class="cart-books-price" id="priceBook2">499/- </p>
+                <div class="books-counter">
+                    <img class="inc-dec-btn" src="../images/home/minus.png" onclick="decreaseQuantity2(), subCount2()">
+                    <span class="books-quantity" id="quantity2"> 0 </span>
+                    <img class="inc-dec-btn" src="../images/home/add.png" onclick="increaseQuantity2(), subCount2()">
+                </div>
+                <span class="sub-total-in-card"> Sub-Total: </span>
+                <span class="sub-total-in-card" id="subCountOfTheCard2Id"> 0 </span>
+            </div>
+
+            <div class="cart-books-card" style="display:none;" id="cart-card-3">
+                <button type="button" class="total-amount-btn" onclick="removeFromCart3()">Remove from cart </button>
+                <img src="../images/novel/animal.jpg" class="cart-books-img" id="cart-book3-img-id" />
+                <p class="cart-books-name" id="cart-books3-name-id">The Animal </p>
+                <p class="cart-books-price" id="priceBook3">499/- </p>
+                <div class="books-counter">
+                    <img class="inc-dec-btn" src="../images/home/minus.png" onclick="decreaseQuantity3(), subCount3()">
+                    <span class="books-quantity" id="quantity3"> 0 </span>
+                    <img class="inc-dec-btn" src="../images/home/add.png" onclick="increaseQuantity3(), subCount3()">
+                </div>
+                <span class="sub-total-in-card"> Sub-Total: </span>
+                <span class="sub-total-in-card" id="subCountOfTheCard3Id"> 0 </span>
+            </div>
+
+            <div class="cart-books-card" style="display:none;" id="cart-card-4">
+                <button type="button" class="total-amount-btn" onclick="removeFromCart4()">Remove from cart </button>
+                <img src="../images/novel/brave.jpg" class="cart-books-img" id="cart-book4-img-id" />
+                <p class="cart-books-name" id="cart-books4-name-id"> The Brave of the World</p>
+                <p class="cart-books-price" id="priceBook4">499/- </p>
+                <div class="books-counter">
+                    <img class="inc-dec-btn" src="../images/home/minus.png" onclick="decreaseQuantity4(), subCount4()">
+                    <span class="books-quantity" id="quantity4"> 0 </span>
+                    <img class="inc-dec-btn" src="../images/home/add.png" onclick="increaseQuantity4(), subCount4()">
+                </div>
+                <span class="sub-total-in-card"> Sub-Total: </span>
+                <span class="sub-total-in-card" id="subCountOfTheCard4Id"> 0 </span>
+            </div>
+
+            <div class="cart-books-card" style="display:none;" id="cart-card-5">
+                <button type="button" class="total-amount-btn" onclick="removeFromCart5()">Remove from cart </button>
+                <img src="../images/novel/dracula.jpg" class="cart-books-img" id="cart-book5-img-id" />
+                <p class="cart-books-name" id="cart-books5-name-id"> The Dracula </p>
+                <p class="cart-books-price" id="priceBook5">499/- </p>
+                <div class="books-counter">
+                    <img class="inc-dec-btn" src="../images/home/minus.png" onclick="decreaseQuantity5(), subCount5()">
+                    <span class="books-quantity" id="quantity5"> 0 </span>
+                    <img class="inc-dec-btn" src="../images/home/add.png" onclick="increaseQuantity5(), subCount5()">
+                </div>
+                <span class="sub-total-in-card"> Sub-Total: </span>
+                <span class="sub-total-in-card" id="subCountOfTheCard5Id"> 0 </span>
+            </div>
+        </div>
+
+
+        <button type="button" class="total-amount-btn" style="cursor:pointer;" onclick="countTotal()">
+            Total
+        </button>
+        <div class="total-amount-desc">
+            <span> The Total Price for all the Purcahse is :</span> &nbsp;
+            <span id="totalPriceDisplay"> 0 </span>
+        </div>
+
+        <div style="display: flex; justify-content: space-around; margin-bottom: 10px;">
+            <button type="button" class="total-amount-btn" style=" cursor: pointer;"
+                onclick="console.log(`Amount: paid`)">
+                Pay Now
+            </button>
+            <button type="button" class="total-amount-btn" style=" cursor: pointer;" onclick="showTotalOnReceipt()">
+                <a href="../pages/receipt.html" style="color: white;">
+                    Do yo want a receipt
+                </a>
+            </button>
+        </div>
+    </div>
+    <!-- cart section end -->
+    <!-- Body section end -->
+    <!-- Footer section start -->
     <div class="shop-footer">
         <div class="footer-sec">
             <p class="footer-sec-title"> Quick Links </p>
@@ -554,7 +891,7 @@
                 <p><a href="./non-fiction.html">Non-fiction </a>
                 </p>
                 <p><a href="./historic.html">
-                       historical </a></p>
+                        historical </a></p>
                 <p><a href="./login.html"> Login </a>
             </div>
         </div>
@@ -600,44 +937,543 @@
             </div>
         </div>
     </div>
-    <script src="https://kit.fontawesome.com/4d47a5db67.js" crossorigin="anonymous"></script>
+    <!-- Footer section end -->
+
+    <!--script start -->
+
     <script>
-        const addToCartButtons = document.querySelectorAll('.buy-now');
-        const cartList = document.querySelector('.cart-list');
-        const totalPriceEl = document.getElementById('total');
 
-        addToCartButtons.forEach(button => {
-            button.addEventListener('click', function (event) {
-                const book = this.parentNode.parentNode;
-                const bookName = book.querySelector('h3').textContent;
-                const bookPrice = parseFloat(book.querySelector('.price').textContent.slice(1));
+        let cartSectionStatus = true;
+        let cartCard1 = true;
+        let cartCard2 = true;
+        let cartCard3 = true;
+        let cartCard4 = true;
+        let cartCard5 = true;
 
-                const cartItem = document.createElement('li');
-                cartItem.classList.add('cart-item');
-                cartItem.innerHTML = `<img src="../images/novel/book.png" alt="${bookName}">
-                        <span>${bookName}</span>
-                        <span class="price">$${bookPrice.toFixed(2)}</span>
-                        <button class="remove-from-cart">Remove</button>`;
+        /* Interpage communication error */
+        function addToCart(cartAddBookName) {
+            const hiddenSection = document.getElementById('cart-hidden-section');
+            hiddenSection.style.display = "block";
 
-                cartList.appendChild(cartItem);
 
-                updateTotalPrice(bookPrice);
+            if (cartCard1) {
+                console.log('else if 1');
+                const imgElement = document.getElementById('cart-book1-img-id');
+                const nameElement = document.getElementById('cart-books1-name-id');
+                const priceElement = document.getElementById('priceBook1');
 
-                const removeButton = cartItem.querySelector('.remove-from-cart');
-                removeButton.addEventListener('click', function () {
-                    cartList.removeChild(cartItem);
-                    updateTotalPrice(-bookPrice);
-                });
-            });
-        });
+                switch (cartAddBookName) {
+                    case 'black':
+                        imgElement.src = "../images/novel/black-beuty.jpg";
+                        nameElement.innerText = 'The Black Beuty';
+                        priceElement.innerText = '600/-';
+                        break;
+                    case 'brave':
+                        imgElement.src = "../images/novel/brave.jpg"
+                        nameElement.innerText = 'Brave The World';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'dracula':
+                        imgElement.src = "../images/novel/dracula.jpg";
+                        nameElement.innerText = 'The Dracula';
+                        priceElement.innerText = '550/-';
+                        break;
+                    case 'gatspy':
+                        imgElement.src = "../images/novel/gatspy.jpg";
+                        nameElement.innerText = 'The Gatspy';
+                        priceElement.innerText = '400/-';
+                        break;
+                    case 'oliver':
+                        imgElement.src = "../images/novel/oliver.jpg";
+                        nameElement.innerText = 'The Oliver';
+                        priceElement.innerText = '649/-';
+                        break;
+                    case 'oliver1':
+                        imgElement.src = "../images/novel/oliver.jpg";
+                        nameElement.innerText = 'The Oliver';
+                        priceElement.innerText = '500/-';
+                        break;
+                    case 'king':
+                        imgElement.src = "../images/novel/king.jpg";
+                        nameElement.innerText = 'The Return off The King';
+                        priceElement.innerText = '300/-';
+                        break;
+                    case 'oliver2':
+                        imgElement.src = "../images/novel/oliver.jpg";
+                        nameElement.innerText = 'The Oliver';
+                        priceElement.innerText = '700/-';
+                        break;
+                    case 'vanier':
+                        imgElement.src = "../images/novel/vanier.jpg";
+                        nameElement.innerText = 'THe Vanier';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'war':
+                        imgElement.src = "../images/novel/war.jpg";
+                        nameElement.innerText = 'The War and Piece';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'Uncle':
+                        imgElement.src = "../images/novel/uncle-tom.jpg";
+                        nameElement.innerText = 'The Uncle Tom';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'sherlocks':
+                        imgElement.src = "..images/novel/sherlocks.jpg";
+                        nameElement.innerText = 'The Complete Sherlocks Home ';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'solitute':
+                        imgElement.src = "../images/novel/solitute.jpg";
+                        nameElement.innerText = 'THe solitute';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'portrait':
+                        imgElement.src = "../images/novel/portrait.jpg";
+                        nameElement.innerText = 'THe young man in Portrait';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'oliver3':
+                        imgElement.src = "../images/novel/oliver.jpg";
+                        nameElement.innerText = 'THe Oliver';
+                        priceElement.innerText = '499/-';
+                        break;
+                }
+                cartCard1 = false;
+                console.log('Cart book name', cartAddBookName);
+            }
+            else if (cartCard2) {
+                console.log('else if 2');
+                const cartCard2Element = document.getElementById('cart-card-2');
+                cartCard2Element.style.display = "flex";
+                const imgElement = document.getElementById('cart-book2-img-id');
+                const nameElement = document.getElementById('cart-books2-name-id');
+                const priceElement = document.getElementById('priceBook2');
 
-        function updateTotalPrice(price) {
-            const currentTotal = parseFloat(totalPriceEl.textContent);
-            totalPriceEl.textContent = (currentTotal + price).toFixed(2);
+                switch (cartAddBookName) {
+                    case 'black':
+                        imgElement.src = "../images/novel/black-beuty.jpg";
+                        nameElement.innerText = 'The Black Beuty';
+                        priceElement.innerText = '600/-';
+                        break;
+                    case 'brave':
+                        imgElement.src = "../images/novel/brave.jpg"
+                        nameElement.innerText = 'Brave The World';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'dracula':
+                        imgElement.src = "../images/novel/dracula.jpg";
+                        nameElement.innerText = 'The Dracula';
+                        priceElement.innerText = '550/-';
+                        break;
+                    case 'gatspy':
+                        imgElement.src = "../images/novel/gatspy.jpg";
+                        nameElement.innerText = 'The Gatspy';
+                        priceElement.innerText = '400/-';
+                        break;
+                    case 'oliver':
+                        imgElement.src = "../images/novel/oliver.jpg";
+                        nameElement.innerText = 'The Oliver';
+                        priceElement.innerText = '649/-';
+                        break;
+                    case 'oliver1':
+                        imgElement.src = "../images/novel/oliver.jpg";
+                        nameElement.innerText = 'The Oliver';
+                        priceElement.innerText = '500/-';
+                        break;
+                    case 'king':
+                        imgElement.src = "../images/novel/king.jpg";
+                        nameElement.innerText = 'The Return off The King';
+                        priceElement.innerText = '300/-';
+                        break;
+                    case 'oliver2':
+                        imgElement.src = "../images/novel/oliver";
+                        nameElement.innerText = 'The Oliver';
+                        priceElement.innerText = '700/-';
+                        break;
+                    case 'vanier':
+                        imgElement.src = "../images/novel/vanier.jpg";
+                        nameElement.innerText = 'THe Vanier';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'war':
+                        imgElement.src = "../images/novel/war.jpg";
+                        nameElement.innerText = 'The War and Piece';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'Uncle':
+                        imgElement.src = "../images/novel/uncle-tom.jpg";
+                        nameElement.innerText = 'The Uncle Tom';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'sherlocks':
+                        imgElement.src = "..images/novel/sherlocks.jpg";
+                        nameElement.innerText = 'The Complete Sherlocks Home ';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'solitute':
+                        imgElement.src = "../images/novel/solitute.jpg";
+                        nameElement.innerText = 'THe solitute';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'portrait':
+                        imgElement.src = "../images/novel/portrait.jpg";
+                        nameElement.innerText = 'THe young man in Portrait';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'oliver3':
+                        imgElement.src = "../images/novel/oliver.jpg";
+                        nameElement.innerText = 'THe Oliver';
+                        priceElement.innerText = '499/-';
+                        break;
+                }
+                cartCard2 = false;
+                console.log('Cart book name', cartAddBookName);
+            }
+            else if (cartCard3) {
+                console.log('else if 3');
+                const cartCard3Element = document.getElementById('cart-card-3');
+                cartCard3Element.style.display = "flex";
+                const imgElement = document.getElementById('cart-book3-img-id');
+                const nameElement = document.getElementById('cart-books3-name-id');
+                const priceElement = document.getElementById('priceBook3');
+
+                switch (cartAddBookName) {
+                    case 'black':
+                        imgElement.src = "../images/novel/black-beuty.jpg";
+                        nameElement.innerText = 'The Black Beuty';
+                        priceElement.innerText = '600/-';
+                        break;
+                    case 'brave':
+                        imgElement.src = "../images/novel/brave.jpg"
+                        nameElement.innerText = 'Brave The World';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'dracula':
+                        imgElement.src = "../images/novel/dracula.jpg";
+                        nameElement.innerText = 'The Dracula';
+                        priceElement.innerText = '550/-';
+                        break;
+                    case 'gatspy':
+                        imgElement.src = "../images/novel/gatspy.jpg";
+                        nameElement.innerText = 'The Gatspy';
+                        priceElement.innerText = '400/-';
+                        break;
+                    case 'oliver':
+                        imgElement.src = "../images/novel/oliver.jpg";
+                        nameElement.innerText = 'The Oliver';
+                        priceElement.innerText = '649/-';
+                        break;
+                    case 'oliver1':
+                        imgElement.src = "../images/novel/oliver.jpg";
+                        nameElement.innerText = 'The Oliver';
+                        priceElement.innerText = '500/-';
+                        break;
+                    case 'king':
+                        imgElement.src = "../images/novel/king.jpg";
+                        nameElement.innerText = 'The Return off The King';
+                        priceElement.innerText = '300/-';
+                        break;
+                    case 'oliver2':
+                        imgElement.src = "../images/novel/oliver";
+                        nameElement.innerText = 'The Oliver';
+                        priceElement.innerText = '700/-';
+                        break;
+                    case 'vanier':
+                        imgElement.src = "../images/novel/vanier.jpg";
+                        nameElement.innerText = 'THe Vanier';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'war':
+                        imgElement.src = "../images/novel/war.jpg";
+                        nameElement.innerText = 'The War and Piece';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'Uncle':
+                        imgElement.src = "../images/novel/uncle-tom.jpg";
+                        nameElement.innerText = 'The Uncle Tom';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'sherlocks':
+                        imgElement.src = "..images/novel/sherlocks.jpg";
+                        nameElement.innerText = 'The Complete Sherlocks Home ';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'solitute':
+                        imgElement.src = "../images/novel/solitute.jpg";
+                        nameElement.innerText = 'THe solitute';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'portrait':
+                        imgElement.src = "../images/novel/portrait.jpg";
+                        nameElement.innerText = 'THe young man in Portrait';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'oliver3':
+                        imgElement.src = "../images/novel/oliver.jpg";
+                        nameElement.innerText = 'THe Oliver';
+                        priceElement.innerText = '499/-';
+                        break;
+                }
+                cartCard3 = false;
+                console.log('Cart book name', cartAddBookName);
+            }
+            else if (cartCard4) {
+                console.log('else if 4');
+                const cartCard4Element = document.getElementById('cart-card-4');
+                cartCard4Element.style.display = "flex";
+                const imgElement = document.getElementById('cart-book4-img-id');
+                const nameElement = document.getElementById('cart-books4-name-id');
+                const priceElement = document.getElementById('priceBook4');
+
+                switch (cartAddBookName) {
+                    case 'black':
+                        imgElement.src = "../images/novel/black-beuty.jpg";
+                        nameElement.innerText = 'The Black Beuty';
+                        priceElement.innerText = '600/-';
+                        break;
+                    case 'brave':
+                        imgElement.src = "../images/novel/brave.jpg"
+                        nameElement.innerText = 'Brave The World';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'dracula':
+                        imgElement.src = "../images/novel/dracula.jpg";
+                        nameElement.innerText = 'The Dracula';
+                        priceElement.innerText = '550/-';
+                        break;
+                    case 'gatspy':
+                        imgElement.src = "../images/novel/gatspy.jpg";
+                        nameElement.innerText = 'The Gatspy';
+                        priceElement.innerText = '400/-';
+                        break;
+                    case 'oliver':
+                        imgElement.src = "../images/novel/oliver.jpg";
+                        nameElement.innerText = 'The Oliver';
+                        priceElement.innerText = '649/-';
+                        break;
+                    case 'oliver1':
+                        imgElement.src = "../images/novel/oliver.jpg";
+                        nameElement.innerText = 'The Oliver';
+                        priceElement.innerText = '500/-';
+                        break;
+                    case 'king':
+                        imgElement.src = "../images/novel/king.jpg";
+                        nameElement.innerText = 'The Return off The King';
+                        priceElement.innerText = '300/-';
+                        break;
+                    case 'oliver2':
+                        imgElement.src = "../images/novel/oliver";
+                        nameElement.innerText = 'The Oliver';
+                        priceElement.innerText = '700/-';
+                        break;
+                    case 'vanier':
+                        imgElement.src = "../images/novel/vanier.jpg";
+                        nameElement.innerText = 'THe Vanier';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'war':
+                        imgElement.src = "../images/novel/war.jpg";
+                        nameElement.innerText = 'The War and Piece';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'Uncle':
+                        imgElement.src = "../images/novel/uncle-tom.jpg";
+                        nameElement.innerText = 'The Uncle Tom';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'sherlocks':
+                        imgElement.src = "..images/novel/sherlocks.jpg";
+                        nameElement.innerText = 'The Complete Sherlocks Home ';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'solitute':
+                        imgElement.src = "../images/novel/solitute.jpg";
+                        nameElement.innerText = 'THe solitute';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'portrait':
+                        imgElement.src = "../images/novel/portrait.jpg";
+                        nameElement.innerText = 'THe young man in Portrait';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'oliver3':
+                        imgElement.src = "../images/novel/oliver.jpg";
+                        nameElement.innerText = 'THe Oliver';
+                        priceElement.innerText = '499/-';
+                        break;
+                }
+                cartCard4 = false;
+                console.log('Cart book name', cartAddBookName);
+            }
+            else if (cartCard5) {
+                console.log('else if 5');
+                const cartCard5Element = document.getElementById('cart-card-5');
+                cartCard5Element.style.display = "flex";
+                const imgElement = document.getElementById('cart-book5-img-id');
+                const nameElement = document.getElementById('cart-books5-name-id');
+                const priceElement = document.getElementById('priceBook5');
+
+                switch (cartAddBookName) {
+                    case 'black':
+                        imgElement.src = "../images/novel/black-beuty.jpg";
+                        nameElement.innerText = 'The Black Beuty';
+                        priceElement.innerText = '600/-';
+                        break;
+                    case 'brave':
+                        imgElement.src = "../images/novel/brave.jpg"
+                        nameElement.innerText = 'Brave The World';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'dracula':
+                        imgElement.src = "../images/novel/dracula.jpg";
+                        nameElement.innerText = 'The Dracula';
+                        priceElement.innerText = '550/-';
+                        break;
+                    case 'gatspy':
+                        imgElement.src = "../images/novel/gatspy.jpg";
+                        nameElement.innerText = 'The Gatspy';
+                        priceElement.innerText = '400/-';
+                        break;
+                    case 'oliver':
+                        imgElement.src = "../images/novel/oliver.jpg";
+                        nameElement.innerText = 'The Oliver';
+                        priceElement.innerText = '649/-';
+                        break;
+                    case 'oliver1':
+                        imgElement.src = "../images/novel/oliver.jpg";
+                        nameElement.innerText = 'The Oliver';
+                        priceElement.innerText = '500/-';
+                        break;
+                    case 'king':
+                        imgElement.src = "../images/novel/king.jpg";
+                        nameElement.innerText = 'The Return off The King';
+                        priceElement.innerText = '300/-';
+                        break;
+                    case 'oliver2':
+                        imgElement.src = "../images/novel/oliver";
+                        nameElement.innerText = 'The Oliver';
+                        priceElement.innerText = '700/-';
+                        break;
+                    case 'vanier':
+                        imgElement.src = "../images/novel/vanier.jpg";
+                        nameElement.innerText = 'THe Vanier';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'war':
+                        imgElement.src = "../images/novel/war.jpg";
+                        nameElement.innerText = 'The War and Piece';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'Uncle':
+                        imgElement.src = "../images/novel/uncle-tom.jpg";
+                        nameElement.innerText = 'The Uncle Tom';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'sherlocks':
+                        imgElement.src = "..images/novel/sherlocks.jpg";
+                        nameElement.innerText = 'The Complete Sherlocks Home ';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'solitute':
+                        imgElement.src = "../images/novel/solitute.jpg";
+                        nameElement.innerText = 'THe solitute';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'portrait':
+                        imgElement.src = "../images/novel/portrait.jpg";
+                        nameElement.innerText = 'THe young man in Portrait';
+                        priceElement.innerText = '499/-';
+                        break;
+                    case 'oliver3':
+                        imgElement.src = "../images/novel/oliver.jpg";
+                        nameElement.innerText = 'THe Oliver';
+                        priceElement.innerText = '499/-';
+                        break;
+                }
+                cartCard5 = false;
+                console.log('Cart book name', cartAddBookName);
+            }
+            else {
+                alert("You can't buy more than 5 items");
+            }
+
+            cartSectionStatus = false;
         }
+
+        function removeFromCart1() {
+            const cartCard1Element = document.getElementById('cart-card-1');
+            cartCard1Element.style.display = "none";
+            cartCard1 = true;
+        }
+        function removeFromCart2() {
+            const cartCard2Element = document.getElementById('cart-card-2');
+            cartCard2Element.style.display = "none";
+            cartCard2 = true;
+        }
+        function removeFromCart3() {
+            const cartCard3Element = document.getElementById('cart-card-3');
+            cartCard3Element.style.display = "none";
+            cartCard3 = true;
+        }
+        function removeFromCart4() {
+            const cartCard4Element = document.getElementById('cart-card-4');
+            cartCard4Element.style.display = "none";
+            cartCard4 = true;
+        }
+        function removeFromCart5() {
+            const cartCard5Element = document.getElementById('cart-card-5');
+            cartCard5Element.style.display = "none";
+            cartCard5 = true;
+        }
+
+
+        function closeCartFun() {
+            if (cartSectionStatus == false) {
+                const hiddenSection = document.getElementById('cart-hidden-section');
+                hiddenSection.style.display = "none";
+                cartSectionStatus = true;
+            }
+        }
+
+        /* increments decrement */
+
+        function increaseQuantity(quantityTextId) {
+            console.log(`Quantity Id: ${quantityTextId}`)
+            const quantityElement = document.getElementById(quantityTextId);
+            console.log(quantityElement);
+
+            let quantity = parseInt(quantityElement.innerText);
+            console.log(`Quantity: ${quantity}`);
+
+            if (quantity < 10) {
+                quantityElement.innerText = ++quantity;
+            }
+            else {
+                alert("You can't add than 10 items");
+            }
+
+        }
+
+        function decreaseQuantity(quantityTextId) {
+            console.log(`Quantity Id: ${quantityTextId}`)
+            const quantityElement = document.getElementById(quantityTextId)
+            console.log(quantityElement);
+
+            let quantity = parseInt(quantityElement.innerText);
+            if (quantity > 1) {
+                quantityElement.innerText = --quantity;
+            }
+            else {
+                alert("You can't add less than 1 item");
+            }
+        }
+
+
+
     </script>
+    <script src="https://kit.fontawesome.com/4d47a5db67.js" crossorigin="anonymous"></script>
+
 </body>
-
-
 
 </html>
