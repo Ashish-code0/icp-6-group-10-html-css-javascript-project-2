@@ -3,23 +3,27 @@
   <head>
     <title>Group Project 2</title>
     <style>
+
       .colors {
         background: linear-gradient(to left, #1FA2FF, #12D8FA, #A6FFCB);
         background: linear-gradient(to left, #000428, #004e92);
         background: linear-gradient(to left, #ff6500, #ff1701);
         background: linear-gradient(to left, #000428, #004e92);
       }
+
       body {
         padding: 0;
         margin: 0;
         background-color: #fffefb;
       }
-      a {
+      a{
         text-decoration: none;
         color: #000;
       }
       .shop-header {
+
         color: black;
+
         background: linear-gradient(to left, #1FA2FF, #12D8FA, #A6FFCB);
         padding: 2px 15px;
         display: flex;
@@ -35,90 +39,91 @@
         margin: 0px 40px;
       }
       .review-container {
-    width: 100%;
-    height: 500px;
-    background-color: ;
-    display: flex;
-    justify-content: space-around;
-    padding: 10px 10px;
-   }
-   .review{
-    height: 375px;
-    width: 320px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    border: #fffefb 1px solid;
-    border-radius: 10px;
-    margin-top: 55px;
-    position: relative;
-    background-color: #fffefb;
-   }
-   .review:hover{
-    height: 390px;
-    width: 340px;
-    transition: 0.3s;
-    box-shadow: 1px 1px 10px 0 black;
-   }
-   .reviewer-img{
-    margin-top: 20px;
-    border-radius: 50%;
-    height: 120px;
-    width: 120px;
-    border: 1px solid #fffefb;
-    margin-left: auto;
-    margin-right: auto;
-   }
-   .review-para{
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    font-size: large;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   }
-   .rating{
-    position :absolute;
-    bottom: 10%;
-    left: 30%;
-    transform: translate(8%, -10%) rotateY(180deg);
-    display: flex;
 
-   }
-   .rating input{
-    display: none;;
-   }
-   .rating label{
-    display: block;
-    cursor: pointer;
-    width: 20px;  
-   }
-   .rating label::before{
-    content: '\f005';
-    font-family:fontAwesome;
-    display: block;
-    position: relative;
-    font-size: 15px;
-    color: #101010; 
-   }
-   .rating label::after{
-    content: '\f005';
-    font-family:fontAwesome;
-    display: block;
-    position: absolute;
-    font-size: 15px;
-    color: #1f9cff; 
-    top: 0;
-    opacity: 0;
-    transition: 0.5s;
-    text-shadow: 0 2px 5px rgba(0,0,0,.5);
-   }
-   .rating label:hover:after, 
-   .rating label:hover ~ label::after,
-   .rating input:checked ~ label::after{
-    opacity: 1;
-   }
-   
+        width: 100%;
+        height: 500px;
+        background-color: white;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 10px;
+      }
+      .review{
+        height: 375px;
+        width: 320px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        border: #fffefb 1px solid;
+        border-radius: 10px;
+        margin-top: 55px;
+        position: relative;
+        
+      }
+      .review:hover{
+        height: 390px;
+        background-color: #ddffeb;
+        width: 340px;
+        transition: 0.3s;
+        box-shadow: 1px 1px 10px 0 black;
+      }
+      .reviewer-img{
+        margin-top: 20px;
+        border-radius: 50%;
+        height: 120px;
+        width: 120px;
+        border: 1px solid #fffefb;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .review-para{
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        font-size: large;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .rating{
+        position :absolute;
+        bottom: 10%;
+        left: 30%;
+        transform: translate(8%, -10%) rotateY(180deg);
+        display: flex;
+
+      }
+      .rating input{
+        display: none;;
+      }
+      .rating label{
+        display: block;
+        cursor: pointer;
+        width: 20px;  
+      }
+      .rating label::before{
+        content: '\f005';
+        font-family:fontAwesome;
+        display: block;
+        position: relative;
+        font-size: 15px;
+        color: #101010; 
+      }
+      .rating label::after{
+        content: '\f005';
+        font-family:fontAwesome;
+        display: block;
+        position: absolute;
+        font-size: 15px;
+        color: #1f9cff; 
+        top: 0;
+        opacity: 0;
+        transition: 0.5s;
+        text-shadow: 0 2px 5px rgba(0,0,0,.5);
+      }
+      .rating label:hover:after, 
+      .rating label:hover ~ label::after,
+      .rating input:checked ~ label::after{
+        opacity: 1;
+      }
       .shop-logo {
         height: 60px;
         margin: 0;
@@ -128,18 +133,13 @@
         font-weight: bolder;
         margin: 0;
       }
-      
-      
       input {
         border: none;
         outline: none;
         background: none;
       }
-      
-    
       .navbar-menu-container {
         display: flex;
-        margin-top: 25px;
       }
       .navbar-menu {
         margin: 0 15px;
@@ -163,7 +163,7 @@
       .shop-sections {
         margin: 13px 0;
         padding: 20px 0;
-        border-bottom: 2px solid #ffbb00;
+        border-bottom: 2px solid #004e92;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -217,26 +217,40 @@
         padding: 7px 20px;
       }
       .quantity-container {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
-        .btn-quantity {
-            width: 20px;
-            cursor: pointer;
-        }
-
-        .product-quantity {
-            font-size: 20px;
-        }
-
-      .shop-footer {
-        background: linear-gradient(to left, #000428, #004e92);
-          color:white;
           display: flex;
           justify-content: space-around;
-          font-size: 15px;
-        
+          align-items: center;
+      }
+      .btn-quantity {
+          width: 20px;
+          cursor: pointer;
+      }
+      .product-quantity {
+          font-size: 20px;
+      }
+      .shop-footer {
+        background: linear-gradient(to left, #000428, #004e92);
+
+        color:white;
+        display: flex;
+        justify-content: space-around;
+        font-size: 15px;
+      }
+      .shop-footer a{
+        color:white;
+      }
+      .footer-sec {
+        width: 400px;
+        margin: 10px 10px;
+        border-right: 2px solid white;
+      }
+      .footer-sec-title {
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .footer-data {
+        margin-left: 20px;
+
       }
       .shop-footer a{
           color:white;
@@ -254,7 +268,9 @@
           margin-left: 20px;
         }
 
-      @media screen and (max-width: 700px) {
+
+    @media screen and (max-width: 700px) {
+
         body {
           overflow-x: hidden;
         }
@@ -283,20 +299,139 @@
           border: none;
           background-color: #000;
           color: white;
+
+        }
+        .book-section-title{
+          font-size: 20px;
         }
         .shop-sections {
           justify-content: space-around;
           flex-wrap: wrap;
         }
         .books-card {
-          width: 250px;
+          width: 220px;
           padding: 10px 10px;
           margin: 10px 10px;
           display: flex;
           flex-direction: column;
           align-items: center;
         }
-        
+        .books-img{
+          height: 180px;
+        }
+        .cart-books-img{
+            height:180px; 
+        }
+      }
+      /* Responsive for tablet screen */
+      @media screen and (min-width: 701px)and (max-width:900px){
+        body {
+          overflow-x: hidden;
+        }
+        .shop-header {
+          flex-direction: row;
+          justify-content: space-around;
+        }
+        .shop-logo{
+            height: 70px;
+        }
+        .shop-name {
+          font-size: 25px;
+        }
+        .search-container {
+          margin-left:0;
+          margin-bottom: 0;
+        }
+        .navbar-menu-container {
+          display: flex;
+          margin: 15px 0;
+        }
+        .navbar-menu {
+          margin: 0 10px;
+          font-size: 15px;
+          padding: 3px 30px;
+          border-radius: 10px;
+          border: none;
+          background-color: #000;
+          color: white;
+        }
+        .book-section-title{
+          font-size: 20px;
+        }
+
+        .shop-sections {
+          justify-content: space-around;
+          flex-wrap: wrap;
+        }
+        .books-card {
+
+          width: 220px;
+
+          padding: 10px 10px;
+          margin: 10px 10px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .books-img{
+          height: 200px;
+        }
+        .cart-books-img{
+            height:200px; 
+        }
+      }
+      /* Responsive for laptop screen */
+      @media screen and (min-width: 901px)and (max-width:1299px){
+        body {
+          overflow-x: hidden;
+        }
+        .shop-header {
+          flex-direction: row;
+          justify-content: space-around;
+        }
+        .shop-logo{
+            height: 70px;
+        }
+        .shop-name {
+          font-size: 25px;
+        }
+        .search-container {
+          margin-left:0;
+          margin-bottom: 0;
+        }
+        .navbar-menu-container {
+          display: flex;
+          margin: 15px 0;
+        }
+        .navbar-menu {
+          margin: 0 10px;
+          font-size: 15px;
+          padding: 5px 45px;
+          border-radius: 10px;
+          border: none;
+          background-color: #000;
+          color: white;
+        }
+        .shop-sections {
+          justify-content: space-around;
+          flex-wrap: wrap;
+        }
+        .books-card {
+          width: 220px;
+          padding: 10px 10px;
+          margin: 10px 10px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .books-img{
+          height: 200px;
+        }
+        .cart-books-img{
+            height:200px; 
+        }
+
       }
     </style>
   </head>
@@ -334,11 +469,11 @@
       </div>
 
       </div>
-      <marquee direction="right"><h1>Non Fiction </h1></marquee>
-      <h1> Best Seller</h1>
+      <marquee direction="right" style="border-bottom:2px solid #004e92;"><h1>Non Fiction </h1></marquee>
+      <h1 style="text-align: center;"> Best Seller</h1>
 
       <div class="shop-sections">
-        <div class="books-card"> <i class="fa-solid fa-heart wishlist" style="color: #e5dbff;"></i>
+        <div class="books-card"> 
           <img src="./../images/nonfiction/attitude.jpg" class="books-img" />
 
           <p class="books-name">
@@ -424,7 +559,7 @@
           </button>
         </div>
       </div>
-      <h1>New Release</h1>
+      <h1 style="text-align: center;">New Release</h1>
 
       <div class="shop-sections">
         <div class="books-card"> <i class="fa-solid fa-heart wishlist" style="color: #e5dbff;"></i>
@@ -521,7 +656,7 @@
       </div>
       </div>
     </div>
-    <h1> Popular Book</h1>
+    <h1 style="text-align: center;"> Popular Book</h1>
 
       <div class="shop-sections">
         <div class="books-card"> <i class="fa-solid fa-heart wishlist" style="color: #e5dbff;"></i>
@@ -620,7 +755,9 @@
       </div>
       <div class="review-container">
         <div class="review">
+
           <img src="https://i.pravatar.cc/150?img=7" class="reviewer-img">
+
           <p class="review-para">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
@@ -633,7 +770,9 @@
           </div>
         </div>
         <div class="review">
+
           <img src="https://i.pravatar.cc/150?img=9" class="reviewer-img">
+
           <p class="review-para">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
@@ -646,7 +785,9 @@
           </div>
         </div>
         <div class="review">
+
           <img src="https://i.pravatar.cc/150?img=3" class="reviewer-img">
+
           <p class="review-para">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
