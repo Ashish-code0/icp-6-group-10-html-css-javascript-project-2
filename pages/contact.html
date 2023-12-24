@@ -47,7 +47,6 @@
             margin: 0;
             margin-bottom: 35px;
         }
-    
         input{
             border: none;
             outline:none;
@@ -58,15 +57,12 @@
             display: block;
             margin: 20px auto;
             border-radius: 15px;
-            width: 600px;
+            width: 50%;
             box-shadow: 1px 1px 10px 0 black;
             padding: 25px 30px;
         }
-        
-        
         .navbar-menu-container{
             display: flex;
-            margin-top: 25px;
         }
         .navbar-menu{
             margin : 0 15px;
@@ -79,6 +75,14 @@
         }
         .navbar-anchor{
             color:rgb(244, 238, 238);
+        }
+        .navbar-menu:hover {
+          background: none;
+          background-color: #ddffeb;
+          
+        }
+        .navbar-menu:hover .navbar-anchor{
+          color: black;
         }
         .shop-body{
             display: flex;
@@ -128,6 +132,153 @@
             padding:5px 30px;
             font-size: 17px;
             border-radius: 10px;
+        }
+        @media only screen and (max-width: 700px) {
+          
+          body {
+            overflow-x: hidden;
+          }
+          .shop-header {
+            flex-direction: column;
+          }
+          .shop-logo{
+              height: 50px;
+          }
+          .shop-name {
+            font-size: 25px;
+          }
+          .search-container {
+            margin-bottom: 15px;
+          }
+          .navbar-menu-container {
+            display: flex;
+            margin: 15px 0;
+          }
+          .navbar-menu {
+            margin: 0 10px;
+            font-size: 10px;
+            padding: 5px 20px;
+            border-radius: 10px;
+            border: none;
+            background-color: #000;
+            color: white;
+          }
+          .book-section-title{
+            font-size: 20px;
+          }
+          .shop-sections {
+            justify-content: space-around;
+            flex-wrap: wrap;
+          }
+          .shop-footer {
+            flex-direction: column;
+            display: flex;
+            justify-content: space-around; 
+            align-items: center;     
+          }
+          .footer-sec {
+            width: 300px;
+            margin: 10px 10px;
+            border-right: none;
+            border-bottom: 2px solid white;
+          }
+          .shop-footer a{
+            font-size: 16px;
+          }
+        }
+        @media screen and (min-width: 701px)and (max-width:900px){
+          body {
+            overflow-x: hidden;
+          }
+          .shop-header {
+            justify-content: center;
+          }
+          .shop-logo{
+              height: 50px;
+          }
+          .shop-name {
+            font-size: 25px;
+          }
+          .search-container {
+            margin-left:0;
+            margin-bottom: 0;
+          }
+          .navbar-menu-container {
+            display: flex;
+            margin: none;
+          }
+          .navbar-menu {
+            margin: 0 10px;
+            font-size: 15px;
+            padding: 3px 15px;
+            border-radius: 10px;
+            border: none;
+            background-color: #000;
+            color: white;
+          }
+          .book-section-title{
+            font-size: 20px;
+          }
+          .shop-sections {
+            justify-content: space-around;
+            flex-wrap: wrap;
+          }
+          .books-card {
+            width: 220px;
+            padding: 10px 10px;
+            margin: 10px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          .books-img{
+            height: 200px;
+          }
+          .cart-books-img{
+              height:200px; 
+          }
+          .footer-sec {
+            width: 350px;
+            margin: 10px 10px;
+            border-right: 2px solid white;
+          }
+          
+        }
+        @media screen and (min-width: 901px) and (max-width:1299px){
+          body {
+            overflow-x: hidden;
+          }
+          .shop-header {
+            flex-direction: row;
+            justify-content: space-around;
+          }
+          .shop-logo{
+              height: 60px;
+          }
+          .shop-name {
+            font-size: 25px;
+          }
+          .search-container {
+            margin-left:0;
+            margin-bottom: 0;
+          }
+          .navbar-menu-container {
+            display: flex;
+            margin: 15px 0;
+          }
+          .navbar-menu {
+            margin: 0 10px;
+            font-size: 15px;
+            padding: 5px px;
+            border-radius: 10px;
+            border: none;
+            background-color: #000;
+            color: white;
+          }
+          .shop-sections {
+            justify-content: space-around;
+            flex-wrap: wrap;
+          }
         }
         
     </style>
@@ -180,7 +331,7 @@
     <div class="shop-footer">
         <div class="footer-sec">
             <p class="footer-sec-title"> Quick Links </p>
-                <div class="footer-data">
+                <div class="footer-data" style="padding-left:20px;">
                     <p><a href="index.html">Home </a></p>
                     <p><a href="./pages/fiction.html">Fiction
                         </a></p>

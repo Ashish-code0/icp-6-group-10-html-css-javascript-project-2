@@ -47,7 +47,6 @@
         }
         .navbar-menu-container {
             display: flex;
-            margin-top: 25px;
         }
         .navbar-menu {
             margin: 0 15px;
@@ -60,6 +59,14 @@
         }
         .navbar-anchor {
             color: white;
+        }
+        .navbar-menu:hover {
+          background: none;
+          background-color: #ddffeb;
+          
+        }
+        .navbar-menu:hover .navbar-anchor{
+          color: black;
         }
         .heading{
             text-align: center;
@@ -94,7 +101,7 @@
             margin-bottom: 30px;
             border-bottom: 1px solid #3a3a3a;
             border-radius: 3px;
-            font-size: 15px;
+            font-size: 12px;
             outline: none;
         }
         .text::placeholder{
@@ -108,11 +115,11 @@
             border-radius: 4px;
             cursor: pointer;
             font-size: 15px;
-            width: 200px;
+            width: 20%;
         }
         
         .shop-footer {
-          background: linear-gradient(to left, #000428, #004e92);
+            background: linear-gradient(to left, #000428, #004e92);
             display: flex;
             margin-top: 20px;
             justify-content: space-around;
@@ -125,7 +132,7 @@
             .footer-sec {
             width: 400px;
             margin: 10px 10px;
-            border-right: 2px solid #de1212;
+            border-right: 2px solid white;
             }
             .footer-sec-title {
             font-size: 18px;
@@ -133,6 +140,153 @@
             }
             .footer-data {
             margin-left: 20px;
+            }
+        @media only screen and (max-width: 700px) {
+          
+          body {
+            overflow-x: hidden;
+          }
+          .shop-header {
+            flex-direction: column;
+          }
+          .shop-logo{
+              height: 50px;
+          }
+          .shop-name {
+            font-size: 25px;
+          }
+          .search-container {
+            margin-bottom: 15px;
+          }
+          .navbar-menu-container {
+            display: flex;
+            margin: 15px 0;
+          }
+          .navbar-menu {
+            margin: 0 10px;
+            font-size: 10px;
+            padding: 5px 20px;
+            border-radius: 10px;
+            border: none;
+            background-color: #000;
+            color: white;
+          }
+          .book-section-title{
+            font-size: 20px;
+          }
+          .shop-sections {
+            justify-content: space-around;
+            flex-wrap: wrap;
+          }
+          .shop-footer {
+            flex-direction: column;
+            display: flex;
+            justify-content: space-around; 
+            align-items: center;     
+          }
+          .footer-sec {
+            width: 300px;
+            margin: 10px 10px;
+            border-right: none;
+            border-bottom: 2px solid white;
+          }
+          .shop-footer a{
+            font-size: 16px;
+          }
+        }
+        @media screen and (min-width: 701px)and (max-width:900px){
+          body {
+            overflow-x: hidden;
+          }
+          .shop-header {
+            justify-content: center;
+          }
+          .shop-logo{
+              height: 50px;
+          }
+          .shop-name {
+            font-size: 25px;
+          }
+          .search-container {
+            margin-left:0;
+            margin-bottom: 0;
+          }
+          .navbar-menu-container {
+            display: flex;
+            margin: none;
+          }
+          .navbar-menu {
+            margin: 0 10px;
+            font-size: 15px;
+            padding: 3px 15px;
+            border-radius: 10px;
+            border: none;
+            background-color: #000;
+            color: white;
+          }
+          .book-section-title{
+            font-size: 20px;
+          }
+          .shop-sections {
+            justify-content: space-around;
+            flex-wrap: wrap;
+          }
+          .books-card {
+            width: 220px;
+            padding: 10px 10px;
+            margin: 10px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          .books-img{
+            height: 200px;
+          }
+          .cart-books-img{
+              height:200px; 
+          }
+          .footer-sec {
+            width: 350px;
+            margin: 10px 10px;
+            border-right: 2px solid white;
+          }
+          
+        }
+        @media screen and (min-width: 901px) and (max-width:1299px){
+          body {
+            overflow-x: hidden;
+          }
+          .shop-header {
+            flex-direction: row;
+            justify-content: space-around;
+          }
+          .shop-logo{
+              height: 60px;
+          }
+          .shop-name {
+            font-size: 25px;
+          }
+          .search-container {
+            margin-left:0;
+            margin-bottom: 0;
+          }
+          .navbar-menu-container {
+            display: flex;
+            margin: 15px 0;
+          }
+          .navbar-menu {
+            margin: 0 10px;
+            font-size: 15px;
+            padding: 5px px;
+            border-radius: 10px;
+            border: none;
+            background-color: #000;
+            color: white;
+          }
+          .shop-sections {
+            justify-content: space-around;
+            flex-wrap: wrap;
+          }
         }
     </style>
 
@@ -174,25 +328,25 @@
             <h2 class="heading"> Register Now </h2>
 
             
-            <input class="text" id="name" name="name" placeholder="Username" required>
+            <input class="text" id="name" name="name" placeholder="Username"  required>
 
             
-            <input class="text" id="email" name="email" placeholder="Email" required>
+            <input class="text" id="email" name="email" placeholder="Email"  required>
 
          
-            <input class="text" id="Password" name="Password" placeholder="Password" required>
+            <input class="text" id="password" name="Password" placeholder="Password"  required>
 
             
-            <input class="text" id="cpassword" name="cpassword" placeholder="Confirm Password" required>
+            <input class="text" id="cpassword" name="cpassword" placeholder="Confirm Password"  required>
 
-            <button class="btn" onclick="submitForm()"> Submit </button>
+            <button type="button" class="btn" onclick="submitForm(), alert('You are now registered.')"> Submit </button>
        
         </form>
 
         <div class="shop-footer">
             <div class="footer-sec">
               <p class="footer-sec-title">Quick Links</p>
-              <div class="footer-data">
+              <div class="footer-data" style="padding-left:20px;">
                 <p><a href="index.html">Home </a></p>
                 <p><a href="./pages/fiction.html">Fiction </a></p>
                 <p><a href="./pages/personality.html">Personality </a></p>
@@ -252,10 +406,15 @@
         <script>
 
         function submitForm() {
-        var username = document.getElementById('username').value;
+        var username = document.getElementById('name').value;
         var email = document.getElementById('email').value;
         var password = document.getElementById('password').value;
-        var cpassword = document.getElementById('cpassword').value;               
+        var cpassword = document.getElementById('cpassword').value;      
+        
+        console.log(`User: ${username}`);
+        console.log(`Email: ${email}`);
+        console.log(`Password: ${password}`);
+        console.log(`Confirmed Password: ${cpassword}`);
     
     }
     

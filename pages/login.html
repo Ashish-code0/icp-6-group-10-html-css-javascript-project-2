@@ -3,9 +3,7 @@
 <head>
     <title>login page</title>
     <style>
-      html {
-        height: 100%;
-      }
+      
       a {
         text-decoration: none;
         color: #000;
@@ -14,14 +12,10 @@
         overflow-x: hidden;
         height: 100%;
         margin: 0;
-        display: grid;
-        justify-items: center;
-        align-items: center;
-        
+        padding: 0;        
       }
       
       .shop-header {
-        width: 98%;
         background: linear-gradient(to left, #1FA2FF, #12D8FA, #A6FFCB);
         padding: 2px 15px;
         display: flex;
@@ -64,11 +58,19 @@
       .navbar-anchor {
         color: white;
       }
-
+      .navbar-menu:hover {
+        background: none;
+        background-color: #ddffeb;
+        
+      }
+      .navbar-menu:hover .navbar-anchor{
+        color: black;
+      }
       #main-holder {
         margin-top: 20px;
         width: 50%;
         display: grid;
+        margin: 0 auto;
         justify-items: center;
         align-items: center;
         background-color: azure;
@@ -97,9 +99,8 @@
         padding: 5px;
         font-size: 12px;
         font-weight: bold;
-        color: #8a0000;
+        color: black;
         border: 1px solid #8a0000;
-        background-color: #ffd60a; 
         opacity: 0;
       }
       
@@ -152,6 +153,7 @@
           color:#eee;
         }
         .footer-sec {
+          padding-left: 10px;
           width: 400px;
           margin: 10px 10px;
           border-right: 2px solid white;
@@ -162,6 +164,158 @@
         }
         .footer-data {
           margin-left: 20px;
+        }
+        @media only screen and (max-width: 700px) {
+          
+          body {
+            overflow-x: hidden;
+          }
+          .shop-header {
+            flex-direction: column;
+          }
+          .shop-logo{
+              height: 50px;
+          }
+          .shop-name {
+            font-size: 25px;
+          }
+          .search-container {
+            margin-bottom: 15px;
+          }
+          .navbar-menu-container {
+            display: flex;
+            margin: 15px 0;
+          }
+          .navbar-menu {
+            margin: 0 10px;
+            font-size: 10px;
+            padding: 5px 20px;
+            border-radius: 10px;
+            border: none;
+            background-color: #000;
+            color: white;
+          }
+          .book-section-title{
+            font-size: 20px;
+          }
+          .shop-sections {
+            justify-content: space-around;
+            flex-wrap: wrap;
+          }
+          .shop-footer {
+            flex-direction: column;
+            display: flex;
+            justify-content: space-around; 
+            align-items: center;     
+          }
+          .footer-sec {
+            width: 300px;
+            margin: 10px 10px;
+            border-right: none;
+            border-bottom: 2px solid white;
+          }
+          .shop-footer a{
+            font-size: 16px;
+          }
+        }
+        @media screen and (min-width: 701px)and (max-width:900px){
+          body {
+            overflow-x: hidden;
+          }
+          .shop-header {
+            justify-content: center;
+          }
+          .shop-logo{
+              height: 50px;
+          }
+          .shop-name {
+            font-size: 25px;
+          }
+          .search-container {
+            margin-left:0;
+            margin-bottom: 0;
+          }
+          .navbar-menu-container {
+            display: flex;
+            margin: none;
+          }
+          .navbar-menu {
+            margin: 0 10px;
+            font-size: 15px;
+            padding: 3px 15px;
+            border-radius: 10px;
+            border: none;
+            background-color: #000;
+            color: white;
+          }
+          .book-section-title{
+            font-size: 20px;
+          }
+          .shop-sections {
+            justify-content: space-around;
+            flex-wrap: wrap;
+          }
+          .books-card {
+            width: 220px;
+            padding: 10px 10px;
+            margin: 10px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          .books-img{
+            height: 200px;
+          }
+          .cart-books-img{
+              height:200px; 
+          }
+          .footer-sec {
+            width: 350px;
+            margin: 10px 10px;
+            border-right: 2px solid white;
+          }
+          .footer-data {
+            margin-left: 16px;
+          }
+          .shop-footer a{
+            font-size: 13px;
+          }
+        }
+        @media screen and (min-width: 901px) and (max-width:1299px){
+          body {
+            overflow-x: hidden;
+          }
+          .shop-header {
+            flex-direction: row;
+            justify-content: space-around;
+          }
+          .shop-logo{
+              height: 60px;
+          }
+          .shop-name {
+            font-size: 25px;
+          }
+          .search-container {
+            margin-left:0;
+            margin-bottom: 0;
+          }
+          .navbar-menu-container {
+            display: flex;
+            margin: 15px 0;
+          }
+          .navbar-menu {
+            margin: 0 10px;
+            font-size: 15px;
+            padding: 5px px;
+            border-radius: 10px;
+            border: none;
+            background-color: #000;
+            color: white;
+          }
+          .shop-sections {
+            justify-content: space-around;
+            flex-wrap: wrap;
+          }
         }
     </style>
 </head>
@@ -178,9 +332,6 @@
 
     <div class="navbar-menu-container">
       <button type="button" class="navbar-menu"><a href="../index.html" class="navbar-anchor"> Home </a>
-      </button>
-      <button type="button" class="navbar-menu">
-        <a href="./login.html" class="navbar-anchor"> Login </a>
       </button>
       <button type="button" class="navbar-menu">
         <a href="./fiction.html" class="navbar-anchor"> Fiction </a>
@@ -208,9 +359,9 @@
         </div>
 
         <form id="login-form">
-            <input type="text" name="username" id="username-field" class="login-form-field" placeholder="username" required>
-            <input type="password" name="password" id="password-field" class="login-form-field" placeholder="password" required>
-            <input type="submit" name="login" id="login-form-submit">
+            <input type="text" name="username" id="username-field" class="login-form-field" placeholder="username" required id="username-id">
+            <input type="password" name="password" id="password-field" class="login-form-field" placeholder="password" required id="password-id">
+            <input type="submit" name="login" id="login-form-submit" onclick="loginSubmit()">
         </form>
 
         <a href="./../pages/register.html" style="cursor: pointer;"> 
@@ -218,12 +369,12 @@
             Register here 
           </p>
         </a>
-      </div>
+    </div>
 
     <div class="shop-footer">
       <div class="footer-sec">
         <p class="footer-sec-title">Quick Links</p>
-        <div class="footer-data">
+        <div class="footer-data" style="padding-left:20px;">
           <p><a href="index.html">Home </a></p>
           <p><a href="./pages/fiction.html">Fiction </a></p>
           <p><a href="./pages/personality.html">Personality </a></p>
@@ -291,13 +442,15 @@
           const username = loginForm.username.value;
           const password = loginForm.password.value;
 
-          if (username === "user" && password === "web_dev") {
+          if (username === "user" && password === "webdev") {
               alert("You have successfully logged in.");
               location.reload();
           } else {
               loginErrorMsg.style.opacity = 1;
           }
       })
+
+      
     </script>
 </body>
 </html>

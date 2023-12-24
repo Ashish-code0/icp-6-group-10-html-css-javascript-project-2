@@ -49,7 +49,7 @@
 
         .navbar-menu-container {
             display: flex;
-            margin-top: 25px;
+
         }
 
         .navbar-menu {
@@ -62,15 +62,20 @@
             color: white;
         }
 
-        .navbar-menu:hover {
-            font-size: 17px;
-            transition: 0.5s;
-        }
+        
 
         .navbar-anchor {
             color: white;
         }
 
+        .navbar-menu:hover {
+        background: none;
+        background-color: #ddffeb;
+        
+      }
+      .navbar-menu:hover .navbar-anchor{
+        color: black;
+      }
         /* header section end */
 
         .shop-body {
@@ -126,6 +131,8 @@
 
         /*  increment decrement */
         .quantity-container {
+            width:80px;
+            margin-bottom: 10px;
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -362,6 +369,21 @@
             .books-img {
                 height: 180px;
             }
+            .shop-footer {
+            flex-direction: column;
+            display: flex;
+            justify-content: space-around; 
+            align-items: center;     
+          }
+          .footer-sec {
+            width: 300px;
+            margin: 10px 10px;
+            border-right: none;
+            border-bottom: 2px solid white;
+          }
+          .shop-footer a{
+            font-size: 16px;
+          }
         }
 
         @media screen and (min-width: 701px)and (max-width:900px) {
@@ -511,6 +533,7 @@
         <h1>Novel </h1>
     </marquee>
     <!--  section 1 start -->
+    <h1 style="text-align: center;"> Best Seller</h1>
     <div class="shop-sections">
         <div class="books-card">
             <img src="../images/novel/black-beuty.jpg" class="book-img" />
@@ -601,6 +624,7 @@
 
     </div>
     <!--Section 2-->
+    <h1 style="text-align: center;">New Release</h1>
     <div class="shop-sections">
         <div class="books-card">
             <img src="../images/novel/oliver.jpg" class="book-img" />
@@ -689,6 +713,7 @@
             <button type="button" class="add-cart-btn" onclick="addToCart('solitute')">Add to cart</button>
         </div>
     </div>
+    <h1 style="text-align: center;"> Popular Book</h1>
     <div class="shop-sections">
         <div class="books-card">
             <img src="../images/novel/uncle-tom.jpg" class="book-img" />
@@ -779,7 +804,7 @@
 
     </div>
     <!-- The Cart Section -->
-    <span class="book-section-title" style="margin-bottom: 10px;"> Books in your cart </span>
+    <span class="book-section-title" style="margin-bottom: 10px; text-align: center;"> Books in your cart </span>
     <div class="cart-book-sections" id="cart-hidden-section">
         <i class="fa-solid fa-chevron-up close-cart-up-arrow" onclick="closeCartFun()"></i>
 
@@ -883,7 +908,7 @@
     <div class="shop-footer">
         <div class="footer-sec">
             <p class="footer-sec-title"> Quick Links </p>
-            <div class="footer-data">
+            <div class="footer-data" style="padding-left:20px;">
                 <p><a href="./../index.html">Home </a></p>
                 <p><a href="./fiction.html">Fiction
                     </a></p>

@@ -41,15 +41,15 @@
       .review-container {
 
         width: 100%;
-        height: 500px;
         background-color: white;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-around;
         padding: 10px 10px;
       }
       .review{
         height: 375px;
-        width: 320px;
+        width: 300px;
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
@@ -62,7 +62,7 @@
       .review:hover{
         height: 390px;
         background-color: #ddffeb;
-        width: 340px;
+        width: 320px;
         transition: 0.3s;
         box-shadow: 1px 1px 10px 0 black;
       }
@@ -124,6 +124,24 @@
       .rating input:checked ~ label::after{
         opacity: 1;
       }
+      .review-container{
+          justify-content: space-around;
+          display: flex;
+          flex-wrap: wrap;
+          height: auto;
+        }
+        .review{
+          height: 350px;
+          width: 250px;
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+        }
+        .review:hover{
+          height: 350px;
+          width: 260px;
+        }
+      
       .shop-logo {
         height: 60px;
         margin: 0;
@@ -152,6 +170,14 @@
       }
       .navbar-anchor {
         color: white;
+      }
+      .navbar-menu:hover {
+        background: none;
+        background-color: #ddffeb;
+        
+      }
+      .navbar-menu:hover .navbar-anchor{
+        color: black;
       }
       .shop-body {
         display: flex;
@@ -217,6 +243,8 @@
         padding: 7px 20px;
       }
       .quantity-container {
+          width:80px;
+          margin-bottom: 10px;
           display: flex;
           justify-content: space-around;
           align-items: center;
@@ -230,7 +258,6 @@
       }
       .shop-footer {
         background: linear-gradient(to left, #000428, #004e92);
-
         color:white;
         display: flex;
         justify-content: space-around;
@@ -322,6 +349,21 @@
         .cart-books-img{
             height:180px; 
         }
+        .shop-footer {
+            flex-direction: column;
+            display: flex;
+            justify-content: space-around; 
+            align-items: center;     
+          }
+          .footer-sec {
+            width: 300px;
+            margin: 10px 10px;
+            border-right: none;
+            border-bottom: 2px solid white;
+          }
+          .shop-footer a{
+            font-size: 16px;
+          }
       }
       /* Responsive for tablet screen */
       @media screen and (min-width: 701px)and (max-width:900px){
@@ -437,7 +479,7 @@
   </head>
   <body>
     <div class="shop-header">
-      <a href="./index.html">
+      <a href="./../index.html">
         <div class="shop-container">
           <img src="./../images/home/logo.png" alt="logo" class="shop-logo" />
           <p class="shop-name">Readit</p>
@@ -803,7 +845,7 @@
     <div class="shop-footer">
       <div class="footer-sec">
         <p class="footer-sec-title">Quick Links</p>
-        <div class="footer-data">
+        <div class="footer-data" style="padding-left:20px;">
           <p><a href="index.html">Home </a></p>
           <p><a href="./fiction.html">Fiction </a></p>
           <p><a href="./personality.html">Personality </a></p>
