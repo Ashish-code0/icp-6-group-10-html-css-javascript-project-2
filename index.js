@@ -36,7 +36,7 @@ function showBook(bookName){
     const bookNameId = document.getElementById('book-name-id');
     const bookPriceId = document.getElementById('book-price-id');
     const bookSummaryElement = document.getElementById('bookSummaryId');
-
+    
     switch(bookName){
         case 'atomic':
             bookImgId.src="./images/personality/atomic-habit.jpeg";
@@ -99,49 +99,48 @@ function showBook(bookName){
             bookSummaryElement.innerText = 'Violet is an admirable heroine. Despite having a chronic illness, she tenaciously fights to help the revolution she joined in the end of book one. Again and again, she faces peril–she routinely gets beat up–but every time, she jumps back up, ready to try again, with the help of her friends and her dragons.';
         break;
     }
-
     /*
-    if ( bookName = 'psychology'){
+    if ( bookName == 'psychology'){
         bookImgId.src="./images/personality/psychology-of-money.jpg";
         bookNameId.innerText = 'Atomic Habits Paperback _ 1 January 2018';
         bookPriceId.innerText = '600/-';
     }
-    else if( bookName ='atomic'){
+    else if( bookName =='atomic'){
         bookImgId.src="./images/personality/atomic-habit.jpeg";
         bookNameId.innerText = 'Atomic Habits Paperback _ 1 January 2018';
         bookPriceId.innerText = '600/-';
     }
-    else if ( bookName = 'rich'){
+    else if ( bookName == 'rich'){
         bookImgId.src="./images/personality/rich-dad-poor-dad.jpeg";
         bookNameId.innerText = 'Rich Dad Poor Dad: 25th Anniversary Edit';
         bookPriceId.innerText = '400/-';
     }
-    else if ( bookName = 'think'){
+    else if ( bookName == 'think'){
         bookImgId.src="./images/personality/think-and-grow-rich.jpg";
         bookNameId.innerText = 'Atomic Habits Paperback _ 1 January 2018';
         bookPriceId.innerText = '600/-';
     }
-    else if ( bookName = 'divine'){
+    else if ( bookName == 'divine'){
         bookImgId.src="./images/fiction/divine-rivals.jpg";
         bookNameId.innerText = 'Atomic Habits Paperback _ 1 January 2018';
         bookPriceId.innerText = '600/-';
     }
-    else if ( bookName = 'fire'){
+    else if ( bookName == 'fire'){
         bookImgId.src="./images/fiction/fire-blood.jpeg";
         bookNameId.innerText = 'Atomic Habits Paperback _ 1 January 2018';
         bookPriceId.innerText = '600/-';
     }
-    else if ( bookName = 'fourth'){
+    else if ( bookName == 'fourth'){
         bookImgId.src="./images/fiction/fourth-wing.jpg";
         bookNameId.innerText = 'Atomic Habits Paperback _ 1 January 2018';
         bookPriceId.innerText = '600/-';
     }
-    else if ( bookName = 'iron'){
+    else if ( bookName == 'iron'){
         bookImgId.src="./images/fiction/iron-flame.jpg";
         bookNameId.innerText = 'Atomic Habits Paperback _ 1 January 2018';
         bookPriceId.innerText = '600/-';
     }
-    else if ( bookName = 'song'){
+    else if ( bookName == 'song'){
         bookImgId.src="./images/fiction/song-of-ice-fire.jpeg";
         bookNameId.innerText = '';
         bookPriceId.innerText = '600/-';

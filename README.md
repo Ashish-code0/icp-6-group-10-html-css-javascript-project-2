@@ -7,28 +7,28 @@ Readit is a group project created by the members of Project Group 10 of Internsh
 ## The following are images from the website:
 
 ### The Home Page
-![Home](./images/readme/home-page.png)
+![Home](./images/readme/home.png)
 
 ### The Login section
-![Login](./images/readme/login-page.png)
+![Login](./images/readme/login.png)
 
 ### The Register section
-![Register](./images/readme/register-page.png)
+![Register](./images/readme/register.png)
 
 ### The Fiction section
-![Fiction](./images/readme/fiction-page.png)
+![Fiction](./images/readme/fiction.png)
 
 ### The Non-Fiction section
-![Non-Fiction](./images/readme/non-fiction-page.png)
+![Non-Fiction](./images/readme/non-fiction.png)
 
 ### The Novel section
-![Novel](./images/readme/novel-page.png)
+![Novel](./images/readme/novel.png)
 
 ### The Historic dection
-![Historic](./images/readme/historic-page.png)
+![Historic](./images/readme/historic.png)
 
 ### The Contact section
-![Contact](./images/readme/contact-page.png)
+![Contact](./images/readme/contact.png)
 
 
 ### Description 
